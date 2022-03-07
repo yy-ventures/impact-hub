@@ -1,16 +1,12 @@
-html,
-body {
-  padding: 0;
+@import url("http://fonts.cdnfonts.com/css/gt-walsheim");
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'GT Walsheim', sans-serif;
+  line-height: 1.5;
 }
