@@ -1,0 +1,70 @@
+@import '../../../styles/base.scss';
+
+.navbar_container{
+    border: 1px solid red;
+    width: 100vw;
+    position: relative;
+    overflow-y: hidden;
+    font-size: 1em;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary2;
+    .navbar_grid{
+        align-items: center;
+        width: 80.9375%;
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+        .brand_logo{
+            border: 1px solid red;
+            img{
+                height: 4.625rem;
+            }
+         }
+         .nav_list{
+            border: 1px solid red;
+             text-align: center;
+             ul{
+                 li{
+                     list-style-type: none;
+                     display: inline;
+                     text-transform: capitalize;
+                     a{
+                         text-decoration: none;
+                         color: $white;
+                         font-size: 1.25rem;
+                         margin: 0 1.6875rem;
+                     }
+                 }
+             }
+         }
+         .language-container{
+            border: 1px solid red;
+             .language{
+                 display: flex;
+                 align-items: center;
+                 p{
+                     color: $textLight;
+                     font-size: 1.25rem;
+                     text-transform: capitalize;
+                     margin-left: 2.5%;
+                 }
+             }
+         }
+    }
+    svg{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // height: 19.1875rem;
+        // width: 19.125rem;
+        width: 100%;
+        z-index: -1;
+        // path{
+        //     width: 100%;
+        // }
+    }
+}

@@ -3,11 +3,9 @@ import React from "react";
 
 const HomeHero = () => {
   return (
-    <div>
-      <h1>Im the home hero</h1>
-      <Link href="/about">About</Link>
-      <Link href="/co-working/membership">Membership</Link>
-    </div>
+    <section className="home-hero">
+      <video src="/video/hero_video.mp4" type="video/mp4"></video>
+    </section>
   );
 };
 

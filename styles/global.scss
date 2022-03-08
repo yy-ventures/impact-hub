@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "GT Walsheim Pro";
+    src: url("/fonts/GTWalsheimPro/GTWalsheimPro-Regular.ttf");
+    font-display: swap;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'GT Walsheim Pro', sans-serif;
+  line-height: 1.5;
+}
+

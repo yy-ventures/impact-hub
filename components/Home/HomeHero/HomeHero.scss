@@ -1,0 +1,9 @@
+@import '../../../styles/base.scss';
+
+.home-hero{
+    height: 100vh;
+    background-color: $textLight;
+    video{
+        width: 100%;
+    }
+}
