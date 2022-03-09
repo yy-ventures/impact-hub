@@ -1,11 +1,10 @@
 @import '../../../styles/base.scss';
 
 .navbar_container{
-    border: 1px solid red;
-    width: 100vw;
+    height: min-content;
     position: relative;
     overflow-y: hidden;
-    font-size: 1em;
+    font-size: $common;
     z-index: 1;
     display: flex;
     justify-content: center;
@@ -14,18 +13,15 @@
     .navbar_grid{
         align-items: center;
         width: 80.9375%;
-        border: 1px solid red;
         display: flex;
         justify-content: space-between;
         z-index: 100;
         .brand_logo{
-            border: 1px solid red;
             img{
-                height: 4.625rem;
+                height: 7.4rem;
             }
          }
          .nav_list{
-            border: 1px solid red;
              text-align: center;
              ul{
                  li{
@@ -35,20 +31,19 @@
                      a{
                          text-decoration: none;
                          color: $white;
-                         font-size: 1.25rem;
-                         margin: 0 1.6875rem;
+                         font-size: $common;
+                         margin: 0 2.7rem;
                      }
                  }
              }
          }
          .language-container{
-            border: 1px solid red;
              .language{
                  display: flex;
                  align-items: center;
                  p{
                      color: $textLight;
-                     font-size: 1.25rem;
+                     font-size: 2rem;
                      text-transform: capitalize;
                      margin-left: 2.5%;
                  }

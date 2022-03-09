@@ -3,8 +3,8 @@ import React from "react";
 
 const HomeHero = () => {
   return (
-    <section className="home-hero">
-      <video src="/video/hero_video.mp4" type="video/mp4"></video>
+    <section className="home_hero">
+      <video src="/video/hero_video.mp4" type="video/mp4" autoPlay muted loop></video>
     </section>
   );
 };

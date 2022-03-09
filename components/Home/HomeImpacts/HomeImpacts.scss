@@ -1,0 +1,138 @@
+@import '../../../styles/base.scss';
+
+.home_impacts{
+    height: 107.9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    &_header{
+        text-align: center;
+        h2{
+            color: $textDark;
+            font-size: $headingSecondary;
+            font-weight: $bold;
+        }
+        h4{
+            color: $textDark;
+            font-size: $subHeading3;
+            font-weight: $bold;
+        }
+    }
+    &_body{
+        width: 137.058rem;
+        margin-top: 10.6rem;
+        h4{
+            font-size: $subHeading3;
+            font-weight: $bold;
+            margin-left: 2.7rem;
+        }
+        &_counter{
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6rem;
+            &_card{
+                height: 23.811rem * 2;
+                h2{
+                    font-weight: $bold;
+                    color: $textDark;
+                }
+                p{
+                    font-size: $common;
+                    text-transform: capitalize;
+                    color: $textDark;
+                    font-weight: $bold;
+                }
+                &:nth-child(1){
+                    display: flex;
+                    align-items: flex-start;
+                }
+                &:nth-child(2){
+                    display: flex;
+                    align-items: flex-end;
+                }
+                &:nth-child(3){
+                    display: flex;
+                    align-items: flex-start;
+                }
+                &:nth-child(4){
+                    display: flex;
+                    align-items: flex-end;
+                }
+            }
+            &_card_1{
+                width: 32.123rem;
+                height: 23.811rem;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-around;
+                position: relative;
+                &::before{
+                    content: url('../../../static/assets/counter/counter_1.png');
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+                h2{
+                    font-size: $number;
+                }
+            }
+            &_card_2{
+                width: 32.352rem;
+                height: 24.742rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                position: relative;
+                &::before{
+                    content: url('../../../static/assets/counter/counter_2.png');
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+                h2{
+                    font-size: 15rem;
+                }
+            }
+            &_card_3{
+                width: 26.7rem;
+                height: 21.875rem;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-around;
+                position: relative;
+                &::before{
+                    content: url('../../../static/assets/counter/counter_3.png');
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+                h2{
+                    font-size: 15rem;
+                }
+            }
+            &_card_4{
+                width: 33.883rem;
+                height: 22.752rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                position: relative;
+                &::before{
+                    content: url('../../../static/assets/counter/counter_4.png');
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+                h2{
+                    font-size: 13rem;
+                }
+            }
+        }
+    }
+}

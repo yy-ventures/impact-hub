@@ -10,13 +10,14 @@ const Navbar = () => {
     const HandleCursor = e => {
         setMousePoint({x: e.clientX, y: e.clientY})
     }
-    console.log(mousePoint.x)
     return (
         <nav className='navbar_container' onMouseMove={HandleCursor}>
             <SVGCursor x={mousePoint.x} y={mousePoint.y}/>
             <div className='navbar_grid'>
                 <div className='brand_logo'>
-                    <Link href="/"><img src={logo.src} /></Link>
+                    <Link href="/">
+                        <a><img src={logo.src} /></a>
+                    </Link>
                 </div>
                 <div className='nav_list'>
                     <ul>

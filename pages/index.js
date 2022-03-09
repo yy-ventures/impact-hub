@@ -1,5 +1,9 @@
 import Head from 'next/head'
 import HomeHero from '../components/Home/HomeHero/HomeHero'
+import HomeImpacts from '../components/Home/HomeImpacts/HomeImpacts'
+import HomeOffer from '../components/Home/HomeOffer/HomeOffer'
+import HomeWelcome from '../components/Home/HomeWelcome/HomeWelcome'
+import Cookies from '../components/Shared/Cookies/Cookies'
 
 export default function Home() {
   return (
@@ -10,6 +14,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <HomeHero/>
+      <HomeWelcome/>
+      <HomeOffer/>
+      <HomeImpacts/>
+      {/* <Cookies/> */}
     </div>
   )
 }
