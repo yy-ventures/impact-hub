@@ -1,0 +1,65 @@
+@import '../../../styles/base.scss';
+
+.navbar_container{
+    height: min-content;
+    position: relative;
+    overflow-y: hidden;
+    font-size: $common;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary2;
+    .navbar_grid{
+        align-items: center;
+        width: 80.9375%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 100;
+        .brand_logo{
+            img{
+                height: 7.4rem;
+            }
+         }
+         .nav_list{
+             text-align: center;
+             ul{
+                 li{
+                     list-style-type: none;
+                     display: inline;
+                     text-transform: capitalize;
+                     a{
+                         text-decoration: none;
+                         color: $white;
+                         font-size: $common;
+                         margin: 0 2.7rem;
+                     }
+                 }
+             }
+         }
+         .language-container{
+             .language{
+                 display: flex;
+                 align-items: center;
+                 p{
+                     color: $textLight;
+                     font-size: 2rem;
+                     text-transform: capitalize;
+                     margin-left: 2.5%;
+                 }
+             }
+         }
+    }
+    svg{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        // height: 19.1875rem;
+        // width: 19.125rem;
+        width: 100%;
+        z-index: -1;
+        // path{
+        //     width: 100%;
+        // }
+    }
+}
