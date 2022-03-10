@@ -5,7 +5,7 @@ const HomeOfferCard = ({offer}) => {
     return (
         <div className='home_offer_body_card'>
             <div className='home_offer_body_card_back'>
-                <img src={`../../../../static/assets/${img1}.jpg`}/>
+                <img src={`/images/${img1}.jpg`}/>
                 <div className='home_offer_body_card_back_overlay'>
                     <div className='home_offer_body_card_back_overlay_content'>
                         <h4>{title}</h4>
@@ -14,7 +14,7 @@ const HomeOfferCard = ({offer}) => {
                 </div>
             </div>
             <div className='home_offer_body_card_front'>
-                <img src={`../../../../static/assets/${img2}.jpg`}/>
+                <img src={`/images/${img2}.jpg`}/>
                 <div className='home_offer_body_card_front_overlay'>
                     <div className='home_offer_body_card_front_overlay_content'>
                         <h4>{title}</h4>
