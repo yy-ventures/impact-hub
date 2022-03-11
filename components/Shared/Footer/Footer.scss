@@ -1,0 +1,75 @@
+@import '../../../styles/base.scss';
+
+.footer{
+    background-color: $primary2;
+    position: relative;
+    display: flex;
+    padding: 9rem 0 9rem 0;
+    justify-content: space-between;
+    &_left{
+        &_list{
+            ul{
+                li{
+                    list-style-type: none;
+                    a{
+                        font-size: $para1;
+                        text-decoration: none;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        &_logo{
+            img{
+                width: 19.6rem;
+                height: 9.1rem;
+                object-fit: contain;
+            } 
+        }
+    }
+    &_right{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &_content{
+            width: 43rem;
+            height: 25.2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // margin: 7.5rem 3.5rem 0 3.5rem;
+            h4{
+                color: $white;
+                font-weight: $bold;
+                font-size: $subHeading2;
+            }
+            p{
+                font-size: $para1;
+                color: $white;
+            }
+            &_social{
+                width: 16.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                img{
+                    width: 3.5rem;
+                    height: 3.5rem;
+                }
+            }
+        }
+        &_map{
+            background-color: aliceblue;
+            width: 59.6rem;
+            height: 42rem;
+            position: relative;
+            img{
+                position: absolute;
+                top: -9rem;
+                right: 0;
+                height: 100%;
+            }
+        }
+    }
+}

@@ -1,9 +1,8 @@
 @import '../../../styles/base.scss';
 
 .navbar_container{
-    height: min-content;
+    height: 9rem;
     position: relative;
-    overflow-y: hidden;
     font-size: $common;
     z-index: 1;
     display: flex;
@@ -15,7 +14,6 @@
         width: 80.9375%;
         display: flex;
         justify-content: space-between;
-        z-index: 100;
         .brand_logo{
             img{
                 height: 7.4rem;
@@ -23,16 +21,131 @@
          }
          .nav_list{
              text-align: center;
+             // menu toggle classes 
+             .menu_open, .menu_close{
+                 position: absolute;
+                 display: none;
+                 width: 5rem;
+                 height: 5rem;
+                 top: 5%;
+                 cursor: pointer;
+                 img{
+                     width: 4rem;
+                     height: 4rem;
+                     object-fit: cover;
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     transform: translate(-50%,-50%);
+                 }
+             }
+             .menu_open{
+                right: -5rem;
+                background-color: $primary2;
+             }
+             .menu_close{
+                right: 0;
+                background-color: $primary1;
+             }
+             @media screen and (max-width:900px){
+                 background-color: $primary2;
+                 width: 100%;
+                 height: calc(100vh - 9rem);
+                 position: absolute;
+                 top: 9rem;
+                 left: -100%;
+                 transition: 0.3s;   
+                 .menu_open, .menu_close{
+                     display: block;
+                 }
+             }
              ul{
+                @media screen and (max-width:900px){
+                    height: 100%;
+                    width: 100%;
+                    display: inline-flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
                  li{
                      list-style-type: none;
-                     display: inline;
+                     display: inline-block;
+                     @media screen and (max-width:900px){
+                         width: 100%;
+                         display: block;
+                     }
+                     height: 9rem;
+                     width: 17.5rem;
+                     line-height: 9rem;
                      text-transform: capitalize;
+                     color: $white;
+                     font-weight: $bold;
+                     font-size: $common;
+                     position: relative;
+                     cursor: pointer;
+                     .nav_list_arrow_container{
+                         position: absolute;
+                         top: 40%;
+                         left: 50%;
+                         transform: translateX(-50%);
+                         width: 3rem;
+                         height: 3rem;
+                         @media screen and (max-width:900px){
+                            right: 5%;
+                         }
+                         img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                         }
+                     }
+                     &:hover{
+                         ul{
+                            animation: submenu 0.3s;
+                            @media screen and (max-width: 900px) {
+                                animation: none;
+                            }
+                             li{
+                                 display: block;
+                             }
+                         }
+                     }
                      a{
                          text-decoration: none;
                          color: $white;
-                         font-size: $common;
-                         margin: 0 2.7rem;
+                     }
+                     ul{
+                         display: inline-flex;
+                         align-items: center;
+                         justify-content: center;
+                         flex-direction: column;
+                         position: absolute;
+                         top: 100%;
+                         left: 0;
+                         background-color: $primary2;
+                         width: 17.5rem;
+                         @media screen and (max-width: 900px){
+                             position: relative;
+                             width: 100%;
+                             top: 0;
+                         }
+                         li{
+                             width: 100%;
+                             padding: 2rem;
+                             height: auto;
+                             line-height: 1.5;
+                             display: none;
+                             @media screen and (max-width: 900px){
+                                 z-index: 500;
+                                background-color: #11436e;
+                             }
+                             a{
+                                transition: 0.3s;
+                                &:hover{
+                                    color: $primary1;
+                                }
+                             }
+                         }
                      }
                  }
              }
@@ -54,12 +167,17 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        // height: 19.1875rem;
-        // width: 19.125rem;
         width: 100%;
         z-index: -1;
-        // path{
-        //     width: 100%;
-        // }
+    }
+}
+
+
+@keyframes submenu {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
     }
 }

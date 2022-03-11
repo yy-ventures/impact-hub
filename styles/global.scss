@@ -1,10 +1,6 @@
 @import './base.scss';
+@import url("/fonts/GTWalsheimPro/font.css");
 
-@font-face {
-    font-family: "GT Walsheim Pro";
-    src: url("/fonts/GTWalsheimPro/GTWalsheimPro-Regular.ttf");
-    font-display: swap;
-}
 
 *{
   margin: 0;
@@ -14,13 +10,19 @@
 
 html{
   font-size: 44.4661458333%;
-  @media screen and (min-width: 1367px) {
+  @media screen and (min-width: 1441px) {
     font-size: 62.5%;
+  }
+  @media screen and (max-width: 1440px) {
+    font-size: 46.875%;
+  }
+  @media screen and (max-width: 1366px) {
+    font-size: 44.4661458333%;
   }
 }
 
 body {
-  font-family: 'GT Walsheim Pro', sans-serif;
+  font-family: 'GT Walsheim Pro';
   line-height: 1.5;
   overflow-x: hidden;
 }
