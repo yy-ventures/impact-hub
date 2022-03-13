@@ -2,4 +2,148 @@
 
 .home_news_letter{
     margin-top: 8rem;
+    height: 62.0rem;
+    width: 168.7rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &_left{
+        width: 46.9rem;
+        height: 28.4rem;
+        position: absolute;
+        left: 24.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        h4{
+            font-size: $headingOptional;
+            font-weight: $bold;
+            color: $primary2;
+        }
+        p{
+            font-size: $para2;
+            color: $primary2;
+            line-height: 2.9rem;
+            padding: 2rem 0;
+        }
+        button{
+            outline: 0;
+            border: 0;
+            padding: 1.9rem 2.8rem;
+            font-size: 2.6rem;
+            color: $white;
+            background-color: $primary2;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        &_form{
+            width: 43.8rem;
+            height: 32.5rem;
+            animation: form 0.3s;
+            input{
+                outline: 0;
+                border: 0;
+                border-bottom: 1px solid #707070;
+                display: block;
+                background-color: inherit;
+                width: 100%;
+                font-size: 3rem;
+                color: $placeholder;
+                padding: 0 1.9rem 1.3rem 1.9rem;
+                &:nth-child(2){
+                    padding-left: 1.3rem 1.9rem 1.3rem 1.9rem;
+                    margin-top: 4.2rem;
+                }
+                &:nth-child(3){
+                    margin-top: 4.2rem;
+                    padding-left: 1.3rem 1.9rem 1.3rem 1.9rem;
+                }
+            }
+            button{
+                margin-top: 1.9rem;
+                padding: 1.7rem 2.8rem;
+            }
+        }
+    }
+    &_right{
+        width: 65.4rem;
+        height: 23.3rem;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        right: 0;
+        &_header{
+            height: 14.9rem;
+            h2{
+                font-size: $headingPrimary;
+                color: $primary2;
+                font-weight: $bold;
+                line-height: 9.2rem;
+                margin-left: 2.2rem;
+            }
+            h3{
+                font-size: $headingOptional;
+                color: $secondary;
+                font-weight: $bold;
+                line-height: 6.9rem;
+                padding-bottom: 2rem;
+            }
+        }
+        button{
+            outline: 0;
+            border: 0;
+            padding: 2.0rem 3.2rem;
+            font-size: 2.6rem;
+            color: $textLight;
+            background-color: $primary1;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        &_form{
+            width: 43.8rem;
+            height: 23.92rem;
+            position: relative;
+            animation: form 0.3s;
+            input{
+                outline: 0;
+                border: 0;
+                border-bottom: 1px solid #707070;
+                display: block;
+                background-color: inherit;
+                width: 100%;
+                font-size: 3rem;
+                color: $placeholder;
+                padding: 0 1.9rem 1.3rem 1.9rem;
+                &:nth-child(2){
+                    padding-left: 1.3rem 1.9rem 1.3rem 1.9rem;
+                    margin-top: 4.2rem;
+                }
+            }
+            button{
+                margin-top: 1.9rem;
+                padding: 1.7rem 2.8rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+@keyframes form {
+    0%{
+        opacity: 0;
+        transform: translateY(25%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
