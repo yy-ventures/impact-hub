@@ -1,0 +1,55 @@
+@import "../../../styles/base.scss";
+@import "../../../styles/global.scss";
+
+.about_us {
+  height: 90.7rem;
+  padding: 8.1rem 10rem 0rem 18.4rem;
+  //   background-color: aquamarine;
+  &_container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10.1rem;
+    // background-color: aqua;
+    h2 {
+      font-size: $headingSecondary;
+    }
+    p {
+      font-size: $para1;
+    }
+    &_vision_detail {
+      &_heading {
+        @include headingLine("left");
+      }
+      &_body {
+        width: 66.3rem;
+        margin-left: 3rem;
+      }
+    }
+    &_mission {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 10.3rem;
+      text-align: right;
+      img {
+        width: 81.2rem;
+        height: 41.4rem;
+        margin-right: 3rem;
+      }
+      &_detail {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        &_heading {
+          text-align: right;
+          @include headingLine("right");
+        }
+        &_body {
+          width: 67.2rem;
+          margin-right: 3rem;
+        }
+      }
+    }
+  }
+}
