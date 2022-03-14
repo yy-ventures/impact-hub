@@ -4,6 +4,7 @@
   &_container {
     padding: 10rem 18.8rem 11.9rem 8.4rem;
     &_detail {
+      color: $primary2;
       &_heading {
         @include headingLine("left", center);
         font-size: $headingSecondary;

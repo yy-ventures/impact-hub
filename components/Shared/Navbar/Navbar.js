@@ -45,7 +45,7 @@ const Navbar = () => {
               </span>
               <ul>
                 <li>
-                  <Link href="/about">about us</Link>
+                  <Link href="/about/about-us">about us</Link>
                 </li>
                 <li>
                   <Link href="/about/partners">partners</Link>

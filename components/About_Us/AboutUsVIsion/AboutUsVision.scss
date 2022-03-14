@@ -10,11 +10,11 @@
     padding-left: 4.2rem;
     // vision heading (1st grid element)
     &_vision {
-      color: $primary2;
       &_heading {
         height: fit-content;
         @include headingLine("left", center);
         font-size: $headingSecondary;
+        color: $primary2;
       }
       // vision detail & image (2nd grid element)
       &_detail {
@@ -26,7 +26,7 @@
         &_body {
           width: 66.3rem;
           margin-left: 7.2rem;
-          color: $primary2;
+          // color: $primary2;
           p:first-child {
             padding-bottom: 3.8rem;
           }
