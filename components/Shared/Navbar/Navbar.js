@@ -8,7 +8,6 @@ import menuOpen from "../../../public/menu_open.svg";
 import menuClose from "../../../public/menu_close.svg";
 
 const Navbar = () => {
-<<<<<<< HEAD
   const [mousePoint, setMousePoint] = useState({ x: 203.5, y: -83 });
   const menuRef = useRef(null);
   const HandleCursor = (e) => {
@@ -121,85 +120,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-=======
-    const [mousePoint, setMousePoint] = useState({x:203.5, y:-83})
-    const menuRef = useRef(null)
-    const HandleCursor = e => {
-        setMousePoint({x: e.clientX, y: e.clientY})
-    }
-    const handleMenuOpen = () => {
-        menuRef.current.style.left = "0"   
-    }
-    const handleMenuClose = () => {
-        menuRef.current.style.left = "-100%"   
-    }
-    return (
-        <nav className='navbar_container' onMouseMove={HandleCursor}>
-            <SVGCursor x={mousePoint.x} y={mousePoint.y}/>
-            <div className='navbar_grid'>
-                <div className='brand_logo'>
-                    <Link href="/">
-                        <a><img src={logo.src} /></a>
-                    </Link>
-                </div>
-                <div className='nav_list' ref={menuRef}>
-                    <div className='menu_open' onClick={handleMenuOpen}>
-                        <img src={menuOpen.src} alt="menu open"/>
-                    </div>
-                    <div className='menu_close' onClick={handleMenuClose}>
-                        <img src={menuClose.src} alt="menu close"/>
-                    </div>
-                    <ul>
-                        <li>About
-                            <span className='nav_list_arrow_container'>
-                                <img src={downArrow.src} alt="arrow down" />
-                            </span>
-                            <ul>
-                                <li><Link href="/about">about us</Link></li>
-                                <li><Link href="/about/partners">partners</Link></li>
-                                <li><Link href="/about/global-network">global network</Link></li>
-                                <li><Link href="/about">careers</Link></li>
-                                <li><Link href="/about">global locations</Link></li>
-                            </ul>
-                        </li>
-                        <li>Co-Working
-                            <span className='nav_list_arrow_container'>
-                                <img src={downArrow.src} alt="arrow down" />
-                            </span>
-                            <ul>
-                                <li><Link href="/about">membership</Link></li>
-                                <li><Link href="/about">FAQ</Link></li>
-                            </ul>
-                        </li>
-                        <li><Link href="/about">Office Space</Link></li>
-                        <li>Event Space
-                            <span className='nav_list_arrow_container'>
-                                <img src={downArrow.src} alt="arrow down" />
-                            </span>
-                            <ul>
-                                <li><Link href="/about">spaces</Link></li>
-                                <li><Link href="/about">send enquire</Link></li>
-                            </ul>
-                        </li>
-                        <li>Events
-                            <span className='nav_list_arrow_container'>
-                                <img src={downArrow.src} alt="arrow down" />
-                            </span>
-                            <ul>
-                                <li><Link href="/about">upcoming events</Link></li>
-                                <li><Link href="/about">past events</Link></li>
-                            </ul>
-                        </li>
-                        <li><Link href="/about">Stories</Link></li>
-                    </ul>
-                </div>
-                <div className='language-container'>
-                    <span className='language'><img src={globeIcon.src} /><p>english</p></span>
-                </div>
-            </div>
-        </nav>
-    );
->>>>>>> devFarhan
 };
 
 export default Navbar;
