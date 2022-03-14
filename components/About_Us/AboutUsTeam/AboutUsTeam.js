@@ -1,15 +1,23 @@
 import React from "react";
 import AboutUsDescription from "../AboutUsDescription/AboutUsDescription";
+import AboutUsImageGrid from "./AboutUsImageGrid/AboutUsImageGrid";
 import { team } from "./description";
+import { images } from "./images";
 const AboutUsTeam = () => {
   return (
     <section className="about_us_team">
       <div className="about_us_team_container">
-        <AboutUsDescription
-          parentClass={"about_us_team_container"}
-          heading={team.heading}
-          content={team.content}
-        />
+        <div className="about_us_team_container_description">
+          <AboutUsDescription
+            parentClass={"about_us_team_container_description"}
+            span={team.span}
+            heading={team.heading}
+            content={team.content}
+          />
+        </div>
+        <div className="about_us_team_container_image-grid">
+          <AboutUsImageGrid parentClass={"about_us_team_container_image-grid"} images={images} />
+        </div>
       </div>
     </section>
   );
