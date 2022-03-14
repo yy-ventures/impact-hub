@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   background-color: $primary2;
+  z-index: 100;
   .navbar_grid {
     align-items: center;
     width: 100%;
@@ -104,7 +105,10 @@
           }
           &:hover {
             ul {
+              transform-origin: 50% 0;
               animation: submenu 0.3s;
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
               @media screen and (max-width: 900px) {
                 animation: none;
               }
@@ -177,9 +181,11 @@
 
 @keyframes submenu {
   0% {
-    transform: translateY(100%);
+    transform: translateY(-1rem);
+    transform: scale(0);
   }
   100% {
     transform: translateY(0);
+    transform: scale(1);
   }
 }

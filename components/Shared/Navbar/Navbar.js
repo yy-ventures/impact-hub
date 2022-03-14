@@ -42,8 +42,8 @@ const Navbar = () => {
                             </span>
                             <ul>
                                 <li><Link href="/about">about us</Link></li>
-                                <li><Link href="/about">partners</Link></li>
-                                <li><Link href="/about">global network</Link></li>
+                                <li><Link href="/about/partners">partners</Link></li>
+                                <li><Link href="/about/global-network">global network</Link></li>
                                 <li><Link href="/about">careers</Link></li>
                                 <li><Link href="/about">global locations</Link></li>
                             </ul>
