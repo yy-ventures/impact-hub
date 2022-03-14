@@ -7,8 +7,12 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
+    flex-direction: row;
     align-items: center;
-
+    @media screen and (max-width: 600px) {
+        height: auto;
+        flex-direction: column;
+    }
     &_left{
         width: 46.9rem;
         height: 28.4rem;
