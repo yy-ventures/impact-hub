@@ -11,6 +11,7 @@ import "../components/Home/HomeNewsLetter/HomeNewsLetter.scss";
 import "../components/Shared/Cookies/Cookies.scss";
 import "../components/About_Us/AboutUsVIsion/AboutUsVision.scss";
 import "../components/About_Us/AboutUsTeam/AboutUsTeam.scss";
+import "../components/About_Us/AboutUsPurpose/AboutUsPurpose.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

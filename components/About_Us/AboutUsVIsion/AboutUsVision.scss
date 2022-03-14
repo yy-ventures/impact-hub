@@ -1,54 +1,60 @@
 @import "../../../styles/base.scss";
 @import "../../../styles/global.scss";
 
+// About us vision & mission section
 .about_us {
-  height: 90.7rem;
-  padding: 8.1rem 10rem 0rem 18.4rem;
-  //   background-color: aquamarine;
+  height: fit-content;
+  padding-top: 8.1rem;
+  // section container
   &_container {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10.1rem;
-    // background-color: aqua;
-    h2 {
-      font-size: $headingSecondary;
-    }
-    p {
-      font-size: $para1;
-    }
-    &_vision_detail {
+    padding-left: 4.2rem;
+    // vision heading (1st grid element)
+    &_vision {
+      color: $primary2;
       &_heading {
-        @include headingLine("left");
+        height: fit-content;
+        @include headingLine("left", center);
+        font-size: $headingSecondary;
       }
-      &_body {
-        width: 66.3rem;
-        margin-left: 3rem;
-      }
-    }
-    &_mission {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-top: 10.3rem;
-      text-align: right;
-      img {
-        width: 81.2rem;
-        height: 41.4rem;
-        margin-right: 3rem;
-      }
+      // vision detail & image (2nd grid element)
       &_detail {
         display: flex;
-        align-items: flex-end;
-        flex-direction: column;
-        &_heading {
-          text-align: right;
-          @include headingLine("right");
-        }
+        justify-content: space-between;
+        padding: 6.6rem 0rem 12.2rem 0rem;
+        font-size: $para1;
+        color: $primary2;
         &_body {
-          width: 67.2rem;
+          width: 66.3rem;
+          margin-left: 7.2rem;
+          color: $primary2;
+          p:first-child {
+            padding-bottom: 3.8rem;
+          }
+        }
+        img {
+          width: 81.2rem;
+          height: 41.4rem;
           margin-right: 3rem;
         }
+      }
+    }
+    // mission detail (3rd grid element)
+    &_mission_detail {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      color: $primary2;
+      &_heading {
+        font-size: $headingSecondary;
+        font-weight: $bold;
+        text-align: right;
+        @include headingLine("right", center);
+      }
+      &_body {
+        width: 67.2rem;
+        margin-right: 3rem;
+        font-size: $para1;
       }
     }
   }
