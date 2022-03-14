@@ -1,0 +1,20 @@
+@import "../../../styles/base.scss";
+.about_us_team {
+  height: 90.7rem;
+  padding: 8.1rem 10rem 0rem 18.4rem;
+  &_container {
+    height: 82.3rem;
+    h2 {
+      font-size: $headingSecondary;
+    }
+    p {
+      font-size: $para1;
+    }
+    &_heading {
+      @include headingLine("left");
+    }
+    &_body {
+      width: 71.8rem;
+    }
+  }
+}
