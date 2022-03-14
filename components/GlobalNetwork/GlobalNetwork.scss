@@ -1,0 +1,52 @@
+@import '../../styles/base.scss';
+
+.global_network{
+    padding: 14.2rem 0 19.5rem 0;
+    &_container{
+        display: flex;
+        justify-content: center;
+        &_header{
+            width: 172rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &_left{
+                width: 81.2rem;
+                height: 73.7rem;
+                padding-left: 9.8rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h1{
+                    color: $primary2;
+                    font-weight: $bold;
+                    font-size: $headingPrimary;
+                    line-height: 9.2rem;
+                    position: relative;
+                    &:nth-child(1){
+                        &::before{
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            bottom: $headingPrimary / 2;
+                            width: 6.4rem;
+                            left: -6.4rem - 1rem;
+                            height: 0.5rem;
+                            background-color: $primary1;
+                        }
+                    }
+                }
+                p{
+                    font-size: $para1;
+                    color: $textDark;
+                }
+            }
+            &_right{
+                img{
+                    height: 50.5rem;
+                    box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.16);
+                }
+            }
+        }
+    }
+}

@@ -1,16 +1,15 @@
-import React from 'react';
-import Footer from '../Shared/Footer/Footer';
-import Navbar from '../Shared/Navbar/Navbar';
+import React from "react";
+import Footer from "../Shared/Footer/Footer";
+import Navbar from "../Shared/Navbar/Navbar";
 
-const Layout = ({children}) => {
-    
-    return (
-        <>
-            <Navbar/>
-            {children}
-            <Footer/>
-        </>
-    );
+const Layout = ({ children }) => {
+  return (
+    <>
+      <Navbar />
+      {children.type.name == "Home" ? children : <div className="main_container">{children}</div>}
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;

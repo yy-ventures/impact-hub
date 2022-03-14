@@ -1,0 +1,50 @@
+@import "../../../styles/base.scss";
+// Section
+.about_us_team {
+  padding: 8.6rem 0rem 17.3rem 0rem;
+  overflow: hidden;
+  // Container
+  &_container {
+    height: fit-content;
+    padding-left: 8.4rem;
+    // Content Description
+    &_description {
+      padding-bottom: 15.6rem;
+      // Description Heading
+      &_heading {
+        @include headingLine("left", center);
+        padding-bottom: 5.4rem;
+        font-size: $headingSecondary;
+        font-weight: $bold;
+        line-height: 1;
+        h2 {
+          display: flex;
+          flex-direction: column;
+          color: $primary2;
+          span {
+            font-size: $subHeading2;
+          }
+        }
+      }
+      // Description Body
+      &_body {
+        width: 71.8rem;
+        padding-left: 7.2rem;
+        font-size: $para1;
+        color: $primary2;
+      }
+    }
+    // About Us Team section image grid
+    &_image-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // height: 37.4rem;
+      & > img {
+        width: 37.1rem;
+        height: 37.4rem;
+        object-fit: contain;
+      }
+    }
+  }
+}
