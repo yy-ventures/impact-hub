@@ -29,7 +29,21 @@ body {
 .marked {
   color: $primary1;
 }
+<<<<<<< HEAD
 .main_container {
   padding-left: 10rem;
   padding-right: 10rem;
 }
+=======
+
+.bold{
+  font-weight: $bold;
+}
+
+
+.para-medium{
+  font-size: $para2;
+  color: $textDark;
+  font-weight: 500;
+}
+>>>>>>> devFarhan

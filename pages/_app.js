@@ -11,7 +11,12 @@ import "../components/Home/HomeNewsLetter/HomeNewsLetter.scss";
 import "../components/Shared/Cookies/Cookies.scss";
 import "../components/About_Us/AboutUsVIsion/AboutUsVision.scss";
 import "../components/About_Us/AboutUsTeam/AboutUsTeam.scss";
+<<<<<<< HEAD
 import "../components/About_Us/AboutUsPurpose/AboutUsPurpose.scss";
+=======
+import "../components/Partners/Partners.scss";
+import "../components/GlobalNetwork/GlobalNetwork.scss";
+>>>>>>> devFarhan
 
 function MyApp({ Component, pageProps }) {
   return (
