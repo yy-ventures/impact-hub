@@ -15,6 +15,7 @@ import "../components/About_Us/AboutUsPurpose/AboutUsPurpose.scss";
 import "../components/Partners/Partners.scss";
 import "../components/GlobalNetwork/GlobalNetwork.scss";
 import "../components/GlobalLocations/GlobalLocations.scss";
+import "../components/Careers/Careers.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
