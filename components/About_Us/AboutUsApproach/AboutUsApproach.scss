@@ -1,0 +1,61 @@
+@import "../../../styles/base.scss";
+.about_us_approach {
+  padding: 9.6rem 13rem 15.6rem 21.2rem;
+  &_container {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    justify-content: center;
+    justify-items: center;
+    &_inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20.5rem;
+      &_heading {
+        font-size: $headingPrimary;
+        font-weight: $bold;
+        color: $secondary;
+      }
+      &_body {
+        font-size: $para1;
+        color: $primary2;
+      }
+      &_image {
+        img {
+          width: 65.7rem;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 10rem;
+      &_card {
+        width: 35.5rem;
+        position: relative;
+        svg {
+          width: 7.6rem;
+          position: absolute;
+          z-index: 1;
+        }
+        &_details {
+          padding: 3rem 0rem 0rem 4rem;
+          position: relative;
+          z-index: 2;
+          h4,
+          p {
+            font-size: $para1;
+            color: $primary2;
+          }
+          h4 {
+            font-weight: $bold;
+            padding-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

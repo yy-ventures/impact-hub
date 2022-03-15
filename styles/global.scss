@@ -25,14 +25,18 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-
+button {
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+}
 .marked {
   color: $primary1;
 }
-.main_container {
-  padding-left: 10rem;
-  padding-right: 10rem;
-}
+// .main_container {
+//   padding-left: 10rem;
+//   padding-right: 10rem;
+// }
 
 .bold {
   font-weight: $bold;
@@ -42,4 +46,34 @@ body {
   font-size: $para2;
   color: $textDark;
   font-weight: 500;
+}
+
+// Button Component
+.btn-component {
+  border: none;
+  outline: none;
+  // padding: 12px 36px;
+  // border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.btn-component-primary {
+  background-color: $primary1;
+  color: $white;
+  &:hover {
+    background-color: $primary2;
+  }
+}
+
+.btn-component-secondary {
+  background-color: $primary2;
+  color: $white;
+  &:hover {
+    background-color: $primary1;
+  }
 }

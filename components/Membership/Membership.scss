@@ -1,0 +1,71 @@
+@import '../../styles/base.scss';
+
+.membership_container{
+    &_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 14rem 26.8rem 10.8rem 15.3rem;
+        &_content{
+            width: 84.1rem;
+            height: 35.7rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            h4{
+                font-size: $subHeading1;
+                font-weight: 500;
+                color: $primary2;
+                margin-left: 7.4rem;
+                position: relative;
+                &::before{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: $subHeading1 / 2;
+                    width: 6.4rem;
+                    left: -6.4rem - 1rem;
+                    height: 0.5rem;
+                    background-color: $primary1;
+                }
+            }
+            h5{
+                font-size: $subHeading1;
+                font-weight: $bold;
+                color: $primary2;
+                margin-left: 7.4rem;
+            }
+            p{
+                font-size: $para1;
+                color: $primary2;
+                margin-left: 9.7rem;
+            }
+        }
+        &_title_block_container{
+            width: 54.45rem;
+            height: 31.7rem;
+            position: relative;
+            h1{
+                font-size: $headingPrimary;
+                font-weight: $bold;
+                color: $textDark;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                line-height: 9.2rem;
+                z-index: 3;
+            }
+            img{
+                position: absolute;
+                width: 31.54rem;
+                height: 31.704rem;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+    
+}

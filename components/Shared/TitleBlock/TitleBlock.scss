@@ -1,0 +1,21 @@
+@import '../../../styles/base.scss';
+
+.title_block_container{
+    img{
+        position: absolute;
+        width: 31.54rem;
+        height: 31.704rem;
+        top: 0;
+        left: 0;
+    }
+    h1{
+        font-size: $headingPrimary;
+        font-weight: $bold;
+        color: $textDark;
+        position: absolute;
+        bottom: 2.8rem;
+        left: 11rem;
+        line-height: 9.2rem;
+        z-index: 3;
+    }
+}
