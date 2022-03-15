@@ -4,28 +4,26 @@
 // About us vision & mission section
 .about_us {
   height: fit-content;
-  padding-top: 8.1rem;
+  padding: 8.1rem 10rem 0rem 18.4rem;
   // section container
   &_container {
-    padding-left: 4.2rem;
     // vision heading (1st grid element)
     &_vision {
-      color: $primary2;
       &_heading {
         height: fit-content;
         @include headingLine("left", center);
         font-size: $headingSecondary;
+        color: $primary2;
       }
       // vision detail & image (2nd grid element)
       &_detail {
         display: flex;
         justify-content: space-between;
-        padding: 6.6rem 0rem 12.2rem 0rem;
+        padding: 5.5rem 0rem 12.2rem 0rem;
         font-size: $para1;
-        color: $primary2;
         &_body {
           width: 66.3rem;
-          margin-left: 7.2rem;
+          margin-left: 3rem;
           color: $primary2;
           p:first-child {
             padding-bottom: 3.8rem;
