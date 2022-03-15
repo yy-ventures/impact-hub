@@ -14,6 +14,7 @@ import "../components/About_Us/AboutUsTeam/AboutUsTeam.scss";
 import "../components/About_Us/AboutUsPurpose/AboutUsPurpose.scss";
 import "../components/Partners/Partners.scss";
 import "../components/GlobalNetwork/GlobalNetwork.scss";
+import "../components/About_Us/AboutUsApproach/AboutUsApproach.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
