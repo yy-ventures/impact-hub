@@ -1,10 +1,12 @@
 import React from "react";
-import "./Button.scss";
+import ButtonPrimarySVG from "./ButtonPrimarySVG";
+import ButtonSecondarySVG from "./ButtonSecondarySVG";
 const Button = ({ text, type }) => {
   return (
-    <div>
-      <button className={type === "primary" ? "btn btn-primary" : "btn btn-secondary"}>
-        {text}
+    <div className="container">
+      <button className={type === "primary" ? "btn btn_primary" : "btn btn_secondary"}>
+        {type === "primary" ? <ButtonPrimarySVG /> : <ButtonSecondarySVG />}
+        <p>{text}</p>
       </button>
     </div>
   );

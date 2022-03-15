@@ -1,5 +1,6 @@
 import React from "react";
 import banner from "../../../public/images/about-us/approach_banner.png";
+import Button from "../../Shared/Button/Button";
 import CardDetail from "./CardDetail/CardDetail";
 import { cardDetails } from "./contents";
 const AboutUsApproach = () => {
@@ -45,6 +46,7 @@ const AboutUsApproach = () => {
           })}
         </div>
       </div>
+      <Button text={"Show More"} type={"primary"} />
     </section>
   );
 };
