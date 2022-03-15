@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import BackgroundOverlay from "../../Shared/BackgroundOverlay/BackgroundOverlay";
 import Card from "./Card/Card";
-import AboutUsDescription from "../AboutUsDescription/AboutUsDescription";
 import { purpose } from "./description";
 import { buttons } from "./buttons";
+import HeadingDescription from "../../Shared/HeadingDescription/HeadingDescription";
 
 const AboutUsPurpose = () => {
   // on mouse over expand the height of the button div
@@ -28,7 +28,7 @@ const AboutUsPurpose = () => {
       <div className="about_us_purpose_container">
         <div className="about_us_purpose_container_detail">
           <div className="about_us_purpose_container_detail_block">
-            <AboutUsDescription
+            <HeadingDescription
               parentClass={"about_us_purpose_container_detail_block"}
               heading={purpose.heading}
             />
