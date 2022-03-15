@@ -1,7 +1,7 @@
 import React from "react";
 import banner from "../../../public/images/about-us/approach_banner.png";
 import CardDetail from "./CardDetail/CardDetail";
-import { cardDetails } from "./cardDetails";
+import { cardDetails } from "./contents";
 const AboutUsApproach = () => {
   return (
     <section className="about_us_approach">

@@ -1,5 +1,5 @@
 import React from "react";
-import { vision, mission } from "./description";
+import { vision, mission } from "./contents";
 import visionImage from "../../../public/images/about-us/about.png";
 import HeadingDescription from "../../Shared/HeadingDescription/HeadingDescription";
 const AboutUsVision = () => {

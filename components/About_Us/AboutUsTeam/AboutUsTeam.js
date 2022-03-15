@@ -1,8 +1,7 @@
 import React from "react";
 import HeadingDescription from "../../Shared/HeadingDescription/HeadingDescription";
 import AboutUsImageGrid from "./AboutUsImageGrid/AboutUsImageGrid";
-import { team } from "./description";
-import { images } from "./images";
+import { team, images } from "./contents";
 const AboutUsTeam = () => {
   return (
     <section className="about_us_team">
