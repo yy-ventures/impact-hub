@@ -68,10 +68,10 @@ const Navbar = () => {
               </span>
               <ul>
                 <li>
-                  <Link href="/about">membership</Link>
+                  <Link href="/co-working/membership">membership</Link>
                 </li>
                 <li>
-                  <Link href="/about">FAQ</Link>
+                  <Link href="/co-working/faq">FAQ</Link>
                 </li>
               </ul>
             </li>

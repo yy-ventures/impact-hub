@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      {children.type.name == "Home" ? children : <div className="main_container">{children}</div>}
+      {children}
       <Footer />
     </>
   );
