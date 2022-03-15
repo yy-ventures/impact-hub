@@ -1,12 +1,11 @@
 @import "../../../styles/base.scss";
 // Section
 .about_us_team {
-  padding: 8.6rem 10rem 17.3rem 10rem;
+  padding: 8.6rem 10rem 17.3rem 18.4rem;
   overflow: hidden;
   // Container
   &_container {
     height: fit-content;
-    padding-left: 8.4rem;
     // Content Description
     &_description {
       padding-bottom: 15.6rem;
@@ -29,7 +28,7 @@
       // Description Body
       &_body {
         width: 71.8rem;
-        padding-left: 7.2rem;
+        padding-left: 3rem;
         font-size: $para1;
         color: $primary2;
       }
