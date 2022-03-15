@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import BackgroundOverlay from "../../Shared/BackgroundOverlay/BackgroundOverlay";
 import Card from "./Card/Card";
-import { purpose } from "./description";
-import { buttons } from "./buttons";
 import HeadingDescription from "../../Shared/HeadingDescription/HeadingDescription";
+import { purpose, buttons } from "./contents";
 
 const AboutUsPurpose = () => {
   // on mouse over expand the height of the button div
