@@ -1,11 +1,12 @@
 import React from "react";
-
-const Button = ({ key, text, expand, span }) => {
+import "./Button.scss";
+const Button = ({ text, type }) => {
   return (
-    <button className={expand}>
-      {text}
-      <p key={key}>{span && " " + span}</p>
-    </button>
+    <div>
+      <button className={type === "primary" ? "btn btn-primary" : "btn btn-secondary"}>
+        {text}
+      </button>
+    </div>
   );
 };
 

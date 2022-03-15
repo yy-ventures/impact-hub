@@ -47,16 +47,20 @@
       justify-items: center;
       padding: 8.4rem 25.9rem 12.5rem 17.5rem;
       gap: 3rem;
-      button {
-        width: 33.4rem;
-        padding: 3.5rem;
+      &_card {
+        width: 36.4rem;
+        padding: 2rem;
         border-radius: 1.5rem;
         text-transform: uppercase;
+        text-align: center;
         color: white;
+        transition: 0.25s ease;
         // buttons 1,2,3
         &:nth-child(-n + 3) {
-          font-size: $subHeading2;
-          font-weight: $bold;
+          h3 {
+            font-size: $subHeading2;
+            font-weight: $bold;
+          }
         }
         // Button background
         // buttons 1,4,7
@@ -72,12 +76,14 @@
           background: $buttonYellow;
         }
         // Button animation initial state
-        // buttons 4,5,6
+        // buttons 4,5,6,7,8,9
         &:nth-child(n + 4) {
-          font-size: $para2;
-          font-weight: $medium;
           opacity: 0;
           transform: translateY(-6rem);
+          h3 {
+            font-size: $para2;
+            font-weight: $medium;
+          }
           p {
             font-size: $para3;
             font-weight: $medium;
@@ -93,13 +99,11 @@
       .expand:nth-child(n + 4) {
         opacity: 0.8;
         transform: translateY(0rem);
-        transition: 0.3s ease-in-out;
       }
       // expand buttons 7,8,9
       .expand:nth-child(n + 7) {
         opacity: 0.4;
         transform: translateY(0rem);
-        transition: 0.3s ease-in-out;
       }
     }
   }
