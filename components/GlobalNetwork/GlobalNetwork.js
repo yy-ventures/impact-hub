@@ -13,7 +13,7 @@ const GlobalNetwork = () => {
                             <h1>is part of a Global</h1>
                             <h1>Network</h1>
                         </div>
-                        <div className='para-medium'>
+                        <div className='para_medium'>
                             <p>We believe a better world is created through the combined accomplishments of compassionate, creative, and committed individuals focused on a common purpose.</p>
                         </div>
                         <div>

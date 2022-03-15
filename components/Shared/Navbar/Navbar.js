@@ -57,7 +57,7 @@ const Navbar = () => {
                   <Link href="/about">careers</Link>
                 </li>
                 <li>
-                  <Link href="/about">global locations</Link>
+                  <Link href="/about/global-locations">global locations</Link>
                 </li>
               </ul>
             </li>
