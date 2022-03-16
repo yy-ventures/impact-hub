@@ -1,5 +1,5 @@
 import React from "react";
-import Membership from "../../components/Membership/Membership";
+import Membership from "../../components/Membership/Membership.js";
 
 const MembershipPage = () => {
   return (
