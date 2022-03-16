@@ -28,9 +28,15 @@ const Membership = () => {
         />
       </div>
       <div className="membership_container_grid_cards">
-        {plans.map(({ title, price, duration, details }) => {
+        {plans.map(({ title, price, duration, details }, index) => {
           return (
-            <MembershipCard title={title} price={price} duration={duration} details={details} />
+            <MembershipCard
+              key={index}
+              title={title}
+              price={price}
+              duration={duration}
+              details={details}
+            />
           );
         })}
       </div>
