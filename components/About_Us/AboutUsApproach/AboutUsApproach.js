@@ -46,7 +46,6 @@ const AboutUsApproach = () => {
           })}
         </div>
       </div>
-      <Button text={"Show More"} type={"primary"} />
     </section>
   );
 };

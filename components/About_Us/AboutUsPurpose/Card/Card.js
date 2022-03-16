@@ -1,10 +1,10 @@
 import React from "react";
 
-const Card = ({ parentClass, key, text, expand, span }) => {
+const Card = ({ parentClass, text, expand, span }) => {
   return (
     <div className={expand ? `${parentClass}_card expand` : `${parentClass}_card`}>
       <h3>{text}</h3>
-      <p key={key}>{span && " " + span}</p>
+      <p>{span && " " + span}</p>
     </div>
   );
 };
