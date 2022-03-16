@@ -1,6 +1,6 @@
 import React from "react";
 import partnerShape from "../../public/partners_path.png";
-import MembershipCard from "../Shared/MemberShipCard/MembershipCard";
+import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import { plans } from "./contents";
 const Membership = () => {
