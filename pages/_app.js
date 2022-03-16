@@ -19,6 +19,7 @@ import "../components/Careers/Careers.scss";
 import "../components/About_Us/AboutUsApproach/AboutUsApproach.scss";
 import "../components/Membership/Membership.scss";
 import "../components/Shared/TitleBlock/TitleBlock.scss";
+import "../components/Shared/MembershipCard/MembershipCard.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
