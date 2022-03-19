@@ -14,7 +14,7 @@ const HomeOfferCard = ({offer}) => {
                 </div>
             </div>
             <div className='home_offer_body_card_front'>
-                <img src={`/images/${img2}.jpg`}/>
+                <img src={`/images/${img1}.jpg`}/>
                 <div className='home_offer_body_card_front_overlay'>
                     <div className='home_offer_body_card_front_overlay_content'>
                         <h4>{title}</h4>
