@@ -1,14 +1,13 @@
 import React from "react";
-import AboutUsDescription from "../AboutUsDescription/AboutUsDescription";
+import HeadingDescription from "../../Shared/HeadingDescription/HeadingDescription";
 import AboutUsImageGrid from "./AboutUsImageGrid/AboutUsImageGrid";
-import { team } from "./description";
-import { images } from "./images";
+import { team, images } from "./contents";
 const AboutUsTeam = () => {
   return (
     <section className="about_us_team">
       <div className="about_us_team_container">
         <div className="about_us_team_container_description">
-          <AboutUsDescription
+          <HeadingDescription
             parentClass={"about_us_team_container_description"}
             span={team.span}
             heading={team.heading}

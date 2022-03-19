@@ -4,7 +4,7 @@ import Membership from "../../components/Membership/Membership";
 const MembershipPage = () => {
   return (
     <>
-      <Membership/>
+      <Membership />
     </>
   );
 };

@@ -14,8 +14,13 @@ import "../components/About_Us/AboutUsTeam/AboutUsTeam.scss";
 import "../components/About_Us/AboutUsPurpose/AboutUsPurpose.scss";
 import "../components/Partners/Partners.scss";
 import "../components/GlobalNetwork/GlobalNetwork.scss";
+import "../components/GlobalLocations/GlobalLocations.scss";
+import "../components/Careers/Careers.scss";
+import "../components/About_Us/AboutUsApproach/AboutUsApproach.scss";
 import "../components/Membership/Membership.scss";
 import "../components/Shared/TitleBlock/TitleBlock.scss";
+import "../components/Faq/Faq.scss";
+import "../components/Shared/MembershipCard/MembershipCard.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

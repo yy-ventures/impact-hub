@@ -1,10 +1,10 @@
-import React from 'react';
-import ihdWhite from '../../../public/ihd_white.png'
-import mapShape from '../../../public/map_shape.svg'
-import fb from '../../../public/social/icon_fb.png'
-import linked from '../../../public/social/icon_linkedin.png'
-import insta from '../../../public/social/icon_insta.png'
-import Link from 'next/link';
+import React from "react";
+import ihdWhite from "../../../public/ihd_white.png";
+import mapShape from "../../../public/map_shape.svg";
+import fb from "../../../public/social/icon_fb.png";
+import linked from "../../../public/social/icon_linkedin.png";
+import insta from "../../../public/social/icon_insta.png";
+import Link from "next/link";
 
 const Footer = () => {
     return (

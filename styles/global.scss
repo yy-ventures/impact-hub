@@ -25,21 +25,31 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
-
+button {
+  border-style: none;
+  outline: none;
+  cursor: pointer;
+}
 .marked {
   color: $primary1;
-}
-.main_container {
-  padding-left: 10rem;
-  padding-right: 10rem;
 }
 
 .bold {
   font-weight: $bold;
 }
 
-.para-medium {
+.para_medium {
   font-size: $para2;
   color: $textDark;
   font-weight: 500;
+}
+
+.heading-global {
+  font-size: $headingPrimary;
+  font-weight: $bold;
+  color: $primary2;
+}
+.body-global {
+  font-size: $para1;
+  color: $primary2;
 }

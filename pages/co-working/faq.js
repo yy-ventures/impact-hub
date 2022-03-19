@@ -1,7 +1,12 @@
 import React from "react";
+import Faq from "../../components/Faq/Faq";
 
-const Faq = () => {
-  return <div>Faq Section</div>;
+const FaqPage = () => {
+  return (
+    <>
+      <Faq/>
+    </>
+  );
 };
 
-export default Faq;
+export default FaqPage;
