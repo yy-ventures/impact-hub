@@ -41,7 +41,7 @@ const Footer = () => {
                 
             </div>
             <div className='footer_right'>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14601.179410948627!2d90.3505441!3d23.808112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc090596a1ecbdba9!2sImpact%20Hub%20Dhaka!5e0!3m2!1sen!2sbd!4v1647247493467!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14601.179410948627!2d90.3505441!3d23.808112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc090596a1ecbdba9!2sImpact%20Hub%20Dhaka!5e0!3m2!1sen!2sbd!4v1647247493467!5m2!1sen!2sbd" allowFullScreen="" loading="lazy"></iframe>
                     <img src={mapShape.src}/>
             </div>  
         </footer>

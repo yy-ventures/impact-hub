@@ -1,13 +1,12 @@
 import React from "react";
-import Link from "next/link";
+import Membership from "../../components/Membership/Membership";
 
-const Membership = () => {
+const MembershipPage = () => {
   return (
-    <div>
-      <h1>hello members</h1>
-      <Link href="/">back</Link>
-    </div>
+    <>
+      <Membership/>
+    </>
   );
 };
 
-export default Membership;
+export default MembershipPage;

@@ -5,13 +5,17 @@
     height: 62.0rem;
     width: 168.7rem;
     position: relative;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
     display: flex;
-    justify-content: flex-end;
     flex-direction: row;
     align-items: center;
     @media screen and (max-width: 600px) {
-        height: auto;
+        //grid-template-columns: 1fr;
+        width: 100%;
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
     &_left{
         width: 46.9rem;
@@ -23,6 +27,10 @@
         justify-content: space-between;
         align-items: center;
         text-align: center;
+        @media screen and (max-width: 600px) {
+            position: relative;
+            left: 0;
+        }
         h4{
             font-size: $headingOptional;
             font-weight: $bold;
@@ -81,6 +89,9 @@
         flex-direction: column;
         justify-content: space-between;
         right: 0;
+        @media screen and (max-width: 600px) {
+            position: relative;
+        }
         &_header{
             height: 14.9rem;
             h2{
