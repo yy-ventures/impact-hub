@@ -12,7 +12,7 @@ const Button = ({ text = "button", type = "primary" }) => {
   // Initial class => 'btn-component'
   // Class name => Initial class + Type + Button State (active/inactive)
   const className = `btn-component ${
-    buttonState ? `btn-component_${type}_active` : `btn-component_${type}`
+    buttonState ? `btn-component_${type}_active active` : `btn-component_${type}`
   }`;
 
   return (

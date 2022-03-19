@@ -1,4 +1,6 @@
 @import "../../../styles/base.scss";
+// Membership Card colors
+$cardColors: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
 // Membership Card container
 .membership-card {
   overflow: hidden;
@@ -38,6 +40,9 @@
         z-index: 2;
         font-size: $subHeading4;
         font-weight: $bold;
+        color: $textLight;
+        mix-blend-mode: multiply;
+        isolation: auto;
         span {
           font-size: $para2;
           font-weight: $regular;
@@ -83,8 +88,16 @@
     .membership-card_btn {
       opacity: 1;
     }
-    .membership-card_plan svg {
-      transform: translateY(-72%);
+    .membership-card_plan {
+      svg {
+        transform: translateY(-72%);
+      }
+      &_header_price {
+        color: white;
+        mix-blend-mode: normal;
+      }
     }
   }
+  // Child Selector
+  @include repeatColors(6, $cardColors, ".membership-card_plan", "svg");
 }

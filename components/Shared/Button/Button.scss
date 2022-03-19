@@ -24,7 +24,7 @@
   }
   // Button svg initial position
   svg {
-    height: 8.5rem;
+    height: 100%;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -55,13 +55,12 @@
         font-weight: $bold;
       }
       svg {
-        fill: $textLight;
+        fill: $textLight !important;
       }
     }
   }
   // Additional styles for secondary button
   &_secondary {
-    transform: scale(0.7);
     // Initial state
     svg {
       left: 50%;
@@ -72,7 +71,7 @@
     // Hover State
     &:hover {
       background: $secondary;
-      transform: scale(0.8);
+      transform: scale(1.1);
       svg {
         fill: $primary1;
         transform: scaleX(1.1) scaleY(1.8) translateX(-45%) translateY(1rem);
@@ -88,7 +87,7 @@
       svg {
         left: 50%;
         transform: translateX(-50%);
-        fill: $textLight;
+        fill: $textLight !important;
       }
     }
   }
