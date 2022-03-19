@@ -9,8 +9,13 @@
         width: 151.5rem;
         margin-top: 20rem;
         display: flex;
+        flex-direction: row;
         align-items: flex-end;
         justify-content: space-between;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            flex-direction: column;
+        }
         &_left{
             h4{
                 font-size: $subHeading3;
@@ -59,10 +64,16 @@
         margin-top: 4rem;
         width: 100%;
         padding: 0 18.7rem;
+        @media screen and (max-width: 600px) {
+            padding: 0 5rem;
+        }
         &_grid{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            @media screen and (max-width: 600px) {
+                flex-direction: column;
+            }
             &_images{
                 display: flex;
                 flex-direction: column;
