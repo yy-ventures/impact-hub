@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import partnerShape from "../../public/partners_path.png";
 import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import { plans } from "./contents";
+import MembershipModal from "./MembershipModal/MembershipModal";
 const Membership = () => {
+
+  const [showForm, setShowForm] = useState(false)
+  const handleCloseModal = e => {
+    if (e.target.className === "membership_modal" && e.target.className !== "membership_modal_container") {
+      setShowForm(false)
+    }
+  }
+
+  const handleChild = () => {
+    setShowForm(true)
+  }
+
   return (
-    <section className="membership_container">
+    <section className="membership_container" onClick={handleCloseModal}>
       <div className="membership_container_header">
         <div className="membership_container_header_content">
           <div>
@@ -36,10 +49,14 @@ const Membership = () => {
               price={price}
               duration={duration}
               details={details}
+              onChildClick={handleChild}
+              showForm={showForm}
+              setShowForm={setShowForm}
             />
           );
         })}
       </div>
+      {showForm && <MembershipModal/>}
     </section>
   );
 };

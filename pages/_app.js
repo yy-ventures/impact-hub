@@ -26,6 +26,9 @@ import "../components/Careers/Careers.scss";
 import "../components/Membership/Membership.scss";
 import "../components/Faq/Faq.scss";
 
+// modal
+import "../components/Membership/MembershipModal/MembershipModal.scss";
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>

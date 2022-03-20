@@ -2,7 +2,8 @@ import React from "react";
 import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
-const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
+const MembershipCard = ({ title, price, duration, details, modifierClass, onChildClick}) => {
+
   return (
     <div className={modifierClass ? "membership-card " + modifierClass : "membership-card"}>
       <div className="membership-card_plan">
@@ -28,7 +29,7 @@ const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
           })}
       </div>
       <div className="membership-card_btn">
-        <Button text="choose plans" type="secondary" />
+        <div onClick={onChildClick}><Button text="choose plans" type="secondary"/></div>
       </div>
     </div>
   );
