@@ -28,6 +28,9 @@ import "../components/Faq/Faq.scss";
 import "../components/Shared/MembershipCard/MembershipCard.scss";
 import "../components/OfficeSpace/OfficeSpace.scss";
 
+// modal
+import "../components/Membership/MembershipModal/MembershipModal.scss";
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
