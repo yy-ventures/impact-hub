@@ -62,11 +62,21 @@
     }
   }
   &_grid_cards {
-    width: 142.2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: space-between;
+    position: relative;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 6rem;
+    display: flex;
+    flex-direction: row;
+    // flex-wrap: wrap;
     gap: 6rem;
     padding: 8rem 25rem;
+    &_flex {
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+    }
+    .flex-item-2 {
+    }
   }
 }

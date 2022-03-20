@@ -28,15 +28,26 @@ const Membership = () => {
         />
       </div>
       <div className="membership_container_grid_cards">
-        {plans.map(({ title, price, duration, details }, index) => {
+        {plans.map((data, index) => {
           return (
-            <MembershipCard
-              key={index}
-              title={title}
-              price={price}
-              duration={duration}
-              details={details}
-            />
+            index % 2 == 0 && (
+              <div className={`membership_container_grid_cards_flex flex-item-${index}`}>
+                <MembershipCard
+                  key={index}
+                  title={plans[index].title}
+                  price={plans[index].price}
+                  duration={plans[index].duration}
+                  details={plans[index].details}
+                />
+                <MembershipCard
+                  key={index + 1}
+                  title={plans[index + 1].title}
+                  price={plans[index + 1].price}
+                  duration={plans[index + 1].duration}
+                  details={plans[index + 1].details}
+                />
+              </div>
+            )
           );
         })}
       </div>

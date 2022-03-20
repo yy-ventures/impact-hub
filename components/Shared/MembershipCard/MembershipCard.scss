@@ -16,6 +16,7 @@ $cardColors: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
   background: white;
   transition: all 0.5s ease;
   box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
+  grid-column: span;
   // Plan section styles
   &_plan {
     align-self: flex-start;
@@ -25,6 +26,7 @@ $cardColors: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
       z-index: 1;
       height: 83.2rem;
       left: -20rem;
+      fill: $primary1;
       transform: translateY(-50%);
       transition: all 0.5s ease;
     }
@@ -99,5 +101,10 @@ $cardColors: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
     }
   }
   // Child Selector
-  @include repeatColors(6, $cardColors, ".membership-card");
+  &:nth-child(1) {
+    border: 5px blue solid;
+  }
+  &:nth-child(2) {
+    border: 3px green solid;
+  }
 }
