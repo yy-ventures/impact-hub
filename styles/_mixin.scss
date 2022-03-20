@@ -41,6 +41,7 @@
 
 @mixin headingLine($direction, $position) {
   display: flex;
+
   @if $direction == "left" {
     &::before {
       content: "";
@@ -49,7 +50,10 @@
       height: 0.5rem;
       align-self: $position;
       background-color: $primary1;
-      margin-right: 4rem;
+      margin-right: 1.5rem;
+      @if $position == flex-start {
+        margin-top: 2.5rem;
+      }
     }
   } @else {
     &::after {
@@ -59,17 +63,20 @@
       height: 0.5rem;
       align-self: $position;
       background-color: $primary1;
-      margin-left: 4rem;
+      margin-left: 1.5rem;
     }
   }
 }
 
-@mixin repeatColors($n, $colors, $class, $selector) {
+@mixin repeatColors($n, $colors, $class) {
   @for $i from 1 to $n + 1 {
     &:nth-child(#{$n}n + #{$i}) {
       #{$class} {
-        #{$selector} {
-          fill: nth($list: $colors, $n: $i);
+        &_plan,
+        &_btn:not(:hover) {
+          svg {
+            fill: nth($list: $colors, $n: $i);
+          }
         }
       }
     }
