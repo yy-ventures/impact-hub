@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import partnerShape from "../../public/partners_path.png";
 import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
-import { plans } from "./contents";
-import MembershipModal from "./MembershipModal/MembershipModal";
-const Membership = () => {
+import { spaces } from "./contents";
+const OfficeSpace = () => {
   return (
-    <section className="membership_container">
-      <div className="membership_container_header">
-        <div className="membership_container_header_content">
+    <section className="officespace_container">
+      <div className="officespace_container_header">
+        <div className="officespace_container_header_content">
           <div>
             <h4>The world is changing.</h4>
             <h5>We are on the transitioning team.</h5>
@@ -24,12 +23,12 @@ const Membership = () => {
         </div>
         <TitleBlock
           title="Come create with us!"
-          parentClass="membership_container_header"
+          parentClass="officespace_container_header"
           shape={partnerShape.src}
         />
       </div>
-      <div className="membership_container_grid_cards">
-        {plans.map(({ title, price, duration, details }, index) => {
+      <div className="officespace_container_grid_cards">
+        {spaces.map(({ title, price, duration, details }, index) => {
           return (
             <MembershipCard
               key={index}
@@ -41,9 +40,8 @@ const Membership = () => {
           );
         })}
       </div>
-      {/* {showForm && <MembershipModal/>} */}
     </section>
   );
 };
 
-export default Membership;
+export default OfficeSpace;

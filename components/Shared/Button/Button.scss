@@ -1,0 +1,94 @@
+@import "../../../styles/base.scss";
+// Button Component
+.btn-component {
+  // Base Styles
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem 5rem;
+  margin: 1.5rem;
+  border-radius: 0.8rem;
+  text-transform: capitalize;
+  background: $primary2;
+  color: white;
+  box-shadow: 0.1rem 0.1rem 1rem $textLight;
+  cursor: pointer;
+  transition: transform 0.25s ease-in-out;
+  // Button text style
+  p {
+    position: relative;
+    z-index: 2;
+    font-size: $para1;
+    font-weight: $regular;
+  }
+  // Button svg initial position
+  svg {
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  // Additional styles for primary button
+  &_primary {
+    // Initial State
+    svg {
+      fill: $primary1;
+      transition: transform 0.25s ease-in-out;
+    }
+    // Hover State
+    &:hover {
+      background: $primary1;
+      color: white;
+      transform: scale(1.1);
+      svg {
+        fill: $primary2;
+        transform: scaleX(1.5) translateX(1.5rem);
+      }
+    }
+    // Toggle State
+    &_active {
+      background: white;
+      color: $primary1;
+      p {
+        font-weight: $bold;
+      }
+      svg {
+        fill: $textLight !important;
+      }
+    }
+  }
+  // Additional styles for secondary button
+  &_secondary {
+    // Initial state
+    svg {
+      left: 50%;
+      fill: $primary1;
+      transform: translateX(-50%);
+      transition: transform 0.25s ease-in-out;
+    }
+    // Hover State
+    &:hover {
+      background: $secondary;
+      transform: scale(1.1);
+      svg {
+        fill: $primary1;
+        transform: scaleX(1.1) scaleY(1.8) translateX(-45%) translateY(1rem);
+      }
+    }
+    // Toggle State
+    &_active {
+      background: white;
+      color: $primary1;
+      p {
+        font-weight: $bold;
+      }
+      svg {
+        left: 50%;
+        transform: translateX(-50%);
+        fill: $textLight !important;
+      }
+    }
+  }
+}

@@ -2,6 +2,11 @@ import Layout from "../components/Layout/Layout";
 import "../styles/global.scss";
 import "../components/Shared/Navbar/Navbar.scss";
 import "../components/Shared/Footer/Footer.scss";
+import "../components/Shared/Cookies/Cookies.scss";
+import "../components/Shared/TitleBlock/TitleBlock.scss";
+import "../components/Shared/Button/Button.scss";
+import "../components/Shared/MembershipCard/MembershipCard.scss";
+// Home Page Styles
 import "../components/Home/HomeHero/HomeHero.scss";
 import "../components/Home/HomeWelcome/HomeWelcome.scss";
 import "../components/Home/HomeOffer/HomeOffer.scss";
@@ -21,6 +26,10 @@ import "../components/Membership/Membership.scss";
 import "../components/Shared/TitleBlock/TitleBlock.scss";
 import "../components/Faq/Faq.scss";
 import "../components/Shared/MembershipCard/MembershipCard.scss";
+import "../components/OfficeSpace/OfficeSpace.scss";
+
+// modal
+import "../components/Membership/MembershipModal/MembershipModal.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

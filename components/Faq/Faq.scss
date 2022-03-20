@@ -1,71 +1,37 @@
-@import '../../styles/base.scss';
+@import "../../styles/base.scss";
 
-.faq_container{
-    height: 76.3rem;
+.faq_container {
+  padding: 12rem 15.2rem 10rem 17.6rem;
+  &_content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    &_content{
-        width: 172rem;
+    justify-content: space-between;
+    &_left {
+      &_heading {
+        @include headingLine("left", flex-start);
+        font-size: 6.5rem;
+        padding-bottom: 4.7rem;
+      }
+      &_details {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-        z-index: 2;
-        @media screen and (max-width: 600px) {
-            flex-direction: column;
+        width: 63.1rem;
+        margin-left: 9.4rem;
+        margin-right: 2rem;
+        &_body {
+          padding-bottom: 2rem;
         }
-        &_left{
-            width: 80.7rem;
-            height: 27rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            h1{
-                font-size: 7.4rem;
-                font-weight: $bold;
-                line-height: normal;
-                text-align: left;
-                span{
-                    display: block;
-                    font-size: 3.5rem;
-                    @include headingLine("left", center);
-                }
-            }
-            p{
-                font-size: $para1;
-                color: $primary2;
-                line-height: normal;
-                text-align: left;
-                &:nth-child(2){
-                    color: $primary1;
-                    font-weight: bold;
-                }
-            }
-        }
-        &_right{
-            width: 77.5rem;
-            height: 31.7rem;
-            position: relative;
-            img{
-                position: absolute;
-                width: 31.54rem;
-                height: 31.704rem;
-                top: 0;
-                right: 0;
-            }
-            h1{
-                text-align: center;
-                font-size: $headingPrimary;
-                font-weight: $bold;
-                color: $textDark;
-                position: absolute;
-                bottom: 2.8rem;
-                left: 21rem;
-                line-height: 9.2rem;
-                z-index: 3;
-            }
-        }
+      }
     }
+    &_right {
+      &_title_block {
+        img {
+          right: 0;
+        }
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
