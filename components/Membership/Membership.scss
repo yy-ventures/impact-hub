@@ -43,8 +43,6 @@
     }
     &_title_block_container {
       width: 54.45rem;
-      height: 31.7rem;
-      position: relative;
       h1 {
         font-size: $headingPrimary;
         font-weight: $bold;
@@ -58,9 +56,6 @@
         z-index: 3;
       }
       img {
-        position: absolute;
-        width: 31.54rem;
-        height: 31.704rem;
         top: 0;
         right: 0;
       }

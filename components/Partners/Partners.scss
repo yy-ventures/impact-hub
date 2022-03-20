@@ -1,61 +1,61 @@
-@import '../../styles/base.scss';
+@import "../../styles/base.scss";
 
-.partners_container{
-    height: 76.3rem;
+.partners_container {
+  height: 76.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  img {
+    position: absolute;
+    z-index: 1;
+    height: 67.68rem;
+    width: 100%;
+    bottom: 0;
+  }
+  &_content {
+    width: 172rem;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
-    img{
+    z-index: 2;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+    &_title_block {
+      width: 77.5rem;
+      height: 31.7rem;
+      position: relative;
+      img {
         position: absolute;
-        z-index: 1;
-        height: 67.68rem;
-        width: 100%;
-        bottom: 0;
+        width: 31.54rem;
+        height: 31.704rem;
+        top: 0;
+        left: 0;
+      }
+      h1 {
+        font-size: $headingPrimary;
+        font-weight: $bold;
+        color: $textDark;
+        position: absolute;
+        bottom: 2.8rem;
+        left: 11rem;
+        line-height: 9.2rem;
+        z-index: 3;
+      }
     }
-    &_content{
-        width: 172rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 2;
-        @media screen and (max-width: 600px) {
-            flex-direction: column;
-        }
-        &_title_block_container{
-            width: 77.5rem;
-            height: 31.7rem;
-            position: relative;
-            img{
-                position: absolute;
-                width: 31.54rem;
-                height: 31.704rem;
-                top: 0;
-                left: 0;
-            }
-            h1{
-                font-size: $headingPrimary;
-                font-weight: $bold;
-                color: $textDark;
-                position: absolute;
-                bottom: 2.8rem;
-                left: 11rem;
-                line-height: 9.2rem;
-                z-index: 3;
-            }
-        }
-        &_right{
-            width: 66.7rem;
-            height: 27rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            p{
-                font-size: $para1;
-                color: $primary2;
-                line-height: 2.9rem;
-            }
-        }
+    &_right {
+      width: 66.7rem;
+      height: 27rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      p {
+        font-size: $para1;
+        color: $primary2;
+        line-height: 2.9rem;
+      }
     }
+  }
 }
