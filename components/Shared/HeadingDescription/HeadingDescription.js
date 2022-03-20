@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeadingDescription = ({ parentClass, span, heading, content }) => {
+const HeadingDescription = ({ parentClass, span, heading, content, paragraph, highlight }) => {
   return (
     <>
       {/* show heading if any*/}
@@ -19,6 +19,15 @@ const HeadingDescription = ({ parentClass, span, heading, content }) => {
             return <p key={index}>{data}</p>;
           })}
         </div>
+      )}
+      {/* If the body contains only a single paragraph */}
+      {paragraph && <p className={parentClass + "_body body-global"}>{paragraph}</p>}
+      {/* Show if there is any highlights */}
+      {highlight && (
+        <>
+          <br />
+          <p className={parentClass + "_highlight highlight-global"}>{highlight}</p>
+        </>
       )}
     </>
   );

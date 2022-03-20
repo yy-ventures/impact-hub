@@ -99,5 +99,5 @@ $cardColors: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
     }
   }
   // Child Selector
-  @include repeatColors(6, $cardColors, ".membership-card_plan", "svg");
+  @include repeatColors(6, $cardColors, ".membership-card");
 }
