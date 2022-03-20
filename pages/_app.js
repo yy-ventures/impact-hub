@@ -26,6 +26,7 @@ import "../components/Membership/Membership.scss";
 import "../components/Shared/TitleBlock/TitleBlock.scss";
 import "../components/Faq/Faq.scss";
 import "../components/Shared/MembershipCard/MembershipCard.scss";
+import "../components/OfficeSpace/OfficeSpace.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
