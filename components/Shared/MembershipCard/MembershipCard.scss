@@ -1,6 +1,5 @@
 @import "../../../styles/base.scss";
-// Membership Card colors
-$cardColors: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
+
 // Membership Card container
 .membership-card {
   overflow: hidden;
@@ -101,10 +100,4 @@ $cardColors: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
     }
   }
   // Child Selector
-  &:nth-child(1) {
-    border: 5px blue solid;
-  }
-  &:nth-child(2) {
-    border: 3px green solid;
-  }
 }

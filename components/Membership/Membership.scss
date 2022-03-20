@@ -1,4 +1,6 @@
 @import "../../styles/base.scss";
+// Membership Card colors
+$cardColors: ($secondary, $yellow, $limeGreen, $skyBlue, $orange, $primary2);
 .membership_container {
   &_header {
     display: flex;
@@ -41,42 +43,48 @@
         margin-left: 9.7rem;
       }
     }
-    &_title_block_container {
+    &_title_block {
       width: 54.45rem;
       h1 {
-        font-size: $headingPrimary;
-        font-weight: $bold;
-        color: $textDark;
-        position: absolute;
         text-align: center;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        line-height: 9.2rem;
-        z-index: 3;
       }
       img {
-        top: 0;
         right: 0;
       }
     }
   }
   &_grid_cards {
     position: relative;
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // gap: 6rem;
-    display: flex;
-    flex-direction: row;
-    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 6rem;
     padding: 8rem 25rem;
+    // =====================
+    // .membership-card {
+    //   &:nth-child(4):hover {
+    //     grid-row: span 3;
+    //   }
+    // }
+    // =====================
     &_flex {
       display: flex;
       flex-direction: column;
       gap: 6rem;
-    }
-    .flex-item-2 {
+      // set colors for each card based on their class names
+      @each $color in $cardColors {
+        $i: index(
+          $list: $cardColors,
+          $value: $color,
+        );
+        .flex-card-#{$i} {
+          @include setMembershipCardColors($color);
+        }
+        @if $i==6 {
+          .flex-card-#{$i} {
+            @include setMembershipCardColors($color, "true");
+          }
+        }
+      }
     }
   }
 }
