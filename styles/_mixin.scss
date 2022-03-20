@@ -63,3 +63,15 @@
     }
   }
 }
+
+@mixin repeatColors($n, $colors, $class, $selector) {
+  @for $i from 1 to $n + 1 {
+    &:nth-child(#{$n}n + #{$i}) {
+      #{$class} {
+        #{$selector} {
+          fill: nth($list: $colors, $n: $i);
+        }
+      }
+    }
+  }
+}

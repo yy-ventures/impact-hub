@@ -28,7 +28,7 @@ const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
           })}
       </div>
       <div className="membership-card_btn">
-        <Button text="choose plan" type="secondary" />
+        <Button text="choose plans" type="secondary" />
       </div>
     </div>
   );

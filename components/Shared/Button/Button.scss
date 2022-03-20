@@ -24,7 +24,7 @@
   }
   // Button svg initial position
   svg {
-    height: 8.5rem;
+    height: 100%;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -55,7 +55,7 @@
         font-weight: $bold;
       }
       svg {
-        fill: $textLight;
+        fill: $textLight !important;
       }
     }
   }
@@ -87,7 +87,7 @@
       svg {
         left: 50%;
         transform: translateX(-50%);
-        fill: $textLight;
+        fill: $textLight !important;
       }
     }
   }
