@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../Shared/Button/Button';
 
 const MembershipModal = ({handleCloseModal, optionTitle}) => {
-    console.log(optionTitle)
+    
     return (
         <section className='membership_modal' onClick={handleCloseModal}>
             <div className='membership_modal_container'>
