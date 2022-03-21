@@ -1,7 +1,7 @@
 @import "../../../styles/base.scss";
 
 .title_block_container {
-  min-width: 75rem;
+  min-width: 65rem;
   height: 31.7rem;
   position: relative;
   img {
@@ -9,7 +9,6 @@
     width: 31.54rem;
     height: 31.704rem;
     top: 0;
-    left: 0;
   }
   h1 {
     font-size: $headingPrimary;

@@ -46,10 +46,13 @@ button {
 }
 
 .heading-global {
-  @include headingLine("left", center);
-  font-size: $headingPrimary;
-  font-weight: $bold;
   color: $primary2;
+  h2 {
+    display: flex;
+    flex-direction: column;
+    font-size: $headingSecondary;
+    font-weight: $bold;
+  }
   span {
     font-size: $subHeading2;
     font-weight: $bold;
@@ -58,4 +61,8 @@ button {
 .body-global {
   font-size: $para1;
   color: $primary2;
+}
+.highlight-global {
+  font-size: $para1;
+  color: $primary1;
 }

@@ -76,7 +76,7 @@ const Navbar = () => {
               </ul>
             </li>
             <li>
-              <Link href="/about">Office Space</Link>
+              <Link href="/office-space">Office Space</Link>
             </li>
             <li>
               Event Space
