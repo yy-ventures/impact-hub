@@ -4,17 +4,19 @@ import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
 const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
-
-  const [showForm, setShowForm] = useState(false)
-  const handleCloseModal = e => {
-    if (e.target.className === "membership_modal" && e.target.className !== "membership_modal_container") {
-      setShowForm(false)
+  const [showForm, setShowForm] = useState(false);
+  const handleCloseModal = (e) => {
+    if (
+      e.target.className === "membership_modal" &&
+      e.target.className !== "membership_modal_container"
+    ) {
+      setShowForm(false);
     }
-  }
+  };
 
   const handleShowModal = () => {
-    setShowForm(true)
-  }
+    setShowForm(true);
+  };
   return (
     <div className={modifierClass ? "membership-card " + modifierClass : "membership-card"}>
       <div className="membership-card_plan">
@@ -40,9 +42,11 @@ const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
           })}
       </div>
       <div className="membership-card_btn">
-        <div onClick={handleShowModal}><Button text="choose plans" type="secondary"/></div>
+        <div onClick={handleShowModal}>
+          <Button text="choose plans" type="secondary" />
+        </div>
       </div>
-      {showForm && <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title}/>}
+      {showForm && <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} />}
     </div>
   );
 };
