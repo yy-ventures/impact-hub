@@ -14,10 +14,7 @@
   background: white;
   transition: all 0.5s ease;
   box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
-<<<<<<< HEAD
   grid-column: span;
-=======
->>>>>>> a0c4255bfba31144b0478039a61a44c4cc3c1caf
   // Plan section styles
   &_plan {
     align-self: flex-start;
@@ -27,10 +24,7 @@
       z-index: 1;
       height: 83.2rem;
       left: -20rem;
-<<<<<<< HEAD
       fill: $primary1;
-=======
->>>>>>> a0c4255bfba31144b0478039a61a44c4cc3c1caf
       transform: translateY(-50%);
       transition: all 0.5s ease;
     }
@@ -105,8 +99,4 @@
     }
   }
   // Child Selector
-<<<<<<< HEAD
-=======
-  @include repeatColors(6, $cardColors, ".membership-card");
->>>>>>> a0c4255bfba31144b0478039a61a44c4cc3c1caf
 }
