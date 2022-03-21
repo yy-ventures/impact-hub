@@ -68,15 +68,24 @@
   }
 }
 
-@mixin repeatColors($n, $colors, $class) {
-  @for $i from 1 to $n + 1 {
-    &:nth-child(#{$n}n + #{$i}) {
-      #{$class} {
-        &_plan,
-        &_btn:not(:hover) {
-          svg {
-            fill: nth($list: $colors, $n: $i);
-          }
+@mixin setMembershipCardColors($color, $bgDarken: "false") {
+  .membership-card {
+    &_plan,
+    &_btn:not(:hover) {
+      @if ($bgDarken == "true") {
+        .btn-component {
+          background: darken($color, 10%);
+        }
+      }
+      svg {
+        fill: $color;
+      }
+    }
+    &_btn:hover {
+      .btn-component {
+        background: $color;
+        svg {
+          fill: darken($color, 10%);
         }
       }
     }

@@ -1,0 +1,44 @@
+@import "../../../styles/base.scss";
+.faq-component {
+  transition: all 0.45s ease-in-out;
+  h2 {
+    background: lighten(red, 20%);
+    position: relative;
+    padding: 4rem;
+    border-radius: 4rem;
+    font-size: $para2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      width: 2rem;
+      height: 2rem;
+      background: black;
+      opacity: 0.5;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      cursor: pointer;
+      transition: transform 0.45s ease;
+    }
+    .rotate {
+      transform: rotate(180deg);
+    }
+  }
+  &_answer {
+    overflow: hidden;
+    background: white;
+    max-height: 0rem;
+    transition: all 1s ease-in-out -0.75s;
+    margin: 0rem 4rem 4rem 4rem;
+    padding: 0rem 4rem;
+    p {
+      font-size: $para1;
+      color: lighten(black, 10%);
+    }
+  }
+  .show {
+    height: auto;
+    max-height: 100rem;
+    transition: all 1s ease-in-out;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MembershipModal from "../../Membership/MembershipModal/MembershipModal";
+import MembershipModal from "../MembershipModal/MembershipModal";
 import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
