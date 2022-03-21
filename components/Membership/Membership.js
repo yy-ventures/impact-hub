@@ -3,6 +3,7 @@ import partnerShape from "../../public/partners_path.png";
 import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import { plans } from "./contents";
+import MembershipBg from "./MembershipBg";
 
 const Membership = () => {
   return (
@@ -32,9 +33,8 @@ const Membership = () => {
         {plans.map((data, index) => {
           return (
             index % 2 == 0 && (
-              <div className={`membership_container_grid_cards_flex`}>
+              <div key={index} className={`membership_container_grid_cards_flex`}>
                 <MembershipCard
-                  key={index}
                   title={plans[index].title}
                   price={plans[index].price}
                   duration={plans[index].duration}
@@ -42,7 +42,6 @@ const Membership = () => {
                   modifierClass={`flex-card-${index + 1}`}
                 />
                 <MembershipCard
-                  key={index + 1}
                   title={plans[index + 1].title}
                   price={plans[index + 1].price}
                   duration={plans[index + 1].duration}
@@ -53,6 +52,9 @@ const Membership = () => {
             )
           );
         })}
+      </div>
+      <div className="membership_container_bg">
+        <MembershipBg />
       </div>
     </section>
   );
