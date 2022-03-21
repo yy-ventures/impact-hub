@@ -36,6 +36,9 @@ import "../components/Faq/Faq.scss";
 // Office Space Page Styles
 import "../components/OfficeSpace/OfficeSpace.scss";
 
+// modal
+import "../components/Membership/MembershipModal/MembershipModal.scss";
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import partnerShape from "../../public/partners_path.png";
 import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import { plans } from "./contents";
+
 const Membership = () => {
   return (
     <section className="membership_container">
