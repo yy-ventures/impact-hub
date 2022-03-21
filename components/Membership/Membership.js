@@ -3,7 +3,7 @@ import partnerShape from "../../public/partners_path.png";
 import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import { plans } from "./contents";
-import MembershipModal from "./MembershipModal/MembershipModal";
+
 const Membership = () => {
   return (
     <section className="membership_container">
@@ -41,7 +41,6 @@ const Membership = () => {
           );
         })}
       </div>
-      {/* {showForm && <MembershipModal/>} */}
     </section>
   );
 };
