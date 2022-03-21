@@ -1,0 +1,38 @@
+@import "../../styles/base.scss";
+
+.faq_container {
+  padding: 12rem 15.2rem 10rem 17.6rem;
+  &_content {
+    display: flex;
+    justify-content: space-between;
+    &_left {
+      &_heading {
+        @include headingLine("left", flex-start);
+        font-size: 6.5rem;
+        padding-bottom: 4.7rem;
+      }
+      &_details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 63.1rem;
+        margin-left: 9.4rem;
+        margin-right: 2rem;
+        &_body {
+          padding-bottom: 2rem;
+        }
+      }
+    }
+    &_right {
+      &_title_block {
+        width: 54.5rem;
+        img {
+          right: 0;
+        }
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

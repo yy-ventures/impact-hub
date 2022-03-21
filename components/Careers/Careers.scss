@@ -1,0 +1,106 @@
+@import '../../styles/base.scss';
+
+.careers_container{
+    height: 76.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include response(tab-port){
+        height: 56.3rem;
+    }
+    &_content{
+        width: 172rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+        @include response(s-phone){
+            width: 100%;
+        }
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+        }
+        &_left{
+            width: 66.7rem;
+            height: 27rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include response(s-phone){
+                width: 100%;
+            }
+            @include response(tab-port){
+                width: 47.7rem;
+                height: 23rem;
+            }
+            p{
+                font-size: $para1;
+                color: $primary2;
+                line-height: normal;
+                text-align: left;
+                &:nth-child(2){
+                    color: $primary1;
+                    font-weight: bold;
+                }
+            
+                @include response(tab-port){
+                    font-size: $para1;
+                    padding-left: 9.5rem;
+                    padding-bottom: 3rem;
+                }
+            }
+        }
+        &_right{
+            width: 77.5rem;
+            height: 31.7rem;
+            position: relative;
+            @include response(s-phone){
+                width: 100%;
+            }
+            @include response(tab-port){
+                width: 67.5rem;
+                height: 26.7rem;
+            }
+            img{
+                position: absolute;
+                width: 31.54rem;
+                height: 31.704rem;
+                top: 0;
+                right: 0;
+                @include response(s-phone){
+                    width: 26.54rem;
+                    height: 26.704rem;
+                    right: 9.2rem;
+                    top: 7rem;
+                }
+                @include response(tab-port){
+                    right: 10.2rem;
+                }
+            }
+            h1{
+                font-size: $headingPrimary;
+                font-weight: $bold;
+                color: $textDark;
+                position: absolute;
+                bottom: 2.8rem;
+                right: 11rem;
+                line-height: 9.2rem;
+                z-index: 3;
+                @include response(s-phone){
+                    font-size: $subHeading3;
+                    bottom: 1.8rem;
+                    left: 9.2rem;
+                    line-height: 6.2rem;
+                }
+                @include response(tab-port){
+                    font-size: $subHeading3;
+                    bottom: 9.2rem;
+                    left: 11.2rem;
+                    line-height: 5.2rem;
+                }
+            }
+        }
+    }
+}

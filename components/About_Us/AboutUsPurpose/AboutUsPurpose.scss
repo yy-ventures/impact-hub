@@ -1,0 +1,110 @@
+@import "../../../styles/base.scss";
+
+.about_us_purpose {
+  min-height: 107.9rem;
+  position: relative;
+  overflow: hidden;
+  &_bg_overlay {
+    svg {
+      position: absolute;
+      z-index: 1;
+    }
+  }
+  &_container {
+    position: relative;
+    z-index: 2;
+    padding: 10rem 10rem 0rem 18.4rem;
+    &_detail {
+      display: flex;
+      justify-content: space-between;
+      &_block {
+        &_heading {
+          @include headingLine("left", center);
+          font-size: $headingSecondary;
+          font-weight: $bold;
+          color: $primary2;
+        }
+        &_body {
+          width: 67.2rem;
+          margin-left: 3rem;
+          font-size: $para1;
+          color: $primary2;
+        }
+      }
+
+      &_highlight {
+        width: 66.2rem;
+        align-self: flex-end;
+        font-size: $subHeading2;
+        font-weight: $bold;
+        text-align: right;
+        color: $primary1;
+      }
+    }
+    &_btn_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      padding: 8.4rem 25.9rem 12.5rem 17.5rem;
+      gap: 3rem;
+      &_card {
+        width: 36.4rem;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+        transition: 0.25s ease;
+        // buttons 1,2,3
+        &:nth-child(-n + 3) {
+          h3 {
+            font-size: $subHeading2;
+            font-weight: $bold;
+          }
+        }
+        // Button background
+        // buttons 1,4,7
+        &:nth-child(3n + 1) {
+          background: $secondary;
+        }
+        // buttons 2,5,8
+        &:nth-child(3n + 2) {
+          background: $primary2;
+        }
+        // buttons 3,6,9
+        &:nth-child(3n) {
+          background: $orange;
+        }
+        // Button animation initial state
+        // buttons 4,5,6,7,8,9
+        &:nth-child(n + 4) {
+          opacity: 0;
+          transform: translateY(-6rem);
+          h3 {
+            font-size: $para2;
+            font-weight: $medium;
+          }
+          p {
+            font-size: $para3;
+            font-weight: $medium;
+          }
+        }
+        // buttons 7,8,9
+        &:nth-child(n + 7) {
+          transform: translateY(-12rem);
+        }
+      }
+      // Button animation final state
+      // expand buttons 4,5,6
+      .expand:nth-child(n + 4) {
+        opacity: 0.8;
+        transform: translateY(0rem);
+      }
+      // expand buttons 7,8,9
+      .expand:nth-child(n + 7) {
+        opacity: 0.4;
+        transform: translateY(0rem);
+      }
+    }
+  }
+}

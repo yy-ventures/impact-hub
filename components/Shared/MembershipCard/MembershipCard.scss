@@ -1,0 +1,103 @@
+@import "../../../styles/base.scss";
+
+// Membership Card container
+.membership-card {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 46.8rem;
+  height: 18rem;
+  padding: 3rem;
+  border-radius: 3rem;
+  background: white;
+  transition: all 0.5s ease;
+  box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
+  grid-column: span;
+  // Plan section styles
+  &_plan {
+    align-self: flex-start;
+    color: white;
+    svg {
+      position: absolute;
+      z-index: 1;
+      height: 83.2rem;
+      left: -20rem;
+      fill: $primary1;
+      transform: translateY(-50%);
+      transition: all 0.5s ease;
+    }
+    &_header {
+      &_title {
+        position: relative;
+        z-index: 2;
+        font-size: $subHeading1;
+        font-weight: $medium;
+      }
+      &_price {
+        position: relative;
+        z-index: 2;
+        font-size: $subHeading4;
+        font-weight: $bold;
+        color: $textLight;
+        mix-blend-mode: multiply;
+        isolation: auto;
+        span {
+          font-size: $para2;
+          font-weight: $regular;
+        }
+      }
+      &_duration {
+        position: relative;
+        z-index: 2;
+        font-size: $para2;
+        font-weight: $medium;
+        color: $textLight;
+        mix-blend-mode: multiply;
+        isolation: auto;
+      }
+    }
+  }
+  // Features styles
+  &_details {
+    padding-top: 2rem;
+    &_paragraph {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0rem;
+      font-size: $para3;
+      color: $placeholder;
+    }
+    p {
+      padding-right: 1rem;
+    }
+    svg {
+      width: $para3;
+      aspect-ratio: 1;
+    }
+  }
+  //   Membership choose plan button
+  &_btn {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out 0.25s;
+  }
+  //   Hover animation
+  &:hover {
+    height: 74rem;
+    .membership-card_btn {
+      opacity: 1;
+    }
+    .membership-card_plan {
+      svg {
+        transform: translateY(-72%);
+      }
+      &_header_price {
+        color: white;
+        mix-blend-mode: normal;
+      }
+    }
+  }
+  // Child Selector
+}

@@ -1,0 +1,34 @@
+@import '../../../styles/base.scss';
+
+.home_welcome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9rem 0;
+    &_container{
+        // max-width: 96rem;
+        text-align: center;
+        &_header{
+            h2{
+                font-size: $headingSecondary;
+                font-weight: $bold;
+                display: inline;
+            }
+        }
+        &_body{
+            max-width: 96rem;
+            margin-top: 5.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p{
+                font-size: $para1;
+                text-align: center;
+                margin-top: $para1;
+                color: $primary2;
+                padding: 0rem 8rem;
+            }
+        }
+    }
+}
+
