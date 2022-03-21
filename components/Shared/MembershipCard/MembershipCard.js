@@ -3,7 +3,7 @@ import MembershipModal from "../../Membership/MembershipModal/MembershipModal";
 import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
-const MembershipCard = ({ title, price, duration, details, modifierClass, onChildClick}) => {
+const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
 
   const [showForm, setShowForm] = useState(false)
   const handleCloseModal = e => {
