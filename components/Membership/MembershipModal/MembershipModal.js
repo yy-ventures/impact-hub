@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import Button from '../../Shared/Button/Button';
 
-const MembershipModal = ({id}) => {
+const MembershipModal = ({handleCloseModal, optionTitle}) => {
     
     return (
-        <section className='membership_modal'>
+        <section className='membership_modal' onClick={handleCloseModal}>
             <div className='membership_modal_container'>
                 <form className='membership_modal_form'>
                     <div className='membership_modal_form_input_container'>
@@ -21,7 +21,7 @@ const MembershipModal = ({id}) => {
                     <div className='membership_modal_form_option_container'>
                         <p>Choose Membership Package</p>
                         <select>
-                            <option>Select Packages</option>
+                            <option>{optionTitle} 1day/month</option>
                             <option>Hub connect 1day/month</option>
                             <option>Hub connect 1day/month</option>
                             <option>Hub connect 1day/month</option>
