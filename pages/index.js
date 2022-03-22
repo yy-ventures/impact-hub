@@ -23,14 +23,15 @@ export default function Home() {
       body: JSON.stringify({email: 'admin@example.com', password: 'yy@123456'})
     })
     .then(res => res.json())
-    .then(data => setToken(data.data))
+    .then(data => setToken(data.data.token))
   } 
 
   useEffect(()=> {
     HandleToken()
+    localStorage.setItem("token", token);
   }, [])
 
-  console.log(token.token)
+  // console.log(token)
   return (
     <div>
       <Head>
