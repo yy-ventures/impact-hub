@@ -2,11 +2,14 @@
 // Button Component
 .btn-component {
   // Base Styles
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   outline: none;
-  position: relative;
   overflow: hidden;
-  padding: 2.5rem 5rem;
+  padding: 2.5rem 2rem;
   margin: 1.5rem;
   border-radius: 0.8rem;
   text-transform: capitalize;
@@ -19,7 +22,6 @@
   p {
     position: relative;
     z-index: 2;
-    font-size: $para1;
     font-weight: $regular;
   }
   // Button svg initial position
@@ -32,6 +34,7 @@
   }
   // Additional styles for primary button
   &_primary {
+    height: 6.4rem;
     // Initial State
     svg {
       fill: $primary1;
@@ -52,15 +55,17 @@
       background: white;
       color: $primary1;
       p {
+        font-size: 2.7rem;
         font-weight: $bold;
       }
       svg {
-        fill: $textLight !important;
+        fill: $textLight;
       }
     }
   }
   // Additional styles for secondary button
   &_secondary {
+    height: 5.4rem;
     // Initial state
     svg {
       left: 50%;
@@ -82,13 +87,36 @@
       background: white;
       color: $primary1;
       p {
+        font-size: 1.8rem;
         font-weight: $bold;
       }
       svg {
         left: 50%;
         transform: translateX(-50%);
-        fill: $textLight !important;
+        fill: $textLight;
       }
     }
+  }
+}
+.primary_active {
+  background: white;
+  color: $primary1;
+  p {
+    font-weight: $bold;
+  }
+  svg {
+    fill: $textLight;
+  }
+}
+.secondary_active {
+  background: white;
+  color: $primary1;
+  p {
+    font-weight: $bold;
+  }
+  svg {
+    left: 50%;
+    transform: translateX(-50%);
+    fill: $textLight;
   }
 }

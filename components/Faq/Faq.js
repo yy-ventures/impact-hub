@@ -2,7 +2,7 @@ import React from "react";
 import commonShape from "../../public/common_path.png";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription";
-import FaqComponent from "../Shared/FaqComponent/FaqComponent";
+import FaqContent from "./FaqContent/FaqContent";
 
 const Faq = () => {
   return (
@@ -31,9 +31,7 @@ const Faq = () => {
           />
         </div>
       </div>
-      <FaqComponent />
-      <FaqComponent />
-      <div className="faq_container_faq"></div>
+      <FaqContent parentClass="faq_container" />
     </section>
   );
 };
