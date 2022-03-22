@@ -1,8 +1,4 @@
 @import "../../../styles/base.scss";
-<<<<<<< HEAD
-
-=======
->>>>>>> devFarhan
 // Membership Card container
 .membership-card {
   overflow: hidden;
@@ -11,14 +7,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 46.8rem;
+  width: 43rem;
   height: 18rem;
   padding: 3rem;
   border-radius: 3rem;
   background: white;
   transition: all 0.5s ease;
   box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
-  grid-column: span;
+  // grid-column: span;
   // Plan section styles
   &_plan {
     align-self: flex-start;
@@ -65,11 +61,13 @@
   }
   // Features styles
   &_details {
-    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 32rem;
     &_paragraph {
       display: flex;
       align-items: center;
-      padding: 1rem 0rem;
       font-size: $para3;
       color: $placeholder;
     }
@@ -88,7 +86,7 @@
   }
   //   Hover animation
   &:hover {
-    height: 74rem;
+    height: 67rem;
     .membership-card_btn {
       opacity: 1;
     }
