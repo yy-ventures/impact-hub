@@ -4,7 +4,7 @@
   // Base style
   position: relative;
   width: fit-content;
-  padding-bottom: 10rem;
+  margin-bottom: 10rem;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
   // Faq question container styles
@@ -59,7 +59,7 @@
   }
   .faq-component {
     &_answer {
-      top: 50%;
+      top: 80%;
       height: auto;
       padding: 8rem 4rem;
       max-height: 100rem;

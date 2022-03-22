@@ -3,9 +3,10 @@
   position: relative;
   height: 150rem;
   &_bg {
-    position: absolute;
-    bottom: 0;
-    width: 192rem;
+    svg {
+      position: absolute;
+      bottom: 0;
+    }
   }
   &_header {
     display: flex;

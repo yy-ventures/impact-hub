@@ -24,11 +24,11 @@ const FaqComponent = ({ question, answer, zIndex }) => {
     >
       <h4 style={{ zIndex: zIndex }}>
         {question}
-        <FaqIcon className={visible && "rotate"} />
+        <FaqIcon className={visible ? "rotate" : ""} />
       </h4>
 
       <div className={`faq-component_answer`} style={{ zIndex: zIndex - 1 }}>
-        <p>{answer}</p>
+        <p dangerouslySetInnerHTML={{ __html: answer }}></p>
       </div>
     </div>
   );
