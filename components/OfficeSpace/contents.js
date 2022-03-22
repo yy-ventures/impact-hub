@@ -43,10 +43,11 @@ export const spaces = [
       },
     ],
   },
-  // plan 2
+
+  // plan 3
   {
-    title: "Medium",
-    price: "BDT 19000",
+    title: "Regular",
+    price: "BDT 25800",
     duration: "8 hrs",
     details: [
       {
@@ -87,10 +88,10 @@ export const spaces = [
       },
     ],
   },
-  // plan 3
+  // plan 2
   {
-    title: "Regular",
-    price: "BDT 25800",
+    title: "Medium",
+    price: "BDT 19000",
     duration: "8 hrs",
     details: [
       {
@@ -174,5 +175,5 @@ export const spaces = [
         availability: 1,
       },
     ],
-  }
+  },
 ];

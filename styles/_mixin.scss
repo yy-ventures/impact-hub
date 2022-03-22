@@ -98,9 +98,9 @@
 
 @mixin setFaqAccordionZindex($n) {
   $k: $n * 2; // Double the size of the number as we have both question and answer in a single accordion
-  @for $i from 2 to $n + 2 {
+  @for $i from 1 to $n {
     &:nth-child(#{$i}) {
-      h2 {
+      h4 {
         z-index: $k;
       }
       .faq-component_answer {
