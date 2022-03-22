@@ -2,9 +2,11 @@
 
 .faq_container {
   padding: 12rem 15.2rem 10rem 17.6rem;
+
   &_content {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 11.5rem;
     &_left {
       &_heading {
         @include headingLine("left", flex-start);
@@ -41,6 +43,7 @@
       z-index: 0;
       font-size: $subHeading2;
       font-weight: $bold;
+      padding-bottom: 3.4rem;
     }
   }
 }

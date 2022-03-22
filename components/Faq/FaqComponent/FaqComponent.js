@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FaqIcon from "../../Faq/FaqIcon";
+import FaqIcon from "./FaqIcon";
 
 const FaqComponent = ({ question, answer, zIndex }) => {
   const [visible, setVisible] = useState(false);

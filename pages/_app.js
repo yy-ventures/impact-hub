@@ -8,7 +8,7 @@ import "../components/Shared/Cookies/Cookies.scss";
 import "../components/Shared/TitleBlock/TitleBlock.scss";
 import "../components/Shared/Button/Button.scss";
 import "../components/Shared/MembershipCard/MembershipCard.scss";
-import "../components/Shared/FaqComponent/FaqComponent.scss";
+import "../components/Faq/FaqComponent/FaqComponent.scss";
 // Home Page Styles
 import "../components/Home/HomeHero/HomeHero.scss";
 import "../components/Home/HomeWelcome/HomeWelcome.scss";
