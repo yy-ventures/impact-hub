@@ -7,11 +7,12 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     const [email, setEmail] = useState('')
     const [contact, setContact] = useState('')
     const [organization, setOrganization] = useState('')
-    const [hubPackage, setPackage] = useState('')
+    const [hubPackage, setHubPackage] = useState('')
     const [organizationBrief, setOrganizationBrief] = useState('')
     const [whyBecome, setWhyBecome] = useState('')
     const [didHear, setDidHear] = useState('')
 
+    console.log(hubPackage)
     const handleContact = e => {
         let phoneNumber = e.target.value
         if(isNaN(phoneNumber) || Number(phoneNumber) < 0){
@@ -63,13 +64,13 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
                     </div>
                     <div className='membership_modal_form_option_container'>
                         <p>Choose Membership Package</p>
-                        <select value={hubPackage} onChange={e => setPackage(e.target.value)}>
-                            <option>{optionTitle} 1day/month</option>
-                            <option>Hub connect 1day/month</option>
-                            <option>Hub connect 1day/month</option>
-                            <option>Hub connect 1day/month</option>
-                            <option>Hub connect 1day/month</option>
-                            <option>Hub connect 1day/month</option>
+                        <select value={hubPackage} onChange={e => setHubPackage(e.target.value)}>
+                            <option value="1">{optionTitle} 1day/month</option>
+                            <option value="2">Hub connect 1day/month</option>
+                            <option value="3">Hub connect 1day/month</option>
+                            <option value="4">Hub connect 1day/month</option>
+                            <option value="5">Hub connect 1day/month</option>
+                            <option value="6">Hub connect 1day/month</option>
                         </select>
                     </div>
                     <div className='membership_modal_form_textarea'>
