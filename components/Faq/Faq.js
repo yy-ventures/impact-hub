@@ -3,8 +3,9 @@ import commonShape from "../../public/common_path.png";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription";
 import FaqComponent from "../Shared/FaqComponent/FaqComponent";
-
+import { faqContents } from "./faqContent";
 const Faq = () => {
+  let initialIndex = 200;
   return (
     <section className="faq_container">
       <div className="faq_container_content">
@@ -31,11 +32,25 @@ const Faq = () => {
           />
         </div>
       </div>
-      <FaqComponent />
-      <FaqComponent />
-      <FaqComponent />
-      <FaqComponent />
-      <div className="faq_container_faq"></div>
+
+      {faqContents.map(({ heading, faq }, index, outerArr) => {
+        return (
+          <div key={index} className="faq_container_faqs">
+            <h2>{heading}</h2>
+            {faq.map(({ question, answer }, index, innerArr) => {
+              initialIndex = initialIndex - 2;
+              return (
+                <FaqComponent
+                  key={index}
+                  question={question}
+                  answer={answer}
+                  zIndex={initialIndex}
+                />
+              );
+            })}
+          </div>
+        );
+      })}
     </section>
   );
 };

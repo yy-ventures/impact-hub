@@ -1,37 +1,34 @@
 import React, { useState } from "react";
 import FaqIcon from "../../Faq/FaqIcon";
 
-const FaqComponent = () => {
-  const [answer, setAnswer] = useState(false);
+const FaqComponent = ({ question, answer, zIndex }) => {
+  const [visible, setVisible] = useState(false);
   // Toggle when clicked
   const toggle = () => {
-    setAnswer(!answer);
+    setVisible(!visible);
   };
   // Open the accordion on hover
   const mouseEnter = () => {
-    setAnswer(true);
+    setVisible(true);
   };
   // Close the accordion when the mouse leaves
   const mouseLeave = () => {
-    setAnswer(false);
+    setVisible(false);
   };
   return (
     <div
-      className={`faq-component ${answer ? "show" : ""}`}
+      className={`faq-component ${visible ? "show" : ""}`}
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
       onClick={toggle}
     >
-      <h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, voluptas?
-        <FaqIcon className={answer && "rotate"} />
-      </h2>
+      <h4 style={{ zIndex: zIndex }}>
+        {question}
+        <FaqIcon className={visible && "rotate"} />
+      </h4>
 
-      <div className={`faq-component_answer`}>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti aspernatur minus porro
-          deserunt exercitationem odio eligendi laborum minima magnam quia?
-        </p>
+      <div className={`faq-component_answer`} style={{ zIndex: zIndex - 1 }}>
+        <p>{answer}</p>
       </div>
     </div>
   );
