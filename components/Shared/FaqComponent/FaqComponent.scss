@@ -1,44 +1,69 @@
 @import "../../../styles/base.scss";
+// Faq Component
 .faq-component {
-  transition: all 0.45s ease-in-out;
+  // Base style
+  position: relative;
+  width: fit-content;
+  padding-bottom: 10rem;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  // Faq question container styles
   h2 {
-    background: lighten(red, 20%);
     position: relative;
-    padding: 4rem;
-    border-radius: 4rem;
-    font-size: $para2;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 137.1rem;
+    padding: 4rem;
+    border-radius: 1.7rem;
+    font-size: $para1;
+    font-weight: $bold;
+    color: white;
+    background: lighten($primary1, 25%);
+    box-shadow: 0rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.16);
+    transition: all 0.15s ease-in-out;
 
-    span {
-      width: 2rem;
-      height: 2rem;
-      background: black;
-      opacity: 0.5;
-      clip-path: polygon(50% 100%, 0 0, 100% 0);
+    svg {
+      width: $para1;
       cursor: pointer;
-      transition: transform 0.45s ease;
+      transition: transform 0.25s ease-in-out;
     }
+    // rotate the svg when hovered
     .rotate {
       transform: rotate(180deg);
     }
   }
+  // Faq answer container style
   &_answer {
+    position: absolute;
+    top: 6rem;
     overflow: hidden;
-    background: white;
+    width: 137.1rem;
     max-height: 0rem;
-    transition: all 1s ease-in-out -0.75s;
-    margin: 0rem 4rem 4rem 4rem;
     padding: 0rem 4rem;
+    border-radius: 0rem 0rem 1.7rem 1.7rem;
+    background: white;
+    transition: all 0.25s ease-in-out;
     p {
       font-size: $para1;
-      color: lighten(black, 10%);
+      font-weight: $regular;
+      color: $primary2;
     }
   }
-  .show {
-    height: auto;
-    max-height: 100rem;
-    transition: all 1s ease-in-out;
+  @include setFaqAccordionZindex(4);
+}
+// Show the answer
+.show {
+  h2 {
+    box-shadow: none;
+  }
+  .faq-component {
+    &_answer {
+      height: auto;
+      padding: 8rem 4rem;
+      max-height: 100rem;
+      transition: all 0.25s ease-in-out;
+      box-shadow: 0rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.16);
+    }
   }
 }

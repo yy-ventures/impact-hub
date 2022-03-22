@@ -33,6 +33,8 @@ const Faq = () => {
       </div>
       <FaqComponent />
       <FaqComponent />
+      <FaqComponent />
+      <FaqComponent />
       <div className="faq_container_faq"></div>
     </section>
   );

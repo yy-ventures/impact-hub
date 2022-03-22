@@ -38,7 +38,7 @@
     }
   }
 }
-
+// Heading Component's Line
 @mixin headingLine($direction, $position) {
   display: flex;
 
@@ -70,24 +70,43 @@
 
 @mixin setMembershipCardColors($color, $bgDarken: "false") {
   .membership-card {
-    &_plan,
-    &_btn:not(:hover) {
-      @if ($bgDarken == "true") {
-        .btn-component {
-          background: darken($color, 10%);
-        }
-      }
+    &_plan {
       svg {
         fill: $color;
       }
     }
+    &_btn:not(:hover) {
+      .btn-component:not(.primary_active):not(.secondary_active) {
+        @if ($bgDarken == "true") {
+          background: darken($color, 10%);
+        }
+        svg {
+          fill: $color;
+        }
+      }
+    }
     &_btn:hover {
-      .btn-component {
+      .btn-component:not(.primary_active):not(.secondary_active) {
         background: $color;
         svg {
           fill: darken($color, 10%);
         }
       }
     }
+  }
+}
+
+@mixin setFaqAccordionZindex($n) {
+  $k: $n * 2; // Double the size of the number as we have both question and answer in a single accordion
+  @for $i from 2 to $n + 2 {
+    &:nth-child(#{$i}) {
+      h2 {
+        z-index: $k;
+      }
+      .faq-component_answer {
+        z-index: $k - 1;
+      }
+    }
+    $k: $k - 2;
   }
 }
