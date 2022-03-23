@@ -28,10 +28,10 @@ export default function Home() {
 
   useEffect(()=> {
     HandleToken()
-    localStorage.setItem("token", token);
+    localStorage.setItem("token", JSON.stringify(token))
   }, [])
 
-  // console.log(token)
+  console.log(token)
   return (
     <div>
       <Head>

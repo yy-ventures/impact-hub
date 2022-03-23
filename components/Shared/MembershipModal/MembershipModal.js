@@ -1,7 +1,8 @@
-import React,{ useState } from 'react';
+import React,{ useState, useRef } from 'react';
 import Button from '../Button/Button';
 
 const MembershipModal = ({handleCloseModal, optionTitle}) => {
+
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -12,7 +13,7 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     const [whyBecome, setWhyBecome] = useState('')
     const [didHear, setDidHear] = useState('')
 
-    console.log(hubPackage)
+    // number input check
     const handleContact = e => {
         let phoneNumber = e.target.value
         if(isNaN(phoneNumber) || Number(phoneNumber) < 0){
@@ -22,8 +23,12 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
         }
     } 
 
+    // form reference
+    const form = useRef(null)
+
     let bookingFormData = new FormData()
 
+    bookingFormData.append('package_id', hubPackage)
     bookingFormData.append('first_name', firstName)
     bookingFormData.append('last_name', lastName)
     bookingFormData.append('email', email)
@@ -37,7 +42,7 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     // submit
     const HandleOnSubmit = e => {
         e.preventDefault()
-        fetch('https://ihd.yyventures.org/api/login', {
+        fetch('https://ihd.yyventures.org/api/booking/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -45,12 +50,20 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
             },
             body: JSON.stringify(bookingFormData)
         })
+        .then(res => res.json())
+        .then(data => {
+            if(data){
+                form.current.reset()
+            }
+        })
     }
 
+    // let newToken = localStorage.getItem("token")
+    // console.log(newToken)
     return ( 
         <section className='membership_modal' onClick={handleCloseModal}>
             <div className='membership_modal_container'>
-                <form className='membership_modal_form' onSubmit={HandleOnSubmit}>
+                <form className='membership_modal_form' onSubmit={HandleOnSubmit} ref={form}>
                     <div className='membership_modal_form_input_container'>
                         <input type="text" placeholder='First Name' required value={firstName} onChange={e => setFirstName(e.target.value)}/>
                         <input type="text" placeholder='Last Name' required value={lastName} onChange={e => setLastName(e.target.value)}/>
