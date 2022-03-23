@@ -4,11 +4,11 @@
   // Base style
   position: relative;
   width: fit-content;
-  padding-bottom: 10rem;
+  margin-bottom: 10rem;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
   // Faq question container styles
-  h2 {
+  h4 {
     position: relative;
     display: flex;
     align-items: center;
@@ -50,15 +50,16 @@
       color: $primary2;
     }
   }
-  @include setFaqAccordionZindex(4);
 }
 // Show the answer
 .show {
-  h2 {
+  h4 {
     box-shadow: none;
+    background: $primary1;
   }
   .faq-component {
     &_answer {
+      top: 80%;
       height: auto;
       padding: 8rem 4rem;
       max-height: 100rem;

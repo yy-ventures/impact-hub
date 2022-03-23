@@ -9,14 +9,8 @@
 
 html {
   font-size: 44.4661458333%;
-  @media screen and (min-width: 1441px) {
-    font-size: 62.5%;
-  }
-  @media screen and (max-width: 1440px) {
-    font-size: 46.875%;
-  }
-  @media screen and (max-width: 1366px) {
-    font-size: 44.4661458333%;
+  @include response(s-phone) {
+    font-size: 25%;
   }
 }
 

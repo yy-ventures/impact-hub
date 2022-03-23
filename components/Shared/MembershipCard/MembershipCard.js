@@ -3,7 +3,7 @@ import MembershipModal from "../MembershipModal/MembershipModal";
 import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
-const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
+const MembershipCard = ({ title, price, details, modifierClass }) => {
   const [showForm, setShowForm] = useState(false);
   const handleCloseModal = (e) => {
     if (
@@ -27,16 +27,16 @@ const MembershipCard = ({ title, price, duration, details, modifierClass }) => {
             {price}
             <span>/ month</span>
           </h3>
-          <span className="membership-card_plan_header_duration">{duration} / month</span>
+          <span className="membership-card_plan_header_duration">8hrs / month</span>
         </div>
       </div>
       <div className="membership-card_details">
         {details &&
-          details.map(({ feature, availability }, index) => {
+          details.map(({ id, name, is_available }) => {
             return (
-              <div key={index} className="membership-card_details_paragraph">
-                <p>{feature}</p>
-                <FeatureAvailability available={availability} />
+              <div key={id} className="membership-card_details_paragraph">
+                <p>{name}</p>
+                <FeatureAvailability available={is_available} />
               </div>
             );
           })}

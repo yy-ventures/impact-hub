@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import partnerShape from "../../public/partners_path.png";
-import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
-import { plans } from "./contents";
 import MembershipBg from "./MembershipBg";
+import MembershipContent from "./MembershipContent/MembershipContent";
 
 const Membership = () => {
   return (
@@ -30,28 +29,7 @@ const Membership = () => {
         />
       </div>
       <div className="membership_container_grid_cards">
-        {plans.map((data, index) => {
-          return (
-            index % 2 == 0 && (
-              <div key={index} className={`membership_container_grid_cards_flex`}>
-                <MembershipCard
-                  title={plans[index].title}
-                  price={plans[index].price}
-                  duration={plans[index].duration}
-                  details={plans[index].details}
-                  modifierClass={`flex-card-${index + 1}`}
-                />
-                <MembershipCard
-                  title={plans[index + 1].title}
-                  price={plans[index + 1].price}
-                  duration={plans[index + 1].duration}
-                  details={plans[index + 1].details}
-                  modifierClass={`flex-card-${index + 2}`}
-                />
-              </div>
-            )
-          );
-        })}
+        <MembershipContent parentClass="membership_container_grid_cards" />
       </div>
       <div className="membership_container_bg">
         <MembershipBg />

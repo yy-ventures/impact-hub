@@ -67,7 +67,8 @@
     height: 32rem;
     &_paragraph {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
+      line-height: 1.8;
       font-size: $para3;
       color: $placeholder;
     }
