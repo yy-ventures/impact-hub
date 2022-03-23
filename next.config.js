@@ -4,6 +4,7 @@ const nextConfig = {
   ignoreDuringBuilds: true,
   env: {
     baseUrl: "https://ihd.yyventures.org/api",
+    baseUrlForImages: "https://ihd.yyventures.org",
   },
 };
 

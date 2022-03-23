@@ -21,7 +21,15 @@ const useFetch = (endPoint) => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setData(data.data))
+      .then((data) => {
+        const reverse = data.data
+          .slice(0)
+          .reverse()
+          .map((element) => {
+            return element;
+          });
+        setData(reverse);
+      })
       .catch((err) => console.log(err));
   };
   //

@@ -2,6 +2,9 @@
 @import "../../styles/mixin";
 .membership_container {
   height: 150rem;
+  @include response(phone) {
+    height: 202rem;
+  }
   position: relative;
   &_bg {
     svg {
@@ -18,7 +21,7 @@
     align-items: center;
     position: relative;
     padding: 12.7rem 16rem 8.8rem 15.3rem;
-    @include response(s-phone) {
+    @include response(phone) {
       flex-direction: column;
       padding: 12.7rem 8rem 8.8rem 8rem;
     }
@@ -28,6 +31,11 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @include response(phone) {
+        width: auto;
+        justify-content: space-evenly;
+        margin-bottom: 2rem;
+      }
 
       h4 {
         font-size: $subHeading1;
@@ -72,15 +80,13 @@
   &_grid_cards {
     position: relative;
     z-index: 3;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     height: 39.2rem;
     max-width: 132.2rem;
     margin: auto;
     gap: 1.6rem;
-    @include response(s-phone) {
-      grid-template-columns: repeat(1, 1fr);
-    }
     // =====================
     // .membership-card {
     //   &:nth-child(4):hover {
@@ -92,7 +98,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.6rem;
-      @include response(s-phone) {
+      @include response(phone) {
         flex-direction: row;
       }
       // set colors for each card based on their class names

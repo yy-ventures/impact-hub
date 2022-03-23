@@ -7,7 +7,6 @@ import HomeNewsLetter from "../components/Home/HomeNewsLetter/HomeNewsLetter";
 import HomeOffer from "../components/Home/HomeOffer/HomeOffer";
 import HomeWelcome from "../components/Home/HomeWelcome/HomeWelcome";
 import Cookies from "../components/Shared/Cookies/Cookies";
-import useToken from "../components/Hooks/useToken";
 
 export default function Home() {
   // const token = useToken();

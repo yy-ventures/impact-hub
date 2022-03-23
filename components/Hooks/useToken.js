@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 const useToken = (email = "admin@example.com", password = "yy@123456") => {
   const [token, setToken] = useState(null);
-
   // Get token value from the api
   const HandleToken = async () => {
     const baseUrl = process.env.baseUrl;

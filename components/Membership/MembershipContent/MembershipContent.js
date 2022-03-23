@@ -6,19 +6,19 @@ const MembershipContent = ({ parentClass }) => {
   const membershipPlans = useFetch("/get-packages/1");
   return membershipPlans.map((data, index) => {
     return (
-      index % 2 == 0 && (
+      index < 3 && (
         <div key={index} className={`${parentClass}_flex`}>
           <MembershipCard
             title={membershipPlans[index].name}
             price={membershipPlans[index].price}
             details={membershipPlans[index].get_package_features}
-            modifierClass={`flex-card-${index + 1}`}
+            modifierClass={`flex-card-${index * 2 + 1}`}
           />
           <MembershipCard
-            title={membershipPlans[index + 1].name}
-            price={membershipPlans[index + 1].price}
-            details={membershipPlans[index + 1].get_package_features}
-            modifierClass={`flex-card-${index + 2}`}
+            title={membershipPlans[index + 3].name}
+            price={membershipPlans[index + 3].price}
+            details={membershipPlans[index + 3].get_package_features}
+            modifierClass={`flex-card-${index * 2 + 2}`}
           />
         </div>
       )
