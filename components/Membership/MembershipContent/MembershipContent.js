@@ -1,27 +1,9 @@
-import React, { useState, useEffect } from "react";
-
+import React from "react";
+import useFetch from "../../Hooks/useFetch";
 import MembershipCard from "../../Shared/MembershipCard/MembershipCard";
 const MembershipContent = ({ parentClass }) => {
   //State to hold Membership Data
-  const [membershipPlans, setMembershipPlans] = useState([]);
-  //   Fetching Membership data from the api
-  const fetchMembershipData = async () => {
-    await fetch("https://ihd.yyventures.org/api/get-packages/1", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        Authorization: "Bearer " + window.localStorage.getItem("token"),
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setMembershipPlans(data.data));
-  };
-  // Fetch data
-  useEffect(() => {
-    fetchMembershipData();
-  }, []);
-  //  Data Rendering
+  const membershipPlans = useFetch("/get-packages/1");
   return membershipPlans.map((data, index) => {
     return (
       index % 2 == 0 && (

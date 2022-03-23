@@ -7,17 +7,20 @@ import HomeNewsLetter from "../components/Home/HomeNewsLetter/HomeNewsLetter";
 import HomeOffer from "../components/Home/HomeOffer/HomeOffer";
 import HomeWelcome from "../components/Home/HomeWelcome/HomeWelcome";
 import Cookies from "../components/Shared/Cookies/Cookies";
+import useToken from "../components/Hooks/useToken";
 
 export default function Home() {
-  const [token, setToken] = useState({});
+  // const token = useToken();
+  const [token, setToken] = useState(null);
 
   // Get token value from the api
   const HandleToken = async () => {
-    await fetch("https://ihd.yyventures.org/api/login", {
+    const baseUrl = process.env.baseUrl;
+    await fetch(`${baseUrl}/login`, {
       method: "POST",
       headers: {
-        "access-control-allow-origin": "*",
         Accept: "application/json",
+        "access-control-allow-origin": "*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email: "admin@example.com", password: "yy@123456" }),
