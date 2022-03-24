@@ -60,28 +60,160 @@
     }
   }
   &_body {
-    margin-top: 4rem;
-    width: 100%;
-    padding: 0 18.7rem;
+    display: grid;
+    height: 89.1rem;
+    width: 150.2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 5.2rem;
+    margin-top: 8.5rem;
+    position: relative;
     @media screen and (max-width: 600px) {
+      height: auto;
+      width: 100%;
+      grid-template-columns: 1fr;
       padding: 0 5rem;
     }
-    &_grid {
+
+    // pop up
+    &_pop{
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba($color: #000000, $alpha: 0.4);
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      @media screen and (max-width: 600px) {
-        flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: popUp 0.1s linear;
+      img{
+        max-height: 80rem;
+        max-width: 80rem;
+        object-fit: cover;
       }
-      &_images {
-        display: flex;
-        flex-direction: column;
+    }
+    // grid
+    &_col {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &_1{
+        height: 50.1rem;
         width: 46.6rem;
-        img {
+        cursor: zoom-in;
+        @media screen and (max-width: 600px) {
+          height: 26.3rem;
           width: 100%;
-          padding-bottom: 4rem;
+          margin-top: 2.6rem;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &_2{
+        height: 34.8rem;
+        width: 46.6rem;
+        cursor: zoom-in;
+        @media screen and (max-width: 600px) {
+          height: 26.3rem;
+          width: 100%;
+          margin-top: 2.6rem;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &_3{
+        height: 26.3rem;
+        width: 46.6rem;
+        cursor: zoom-in;
+        @media screen and (max-width: 600px) {
+          height: 26.3rem;
+          width: 100%;
+          margin-top: 2.6rem;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &_4{
+        height: 26.3rem;
+        width: 46.6rem;
+        cursor: zoom-in;
+        @media screen and (max-width: 600px) {
+          height: 26.3rem;
+          width: 100%;
+          margin-top: 2.6rem;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &_5{
+        height: 26.3rem;
+        width: 46.6rem;
+        cursor: zoom-in;
+        @media screen and (max-width: 600px) {
+          height: 26.3rem;
+          width: 100%;
+          margin-top: 2.6rem;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &_6{
+        height: 34.8rem;
+        width: 46.6rem;
+        cursor: zoom-in;
+        @media screen and (max-width: 600px) {
+          height: 26.3rem;
+          width: 100%;
+          margin-top: 2.6rem;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &_7{
+        height: 50.1rem;
+        width: 46.6rem;
+        cursor: zoom-in;
+        @media screen and (max-width: 600px) {
+          height: 26.3rem;
+          width: 100%;
+          margin-top: 2.6rem;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     }
+  }
+}
+
+
+@keyframes popUp {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
   }
 }

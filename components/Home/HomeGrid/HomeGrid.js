@@ -4,9 +4,25 @@ import Link from "next/link";
 import useToken from "../../Hooks/useToken";
 import useFetch from "../../Hooks/useFetch";
 const HomeGrid = () => {
+
   const community = useFetch("/get-community");
   const baseUrlForImages = process.env.baseUrlForImages;
-  console.log(community);
+
+  const [popUp, setPopUp] = useState([])
+  const [showPopUp, setShowPopUp] = useState(false)
+
+  const HandlePop = (id) => {
+    setPopUp(community.filter(popImg => popImg.id === id))
+    setShowPopUp(true)
+  }
+
+  // modal close
+  const handlePopUpClose = e => {
+    if(e.target.className === 'home_image_grid_body_pop'){
+      setShowPopUp(false)
+    }
+  }
+
   return (
     <section className="home_image_grid">
       <div className="home_image_grid_header">
@@ -28,21 +44,41 @@ const HomeGrid = () => {
 
       {community.length > 0 && (
         <div className="home_image_grid_body">
-          <div className="home_image_grid_body_grid">
-            <div className="home_image_grid_body_grid_images">
+          {/* col-1 */}
+          <div className="home_image_grid_body_col">
+            <div className="home_image_grid_body_col_1" onClick={()=>HandlePop(community[2].id)}>
               <img src={baseUrlForImages + community[2].image} />
+            </div>
+            <div className="home_image_grid_body_col_2" onClick={()=>HandlePop(community[0].id)}>
               <img src={baseUrlForImages + community[0].image} />
             </div>
-            <div className="home_image_grid_body_grid_images">
+          </div>
+          {/* col-2 */}
+          <div className="home_image_grid_body_col">
+            <div className="home_image_grid_body_col_3" onClick={()=>HandlePop(community[1].id)}>
               <img src={baseUrlForImages + community[1].image} />
+            </div>
+            <div className="home_image_grid_body_col_4" onClick={()=>HandlePop(community[3].id)}>
               <img src={baseUrlForImages + community[3].image} />
+            </div>
+            <div className="home_image_grid_body_col_5" onClick={()=>HandlePop(community[4].id)}>
               <img src={baseUrlForImages + community[4].image} />
             </div>
-            <div className="home_image_grid_body_grid_images">
+          </div>
+          {/* col-3 */}
+          <div className="home_image_grid_body_col">
+            <div className="home_image_grid_body_col_6" onClick={()=>HandlePop(community[5].id)}>
               <img src={baseUrlForImages + community[5].image} />
+            </div>
+            <div className="home_image_grid_body_col_7" onClick={()=>HandlePop(community[6].id)}>
               <img src={baseUrlForImages + community[6].image} />
             </div>
           </div>
+
+          {/* pop */}
+          {showPopUp && <div className="home_image_grid_body_pop" onClick={handlePopUpClose}>
+            {popUp.map(popImage => <img src={baseUrlForImages + popImage.image} key={popImage.id}/>)}
+          </div>}
         </div>
       )}
     </section>
@@ -50,3 +86,4 @@ const HomeGrid = () => {
 };
 
 export default HomeGrid;
+
