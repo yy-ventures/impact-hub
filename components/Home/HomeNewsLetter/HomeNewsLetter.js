@@ -13,15 +13,15 @@ const HomeNewsLetter = () => {
         setShowSubscribe(true)
         setHideSubscribe(true)
     }
-    const HandleShowSubscribeForm = () => {
-        setShowForm(true)
-        setShowSubscribe(false)
-        setHideForm(false)
-    }
     const HideForm = () => {
         setHideForm(true)
         setShowForm(true)
         setShowSubscribe(true)
+    }
+    const HandleShowSubscribeForm = () => {
+        setShowForm(true)
+        setShowSubscribe(false)
+        setHideForm(false)
     }
     const HideSubscribe = () => {
         setHideForm(true)
@@ -35,10 +35,11 @@ const HomeNewsLetter = () => {
                 {showForm && <div>
                     <h4>Newsletter</h4>
                     <p>If you’re interested in social impact, subscribe below and get curated weekly Impact news.</p>
-                    {hideForm && <button onClick={HandleShowSubscribeForm}>Show More</button>}
-                    {!hideForm && <button onClick={HideForm}>Hide Form</button>}
+                    {!hideSubscribe && <button onClick={HandleShowForm}>Show More</button>}
+                    {hideSubscribe && <button onClick={HideSubscribe}>Hide Form</button>}
                 </div>}
-                {!showForm && <HomeNewsLetterForm />}
+                {!showForm && <HomeNewsLetterSubscribeForm/>}
+                
             </div>
             <div className='home_news_letter_right'>
                 {showSubscribe && <div>
@@ -46,10 +47,10 @@ const HomeNewsLetter = () => {
                         <h2>Let’s talk</h2>
                         <h3>How may we help you?</h3>
                     </div>
-                    {!hideSubscribe && <button onClick={HandleShowForm}>Show Form</button>}
-                    {hideSubscribe && <button onClick={HideSubscribe}>Hide Form</button>}
+                    {hideForm && <button onClick={HandleShowSubscribeForm}>Show Form</button>}
+                    {!hideForm && <button onClick={HideForm}>Hide Form</button>}
                 </div>}
-                {!showSubscribe && <HomeNewsLetterSubscribeForm/>}
+                {!showSubscribe && <HomeNewsLetterForm />}
             </div>
         </section>
     );

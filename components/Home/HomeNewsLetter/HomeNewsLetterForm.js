@@ -6,7 +6,9 @@ const HomeNewsLetterForm = () => {
             <input type="email" placeholder='Email Address'/>
             <input type="text" placeholder='Subject'/>
             <input type="text" placeholder='Give us your feedback'/>
-            <button>Submit</button>
+            <div>
+                <button>Submit</button>
+            </div>
         </div>
     );
 };
