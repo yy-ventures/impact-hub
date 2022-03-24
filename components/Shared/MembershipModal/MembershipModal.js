@@ -45,21 +45,13 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     
     const HandleOnSubmit = async (e) => {
         e.preventDefault()
-<<<<<<< HEAD
         // console.log(bookingFormData)
         await fetch('https://ihd.yyventures.org/api/booking', {
-=======
-        fetch('https://ihd.yyventures.org/api/booking/', {
->>>>>>> stage
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-<<<<<<< HEAD
                 'Authorization': "Bearer " + window.localStorage.getItem("token"),
-=======
-                Authorization: "Bearer " + window.localStorage.getItem("token"),
->>>>>>> stage
             },
             body: JSON.stringify(bookingFormData)
         })
