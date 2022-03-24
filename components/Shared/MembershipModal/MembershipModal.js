@@ -47,6 +47,7 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                Authorization: "Bearer " + window.localStorage.getItem("token"),
             },
             body: JSON.stringify(bookingFormData)
         })

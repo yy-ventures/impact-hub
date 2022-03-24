@@ -13,6 +13,7 @@ export default function Home() {
 
   // Get token value from the api
   const HandleToken = async () => {
+
     await fetch("https://ihd.yyventures.org/api/login", {
       method: "POST",
       headers: {
@@ -21,17 +22,19 @@ export default function Home() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email: "admin@example.com", password: "yy@123456" }),
-    })
-      .then((res) => res.json())
+    }).then((res) => res.json())
       .then((data) => setToken(data.data.token));
   };
 
-  useEffect(()=> {
-    HandleToken()
-    localStorage.setItem("token", JSON.stringify(token))
-  }, [])
+  useEffect(() => {
+    HandleToken();
+  }, []);
 
-  console.log(token)
+  // Set local storage on the browser not on the server-side
+  if (typeof window !== "undefined") {
+    localStorage.setItem("token", token);
+  }
+  
   return (
     <div>
       <Head>
