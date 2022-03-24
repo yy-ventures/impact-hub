@@ -14,13 +14,13 @@ const Partners = () => {
           parentClass="partners_container_content"
         />
         <div className="partners_container_content_right">
-          <p>
+          <p className="body-global">
             Impact Hub is a global network (100+ locations) of collaborators focused on prototyping
             the future of business and society. We believe a better world evolves through the
             combined accomplishments of creative, committed, and compassionate individuals focused
             on a common purpose.
           </p>
-          <p>
+          <p className="body-global">
             We look forward to hearing about your ideas for partnerships. Write to us at at{" "}
             <span className="bold">lamia.hafiz@impacthub.net</span>
           </p>

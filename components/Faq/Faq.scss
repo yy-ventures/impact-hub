@@ -2,11 +2,17 @@
 
 .faq_container {
   padding: 12rem 15.2rem 10rem 17.6rem;
+  @include response(phone) {
+    padding: 12rem 12rem 10rem 12rem;
+  }
 
   &_content {
     display: flex;
     justify-content: space-between;
     padding-bottom: 11.5rem;
+    @include response(phone) {
+      flex-direction: column;
+    }
     &_left {
       &_heading {
         @include headingLine("left", flex-start);
@@ -18,18 +24,27 @@
         flex-direction: column;
         justify-content: space-between;
         width: 63.1rem;
-        margin-left: 9.4rem;
-        margin-right: 2rem;
+        margin: 0rem 2rem 2rem 9.4rem;
+        @include response(vp-800) {
+          width: auto;
+        }
         &_body {
           padding-bottom: 2rem;
         }
       }
     }
     &_right {
+      @include response(phone) {
+        margin: 0 auto;
+      }
       &_title_block {
         width: 54.5rem;
         img {
           right: 0;
+          @include response(vp-800) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
         h1 {
           text-align: center;
@@ -38,10 +53,12 @@
     }
   }
   &_faqs {
-    @include response(s-phone) {
-      width: 66rem;
-    }
     width: 137.1rem;
+    margin-left: 6rem;
+    @include response(phone) {
+      width: 95rem;
+      margin: 0 auto;
+    }
     h2 {
       position: relative;
       z-index: 0;

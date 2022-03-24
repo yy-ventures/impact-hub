@@ -19,6 +19,7 @@
   &_plan {
     align-self: flex-start;
     color: white;
+    cursor: pointer;
     svg {
       position: absolute;
       z-index: 1;
@@ -67,10 +68,14 @@
     height: 32rem;
     &_paragraph {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       line-height: 1.8;
       font-size: $para3;
       color: $placeholder;
+      @include response(phone) {
+        line-height: 1.2;
+        font-size: 1.8rem;
+      }
     }
     p {
       padding-right: 1rem;
@@ -85,21 +90,20 @@
     opacity: 0;
     transition: opacity 0.25s ease-in-out 0.25s;
   }
-  //   Hover animation
-  &:hover {
-    height: 67rem;
-    .membership-card_btn {
-      opacity: 1;
+}
+// show card on click
+.show-card {
+  height: 67rem;
+  .membership-card_btn {
+    opacity: 1;
+  }
+  .membership-card_plan {
+    svg {
+      transform: translateY(-72%);
     }
-    .membership-card_plan {
-      svg {
-        transform: translateY(-72%);
-      }
-      &_header_price {
-        color: white;
-        mix-blend-mode: normal;
-      }
+    &_header_price {
+      color: white;
+      mix-blend-mode: normal;
     }
   }
-  // Child Selector
 }

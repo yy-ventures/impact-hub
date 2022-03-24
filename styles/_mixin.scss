@@ -32,6 +32,12 @@
       @content;
     }
   }
+  @if $breakpoint == m-desktop {
+    // media size 1440px
+    @media (max-width: 90em) {
+      @content;
+    }
+  }
   @if $breakpoint == big-desktop {
     @media (min-width: 112.5em) {
       @content;
@@ -43,6 +49,9 @@
   display: flex;
 
   @if $direction == "left" {
+    &::after {
+      display: none;
+    }
     &::before {
       content: "";
       display: block;
@@ -56,6 +65,9 @@
       }
     }
   } @else {
+    &::before {
+      display: none;
+    }
     &::after {
       content: "";
       display: block;

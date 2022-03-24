@@ -9,21 +9,25 @@
 
 html {
   font-size: 0.625em;
-  @include response(s-phone) {
-    font-size: 0.2em;
-    .body-global,
-    .highlight-global {
-      font-size: $subHeading3;
-    }
+
+  @include response(big-desktop) {
+    font-size: 0.625em;
   }
-  @include response(tab-port) {
-    font-size: 0.3em;
+  @include response(m-desktop) {
+    font-size: 0.425em;
   }
   @include response(desktop) {
     font-size: 0.4em;
   }
-  @include response(big-desktop) {
-    font-size: 0.625em;
+  @include response(tab-port) {
+    font-size: 0.25em;
+  }
+  @include response(s-phone) {
+    font-size: 0.2em;
+    .body-global,
+    .highlight-global {
+      font-size: $subHeading3 !important;
+    }
   }
 }
 

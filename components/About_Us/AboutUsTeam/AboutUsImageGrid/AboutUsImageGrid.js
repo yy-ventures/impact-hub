@@ -7,6 +7,7 @@ const AboutUsImageGrid = ({ parentClass, images }) => {
           return (
             <div key={index} className={parentClass + "_img-" + index}>
               <img src={image} alt="" />
+              <p className="body-global">Lamia Hafiz</p>
             </div>
           );
         })}

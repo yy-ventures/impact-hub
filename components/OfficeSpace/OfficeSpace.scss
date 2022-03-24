@@ -2,6 +2,9 @@
 .officespace_container {
   position: relative;
   height: 150rem;
+  @include response(vp-800) {
+    height: 180rem;
+  }
   &_bg {
     svg {
       position: absolute;
@@ -14,12 +17,18 @@
     align-items: center;
     position: relative;
     padding: 12.5rem 26.8rem 10.8rem 15.3rem;
+    @include response(vp-800) {
+      flex-direction: column;
+    }
     &_content {
       width: 84.1rem;
       height: 35.7rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @include response(vp-800) {
+        padding-bottom: 5rem;
+      }
       h4 {
         font-size: $subHeading1;
         font-weight: 500;
