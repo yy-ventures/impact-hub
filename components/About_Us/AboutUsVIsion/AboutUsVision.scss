@@ -5,6 +5,9 @@
 .about_us {
   height: fit-content;
   padding: 8.1rem 10rem 0rem 18.4rem;
+  @include response(vp-800) {
+    padding-left: 10rem;
+  }
   // section container
   &_container {
     // vision heading (1st grid element)
@@ -21,8 +24,16 @@
         justify-content: space-between;
         padding: 5.5rem 0rem 12.2rem 0rem;
         font-size: $para1;
+        @include response(vp-800) {
+          flex-direction: column;
+          align-items: center;
+          gap: 10rem;
+        }
         &_body {
           width: 66.3rem;
+          @include response(vp-800) {
+            width: fit-content;
+          }
           margin-left: 3rem;
           color: $primary2;
           p:first-child {
@@ -33,6 +44,9 @@
           width: 81.2rem;
           object-fit: contain;
           margin-right: 3rem;
+          @include response(vp-800) {
+            margin-right: 0rem;
+          }
         }
       }
     }
@@ -52,6 +66,10 @@
       &_body {
         width: 67.2rem;
         margin-right: 3rem;
+        @include response(vp-800) {
+          margin-left: 3rem;
+          margin-right: 0rem;
+        }
         font-size: $para1;
       }
     }

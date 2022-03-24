@@ -1,6 +1,7 @@
 @import "../../../styles/base.scss";
 .about_us_approach {
   padding: 9.6rem 13rem 15.6rem 21.2rem;
+
   &_container {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
@@ -30,9 +31,11 @@
     }
 
     &_grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       column-gap: 10rem;
+      row-gap: 5rem;
       &_card {
         width: 35.5rem;
         position: relative;

@@ -49,6 +49,9 @@
   display: flex;
 
   @if $direction == "left" {
+    &::after {
+      display: none;
+    }
     &::before {
       content: "";
       display: block;
@@ -62,6 +65,9 @@
       }
     }
   } @else {
+    &::before {
+      display: none;
+    }
     &::after {
       content: "";
       display: block;
