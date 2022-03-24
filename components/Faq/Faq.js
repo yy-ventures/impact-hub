@@ -31,7 +31,9 @@ const Faq = () => {
           />
         </div>
       </div>
-      <FaqContent parentClass="faq_container" />
+      <div className="faq_container_faqs">
+        <FaqContent />
+      </div>
     </section>
   );
 };

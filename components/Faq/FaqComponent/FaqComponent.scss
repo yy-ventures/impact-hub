@@ -3,7 +3,6 @@
 .faq-component {
   // Base style
   position: relative;
-  width: fit-content;
   margin-bottom: 10rem;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
@@ -13,7 +12,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 137.1rem;
     padding: 4rem;
     border-radius: 1.7rem;
     font-size: $para1;
@@ -26,11 +24,12 @@
     svg {
       width: $para1;
       cursor: pointer;
+      transform: rotate(180deg);
       transition: transform 0.25s ease-in-out;
     }
     // rotate the svg when hovered
     .rotate {
-      transform: rotate(180deg);
+      transform: rotate(360deg);
     }
   }
   // Faq answer container style
@@ -38,7 +37,6 @@
     position: absolute;
     top: 6rem;
     overflow: hidden;
-    width: 137.1rem;
     max-height: 0rem;
     padding: 0rem 4rem;
     border-radius: 0rem 0rem 1.7rem 1.7rem;

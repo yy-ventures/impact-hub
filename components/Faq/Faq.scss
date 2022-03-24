@@ -2,11 +2,17 @@
 
 .faq_container {
   padding: 12rem 15.2rem 10rem 17.6rem;
+  @include response(phone) {
+    padding: 12rem 12rem 10rem 12rem;
+  }
 
   &_content {
     display: flex;
     justify-content: space-between;
     padding-bottom: 11.5rem;
+    @include response(phone) {
+      flex-direction: column;
+    }
     &_left {
       &_heading {
         @include headingLine("left", flex-start);
@@ -26,6 +32,9 @@
       }
     }
     &_right {
+      @include response(phone) {
+        margin: 0 auto;
+      }
       &_title_block {
         width: 54.5rem;
         img {
@@ -38,6 +47,10 @@
     }
   }
   &_faqs {
+    width: 137.1rem;
+    @include response(phone) {
+      width: 95rem;
+    }
     h2 {
       position: relative;
       z-index: 0;

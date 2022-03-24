@@ -8,9 +8,23 @@
 }
 
 html {
-  font-size: 44.4661458333%;
+  font-size: 0.625em;
+
+  @include response(big-desktop) {
+    font-size: 0.625em;
+  }
+  @include response(desktop) {
+    font-size: 0.4em;
+  }
+  @include response(tab-port) {
+    font-size: 0.3em;
+  }
   @include response(s-phone) {
-    font-size: 25%;
+    font-size: 0.2em;
+    .body-global,
+    .highlight-global {
+      font-size: $subHeading3 !important;
+    }
   }
 }
 

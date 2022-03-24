@@ -4,6 +4,9 @@ import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
 const MembershipCard = ({ title, price, details, modifierClass }) => {
+  // Show or hide membership card
+  const [showCard, setShowCard] = useState(false);
+  //  Show or hide membership form
   const [showForm, setShowForm] = useState(false);
   const handleCloseModal = (e) => {
     if (
@@ -13,12 +16,14 @@ const MembershipCard = ({ title, price, details, modifierClass }) => {
       setShowForm(false);
     }
   };
-
   const handleShowModal = () => {
     setShowForm(true);
   };
   return (
-    <div className={modifierClass ? "membership-card " + modifierClass : "membership-card"}>
+    <div
+      className={`membership-card ${modifierClass && modifierClass} ${showCard && "show-card"}`}
+      onClick={() => setShowCard(!showCard)}
+    >
       <div className="membership-card_plan">
         <MembershipBg />
         <div className="membership-card_plan_header">

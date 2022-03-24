@@ -11,7 +11,7 @@
   overflow: hidden;
   padding: 2.5rem 2rem;
   margin: 1.5rem;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
   text-transform: capitalize;
   background: $primary2;
   color: white;
@@ -22,6 +22,7 @@
   p {
     position: relative;
     z-index: 2;
+    font-size: 2.5rem;
     font-weight: $regular;
   }
   // Button svg initial position
@@ -35,6 +36,9 @@
   // Additional styles for primary button
   &_primary {
     height: 6.4rem;
+    @include response(s-phone) {
+      height: auto;
+    }
     // Initial State
     svg {
       fill: $primary1;
@@ -66,6 +70,9 @@
   // Additional styles for secondary button
   &_secondary {
     height: 5.4rem;
+    @include response(s-phone) {
+      height: auto;
+    }
     // Initial state
     svg {
       left: 50%;
@@ -87,7 +94,6 @@
       background: white;
       color: $primary1;
       p {
-        font-size: 1.8rem;
         font-weight: $bold;
       }
       svg {

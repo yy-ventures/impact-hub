@@ -4,7 +4,7 @@ import Faq from "../../components/Faq/Faq";
 const FaqPage = () => {
   return (
     <>
-      <Faq/>
+      <Faq />
     </>
   );
 };
