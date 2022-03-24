@@ -11,6 +11,7 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     const [organizationBrief, setOrganizationBrief] = useState('')
     const [whyBecome, setWhyBecome] = useState('')
     const [didHear, setDidHear] = useState('')
+    // const packageType = 1
 
     console.log(hubPackage)
     const handleContact = e => {
@@ -29,19 +30,23 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     bookingFormData.append('email', email)
     bookingFormData.append('contact_number', contact)
     bookingFormData.append('organization', organization)
-    bookingFormData.append('first_name', hubPackage)
+    bookingFormData.append('package_id', hubPackage)
+    bookingFormData.append('package_type_id', 1)
     bookingFormData.append('what_you_do', organizationBrief)
     bookingFormData.append('description', whyBecome)
     bookingFormData.append('about', didHear)
 
     // submit
-    const HandleOnSubmit = e => {
+    
+    const HandleOnSubmit = async (e) => {
         e.preventDefault()
-        fetch('https://ihd.yyventures.org/api/login', {
+        // console.log(bookingFormData)
+        await fetch('https://ihd.yyventures.org/api/booking', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'Authorization': "Bearer " + window.localStorage.getItem("token"),
             },
             body: JSON.stringify(bookingFormData)
         })
