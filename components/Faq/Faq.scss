@@ -24,8 +24,10 @@
         flex-direction: column;
         justify-content: space-between;
         width: 63.1rem;
-        margin-left: 9.4rem;
-        margin-right: 2rem;
+        margin: 0rem 2rem 2rem 9.4rem;
+        @include response(vp-800) {
+          width: auto;
+        }
         &_body {
           padding-bottom: 2rem;
         }
@@ -39,6 +41,10 @@
         width: 54.5rem;
         img {
           right: 0;
+          @include response(vp-800) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
         h1 {
           text-align: center;
@@ -48,8 +54,10 @@
   }
   &_faqs {
     width: 137.1rem;
+    margin-left: 6rem;
     @include response(phone) {
       width: 95rem;
+      margin: 0 auto;
     }
     h2 {
       position: relative;

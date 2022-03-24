@@ -1,11 +1,14 @@
 @import "../../styles/base.scss";
 
 .partners_container {
-  height: 76.3rem;
+  min-height: 76.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  @include response(vp-800) {
+    height: fit-content;
+  }
   img {
     position: absolute;
     z-index: 1;
@@ -20,13 +23,16 @@
     justify-content: space-between;
     align-items: center;
     z-index: 2;
-    @media screen and (max-width: 600px) {
+    @include response(vp-800) {
       flex-direction: column;
     }
     &_title_block {
       width: 77.5rem;
       height: 31.7rem;
       position: relative;
+      @include response(vp-800) {
+        margin-bottom: 5rem;
+      }
       img {
         position: absolute;
         width: 31.54rem;
@@ -41,20 +47,22 @@
         position: absolute;
         bottom: 2.8rem;
         left: 11rem;
-        line-height: 9.2rem;
         z-index: 3;
       }
     }
     &_right {
-      width: 66.7rem;
-      height: 27rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: 66.7rem;
+      height: 27rem;
+      @include response(vp-800) {
+        height: auto;
+      }
       p {
         font-size: $para1;
         color: $primary2;
-        line-height: 2.9rem;
+        padding-bottom: 2.9rem;
       }
     }
   }

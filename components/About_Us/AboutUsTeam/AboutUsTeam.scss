@@ -3,12 +3,16 @@
 .about_us_team {
   padding: 8.6rem 10rem 17.3rem 18.4rem;
   overflow: hidden;
+  @include response(vp-800) {
+    padding-left: 10rem;
+  }
   // Container
   &_container {
     height: fit-content;
     // Content Description
     &_description {
       padding-bottom: 15.6rem;
+
       // Description Heading
       &_heading {
         @include headingLine("left", center);
@@ -31,18 +35,33 @@
         padding-left: 3rem;
         font-size: $para1;
         color: $primary2;
+        @include response(vp-800) {
+          width: fit-content;
+        }
       }
     }
     // About Us Team section image grid
     &_image-grid {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-items: center;
       align-items: center;
-      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      gap: 4rem;
+      text-align: center;
+      @include response(vp-800) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6rem;
+      }
 
       img {
-        width: 37.1rem;
-        height: 37.4rem;
+        width: 40rem;
+        padding: 3rem;
         object-fit: contain;
+      }
+      p {
+        font-size: $para1;
       }
     }
   }

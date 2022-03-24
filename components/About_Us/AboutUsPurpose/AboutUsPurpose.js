@@ -31,16 +31,18 @@ const AboutUsPurpose = () => {
               parentClass={"about_us_purpose_container_detail_block"}
               heading={purpose.heading}
             />
-            <p className="about_us_purpose_container_detail_block_body">
-              We mobilize vibrant community of entrepreneurs through
-              <strong> inspiring space, meaningful content </strong> and
-              <strong> diverse networks</strong> to accelerate sustainable socio-economic growth of
-              Bangladesh.
-            </p>
           </div>
-          <div className="about_us_purpose_container_detail_highlight">
-            <p>{purpose.highlight}</p>
-          </div>
+
+          <p className="about_us_purpose_container_detail_highlight highlight-global">
+            {purpose.highlight}
+          </p>
+
+          <p className="about_us_purpose_container_detail_block_body body-global">
+            We mobilize vibrant community of entrepreneurs through
+            <strong> inspiring space, meaningful content </strong> and
+            <strong> diverse networks</strong> to accelerate sustainable socio-economic growth of
+            Bangladesh.
+          </p>
         </div>
         <div className="about_us_purpose_container_btn_grid">
           {buttons.map(({ title, span }, index) => {
