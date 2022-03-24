@@ -32,6 +32,12 @@
       @content;
     }
   }
+  @if $breakpoint == m-desktop {
+    // media size 1440px
+    @media (max-width: 90em) {
+      @content;
+    }
+  }
   @if $breakpoint == big-desktop {
     @media (min-width: 112.5em) {
       @content;
