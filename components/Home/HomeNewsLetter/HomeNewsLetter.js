@@ -1,33 +1,27 @@
 import React, { useState } from 'react';
 import HomeNewsLetterForm from './HomeNewsLetterForm';
 import HomeNewsLetterSubscribeForm from './HomeNewsLetterSubscribeForm';
+import crossBtn from '../../../public/cross.svg'
 
 const HomeNewsLetter = () => {
     const [showForm, setShowForm] = useState(true)
-    const [showSubscribe, setShowSubscribe] = useState(true)
     const [hideForm, setHideForm] = useState(true)
+    
+    const [showSubscribe, setShowSubscribe] = useState(true)
     const [hideSubscribe, setHideSubscribe] = useState(false)
 
     const HandleShowForm = () => {
         setShowForm(false)
-        setShowSubscribe(true)
-        setHideSubscribe(true)
     }
-    const HideForm = () => {
-        setHideForm(true)
+    const HandleHideForm = () => {
         setShowForm(true)
-        setShowSubscribe(true)
     }
+    
     const HandleShowSubscribeForm = () => {
-        setShowForm(true)
         setShowSubscribe(false)
-        setHideForm(false)
     }
-    const HideSubscribe = () => {
-        setHideForm(true)
-        setShowForm(true)
+    const HandleHideSubscribe = () => {
         setShowSubscribe(true)
-        setHideSubscribe(false)
     }
     return (
         <section className='home_news_letter'>
@@ -35,11 +29,12 @@ const HomeNewsLetter = () => {
                 {showForm && <div>
                     <h4>Newsletter</h4>
                     <p>If you’re interested in social impact, subscribe below and get curated weekly Impact news.</p>
-                    {!hideSubscribe && <button onClick={HandleShowForm}>Show More</button>}
-                    {hideSubscribe && <button onClick={HideSubscribe}>Hide Form</button>}
+                    {showForm && <button onClick={HandleShowForm}>Show More</button>}
                 </div>}
                 {!showForm && <HomeNewsLetterSubscribeForm/>}
-                
+                {!showForm && <div className="home_news_letter_left_cross">
+                    <img src={crossBtn.src} alt="" onClick={HandleHideForm}/>
+                </div>}
             </div>
             <div className='home_news_letter_right'>
                 {showSubscribe && <div>
@@ -47,10 +42,12 @@ const HomeNewsLetter = () => {
                         <h2>Let’s talk</h2>
                         <h3>How may we help you?</h3>
                     </div>
-                    {hideForm && <button onClick={HandleShowSubscribeForm}>Show Form</button>}
-                    {!hideForm && <button onClick={HideForm}>Hide Form</button>}
+                    {showSubscribe && <button onClick={HandleShowSubscribeForm}>Show Form</button>}
                 </div>}
                 {!showSubscribe && <HomeNewsLetterForm />}
+                {!showSubscribe && <div className="home_news_letter_right_cross">
+                    <img src={crossBtn.src} alt="" onClick={HandleHideSubscribe}/>
+                </div>}
             </div>
         </section>
     );

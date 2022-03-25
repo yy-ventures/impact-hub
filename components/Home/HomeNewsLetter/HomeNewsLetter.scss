@@ -80,6 +80,12 @@
                 padding: 1.7rem 2.8rem;
             }
         }
+        &_cross{
+            position: absolute;
+            top: -40%;
+            right: 0;
+            cursor: pointer;
+        }
     }
     &_right{
         width: 65.4rem;
@@ -149,6 +155,12 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+        }
+        &_cross{
+            position: absolute;
+            top: -40%;
+            right: 0;
+            cursor: pointer;
         }
     }
 }
