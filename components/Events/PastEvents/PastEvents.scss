@@ -1,0 +1,16 @@
+@import '../../../styles/base.scss';
+
+.past_events{
+    padding: 10.5rem 12.3rem;
+    &_container{
+        padding: 10.5rem 9rem;
+        margin-top: 3.5rem;
+        border: 1px solid #707070;
+        border-radius: 2.9rem;
+    }
+    &_footer{
+        margin-top: 10.5rem;
+        width: 88.5rem;
+        padding-left: 10.5rem;
+    }
+}

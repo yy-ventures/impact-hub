@@ -39,6 +39,13 @@ import "../components/OfficeSpace/OfficeSpace.scss";
 // modal
 import "../components/Shared/MembershipModal/MembershipModal.scss";
 
+// events
+
+import "../components/Events/PastEvents/PastEvents.scss";
+import "../components/Shared/EventCommoncard/EventCommonCard.scss";
+
+
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
