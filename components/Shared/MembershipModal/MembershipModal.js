@@ -96,12 +96,12 @@ const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
                     <div className='membership_modal_form_option_container'>
                         <p>Choose Membership Package</p>
                         <select onChange={handlePackageChange}>
-                            <option value={optionId}>{optionTitle} 1day/month</option>
-                            <option value="2">Hub connect 1day/month</option>
-                            <option value="3">Hub connect 1day/month</option>
-                            <option value="4">Hub connect 1day/month</option>
-                            <option value="5">Hub connect 1day/month</option>
-                            <option value="6">Hub connect 1day/month</option>
+                        <option value={optionId}>{optionTitle} 1day/month</option>
+                            {planData
+                                && planData.map(packagelist => {
+                                    <option value={packagelist.id}>Hub connect 1day/month</option>
+                                })
+                            }
                         </select>
                     </div>
                     <div className='membership_modal_form_textarea'>
