@@ -35,7 +35,9 @@ import "../components/Faq/Faq.scss";
 import "../components/Faq/FaqComponent/FaqComponent.scss";
 // Office Space Page Styles
 import "../components/OfficeSpace/OfficeSpace.scss";
-
+// Event Spaces Page Styles
+import "../components/EventSpaces/EventSpaces.scss";
+import "../components/EventSpaces/SpaceCard/SpacesCard.scss";
 // modal
 import "../components/Shared/MembershipModal/MembershipModal.scss";
 

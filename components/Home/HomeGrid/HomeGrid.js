@@ -6,7 +6,6 @@ import useFetch from "../../Hooks/useFetch";
 const HomeGrid = () => {
   const community = useFetch("/get-community");
   const baseUrlForImages = process.env.baseUrlForImages;
-  console.log(community);
   return (
     <section className="home_image_grid">
       <div className="home_image_grid_header">
