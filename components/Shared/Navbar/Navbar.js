@@ -85,10 +85,10 @@ const Navbar = () => {
               </span>
               <ul>
                 <li>
-                  <Link href="/about">spaces</Link>
+                  <Link href="/event-space/spaces">spaces</Link>
                 </li>
                 <li>
-                  <Link href="/about">send enquire</Link>
+                  <Link href="/event-space/send-enquiry">send enquiry</Link>
                 </li>
               </ul>
             </li>
@@ -99,15 +99,15 @@ const Navbar = () => {
               </span>
               <ul>
                 <li>
-                  <Link href="/about">upcoming events</Link>
+                  <Link href="/events/upcoming-events">upcoming events</Link>
                 </li>
                 <li>
-                  <Link href="/about">past events</Link>
+                  <Link href="/events/past-events">past events</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href="/about">Stories</Link>
+              <Link href="/stories">Stories</Link>
             </li>
           </ul>
         </div>

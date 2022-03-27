@@ -1,0 +1,97 @@
+@import "../../../styles/base.scss";
+.spaces-card {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 73.6rem;
+  height: 30.4rem;
+  margin: 50rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  img {
+    width: 73.6rem;
+    height: 30.4rem;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+    filter: blur(0.5rem);
+  }
+  &_bg-gradient {
+    width: 73.6rem;
+    height: 30.4rem;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.5) 30%);
+    position: absolute;
+    z-index: 1;
+  }
+  &_details {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25rem;
+    height: 30rem;
+    color: white;
+    &_title {
+      font-size: $spacesTitle;
+      font-weight: $bold;
+      background: $primary2;
+      padding: 1.1rem 3.3rem;
+      border-radius: 1rem;
+    }
+    &_size-seating {
+      display: flex;
+      justify-content: space-between;
+      width: 30rem;
+      font-size: $spaceSize;
+      font-weight: $medium;
+      &_size,
+      &_seating {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 12.7rem;
+        height: 4rem;
+        border-radius: 1rem;
+        text-align: center;
+        color: $primary2;
+        background-image: linear-gradient(to right, $limeGreen 50%, white 0);
+        p {
+          min-width: 5rem;
+        }
+      }
+    }
+    &_description {
+      text-align: center;
+    }
+  }
+  &_features {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    // width: 18.7rem;
+    height: 20rem;
+    color: white;
+    p {
+      font-size: $showMoreButton;
+      font-weight: $medium;
+      svg {
+        width: $showMoreButton;
+      }
+    }
+  }
+  &_show-more {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 4.4rem;
+    font-size: $showMoreButton;
+    font-weight: $bold;
+    color: white;
+  }
+}
