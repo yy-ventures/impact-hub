@@ -1,15 +1,11 @@
-import React,{ useState, useRef } from 'react';
+import React,{ useState, useRef,useEffect } from 'react';
 import Button from '../Button/Button';
 import useFetch from "../../Hooks/useFetch";
 
 const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
-    // console.log(optionId);
     const baseUrl='https://ihd.yyventures.org/api';
-
-    const {data} = useFetch("/get-packages/");
-    console.log(planData)
-
-    const [planData, setPlanData] = useState(data)
+    
+    const data = useFetch("/get-packages/1");      
     const [selectedPackageId, setSelectedPackageId] = useState(optionId)
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -35,7 +31,6 @@ const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
         let packageId = e.target.value
         setHubPackage(packageId)
     } 
-    console.log(hubPackage);
 
     // form reference
     const form = useRef(null)
@@ -94,12 +89,14 @@ const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
                         <input type="text" placeholder='Organization or Company' required value={organization} onChange={e => setOrganization(e.target.value)}/>
                     </div>
                     <div className='membership_modal_form_option_container'>
-                        <p>Choose Membership Package</p>
+                        <p>Choose Membership Package
+                        </p>
+                        
                         <select onChange={handlePackageChange}>
                         <option value={optionId}>{optionTitle} 1day/month</option>
-                            {planData
-                                && planData.map(packagelist => {
-                                    <option value={packagelist.id}>Hub connect 1day/month</option>
+                            {data.length>0
+                                && data.map(({id,name},index)=>{
+                                    return <option key={id} value={id}>{name} 1day/month</option>
                                 })
                             }
                         </select>

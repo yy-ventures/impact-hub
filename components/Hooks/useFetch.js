@@ -14,7 +14,6 @@ const useFetch = (endPoint) => {
   // Fetch the data from the api based on the endpoint
   const fetchData = async () => {
     const baseUrl = process.env.baseUrl;
-    console.log(endPoint);
     await fetch(`${baseUrl + endPoint}`, {
       method: "GET",
       headers: {

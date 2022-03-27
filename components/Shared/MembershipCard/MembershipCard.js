@@ -3,6 +3,8 @@ import MembershipModal from "../MembershipModal/MembershipModal";
 import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
+import useFetch from "../../Hooks/useFetch";
+
 const MembershipCard = ({ id, title, price, details, modifierClass }) => {
   // Show or hide membership card
   const [showCard, setShowCard] = useState(false);
