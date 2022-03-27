@@ -2,6 +2,7 @@
 .event-spaces {
   position: relative;
   height: 200rem;
+  overflow: hidden;
   &_bg {
     &_top {
       width: 89.7rem;
@@ -21,5 +22,19 @@
   &_cards {
     position: relative;
     z-index: 2;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    margin: auto;
+    gap: 5rem;
+    &_left,
+    &_right {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
+    &_left {
+      align-items: flex-end;
+    }
   }
 }

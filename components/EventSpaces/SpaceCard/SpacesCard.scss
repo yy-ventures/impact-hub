@@ -4,25 +4,27 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 73.6rem;
+  width: 40rem;
   height: 30.4rem;
-  margin: 50rem;
   border-radius: 2rem;
   overflow: hidden;
+  transition: all 0.5s ease;
   img {
-    width: 73.6rem;
-    height: 30.4rem;
-    object-fit: cover;
+    width: 40rem;
+    object-fit: contain;
     position: absolute;
     z-index: 0;
-    filter: blur(0.5rem);
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
   }
   &_bg-gradient {
-    width: 73.6rem;
+    // width: 73.6rem;
+    width: 40rem;
     height: 30.4rem;
     background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.5) 30%);
     position: absolute;
     z-index: 1;
+    transition: all 0.5s ease;
   }
   &_details {
     position: relative;
@@ -35,20 +37,28 @@
     height: 30rem;
     color: white;
     &_title {
+      position: relative;
+      left: -5rem;
       font-size: $spacesTitle;
       font-weight: $bold;
       background: $primary2;
       padding: 1.1rem 3.3rem;
       border-radius: 1rem;
+      transition: left 0.5s ease;
     }
     &_size-seating {
+      position: relative;
+      bottom: -30rem;
       display: flex;
       justify-content: space-between;
       width: 30rem;
+      opacity: 0;
       font-size: $spaceSize;
       font-weight: $medium;
+      transition: bottom 0.5s ease;
       &_size,
       &_seating {
+        position: relative;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -64,19 +74,32 @@
       }
     }
     &_description {
+      position: relative;
+      bottom: -30rem;
+      opacity: 0;
       text-align: center;
+      transition: bottom 0.5s ease;
+    }
+    button {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      box-shadow: none;
     }
   }
   &_features {
     position: relative;
     z-index: 2;
+    bottom: -30rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    opacity: 0;
     // width: 18.7rem;
     height: 20rem;
     color: white;
+    transition: bottom 0.5s ease;
     p {
       font-size: $showMoreButton;
       font-weight: $medium;
@@ -93,5 +116,54 @@
     font-size: $showMoreButton;
     font-weight: $bold;
     color: white;
+    right: 1rem;
+    svg {
+      width: $showMoreButton;
+    }
+  }
+  &_open {
+    width: 73.6rem;
+    transition: all 0.5s ease;
+    img {
+      width: 73.6rem;
+      filter: blur(0.5rem);
+      object-fit: cover;
+      transition: all 0.5s ease;
+    }
+    .spaces-card {
+      &_bg-gradient {
+        width: 73.6rem;
+        transition: all 0.5s ease;
+      }
+      &_details {
+        &_title {
+          left: 0rem;
+        }
+        &_size-seating,
+        &_description {
+          opacity: 1;
+          bottom: 0rem;
+        }
+        button {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+      &_features {
+        opacity: 1;
+        bottom: 0rem;
+      }
+    }
+  }
+}
+.spaces-card {
+  &_left {
+    flex-direction: row-reverse;
+    .spaces-card_details_title {
+      left: 5rem;
+    }
+    .spaces-card_show-more {
+      left: 1rem;
+    }
   }
 }
