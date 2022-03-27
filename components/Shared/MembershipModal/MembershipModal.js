@@ -1,11 +1,12 @@
-import React,{ useState, useRef,useEffect } from 'react';
+import React,{ useState, useRef } from 'react';
 import Button from '../Button/Button';
 import useFetch from "../../Hooks/useFetch";
 
 const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
     const baseUrl='https://ihd.yyventures.org/api';
     
-    const data = useFetch("/get-packages/1");      
+    const data = useFetch("/get-packages/1");   
+
     const [selectedPackageId, setSelectedPackageId] = useState(optionId)
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -30,7 +31,9 @@ const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
     const handlePackageChange = e => {
         let packageId = e.target.value
         setHubPackage(packageId)
+        setSelectedPackageId(packageId)
     } 
+    console.log('this is pkg_id:-'+hubPackage);
 
     // form reference
     const form = useRef(null)
@@ -45,7 +48,7 @@ const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
         bookingFormData.append('email', email)
         bookingFormData.append('contact_number', contact)
         bookingFormData.append('organization', organization)
-        bookingFormData.append('package_id', hubPackage)
+        bookingFormData.append('package_id', selectedPackageId)
         bookingFormData.append('package_type_id', '1')
         bookingFormData.append('what_you_do', organizationBrief)
         bookingFormData.append('description', whyBecome)
@@ -93,7 +96,7 @@ const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
                         </p>
                         
                         <select onChange={handlePackageChange}>
-                        <option value={optionId}>{optionTitle} 1day/month</option>
+                            <option value={optionId}>{optionTitle} 1day/month</option>
                             {data.length>0
                                 && data.map(({id,name},index)=>{
                                     return <option key={id} value={id}>{name} 1day/month</option>
