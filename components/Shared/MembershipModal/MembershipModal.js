@@ -2,6 +2,8 @@ import React,{ useState, useRef } from 'react';
 import Button from '../Button/Button';
 
 const MembershipModal = ({handleCloseModal, optionTitle}) => {
+const baseUrl='https://ihd.yyventures.org/api';
+    
 
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -12,6 +14,7 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     const [organizationBrief, setOrganizationBrief] = useState('')
     const [whyBecome, setWhyBecome] = useState('')
     const [didHear, setDidHear] = useState('')
+    
     // const packageType = 1
 
     // number input check
@@ -26,42 +29,133 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
 
     // form reference
     const form = useRef(null)
-
-    let bookingFormData = new FormData()
-
-    bookingFormData.append('package_id', hubPackage)
-    bookingFormData.append('first_name', firstName)
-    bookingFormData.append('last_name', lastName)
-    bookingFormData.append('email', email)
-    bookingFormData.append('contact_number', contact)
-    bookingFormData.append('organization', organization)
-    bookingFormData.append('package_id', hubPackage)
-    bookingFormData.append('package_type_id', 1)
-    bookingFormData.append('what_you_do', organizationBrief)
-    bookingFormData.append('description', whyBecome)
-    bookingFormData.append('about', didHear)
-
-    // submit
+    const HandleOnSubmit = (data) => {
+        data.preventDefault()
+        let headers = new Headers({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + window.localStorage.getItem("token"),
+        });
     
-    const HandleOnSubmit = async (e) => {
-        e.preventDefault()
-        // console.log(bookingFormData)
-        await fetch('https://ihd.yyventures.org/api/booking', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': "Bearer " + window.localStorage.getItem("token"),
-            },
-            body: JSON.stringify(bookingFormData)
-        })
-        .then(res => res.json())
-        .then(data => {
-            if(data){
-                form.current.reset()
+        // setIsSubmitting(true);
+        // setIsDisabled(true);
+    
+        let bookingFormData = new FormData();
+            bookingFormData.append('package_id', hubPackage)
+            bookingFormData.append('first_name', firstName)
+            bookingFormData.append('last_name', lastName)
+            bookingFormData.append('email', email)
+            bookingFormData.append('contact_number', contact)
+            bookingFormData.append('organization', organization)
+            bookingFormData.append('package_type_id', 1)
+            bookingFormData.append('what_you_do', organizationBrief)
+            bookingFormData.append('description', whyBecome)
+            bookingFormData.append('about', didHear)
+            console.log(bookingFormData);
+    
+        let requestOptions = {
+          method: "POST",
+          body: bookingFormData,
+          redirect: "follow",
+          headers: headers,
+        };
+    
+        fetch(`${baseUrl}/booking`, requestOptions)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data) {
+              alert("Thanks For Your Application");
+              setIsSubmitting(false);
+              setIsDisabled(false);
+              mainForm.reset();
             }
-        })
-    }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const HandleOnSubmit = async (e) => {
+    //     e.preventDefault()
+
+    //     let bookingFormData = new FormData()
+
+    //     bookingFormData.append('package_id', hubPackage)
+    //     bookingFormData.append('first_name', firstName)
+    //     bookingFormData.append('last_name', lastName)
+    //     bookingFormData.append('email', email)
+    //     bookingFormData.append('contact_number', contact)
+    //     bookingFormData.append('organization', organization)
+    //     bookingFormData.append('package_id', hubPackage)
+    //     bookingFormData.append('package_type_id', 1)
+    //     bookingFormData.append('what_you_do', organizationBrief)
+    //     bookingFormData.append('description', whyBecome)
+    //     bookingFormData.append('about', didHear)
+    //     console.log(bookingFormData);
+    // // submit
+
+
+
+
+
+    //     // console.log(bookingFormData)
+    //     await fetch('https://ihd.yyventures.org/api/booking', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json',
+    //             'Authorization': "Bearer " + window.localStorage.getItem("token"),
+    //         },
+    //         body: JSON.stringify(bookingFormData)
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         if(data){
+    //             form.current.reset()
+    //         }
+    //     })
+    // }
 
     // let newToken = localStorage.getItem("token")
     // console.log(newToken)
