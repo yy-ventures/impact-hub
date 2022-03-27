@@ -3,7 +3,7 @@ import MembershipModal from "../MembershipModal/MembershipModal";
 import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
-const MembershipCard = ({ title, price, details, modifierClass }) => {
+const MembershipCard = ({ id, title, price, details, modifierClass }) => {
   // Show or hide membership card
   const [showCard, setShowCard] = useState(false);
   //  Show or hide membership form
@@ -51,7 +51,7 @@ const MembershipCard = ({ title, price, details, modifierClass }) => {
           <Button text="choose plans" type="secondary" />
         </div>
       </div>
-      {showForm && <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} />}
+      {showForm && <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} optionId={id}/>}
     </div>
   );
 };

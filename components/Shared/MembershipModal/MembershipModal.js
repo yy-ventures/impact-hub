@@ -1,8 +1,16 @@
 import React,{ useState, useRef } from 'react';
 import Button from '../Button/Button';
+import useFetch from "../../Hooks/useFetch";
 
-const MembershipModal = ({handleCloseModal, optionTitle}) => {
+const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
+    // console.log(optionId);
+    const baseUrl='https://ihd.yyventures.org/api';
 
+    const {data} = useFetch("/get-packages/");
+    console.log(planData)
+
+    const [planData, setPlanData] = useState(data)
+    const [selectedPackageId, setSelectedPackageId] = useState(optionId)
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -12,8 +20,7 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
     const [organizationBrief, setOrganizationBrief] = useState('')
     const [whyBecome, setWhyBecome] = useState('')
     const [didHear, setDidHear] = useState('')
-    // const packageType = 1
-
+    
     // number input check
     const handleContact = e => {
         let phoneNumber = e.target.value
@@ -23,30 +30,32 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
             setContact(phoneNumber)
         }
     } 
+    
+    const handlePackageChange = e => {
+        let packageId = e.target.value
+        setHubPackage(packageId)
+    } 
+    console.log(hubPackage);
 
     // form reference
     const form = useRef(null)
-
-    let bookingFormData = new FormData()
-
-    bookingFormData.append('package_id', hubPackage)
-    bookingFormData.append('first_name', firstName)
-    bookingFormData.append('last_name', lastName)
-    bookingFormData.append('email', email)
-    bookingFormData.append('contact_number', contact)
-    bookingFormData.append('organization', organization)
-    bookingFormData.append('package_id', hubPackage)
-    bookingFormData.append('package_type_id', '1')
-    bookingFormData.append('what_you_do', organizationBrief)
-    bookingFormData.append('description', whyBecome)
-    bookingFormData.append('about', didHear)
-    // console.log(JSON.stringify(bookingFormData))
-
-
+    
     // submit
     const HandleOnSubmit = async (e) => {
         e.preventDefault()
-        // console.log(JSON.stringify(bookingFormData))
+        let bookingFormData = new FormData()
+
+        bookingFormData.append('first_name', firstName)
+        bookingFormData.append('last_name', lastName)
+        bookingFormData.append('email', email)
+        bookingFormData.append('contact_number', contact)
+        bookingFormData.append('organization', organization)
+        bookingFormData.append('package_id', hubPackage)
+        bookingFormData.append('package_type_id', '1')
+        bookingFormData.append('what_you_do', organizationBrief)
+        bookingFormData.append('description', whyBecome)
+        bookingFormData.append('about', didHear)
+        
         await fetch('https://ihd.yyventures.org/api/booking', {
             method: 'POST',
             headers: {
@@ -54,9 +63,11 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
                 'Content-Type': 'application/json',
                 'Authorization': "Bearer " + window.localStorage.getItem("token"),
             },
-            body: JSON.stringify(bookingFormData)
+            body: bookingFormData
         })
-        .then(res => res.json())
+        .then(res => {
+            console.log(res)
+        })
         .then(data => {
             if(data){
                 form.current.reset()
@@ -66,6 +77,7 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
 
     // let newToken = localStorage.getItem("token")
     // console.log(newToken)
+
     return ( 
         <section className='membership_modal' onClick={handleCloseModal}>
             <div className='membership_modal_container'>
@@ -83,8 +95,8 @@ const MembershipModal = ({handleCloseModal, optionTitle}) => {
                     </div>
                     <div className='membership_modal_form_option_container'>
                         <p>Choose Membership Package</p>
-                        <select value={hubPackage} onChange={e => setHubPackage(e.target.value)}>
-                            <option value="1">{optionTitle} 1day/month</option>
+                        <select onChange={handlePackageChange}>
+                            <option value={optionId}>{optionTitle} 1day/month</option>
                             <option value="2">Hub connect 1day/month</option>
                             <option value="3">Hub connect 1day/month</option>
                             <option value="4">Hub connect 1day/month</option>

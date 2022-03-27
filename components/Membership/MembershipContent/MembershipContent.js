@@ -9,6 +9,7 @@ const MembershipContent = ({ parentClass }) => {
       index < 3 && (
         <div key={index} className={`${parentClass}_flex`}>
           <MembershipCard
+            id={membershipPlans[index].id}
             title={membershipPlans[index].name}
             price={membershipPlans[index].price}
             details={membershipPlans[index].get_package_features}
