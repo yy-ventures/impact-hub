@@ -7,7 +7,14 @@ const EventSpaces = () => {
     <section className="event-spaces">
       <EventSpacesBg className={"event-spaces_bg_top"} />
       <div className="event-spaces_cards">
-        <SpaceCard />
+        <div className="event-spaces_cards_left">
+          <SpaceCard direction="left" />
+          <SpaceCard direction="left" />
+        </div>
+        <div className="event-spaces_cards_right">
+          <SpaceCard />
+          <SpaceCard />
+        </div>
       </div>
       <EventSpacesBg className={"event-spaces_bg_bottom"} />
     </section>

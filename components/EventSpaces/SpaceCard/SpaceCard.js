@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../Shared/Button/Button";
 import FeatureAvailability from "../../Shared/MembershipCard/MembershipSVGs/FeatureAvailability";
 import ShowMoreSvg from "./ShowMoreSvg";
-const SpaceCard = () => {
+const SpaceCard = ({ direction = "right" }) => {
+  const [showCard, setShowCard] = useState(false);
   return (
-    <div className="spaces-card">
+    <div
+      className={`spaces-card spaces-card_${showCard ? "open" : "closed"} spaces-card_${direction}`}
+    >
       <img src="/images/event-spaces/spaces-card-img.png" alt="" />
       <div className="spaces-card_bg-gradient"></div>
       <div className="spaces-card_details">
@@ -45,7 +48,7 @@ const SpaceCard = () => {
           Tables and Chairs <FeatureAvailability available={true} />
         </p>
       </div>
-      <button className="spaces-card_show-more">
+      <button className="spaces-card_show-more" onClick={() => setShowCard(!showCard)}>
         Show More <ShowMoreSvg />
       </button>
     </div>
