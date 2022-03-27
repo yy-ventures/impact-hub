@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import useToken from "./useToken";
 
 const useFetch = (endPoint) => {
-  let token = null;
+  let token = "";
   if (typeof window !== "undefined") {
     token = localStorage.getItem("token");
+    if (token === "") {
+      token = useToken();
+    }
   }
   // state to hold the data
   const [data, setData] = useState([]);
@@ -34,7 +37,7 @@ const useFetch = (endPoint) => {
   };
   //
   useEffect(() => {
-    if (token !== null) {
+    if (token !== "") {
       fetchData();
     }
   }, [endPoint, token]);

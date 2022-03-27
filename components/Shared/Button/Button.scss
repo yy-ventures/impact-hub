@@ -9,7 +9,8 @@
   border: none;
   outline: none;
   overflow: hidden;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 1.5rem;
+  // padding: 1.5rem 1rem;
   margin: 1.5rem;
   border-radius: 1rem;
   text-transform: capitalize;
@@ -87,6 +88,7 @@
       svg {
         fill: $primary1;
         transform: scaleX(1.1) scaleY(1.8) translateX(-45%) translateY(1rem);
+        top: -1rem;
       }
     }
     // Toggle State

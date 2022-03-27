@@ -1,0 +1,25 @@
+@import "../../styles/base.scss";
+.event-spaces {
+  position: relative;
+  height: 200rem;
+  &_bg {
+    &_top {
+      width: 89.7rem;
+      position: absolute;
+      bottom: 135rem;
+      right: 125rem;
+      z-index: 1;
+    }
+    &_bottom {
+      width: 89.7rem;
+      position: absolute;
+      top: 160rem;
+      left: 120rem;
+      z-index: 1;
+    }
+  }
+  &_cards {
+    position: relative;
+    z-index: 2;
+  }
+}
