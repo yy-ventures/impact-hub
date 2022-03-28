@@ -12,7 +12,7 @@ const HeadingDescription = ({ parentClass, span, heading, content, paragraph, hi
           </h2>
         </div>
       )}
-      {/* show contents if any */}
+      {/* show multiple paragraphs if any */}
       {content && (
         <div className={parentClass + "_body body-global"}>
           {content.map((data, index) => {
