@@ -11,6 +11,7 @@ const MembershipCard = ({ id, title, price, details, modifierClass }) => {
   //  Show or hide membership form
   const [showForm, setShowForm] = useState(false);
   const handleCloseModal = (e) => {
+    e.stopPropagation();
     if (
       e.target.className === "membership_modal" &&
       e.target.className !== "membership_modal_container"
@@ -53,7 +54,9 @@ const MembershipCard = ({ id, title, price, details, modifierClass }) => {
           <Button text="choose plans" type="secondary" />
         </div>
       </div>
-      {showForm && <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} optionId={id}/>}
+      {showForm && (
+        <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} optionId={id} />
+      )}
     </div>
   );
 };
