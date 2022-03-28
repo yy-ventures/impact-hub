@@ -1,9 +1,10 @@
 import React from 'react';
 import nextIcon from '../../../../public/icons/next_icon.png'
+import Slider from "react-slick";
 
-const NextArrow = () => {
+const NextArrow = ({onClick}) => {
     return (
-        <span class="card_next_arrow"><img src={nextIcon.src} /></span>
+        <button type="button" class="card_next_arrow" onClick={onClick}><img src={nextIcon.src} /></button>
     );
 };
 

@@ -5,54 +5,79 @@ import storyThumb from '../../../public/images/story_thumb.png'
 import HeadingDescription from '../../Shared/HeadingDescription/HeadingDescription';
 import PrevArrow from './Arrows/PrevArrow';
 import NextArrow from './Arrows/NextArrow';
+import storyPath from '../../../public/story_path.png';
 
 const PastEvents = () => {
-
     const settings = {
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
         prevArrow: <PrevArrow/>,
-        nextArrow: <NextArrow/>
+        nextArrow: <NextArrow/>,
+        responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                slidesToShow: 1
+              }
+            }
+          ]
       };
 
     return (
         <section className='past_events'>
-            <HeadingDescription span='Past Impact Hub Dhaka' heading='Events'/>
+            {/* event path */}
+            <div className='past_events_path'>
+                <img src={storyPath.src}/>
+            </div>
+
+            {/* past event main */}
+            <div className='past_events_header'>
+                <HeadingDescription span='Past Impact Hub Dhaka' heading='Events'/>
+            </div>
             <div className='past_events_container'>
-                <div className='past_events_container_header'></div>
-                <Slider {...settings}>
-                    <EventCommonCard
-                        title='Workshop on community building and the art of networking'
-                        date='7 September 2020 - Dhaka'
-                        time='3:00pm to 5:00 pm'
-                        type='center'
-                        thumb={storyThumb}
-                    />
-                    <EventCommonCard
-                        title='Workshop on community building and the art of networking'
-                        date='7 September 2020 - Dhaka'
-                        time='3:00pm to 5:00 pm'
-                        type='center'
-                        thumb={storyThumb}
-                    />
-                    <EventCommonCard
-                        title='Workshop on community building and the art of networking'
-                        date='7 September 2020 - Dhaka'
-                        time='3:00pm to 5:00 pm'
-                        type='center'
-                        thumb={storyThumb}
-                    />
-                    <EventCommonCard
-                        title='Workshop on community building and the art of networking'
-                        date='7 September 2020 - Dhaka'
-                        time='3:00pm to 5:00 pm'
-                        type='center'
-                        thumb={storyThumb}
-                    />
-                </Slider>
+                <div className='past_events_container_header'>
+                    <h3>November 2022</h3>
+                </div>
+                <div className='past_events_container_body'>
+                    <Slider {...settings}>
+                        <EventCommonCard
+                            title='Workshop on community building and the art of networking'
+                            date='7 September 2020 - Dhaka'
+                            time='3:00pm to 5:00 pm'
+                            type='center'
+                            thumb={storyThumb}
+                        />
+                        <EventCommonCard
+                            title='Workshop on community building and the art of networking'
+                            date='7 September 2020 - Dhaka'
+                            time='3:00pm to 5:00 pm'
+                            type='center'
+                            thumb={storyThumb}
+                        />
+                        <EventCommonCard
+                            title='Workshop on community building and the art of networking'
+                            date='7 September 2020 - Dhaka'
+                            time='3:00pm to 5:00 pm'
+                            type='center'
+                            thumb={storyThumb}
+                        />
+                        <EventCommonCard
+                            title='Workshop on community building and the art of networking'
+                            date='7 September 2020 - Dhaka'
+                            time='3:00pm to 5:00 pm'
+                            type='center'
+                            thumb={storyThumb}
+                        />
+                    </Slider>
+                </div>
             </div>
             <div className='past_events_footer'>
                 <HeadingDescription
