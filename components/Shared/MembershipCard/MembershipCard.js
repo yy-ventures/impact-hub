@@ -5,7 +5,7 @@ import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
 import useFetch from "../../Hooks/useFetch";
 
-const MembershipCard = ({ id, title, price, details, modifierClass }) => {
+const MembershipCard = ({ id, title, price, details, modifierClass, type = 1 }) => {
   // Show or hide membership card
   const [showCard, setShowCard] = useState(false);
   //  Show or hide membership form
@@ -24,7 +24,9 @@ const MembershipCard = ({ id, title, price, details, modifierClass }) => {
   };
   return (
     <div
-      className={`membership-card ${modifierClass && modifierClass} ${showCard && "show-card"}`}
+      className={`membership-card ${modifierClass ? modifierClass : ""} ${
+        showCard ? "show-card" : ""
+      }`}
       onClick={() => setShowCard(!showCard)}
     >
       <div className="membership-card_plan">
@@ -55,7 +57,12 @@ const MembershipCard = ({ id, title, price, details, modifierClass }) => {
         </div>
       </div>
       {showForm && (
-        <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} optionId={id} />
+        <MembershipModal
+          handleCloseModal={handleCloseModal}
+          optionTitle={title}
+          optionId={id}
+          type={type}
+        />
       )}
     </div>
   );
