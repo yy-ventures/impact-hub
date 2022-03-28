@@ -46,7 +46,11 @@ import "../components/Shared/MembershipModal/MembershipModal.scss";
 import "../components/Events/PastEvents/PastEvents.scss";
 import "../components/Shared/EventCommoncard/EventCommonCard.scss";
 
+// enquiry
+import "../components/EventSpaces/SendEnquiry/SendEnquiry.scss";
 
+// story
+import "../components/Stories/Stories.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

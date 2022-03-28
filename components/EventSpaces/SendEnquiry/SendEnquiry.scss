@@ -1,0 +1,43 @@
+@import '../../../styles/base.scss';
+
+.enquiry{
+    padding: 8rem 15.3rem;
+    &_header{
+        padding: 0 5.3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+        }
+        p{
+            padding: 6.3rem 0 0 10rem;
+            font-size: $para2;
+            color: $primary2;
+            width: 74.1rem;
+        }
+    }
+    &_body{
+        padding: 10.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &_form{
+            width: 108rem;
+            background-color: $formBackground;
+            border-radius: 2.9rem;
+            &_header{
+                padding: 8rem 13rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                h3{
+                    font-size: 3rem;
+                    color: $placeholder;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}
