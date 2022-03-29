@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Button from "../Button/Button";
 import useFetch from "../../Hooks/useFetch";
+import usePost from "../../Hooks/usePost";
 
 const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
   // get package details
@@ -36,9 +37,6 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
     setHubPackage(packageId);
   };
 
-  // form reference
-  const form = useRef(null);
-
   // submit
   const HandleOnSubmit = async (e) => {
     e.preventDefault();
@@ -54,6 +52,8 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
     bookingFormData.append("what_you_do", organizationBrief);
     bookingFormData.append("description", whyBecome);
     bookingFormData.append("about", didHear);
+    // const response = usePost("/booking", bookingFormData, form);
+    // console.log(response);
 
     await fetch("https://ihd.yyventures.org/api/booking", {
       method: "POST",
@@ -63,11 +63,9 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
       body: bookingFormData,
     })
       .then((res) => {
-        console.log(res);
-      })
-      .then((data) => {
-        if (data) {
-          form.current.reset();
+        console.log(res.status);
+        if (res.status === 200) {
+          alert("We have received your application");
         }
       })
       .catch((err) => console.log(err));
@@ -76,7 +74,7 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
   return (
     <section className="membership_modal" onClick={handleCloseModal}>
       <div className="membership_modal_container">
-        <form className="membership_modal_form" onSubmit={HandleOnSubmit} ref={form}>
+        <form className="membership_modal_form" onSubmit={HandleOnSubmit}>
           <div className="membership_modal_form_input_container">
             <input
               type="text"
