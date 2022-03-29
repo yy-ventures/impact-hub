@@ -1,5 +1,6 @@
 @import "../../../styles/base.scss";
 .heading-global {
+  @include headingLine("left", center);
   font-size: $headingPrimary;
   font-weight: $bold;
   color: $primary2;

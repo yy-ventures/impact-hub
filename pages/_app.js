@@ -51,6 +51,8 @@ import "../components/EventSpaces/SendEnquiry/SendEnquiry.scss";
 
 // story
 import "../components/Stories/Stories.scss";
+// story details
+import '../components/StoryDetails/StoryDetails.scss';
 
 // react clock
 import 'react-time-picker/dist/TimePicker.css'

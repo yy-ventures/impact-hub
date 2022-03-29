@@ -4,7 +4,6 @@ import MembershipCard from "../../Shared/MembershipCard/MembershipCard";
 const MembershipContent = ({ parentClass }) => {
   //State to hold Membership Data
   const membershipPlans = useFetch("/get-packages/1");
-  console.log(membershipPlans);
   return membershipPlans.map((data, index) => {
     return (
       index < 3 && (
@@ -17,6 +16,7 @@ const MembershipContent = ({ parentClass }) => {
             modifierClass={`flex-card-${index * 2 + 1}`}
           />
           <MembershipCard
+            id={membershipPlans[index + 3].id}
             title={membershipPlans[index + 3].name}
             price={membershipPlans[index + 3].price}
             details={membershipPlans[index + 3].get_package_features}
