@@ -37,6 +37,7 @@ const OfficeSpace = () => {
             index % 2 == 0 && (
               <div key={index} className="officespace_container_grid_cards_flex">
                 <MembershipCard
+                  type={2}
                   title={spaces[index].title}
                   price={spaces[index].price}
                   duration={spaces[index].duration}
@@ -44,6 +45,7 @@ const OfficeSpace = () => {
                   modifierClass={`flex-card-${index + 1}`}
                 />
                 <MembershipCard
+                  type={2}
                   title={spaces[index + 1].title}
                   price={spaces[index + 1].price}
                   duration={spaces[index + 1].duration}

@@ -2,17 +2,17 @@ import React, { useState, useRef, useEffect } from "react";
 import Button from "../Button/Button";
 import useFetch from "../../Hooks/useFetch";
 
-const MembershipModal = ({ handleCloseModal, optionTitle, optionId }) => {
-  const baseUrl = "https://ihd.yyventures.org/api";
-
-  const data = useFetch("/get-packages/1");
+const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
+  // get package details
+  const data = useFetch(`/get-packages/${type}`);
+  // states to hold Form data
   const [selectedPackageId, setSelectedPackageId] = useState(optionId);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
   const [organization, setOrganization] = useState("");
-  const [hubPackage, setHubPackage] = useState("");
+  const [hubPackage, setHubPackage] = useState(optionId);
   const [organizationBrief, setOrganizationBrief] = useState("");
   const [whyBecome, setWhyBecome] = useState("");
   const [didHear, setDidHear] = useState("");
@@ -26,10 +26,13 @@ const MembershipModal = ({ handleCloseModal, optionTitle, optionId }) => {
       setContact(phoneNumber);
     }
   };
-
+  // Select a package
   const handlePackageChange = (e) => {
     let packageId = e.target.value;
-    console.log(packageId);
+    if (packageId == "") {
+      alert("Please select a package");
+      return;
+    }
     setHubPackage(packageId);
   };
 
@@ -51,13 +54,10 @@ const MembershipModal = ({ handleCloseModal, optionTitle, optionId }) => {
     bookingFormData.append("what_you_do", organizationBrief);
     bookingFormData.append("description", whyBecome);
     bookingFormData.append("about", didHear);
-    console.log(bookingFormData);
 
     await fetch("https://ihd.yyventures.org/api/booking", {
       method: "POST",
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
       body: bookingFormData,
@@ -72,9 +72,6 @@ const MembershipModal = ({ handleCloseModal, optionTitle, optionId }) => {
       })
       .catch((err) => console.log(err));
   };
-
-  // let newToken = localStorage.getItem("token")
-  // console.log(newToken)
 
   return (
     <section className="membership_modal" onClick={handleCloseModal}>
@@ -122,13 +119,14 @@ const MembershipModal = ({ handleCloseModal, optionTitle, optionId }) => {
             />
           </div>
           <div className="membership_modal_form_option_container">
-            <p>Choose Membership Package</p>
+            <p>Choose {type === 1 ? "Membership" : "Office Space"} Package</p>
 
-            <select onChange={handlePackageChange} defaultValue={optionId}>
+            <select onChange={handlePackageChange}>
+              <option value="">Your Packages</option>
               {data.length > 0 &&
-                data.map(({ id, name }, index) => {
+                data.map(({ id, name }) => {
                   return (
-                    <option key={id} value={id}>
+                    <option key={id} value={id} selected={id === optionId}>
                       {name} 1day/month
                     </option>
                   );

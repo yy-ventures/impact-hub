@@ -1,0 +1,32 @@
+@import '../../styles//base.scss';
+
+.stories{
+    padding: 10rem 12.3rem;
+    &_path{
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: -1;
+        width: 75.7rem;
+        height: 61.8rem;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &_main{
+        &_header{
+            padding: 0 7.4rem;
+        }
+        &_body{
+            padding: 4.9rem 5.1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10rem;
+            justify-items: center;
+            @media screen and (max-width: 600px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
