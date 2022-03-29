@@ -54,10 +54,6 @@ import "../components/Stories/Stories.scss";
 // story details
 import '../components/StoryDetails/StoryDetails.scss';
 
-// react clock
-import 'react-time-picker/dist/TimePicker.css'
-// import 'react-clock/dist/Clock.css'
-
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
