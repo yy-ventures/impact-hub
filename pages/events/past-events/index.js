@@ -3,6 +3,7 @@ import React from 'react';
 import PastEvents from '../../../components/Events/PastEvents/PastEvents';
 
 const PastEventContainer = () => {
+    
     return (
         <>
             <Head>

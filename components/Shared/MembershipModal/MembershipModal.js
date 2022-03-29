@@ -33,8 +33,7 @@ const MembershipModal = ({handleCloseModal, optionTitle, optionId}) => {
         setHubPackage(packageId)
         setSelectedPackageId(packageId)
     } 
-    console.log('this is pkg_id:-'+hubPackage);
-
+    
     // form reference
     const form = useRef(null)
     
