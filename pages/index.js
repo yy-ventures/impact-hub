@@ -23,7 +23,8 @@ export default function Home() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email: "admin@example.com", password: "yy@123456" }),
-    }).then((res) => res.json())
+    })
+      .then((res) => res.json())
       .then((data) => setToken(data.data.token));
   };
 
@@ -35,11 +36,12 @@ export default function Home() {
   if (typeof window !== "undefined") {
     localStorage.setItem("token", token);
   }
-  
+
   return (
     <div>
       <Head>
         <title>Impact Hub Dhaka</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
           content="Impact Hub Dhaka brings together entrepreneurs, enablers, young talents and professionals from all across Bangladesh to create a vibrant community."

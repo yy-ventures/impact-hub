@@ -38,13 +38,12 @@
     color: white;
     &_title {
       position: relative;
-      left: -5rem;
       font-size: $spacesTitle;
       font-weight: $bold;
       background: $primary2;
       padding: 1.1rem 3.3rem;
-      border-radius: 1rem;
       transition: left 0.5s ease;
+      width: max-content;
     }
     &_size-seating {
       position: relative;
@@ -80,11 +79,21 @@
       text-align: center;
       transition: bottom 0.5s ease;
     }
-    button {
+    .btn-component {
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.5s ease;
       box-shadow: none;
+      svg {
+        fill: $limeGreen;
+      }
+      &:hover {
+        svg {
+          fill: white;
+        }
+        color: $primary2;
+        background: $limeGreen;
+      }
     }
   }
   &_features {
@@ -121,49 +130,67 @@
       width: $showMoreButton;
     }
   }
-  &_open {
-    width: 73.6rem;
-    transition: all 0.5s ease;
-    img {
-      width: 73.6rem;
-      filter: blur(0.5rem);
-      object-fit: cover;
-      transition: all 0.5s ease;
-    }
-    .spaces-card {
-      &_bg-gradient {
-        width: 73.6rem;
-        transition: all 0.5s ease;
-      }
-      &_details {
-        &_title {
-          left: 0rem;
-        }
-        &_size-seating,
-        &_description {
-          opacity: 1;
-          bottom: 0rem;
-        }
-        button {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
-      &_features {
-        opacity: 1;
-        bottom: 0rem;
-      }
-    }
-  }
 }
+// Styles for right aligned and left aligned card
 .spaces-card {
   &_left {
     flex-direction: row-reverse;
     .spaces-card_details_title {
-      left: 5rem;
+      align-self: flex-end;
+      border-radius: 1rem 0rem 0rem 1rem;
+      // transition: all 1s ease;
     }
     .spaces-card_show-more {
+      flex-direction: row-reverse;
       left: 1rem;
+    }
+  }
+  &_right {
+    .spaces-card_details_title {
+      align-self: flex-start;
+      border-radius: 0rem 1rem 1rem 0rem;
+      // transition: all 1s ease;
+    }
+    .spaces-card_show-more {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+// Styles when card opens
+.spaces-card_open {
+  width: 73.6rem;
+  transition: all 0.5s ease;
+  img {
+    width: 73.6rem;
+    filter: blur(0.5rem);
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+  .spaces-card {
+    &_bg-gradient {
+      width: 73.6rem;
+      transition: all 0.5s ease;
+    }
+    &_details {
+      &_title {
+        align-self: center;
+        border-radius: 1rem;
+      }
+      &_size-seating,
+      &_description {
+        opacity: 1;
+        bottom: 0rem;
+      }
+      button {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    &_features {
+      opacity: 1;
+      bottom: 0rem;
     }
   }
 }

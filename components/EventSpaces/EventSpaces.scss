@@ -1,23 +1,30 @@
 @import "../../styles/base.scss";
 .event-spaces {
   position: relative;
-  height: 200rem;
+  // height: 200rem;
+  height: fit-content;
   overflow: hidden;
+  padding: 5rem 10rem;
   &_bg {
     &_top {
       width: 89.7rem;
       position: absolute;
-      bottom: 135rem;
+      bottom: 35rem;
       right: 125rem;
       z-index: 1;
     }
     &_bottom {
       width: 89.7rem;
       position: absolute;
-      top: 160rem;
+      top: 50rem;
       left: 120rem;
       z-index: 1;
     }
+  }
+  &_heading {
+    position: relative;
+    z-index: 2;
+    @include headingLine("left", flex-start);
   }
   &_cards {
     position: relative;
