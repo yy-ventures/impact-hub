@@ -2,18 +2,21 @@ import React, { useState } from 'react';
 import Button from '../../../Shared/Button/Button';
 
 const SendEnquiryInput = () => {
-    const [startTime, setStartTime] = useState('00:00');
-    const [endTime, setEndTime] = useState('00:00');
-
+    
     // form state
-    const [eventPackage, setEventPackage] = useState(1)
+    const [eventPackage, setEventPackage] = useState('event_space')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [contact, setContact] = useState('')
     const [date, setDate] = useState('')
 
+    //start time & end time
+    const [startTime, setStartTime] = useState('00:00');
+    const [endTime, setEndTime] = useState('00:00');
 
+    // error checking
+    const [error, setError] = useState('')
 
     // number input check
     const handleContact = e => {
@@ -28,45 +31,53 @@ const SendEnquiryInput = () => {
     // submit
     const HandleOnSubmit = async (e) => {
         e.preventDefault()
-        let bookingFormData = new FormData()
+        let sendEnquiry = new FormData()
 
-        bookingFormData.append('first_name', firstName)
-        bookingFormData.append('last_name', lastName)
-        bookingFormData.append('email', email)
-        bookingFormData.append('contact_number', contact)
-        bookingFormData.append('organization', organization)
-        bookingFormData.append('package_id', selectedPackageId)
-        bookingFormData.append('package_type_id', '1')
-        bookingFormData.append('what_you_do', organizationBrief)
-        bookingFormData.append('description', whyBecome)
-        bookingFormData.append('about', didHear)
+        sendEnquiry.append('space', eventPackage)
+        sendEnquiry.append('first_name', firstName)
+        sendEnquiry.append('last_name', lastName)
+        sendEnquiry.append('email', email)
+        sendEnquiry.append('phone', contact)
+        sendEnquiry.append('date', date)
+        sendEnquiry.append('start_time', startTime)
+        sendEnquiry.append('end_time', endTime)
         
-        await fetch('https://ihd.yyventures.org/api/booking', {
+        await fetch('https://ihd.yyventures.org/api/space-booking', {
             method: 'POST',
             headers: {
                 'Authorization': "Bearer " + window.localStorage.getItem("token"),
             },
-            body: bookingFormData
+            body: sendEnquiry
         })
-        .then(res => {
-            console.log(res)
-        })
+        .then((res) => res.json())
         .then(data => {
-            if(data){
-                form.current.reset()
+            if (data.success) {
+                alert('Thank you! we have received your query!')
+                setStartTime('00:00')
+                setEndTime('00:00')
+                setFirstName('')
+                setLastName('')
+                setEmail('')
+                setContact('')
+                setDate('')
+                setEventPackage('event_space')
             }
-        })
+            if(!data.success) {
+                setError(data.errors)
+            }
+        }) 
+        .catch(err => err);
     } 
     return (
         <form onSubmit={HandleOnSubmit}>
             <div className='enquiry_body_form_header'>
                 <div><h3>Space you would like to rent</h3></div>
                 <div>
-                    <select onChange={e => setEventPackage(e.target.value)}>
-                        <option selected value='1'>Event Space</option>
-                        <option value='2'>Hub Cafe</option>
-                        <option value='3'>Workshop Space</option>
-                        <option value='4'>Board Meeting Room</option>
+                    <select value={eventPackage} onChange={e => setEventPackage(e.target.value)}>
+                        <option selected value='event_space'>Event Space</option>
+                        <option value='hub_space'>Hub Cafe</option>
+                        <option value='workshop_space'>Workshop Space</option>
+                        <option value='board_meeting_room'>Board Meeting Room</option>
                     </select>
                 </div>
             </div>
@@ -94,11 +105,14 @@ const SendEnquiryInput = () => {
                     <h3>End Time</h3>
                 </div>
                 <div className='enquiry_body_form_body_container'>
-                    <input type='time' value={endTime} onChange={e => setLastName(e.target.value)} />
+                    <input type='time' value={endTime} onChange={e => setEndTime(e.target.value)} />
                 </div>
             </div>
             <div className='enquiry_body_form_footer'>
                 <Button text='Submit' type='secondary' />
+            </div>
+            <div>
+                <p>{error}</p>
             </div>
         </form>
     );

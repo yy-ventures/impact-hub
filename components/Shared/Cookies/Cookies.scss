@@ -1,6 +1,43 @@
 @import '../../../styles/base.scss';
 
 .cookie_section{
-    padding: 2.5%;
-    background-color: rgba($color: #fff, $alpha: 0.4);
+    padding: 1.5% 2.5%;
+    background-color: $primary1;
+    z-index: 110;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    animation: cookie 1s linear;
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+    p{
+        color: $white;
+        font-weight: $bold;
+        font-size: $para1;
+    }
+    button{
+        outline: 0;
+        border: 0;
+        padding: 1rem 2rem;
+        background-color: $white;
+        color: $primary1;
+        font-weight: $bold;
+    }
+}
+
+
+@keyframes cookie {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }

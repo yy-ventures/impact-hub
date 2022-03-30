@@ -11,6 +11,7 @@ import Cookies from "../components/Shared/Cookies/Cookies";
 export default function Home() {
   // const token = useToken();
   const [token, setToken] = useState(null);
+  const [cookie, setCookie] = useState(true)
 
   // Get token value from the api
   const HandleToken = async () => {
@@ -37,6 +38,8 @@ export default function Home() {
     localStorage.setItem("token", token);
   }
 
+
+
   return (
     <div>
       <Head>
@@ -54,7 +57,7 @@ export default function Home() {
       <HomeImpacts />
       <HomeGrid />
       <HomeNewsLetter />
-      {/* <Cookies/> */}
+      {cookie && <Cookies setCookie={setCookie}/>}
     </div>
   );
 }

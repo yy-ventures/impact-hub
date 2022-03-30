@@ -6,6 +6,7 @@ import useFetch from '../Hooks/useFetch';
 
 const Stories = () => {
     const stories = useFetch('/get-stories')
+    
     return (
         <section className='stories'>
             {/* event path */}
