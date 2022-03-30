@@ -1,8 +1,8 @@
 import React from "react";
 
-const ShowMoreSvg = () => {
+const ShowMoreSvg = ({ className }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.858 13.421">
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.858 13.421">
       <path
         id="Icon_awesome-caret-down"
         data-name="Icon awesome-caret-down"
