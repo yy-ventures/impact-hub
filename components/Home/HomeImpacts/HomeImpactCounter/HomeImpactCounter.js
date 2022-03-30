@@ -11,7 +11,7 @@ const HomeImpactCounter = ({ counter, index }) => {
         <div>
           <h2>{count > 10000 ? Math.abs(count / 1000) + "K" : count}</h2>
         </div>
-        <div>
+        <div className="text">
           <p>{title1}</p>
           <p>{title2}</p>
         </div>
