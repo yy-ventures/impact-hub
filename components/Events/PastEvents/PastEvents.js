@@ -7,6 +7,7 @@ import PrevArrow from './Arrows/PrevArrow';
 import NextArrow from './Arrows/NextArrow';
 import storyPath from '../../../public/story_path.png';
 
+
 const PastEvents = () => {
     const settings = {
         dots: false,
@@ -17,30 +18,30 @@ const PastEvents = () => {
         centerMode: true,
         autoplay: true,
         autoplaySpeed: 2000,
-        prevArrow: <PrevArrow/>,
-        nextArrow: <NextArrow/>,
+        prevArrow: <PrevArrow />,
+        nextArrow: <NextArrow />,
         responsive: [
             {
-              breakpoint: 600,
-              settings: {
-                arrows: false,
-                centerMode: true,
-                slidesToShow: 1
-              }
+                breakpoint: 600,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    slidesToShow: 1
+                }
             }
-          ]
-      };
-
+        ]
+    };
+    
     return (
         <section className='past_events'>
             {/* event path */}
             <div className='past_events_path'>
-                <img src={storyPath.src}/>
+                <img src={storyPath.src} />
             </div>
 
             {/* past event main */}
             <div className='past_events_header'>
-                <HeadingDescription span='Past Impact Hub Dhaka' heading='Events'/>
+                <HeadingDescription span='Past Impact Hub Dhaka' heading='Events' />
             </div>
             <div className='past_events_container'>
                 <div className='past_events_container_header'>

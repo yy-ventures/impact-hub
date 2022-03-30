@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import EventCommonCard from '../Shared/EventCommoncard/EventCommonCard';
 import HeadingDescription from '../Shared/HeadingDescription/HeadingDescription';
-import storyThumb from '../../public/images/story_thumb.png'
 import storyPath from '../../public/story_path.png';
+import useFetch from '../Hooks/useFetch';
 
 const Stories = () => {
+    const stories = useFetch('/get-stories')
     return (
         <section className='stories'>
             {/* event path */}
@@ -16,27 +17,16 @@ const Stories = () => {
                     <HeadingDescription span='Impact Hub' heading='Stories'/>
                 </div>
                 <div className='stories_main_body'>
-                    <EventCommonCard
-                        title='Creating A Bangladesh Where Everyone Thrives'
-                        date='7 September 2020 - dhaka'
-                        summary='This article was first published on The Prestige Magazine   
-                        1. Please tell us about Impact Hub Dhaka and how it has formed? Impact Hub'
-                        thumb={storyThumb}
-                    />
-                    <EventCommonCard
-                        title='Creating A Bangladesh Where Everyone Thrives'
-                        date='7 September 2020 - dhaka'
-                        summary='This article was first published on The Prestige Magazine   
-                        1. Please tell us about Impact Hub Dhaka and how it has formed? Impact Hub'
-                        thumb={storyThumb}
-                    />
-                    <EventCommonCard
-                        title='Creating A Bangladesh Where Everyone Thrives'
-                        date='7 September 2020 - dhaka'
-                        summary='This article was first published on The Prestige Magazine   
-                        1. Please tell us about Impact Hub Dhaka and how it has formed? Impact Hub'
-                        thumb={storyThumb}
-                    />
+
+                    {stories.map(story =>
+                        <EventCommonCard
+                            title={story.title}
+                            date={story.location}
+                            thumb={`https://ihd.yyventures.org${story.image_path}`}
+                            id={story.id}
+                        />
+                    )}
+                    
                 </div>
             </div>
         </section>
