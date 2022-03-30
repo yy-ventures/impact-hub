@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 
 const HomeNewsLetterForm = () => {
     const [email, setEmail] = useState('')
-    const [subject, setSubject] = useState('')
+    const [subject, setSubject] = useState('first_choice')
     const [feedback, setFeedback] = useState('')
+
+    // error message
+    const [error, setError] = useState('')
 
     const HandleSubmit = async e => {
         e.preventDefault()
@@ -11,35 +14,44 @@ const HomeNewsLetterForm = () => {
 
         newsLetterData.append('email', email)
         newsLetterData.append('subject', subject)
-        newsLetterData.append('feedback', feedback)
+        newsLetterData.append('message', feedback)
 
-        await fetch("https://ihd.yyventures.org/api/booking", {
+        await fetch("http://ihd.yyventures.org/api/help", {
             method: "POST",
             headers: {
                 Authorization: "Bearer " + window.localStorage.getItem("token"),
             },
             body: newsLetterData,
         })
-            .then((res) => {
-                if (res.success) {
-                    alert('Thank you! we have received your query!')
-                    setEmail('')
-                    setSubject('')
-                    setFeedback('')
-                }
-            })
-            .catch((err) => console.log(err));
+        .then((res) => res.json())
+        .then(data => {
+            if (data.success) {
+                alert('Thank you! we have received your query!')
+                setEmail('')
+                setSubject('')
+                setFeedback('')
+            }
+            if(!data.success) {
+                setError(data.errors)
+            }
+        }) 
+        .catch(err => err);
     }
     return (
         <div className='home_news_letter_left_form'>
             <form onSubmit={HandleSubmit}>
                 <input type="email" placeholder='Email Address' value={email} onChange={e => setEmail(e.target.value)} required />
-                <input type="text" placeholder='Subject' value={subject} onChange={e => setSubject(e.target.value)} required />
+                <select value={subject} onChange={e => setSubject(e.target.value)} required>
+                    <option value='first_choice'>First Choice</option>
+                    <option value='second_choice'>Second Choice</option>
+                    <option value='third_choice'>Third Choice</option>
+                </select>
                 <textarea type="text" placeholder='Give us your feedback' value={feedback} onChange={e => setFeedback(e.target.value)} required />
                 <div>
                     <button type='submit'>Submit</button>
                 </div>
             </form>
+            <p>{error}</p>
         </div>
     );
 };
