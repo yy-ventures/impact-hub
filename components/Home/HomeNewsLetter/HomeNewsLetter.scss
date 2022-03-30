@@ -8,6 +8,12 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10rem;
 
+    @include response(phone){
+        height: min-content;
+        grid-template-columns: 1fr;
+        padding: 5rem;
+    }
+
     &_left{
         position: relative;
         div{
@@ -92,6 +98,10 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+
+            @include response(phone){
+                align-items: center;
+            }
         }
         &_header{
             h2{
@@ -119,6 +129,10 @@
             border-radius: 5px;
             margin-left: auto;
             cursor: pointer;
+
+            @include response(phone){
+                margin-right: auto;
+            }
         }
         &_form{
             position: relative;
