@@ -56,7 +56,7 @@
             width: 43.8rem;
             height: 32.5rem;
             animation: form 0.3s;
-            input, textarea{
+            input, textarea, select{
                 outline: 0;
                 border: 0;
                 border-bottom: 1px solid #707070;
@@ -135,7 +135,7 @@
             height: 23.92rem;
             position: relative;
             animation: form 0.3s;
-            input, textarea{
+            input, textarea, select{
                 outline: 0;
                 border: 0;
                 border-bottom: 1px solid #707070;

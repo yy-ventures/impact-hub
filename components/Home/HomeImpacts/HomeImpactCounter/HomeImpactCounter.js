@@ -5,6 +5,7 @@ const HomeImpactCounter = ({ counter, index }) => {
   const splitTitle = title.split(/(\s+)/);
   const title1 = splitTitle[0];
   const title2 = splitTitle[2];
+  
   return (
     <div className="home_impacts_body_counter_card">
       <div className={`home_impacts_body_counter_card_${index + 1}`}>
