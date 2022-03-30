@@ -17,6 +17,12 @@
       flex-direction: column;
     }
     &_left {
+
+      @include response(phone){
+        padding-inline: 10rem;
+        align-self: flex-start;
+      }
+
       h4 {
         font-size: $subHeading3;
         color: $primary2;
@@ -99,12 +105,19 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      // img{
+      //   @include response(phone){
+      //     height: 50rem;
+      //   }        
+      // }
+
       &_1{
         height: 50.1rem;
         width: 46.6rem;
         cursor: zoom-in;
         @media screen and (max-width: 600px) {
-          height: 26.3rem;
+          height: 80rem;
           width: 100%;
           margin-top: 2.6rem;
         }
@@ -119,7 +132,7 @@
         width: 46.6rem;
         cursor: zoom-in;
         @media screen and (max-width: 600px) {
-          height: 26.3rem;
+          height: 80rem;
           width: 100%;
           margin-top: 2.6rem;
         }
@@ -134,7 +147,7 @@
         width: 46.6rem;
         cursor: zoom-in;
         @media screen and (max-width: 600px) {
-          height: 26.3rem;
+          height: 80rem;
           width: 100%;
           margin-top: 2.6rem;
         }
@@ -149,7 +162,7 @@
         width: 46.6rem;
         cursor: zoom-in;
         @media screen and (max-width: 600px) {
-          height: 26.3rem;
+          height: 80rem;
           width: 100%;
           margin-top: 2.6rem;
         }
@@ -164,7 +177,7 @@
         width: 46.6rem;
         cursor: zoom-in;
         @media screen and (max-width: 600px) {
-          height: 26.3rem;
+          height: 80rem;
           width: 100%;
           margin-top: 2.6rem;
         }
@@ -179,7 +192,7 @@
         width: 46.6rem;
         cursor: zoom-in;
         @media screen and (max-width: 600px) {
-          height: 26.3rem;
+          height: 80rem;
           width: 100%;
           margin-top: 2.6rem;
         }
@@ -194,7 +207,7 @@
         width: 46.6rem;
         cursor: zoom-in;
         @media screen and (max-width: 600px) {
-          height: 26.3rem;
+          height: 80rem;
           width: 100%;
           margin-top: 2.6rem;
         }
