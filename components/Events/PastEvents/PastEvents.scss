@@ -19,31 +19,33 @@
         padding-left: 10.5rem;
     }
     &_container{
-        padding: 0 9rem 10.5rem 9rem;
-        margin-top: 3.5rem;
         border: 1px solid #707070;
         border-radius: 2.9rem;
-        position: relative;
-        &_header{
-            padding: 5.25rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            h3{
-                font-size: $para1;
-                color: $primary2;
-                font-weight: $bold;
+        margin-top: 3.5rem;
+        &_data{
+            padding: 0 9rem 10.5rem 9rem;
+            position: relative;
+            &_header{
+                padding: 5.25rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                h3{
+                    font-size: $para1;
+                    color: $primary2;
+                    font-weight: $bold;
+                }
             }
-        }
-        .card_prev_arrow{
-            position: absolute;
-            top: 50%;
-            left: -5%;
-        }
-        .card_next_arrow{
-            position: absolute;
-            top: 50%;
-            right: -5%;
+            .card_prev_arrow{
+                position: absolute;
+                top: 50%;
+                left: -5%;
+            }
+            .card_next_arrow{
+                position: absolute;
+                top: 50%;
+                right: -5%;
+            }
         }
     }
     &_footer{

@@ -6,6 +6,7 @@ import usePost from "../../Hooks/usePost";
 const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
   // get package details
   const data = useFetch(`/get-packages/${type}`);
+  
   // states to hold Form data
   const [selectedPackageId, setSelectedPackageId] = useState(optionId);
   const [firstName, setFirstName] = useState("");

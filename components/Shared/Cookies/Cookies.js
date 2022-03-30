@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Cookies = () => {
+const Cookies = ({setCookie}) => {
+    const handleOffCookie = () => {
+        setCookie(false)
+    }
     return (
         <section className='cookie_section'>
-            <div>
-                
-            </div>
+            <p>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.</p>  
+            <button onClick={handleOffCookie}>Accept</button>
         </section>
     );
 };
