@@ -3,11 +3,15 @@ import HomeImpactCounter from "./HomeImpactCounter/HomeImpactCounter";
 import counterData from "../../../static/Data/counter.json";
 import useFetch from "../../Hooks/useFetch";
 
+// LAYOUT
+import layout1 from '../../../public/images/home/impact-layout.svg';
+
 const HomeImpacts = () => {
   const counterData = useFetch("/get-global-networks");
 
   return (
     <section className="home_impacts">
+      <div className="home_impacts_layout"><img src={layout1.src}/></div>
       <div className="home_impacts_header">
         <h4>Want to Know</h4>
         <h2>
