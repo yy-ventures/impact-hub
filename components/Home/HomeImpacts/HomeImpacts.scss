@@ -132,12 +132,13 @@
                         font-size: 25rem;
                     }
                 }
-                p{
-                    &:not(:last-child){
-                        margin-top: 4rem;
-                    }
-                    @include response(phone){
+                .text{
+                    p{
                         font-size: 3rem;
+                        font-weight: 500;
+                        &:not(:last-child){
+                            margin-top: 4rem;
+                        }
                     }
                 }
             }
@@ -178,12 +179,14 @@
                 }
                 .text{
                     align-self: flex-end;
-
+                    
                     @include response(phone){
                         align-self: center;
                         margin-left: 28rem;
                     }
                     p{
+                        font-size: 3rem;
+                        font-weight: 500;
                         @include response(phone){
                             font-size: 3rem;
                         }
@@ -229,9 +232,13 @@
                         font-size: 25rem;
                     }
                 }
-                p{
-                    @include response(phone){
+                .text{
+                    p{
                         font-size: 3rem;
+                        font-weight: 500;
+                        @include response(phone){
+                            font-size: 3rem;
+                        }
                     }
                 }
             }
@@ -278,6 +285,7 @@
                     }
                     p{
                         font-size: 3rem;
+                        font-weight: 500;
                     }
                 }
             }

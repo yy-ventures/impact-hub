@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+
+// COMPONENT
 import HomeNewsLetterForm from './HomeNewsLetterForm';
 import HomeNewsLetterSubscribeForm from './HomeNewsLetterSubscribeForm';
+import Button from '../../Shared/Button/Button';
+
+// ICON
 import crossBtn from '../../../public/cross.svg'
 
 const HomeNewsLetter = () => {
