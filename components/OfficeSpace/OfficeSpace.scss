@@ -1,7 +1,7 @@
 @import "../../styles/base.scss";
 .officespace_container {
   position: relative;
-  height: 150rem;
+  height: 155rem;
   @include response(vp-800) {
     height: 180rem;
   }
@@ -70,12 +70,15 @@
     }
   }
   &_grid_cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     justify-items: space-between;
     width: fit-content;
     gap: 3rem;
     margin: auto;
+    @include response(phone) {
+      flex-direction: column;
+    }
     @each $color in $cardColors {
       $i: index(
         $list: $cardColors,
