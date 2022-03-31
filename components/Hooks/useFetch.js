@@ -17,7 +17,6 @@ const useFetch = (endPoint) => {
     await fetch(`${baseUrl + endPoint}`, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },

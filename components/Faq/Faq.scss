@@ -3,7 +3,7 @@
 .faq_container {
   padding: 12rem 15.2rem 10rem 17.6rem;
   @include response(phone) {
-    padding: 12rem 12rem 10rem 12rem;
+    padding: 12rem 10rem 10rem 10rem;
   }
 
   &_content {
@@ -12,6 +12,7 @@
     padding-bottom: 11.5rem;
     @include response(phone) {
       flex-direction: column;
+      gap: 10rem;
     }
     &_left {
       &_heading {
@@ -42,8 +43,7 @@
         img {
           right: 0;
           @include response(vp-800) {
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
           }
         }
         h1 {

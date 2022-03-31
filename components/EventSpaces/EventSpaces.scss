@@ -1,7 +1,6 @@
 @import "../../styles/base.scss";
 .event-spaces {
   position: relative;
-  // height: 200rem;
   height: fit-content;
   overflow: hidden;
   padding: 5rem 10rem;
@@ -30,10 +29,12 @@
     position: relative;
     z-index: 2;
     display: flex;
-    grid-template-columns: repeat(2, 1fr);
     width: fit-content;
     margin: auto;
     gap: 5rem;
+    @include response(phone) {
+      flex-direction: column;
+    }
     &_left,
     &_right {
       display: flex;

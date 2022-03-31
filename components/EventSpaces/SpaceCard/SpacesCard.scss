@@ -4,13 +4,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 40rem;
-  height: 30.4rem;
+  width: 50rem;
+  height: 40rem;
   border-radius: 2rem;
   overflow: hidden;
   transition: all 0.5s ease;
   img {
-    width: 40rem;
+    width: auto;
     object-fit: contain;
     position: absolute;
     z-index: 0;
@@ -19,8 +19,8 @@
   }
   &_bg-gradient {
     // width: 73.6rem;
-    width: 40rem;
-    height: 30.4rem;
+    width: 100%;
+    height: 100%;
     background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.5) 30%);
     position: absolute;
     z-index: 1;
@@ -32,13 +32,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    width: 25rem;
-    height: 30rem;
+    justify-content: space-between;
+    width: 45rem;
+    height: 80%;
     color: white;
     &_title {
       position: relative;
-      font-size: $spacesTitle;
+      font-size: $para1;
       font-weight: $bold;
       background: $primary2;
       padding: 1.1rem 3.3rem;
@@ -50,7 +50,7 @@
       bottom: -30rem;
       display: flex;
       justify-content: space-between;
-      width: 30rem;
+      width: 40rem;
       opacity: 0;
       font-size: $spaceSize;
       font-weight: $medium;
@@ -59,16 +59,17 @@
       &_seating {
         position: relative;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
-        width: 12.7rem;
-        height: 4rem;
+        width: 18rem;
+        height: 6rem;
         border-radius: 1rem;
         text-align: center;
         color: $primary2;
         background-image: linear-gradient(to right, $limeGreen 50%, white 0);
         p {
-          min-width: 5rem;
+          width: 100%;
+          font-size: $para3;
         }
       }
     }
@@ -78,14 +79,21 @@
       opacity: 0;
       text-align: center;
       transition: bottom 0.5s ease;
+      font-size: $common;
     }
     .btn-component {
+      width: 14rem;
+      height: 6rem;
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.5s ease;
       box-shadow: none;
       svg {
         fill: $limeGreen;
+      }
+      p {
+        font-size: $common;
+        font-weight: $bold;
       }
       &:hover {
         svg {
@@ -105,15 +113,18 @@
     align-items: center;
     justify-content: space-between;
     opacity: 0;
-    // width: 18.7rem;
-    height: 20rem;
+    height: 80%;
     color: white;
     transition: bottom 0.5s ease;
+    h2 {
+      color: $limeGreen;
+      font-size: $para1;
+    }
     p {
-      font-size: $showMoreButton;
+      font-size: $para3;
       font-weight: $medium;
       svg {
-        width: $showMoreButton;
+        width: $para3;
       }
     }
   }
@@ -160,17 +171,16 @@
 }
 // Styles when card opens
 .spaces-card_open {
-  width: 73.6rem;
+  width: 93.6rem;
   transition: all 0.5s ease;
   img {
-    width: 73.6rem;
+    width: 100%;
     filter: blur(0.5rem);
     object-fit: cover;
     transition: all 0.5s ease;
   }
   .spaces-card {
     &_bg-gradient {
-      width: 73.6rem;
       transition: all 0.5s ease;
     }
     &_details {
@@ -183,7 +193,7 @@
         opacity: 1;
         bottom: 0rem;
       }
-      button {
+      .btn-component {
         visibility: visible;
         opacity: 1;
       }
@@ -191,6 +201,11 @@
     &_features {
       opacity: 1;
       bottom: 0rem;
+    }
+    &_show-more {
+      &_right {
+        transform: rotate(180deg);
+      }
     }
   }
 }

@@ -5,9 +5,7 @@ import ShowMoreSvg from "./ShowMoreSvg";
 const SpaceCard = ({ title, size, seating, description, amenities, direction = "right" }) => {
   const [showCard, setShowCard] = useState(false);
   return (
-    <div
-      className={`spaces-card spaces-card_${showCard ? "open" : "closed"} spaces-card_${direction}`}
-    >
+    <div className={`spaces-card spaces-card_${showCard ? "open" : "closed"} spaces-card_${direction}`}>
       <img src="/images/event-spaces/spaces-card-img.png" alt="" />
       <div className="spaces-card_bg-gradient"></div>
       <div className="spaces-card_details">
@@ -37,24 +35,9 @@ const SpaceCard = ({ title, size, seating, description, amenities, direction = "
               </p>
             );
           })}
-        {/* <p>
-          Wifi <FeatureAvailability available={true} />
-        </p>
-        <p>
-          Projector <FeatureAvailability available={true} />
-        </p>
-        <p>
-          Sound system with 2 microphones <FeatureAvailability available={true} />
-        </p>
-        <p>
-          Writable glass <FeatureAvailability available={true} />
-        </p>
-        <p>
-          Tables and Chairs <FeatureAvailability available={true} />
-        </p> */}
       </div>
       <button className="spaces-card_show-more" onClick={() => setShowCard(!showCard)}>
-        Show More <ShowMoreSvg />
+        Show {showCard ? "Less" : "More"} <ShowMoreSvg className={`spaces-card_show-more_${direction}`} />
       </button>
     </div>
   );
