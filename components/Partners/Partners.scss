@@ -6,8 +6,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  @include response(vp-800) {
+  @include response(tab-port) {
     height: fit-content;
+    padding: 5rem;
   }
   img {
     position: absolute;
@@ -23,7 +24,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 2;
-    @include response(vp-800) {
+    @include response(phone) {
       flex-direction: column;
     }
     &_title_block {
@@ -55,14 +56,16 @@
       flex-direction: column;
       justify-content: space-between;
       width: 66.7rem;
-      height: 27rem;
       @include response(vp-800) {
-        height: auto;
+        width: auto;
+      }
+      @include response(tab-port) {
+        width: 80rem;
       }
       p {
         font-size: $para1;
         color: $primary2;
-        padding-bottom: 2.9rem;
+        padding-bottom: 3rem;
       }
     }
   }

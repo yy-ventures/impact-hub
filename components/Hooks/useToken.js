@@ -7,6 +7,7 @@ const useToken = (email = "admin@example.com", password = "yy@123456") => {
     const baseUrl = process.env.baseUrl;
     await fetch(`${baseUrl}/login`, {
       method: "POST",
+      withCredentials: "true",
       headers: {
         Accept: "application/json",
         "access-control-allow-origin": "*",

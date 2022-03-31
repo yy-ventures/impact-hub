@@ -1,45 +1,30 @@
 @import '../../../styles/base.scss';
 
 .home_news_letter{
-    height: 50rem;
+    margin-top: 10rem;
     padding: 5rem 20rem;
+    height: 65rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5rem;
-    // margin-top: 8rem;
-    // height: 62.0rem;
-    // width: 168.7rem;
-    // position: relative;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    background-color: palevioletred;
-    // @media screen and (max-width: 600px) {
-    //     //grid-template-columns: 1fr;
-    //     width: 100%;
-    //     flex-direction: column;
-    //     justify-content: space-between;
-    //     align-items: center;
-    // }
+    grid-gap: 10rem;
+
+    @include response(phone){
+        height: min-content;
+        grid-template-columns: 1fr;
+        padding: 5rem;
+    }
+
     &_left{
-        // display: flex;
-        // flex-direction: column;
-        // width: 46.9rem;
-        // height: 28.4rem;
-        // position: absolute;
-        // left: 24.2rem;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // align-items: center;
-        // text-align: center;
-        background-color: aqua;
-        // @media screen and (max-width: 600px) {
-        //     position: relative;
-        //     left: 0;
-        // }
+        position: relative;
+        div{
+            padding-inline: 15rem;
+            margin-top: 10rem;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         h4{
             font-size: $headingOptional;
             font-weight: $bold;
@@ -50,6 +35,7 @@
             color: $primary2;
             line-height: 2.9rem;
             padding: 2rem 0;
+            margin-bottom: 5rem;
         }
         button{
             outline: 0;
@@ -62,16 +48,20 @@
             cursor: pointer;
         }
         &_form{
-            // width: 43.8rem;
-            // height: 32.5rem;
             animation: form 0.3s;
+
+            form{
+                display: flex;
+                flex-direction: column;                
+                margin-inline: auto;
+            }
+
             input, textarea, select{
                 outline: 0;
                 border: 0;
                 border-bottom: 1px solid #707070;
                 display: block;
                 background-color: inherit;
-                // width: 100%;
                 font-size: 3rem;
                 color: $placeholder;
                 padding: 0 1.9rem 1.3rem 1.9rem;
@@ -87,36 +77,38 @@
             }
             button{
                 margin-top: 1.9rem;
+                margin-inline: auto;
                 padding: 1.7rem 2.8rem;
             }
         }
         &_cross{
             position: absolute;
-            top: -40%;
-            right: 0;
+            top: 0;
+            right: -3rem;
             cursor: pointer;
         }
     }
     &_right{
-        // width: 65.4rem;
-        // height: 23.3rem;
-        // position: absolute;
-        background-color: aquamarine;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // right: 0;
-        // @media screen and (max-width: 600px) {
-        //     position: relative;
-        // }
+        position: relative;
+        div{
+            // padding-inline: 15rem;
+            margin-top: 5rem;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @include response(phone){
+                align-items: center;
+            }
+        }
         &_header{
-            // height: 14.9rem;
             h2{
                 font-size: $headingPrimary;
                 color: $primary2;
                 font-weight: $bold;
-                // line-height: 9.2rem;
-                // margin-left: 2.2rem;
+                margin-left: 4rem;
             }
             h3{
                 font-size: $headingOptional;
@@ -130,32 +122,39 @@
             outline: 0;
             border: 0;
             padding: 2.0rem 3.2rem;
+            margin-top: 5rem;
             font-size: 2.6rem;
             color: $textLight;
             background-color: $primary1;
             border-radius: 5px;
-            // position: absolute;
-            // bottom: -50%;
-            // left: 35%;
-            // transform: translateX(-50%);
+            margin-left: auto;
             cursor: pointer;
+
+            @include response(phone){
+                margin-right: auto;
+            }
         }
         &_form{
-            // width: 43.8rem;
-            // height: 23.92rem;
             position: relative;
             animation: form 0.3s;
+
+            form{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
             input, textarea, select{
                 outline: 0;
                 border: 0;
                 border-bottom: 1px solid #707070;
                 display: block;
                 background-color: inherit;
-                // width: 100%;
                 font-size: 3rem;
                 color: $placeholder;
                 padding: 0 1.9rem 1.3rem 1.9rem;
                 font-family: "GT Walsheim Pro";
+
                 &:nth-child(2){
                     padding-left: 1.3rem 1.9rem 1.3rem 1.9rem;
                     margin-top: 4.2rem;
@@ -164,14 +163,12 @@
             button{
                 margin-top: 1.9rem;
                 padding: 1.7rem 2.8rem;
-                // left: 50%;
-                // transform: translateX(-50%);
             }
         }
         &_cross{
             position: absolute;
-            top: -40%;
-            right: 0;
+            top: 0;
+            right: 13rem;
             cursor: pointer;
         }
     }
