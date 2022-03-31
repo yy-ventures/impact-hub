@@ -71,28 +71,22 @@
   }
   &_grid_cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     justify-items: space-between;
-    width: 88rem;
-    gap: 1.6rem;
+    width: fit-content;
+    gap: 3rem;
     margin: auto;
-    &_flex {
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
-
-      @each $color in $cardColors {
-        $i: index(
-          $list: $cardColors,
-          $value: $color,
-        );
+    @each $color in $cardColors {
+      $i: index(
+        $list: $cardColors,
+        $value: $color,
+      );
+      .flex-card-#{$i} {
+        @include setMembershipCardColors($color);
+      }
+      @if $i==6 {
         .flex-card-#{$i} {
-          @include setMembershipCardColors($color);
-        }
-        @if $i==6 {
-          .flex-card-#{$i} {
-            @include setMembershipCardColors($color, "true");
-          }
+          @include setMembershipCardColors($color, "true");
         }
       }
     }

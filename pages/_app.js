@@ -1,13 +1,5 @@
 import Layout from "../components/Layout/Layout";
-// Global Style
-import "../styles/global.scss";
-// Shared Component Styles
-import "../components/Shared/Navbar/Navbar.scss";
-import "../components/Shared/Footer/Footer.scss";
-import "../components/Shared/Cookies/Cookies.scss";
-import "../components/Shared/TitleBlock/TitleBlock.scss";
-import "../components/Shared/Button/Button.scss";
-import "../components/Shared/MembershipCard/MembershipCard.scss";
+
 // Home Page Styles
 import "../components/Home/HomeHero/HomeHero.scss";
 import "../components/Home/HomeWelcome/HomeWelcome.scss";
@@ -55,6 +47,15 @@ import "../components/Stories/Stories.scss";
 import '../components/StoryDetails/StoryDetails.scss';
 // root layout
 import '../components/Layout/layout.scss';
+// Global Style
+import "../styles/global.scss";
+// Shared Component Styles
+import "../components/Shared/Navbar/Navbar.scss";
+import "../components/Shared/Footer/Footer.scss";
+import "../components/Shared/Cookies/Cookies.scss";
+import "../components/Shared/TitleBlock/TitleBlock.scss";
+import "../components/Shared/Button/Button.scss";
+import "../components/Shared/MembershipCard/MembershipCard.scss";
 
 function MyApp({ Component, pageProps }) {
   return (

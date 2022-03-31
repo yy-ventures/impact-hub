@@ -18,42 +18,26 @@ const OfficeSpace = () => {
           </div>
           <div>
             <p>
-              Impact Hub Dhaka is part of a global network of over 100 connected communities that
-              enable collaboration. We unite people from every profession, background and culture
-              with imagination and drive to challenge the status quo. We see and do things
-              differently – together we create the new normal.
+              Impact Hub Dhaka is part of a global network of over 100 connected communities that enable collaboration.
+              We unite people from every profession, background and culture with imagination and drive to challenge the
+              status quo. We see and do things differently – together we create the new normal.
             </p>
           </div>
         </div>
-        <TitleBlock
-          title="Come create with us!"
-          parentClass="officespace_container_header"
-          shape={partnerShape.src}
-        />
+        <TitleBlock title="Come create with us!" parentClass="officespace_container_header" shape={partnerShape.src} />
       </div>
       <div className="officespace_container_grid_cards">
         {spaces.map(({ title, price, duration, details }, index) => {
           return (
-            index % 2 == 0 && (
-              <div key={index} className="officespace_container_grid_cards_flex">
-                <MembershipCard
-                  type={2}
-                  title={spaces[index].title}
-                  price={spaces[index].price}
-                  duration={spaces[index].duration}
-                  details={spaces[index].details}
-                  modifierClass={`flex-card-${index + 1}`}
-                />
-                <MembershipCard
-                  type={2}
-                  title={spaces[index + 1].title}
-                  price={spaces[index + 1].price}
-                  duration={spaces[index + 1].duration}
-                  details={spaces[index + 1].details}
-                  modifierClass={`flex-card-${index + 2}`}
-                />
-              </div>
-            )
+            <MembershipCard
+              key={index}
+              type={2}
+              title={title}
+              price={price}
+              duration={duration}
+              details={details}
+              modifierClass={`flex-card-${index + 1}`}
+            />
           );
         })}
       </div>
