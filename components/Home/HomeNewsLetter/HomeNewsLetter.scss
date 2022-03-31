@@ -7,11 +7,29 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10rem;
+    overflow: hidden;
+
+    position: relative;
 
     @include response(phone){
         height: min-content;
         grid-template-columns: 1fr;
         padding: 5rem;
+    }
+
+    &_layout{
+        position: absolute;
+        bottom: -1rem;
+
+        @include response(phone){
+            display: none;
+        }
+
+        img{
+            @include response(m-desktop){
+                width: 160rem;
+            }
+        }
     }
 
     &_left{

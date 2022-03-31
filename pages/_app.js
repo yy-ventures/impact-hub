@@ -53,6 +53,8 @@ import "../components/EventSpaces/SendEnquiry/SendEnquiry.scss";
 import "../components/Stories/Stories.scss";
 // story details
 import '../components/StoryDetails/StoryDetails.scss';
+// root layout
+import '../components/Layout/layout.scss';
 
 function MyApp({ Component, pageProps }) {
   return (

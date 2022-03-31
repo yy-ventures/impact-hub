@@ -296,6 +296,7 @@
             &_card_2_layout-2,
             &_card_3_layout-3,
             &_card_4_layout-4{
+                width: 40rem;
                 @include response(phone){
                     left: 40rem;
                 }

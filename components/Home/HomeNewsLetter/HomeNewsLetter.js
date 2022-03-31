@@ -5,6 +5,9 @@ import HomeNewsLetterForm from './HomeNewsLetterForm';
 import HomeNewsLetterSubscribeForm from './HomeNewsLetterSubscribeForm';
 import Button from '../../Shared/Button/Button';
 
+// LAYOUT
+import layout2 from '../../../public/images/home/newsletter-layout.svg'
+
 // ICON
 import crossBtn from '../../../public/cross.svg'
 
@@ -30,6 +33,7 @@ const HomeNewsLetter = () => {
     }
     return (
         <section className='home_news_letter'>
+            <div className="home_news_letter_layout"><img src={layout2.src}/></div>
             <div className='home_news_letter_left'>
                 {showForm && <div>
                     <h4>Newsletter</h4>
