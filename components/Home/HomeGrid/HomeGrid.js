@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import rightArrow from "../../../public/right_arrow.svg";
 import Link from "next/link";
-import useToken from "../../Hooks/useToken";
 import useFetch from "../../Hooks/useFetch";
+import crossWhite from '../../../public/cross_white.svg'
+
 const HomeGrid = () => {
   const community = useFetch("/get-community");
   const baseUrlForImages = process.env.baseUrlForImages;
@@ -17,7 +18,7 @@ const HomeGrid = () => {
 
   // modal close
   const handlePopUpClose = (e) => {
-    if (e.target.className === "home_image_grid_body_pop") {
+    if (e.target.className === "home_image_grid_body_pop" || "home_image_grid_body_pop_cross") {
       setShowPopUp(false);
     }
   };
@@ -77,6 +78,9 @@ const HomeGrid = () => {
           {/* pop */}
           {showPopUp && (
             <div className="home_image_grid_body_pop" onClick={handlePopUpClose}>
+              <div className="home_image_grid_body_pop_cross" onClick={handlePopUpClose}>
+                <img src={crossWhite.src}/>
+              </div>
               {popUp.map((popImage) => (
                 <img src={baseUrlForImages + popImage.image} key={popImage.id} />
               ))}

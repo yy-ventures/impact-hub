@@ -19,12 +19,12 @@
         top: 50%;
         transform: translateY(-50%);
         button{
-            padding: 2rem 3rem;
+            padding: 4rem;
             background-color: rgba($color: $yellow, $alpha: 0.9);
-            color: $textDark;
+            color: $white;
             font-weight: $bold;
-            font-size: 3rem;
-            border-radius: 2rem 0 0 2rem;
+            font-size: 5rem;
+            text-transform: uppercase;
         }
     }
 }

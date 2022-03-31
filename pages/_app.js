@@ -57,6 +57,12 @@ import "../components/Shared/TitleBlock/TitleBlock.scss";
 import "../components/Shared/Button/Button.scss";
 import "../components/Shared/MembershipCard/MembershipCard.scss";
 
+// push notification
+import '../components/Shared/PushNotify/PushNotify.scss'
+
+// pre loader
+import '../components/Shared/PreLoader/PreLoader.scss';
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
