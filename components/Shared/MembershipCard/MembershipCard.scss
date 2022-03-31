@@ -17,6 +17,7 @@
   // grid-column: span;
   // Plan section styles
   &_plan {
+    width: 100%;
     align-self: flex-start;
     color: white;
     cursor: pointer;
@@ -30,6 +31,7 @@
       transition: all 0.5s ease;
     }
     &_header {
+      width: inherit;
       &_title {
         position: relative;
         z-index: 2;
@@ -37,8 +39,13 @@
         font-weight: $medium;
       }
       &_price {
+        width: inherit;
         position: relative;
         z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 3rem;
         font-size: $subHeading4;
         font-weight: $bold;
         color: $textLight;
@@ -47,6 +54,11 @@
         span {
           font-size: $para2;
           font-weight: $regular;
+          svg {
+            position: initial;
+            width: 4rem;
+            height: fit-content;
+          }
         }
       }
       &_duration {
@@ -104,6 +116,11 @@
     &_header_price {
       color: white;
       mix-blend-mode: normal;
+      span {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }

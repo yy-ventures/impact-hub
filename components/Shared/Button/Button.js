@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ButtonPrimarySVG from "./ButtonPrimarySVG";
 import ButtonSecondarySVG from "./ButtonSecondarySVG";
-const Button = ({ text = "button", type = "primary" }) => {
+const Button = ({ text = "button", type = "primary", onClick }) => {
   // Button State to toggle active and inactive state of the button
   const [buttonState, setButtonState] = useState(false);
   // Toggles the button state on click from active to inactive or vice-versa
@@ -16,7 +16,13 @@ const Button = ({ text = "button", type = "primary" }) => {
   }`;
 
   return (
-    <button className={className} onClick={() => toggleState()}>
+    <button
+      className={className}
+      onClick={() => {
+        toggleState();
+        onClick && onClick();
+      }}
+    >
       {type === "primary" ? <ButtonPrimarySVG /> : <ButtonSecondarySVG />}
       <p>{text}</p>
     </button>

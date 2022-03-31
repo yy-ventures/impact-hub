@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
 import useFetch from "../../Hooks/useFetch";
+import DownArrow from "./MembershipSVGs/DownArrow";
 
 const MembershipCard = ({ id, title, price, details, modifierClass, type = 1 }) => {
   // Show or hide membership card
@@ -12,10 +13,7 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1 }) 
   const [showForm, setShowForm] = useState(false);
   const handleCloseModal = (e) => {
     e.stopPropagation();
-    if (
-      e.target.className === "membership_modal" &&
-      e.target.className !== "membership_modal_container"
-    ) {
+    if (e.target.className === "membership_modal" && e.target.className !== "membership_modal_container") {
       setShowForm(false);
     }
   };
@@ -24,27 +22,30 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1 }) 
   };
   return (
     <div
-      className={`membership-card ${modifierClass ? modifierClass : ""} ${
-        showCard ? "show-card" : ""
-      }`}
+      className={`membership-card ${modifierClass ? modifierClass : ""} ${showCard ? "show-card" : ""}`}
       onClick={() => setShowCard(!showCard)}
     >
+      <div className="membership-card_image">
+        <img src="" alt="" />
+      </div>
       <div className="membership-card_plan">
         <MembershipBg />
         <div className="membership-card_plan_header">
           <h2 className="membership-card_plan_header_title">{title}</h2>
           <h3 className="membership-card_plan_header_price">
             {price}
-            <span>/ month</span>
+            <span>
+              <DownArrow />
+            </span>
           </h3>
           <span className="membership-card_plan_header_duration">8hrs / month</span>
         </div>
       </div>
       <div className="membership-card_details">
         {details &&
-          details.map(({ id, name, is_available }) => {
+          details.map(({ name, is_available }, index) => {
             return (
-              <div key={id} className="membership-card_details_paragraph">
+              <div key={index} className="membership-card_details_paragraph">
                 <p>{name}</p>
                 <FeatureAvailability available={is_available} />
               </div>
@@ -57,12 +58,7 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1 }) 
         </div>
       </div>
       {showForm && (
-        <MembershipModal
-          handleCloseModal={handleCloseModal}
-          optionTitle={title}
-          optionId={id}
-          type={type}
-        />
+        <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} optionId={id} type={type} />
       )}
     </div>
   );

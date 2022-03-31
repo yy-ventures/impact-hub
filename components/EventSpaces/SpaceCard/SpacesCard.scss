@@ -136,7 +136,13 @@
     font-size: $showMoreButton;
     font-weight: $bold;
     color: white;
-    right: 1rem;
+    transition: all 0.5s ease;
+    &_left {
+      left: 5rem;
+    }
+    &_right {
+      right: 5rem;
+    }
     svg {
       width: $showMoreButton;
     }
@@ -153,7 +159,8 @@
     }
     .spaces-card_show-more {
       flex-direction: row-reverse;
-      left: 1rem;
+      left: 5rem;
+      transition: all 1s ease;
     }
   }
   &_right {
@@ -163,6 +170,8 @@
       // transition: all 1s ease;
     }
     .spaces-card_show-more {
+      right: 5rem;
+      transition: all 1s ease;
       svg {
         transform: rotate(180deg);
       }
@@ -203,6 +212,7 @@
       bottom: 0rem;
     }
     &_show-more {
+      transition: all 1s ease;
       &_right {
         transform: rotate(180deg);
       }
