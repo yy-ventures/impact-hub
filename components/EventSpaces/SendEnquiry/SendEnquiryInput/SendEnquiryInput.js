@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../../../Shared/Button/Button';
+import PushNotify from '../../../Shared/PushNotify/PushNotify';
 
 const SendEnquiryInput = () => {
     
@@ -17,6 +18,9 @@ const SendEnquiryInput = () => {
 
     // error checking
     const [error, setError] = useState('')
+
+    // push
+    const [showPush, setShowPush] = useState(false)
 
     // number input check
     const handleContact = e => {
@@ -52,7 +56,7 @@ const SendEnquiryInput = () => {
         .then((res) => res.json())
         .then(data => {
             if (data.success) {
-                alert('Thank you! we have received your query!')
+                setShowPush(true)
                 setStartTime('00:00')
                 setEndTime('00:00')
                 setFirstName('')
@@ -107,6 +111,7 @@ const SendEnquiryInput = () => {
                 <div className='enquiry_body_form_body_container'>
                     <input type='time' value={endTime} onChange={e => setEndTime(e.target.value)} />
                 </div>
+                {showPush && <PushNotify setShowPush={setShowPush}/>}
             </div>
             <div className='enquiry_body_form_footer'>
                 <Button text='Submit' type='secondary' />

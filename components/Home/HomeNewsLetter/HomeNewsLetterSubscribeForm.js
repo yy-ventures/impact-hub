@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import PushNotify from '../../Shared/PushNotify/PushNotify';
 
 const HomeNewsLetterSubscribeForm = () => {
 
     const [clientName, setClientName] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
+
+    // push
+    const [showPush, setShowPush] = useState(false)
 
     const HandleSubmit = async e => {
         e.preventDefault()
@@ -23,7 +27,7 @@ const HomeNewsLetterSubscribeForm = () => {
             .then((res) => res.json())
             .then(data => {
                 if (data.success) {
-                    alert('Thank you! we have received your query!')
+                    setShowPush(true)
                     setEmail('')
                     setClientName('')
                 }
@@ -41,6 +45,7 @@ const HomeNewsLetterSubscribeForm = () => {
                 <button>Submit</button>
             </form>
             <p>{error}</p>
+            {showPush && <PushNotify setShowPush={setShowPush}/>}
         </div>
     );
 };

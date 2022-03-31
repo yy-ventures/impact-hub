@@ -2,13 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import Button from "../Button/Button";
 import useFetch from "../../Hooks/useFetch";
 import usePost from "../../Hooks/usePost";
+import PushNotify from "../PushNotify/PushNotify";
 
 const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
   // get package details
   const data = useFetch(`/get-packages/${type}`);
   
   // states to hold Form data
-  const [selectedPackageId, setSelectedPackageId] = useState(optionId);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,6 +19,12 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
   const [whyBecome, setWhyBecome] = useState("");
   const [didHear, setDidHear] = useState("");
 
+  // error message
+  const [error, setError] = useState('')
+
+  // push
+  const [showPush, setShowPush] = useState(false)
+
   // number input check
   const handleContact = (e) => {
     let phoneNumber = e.target.value;
@@ -28,6 +34,7 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
       setContact(phoneNumber);
     }
   };
+  
   // Select a package
   const handlePackageChange = (e) => {
     let packageId = e.target.value;
@@ -37,6 +44,7 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
     }
     setHubPackage(packageId);
   };
+
 
   // submit
   const HandleOnSubmit = async (e) => {
@@ -63,13 +71,25 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
       },
       body: bookingFormData,
     })
-      .then((res) => {
-        console.log(res.status);
-        if (res.status === 200) {
-          alert("We have received your application");
+    .then((res) => res.json())
+    .then(data => {
+        if (data.success) {
+            setShowPush(true)
+            setFirstName('')
+            setLastName('')
+            setEmail('')
+            setContact('')
+            setOrganization('')
+            setHubPackage('')
+            setOrganizationBrief('')
+            setWhyBecome('')
+            setDidHear('')
         }
-      })
-      .catch((err) => console.log(err));
+        if(!data.success) {
+            setError(data.errors)
+        }
+    }) 
+    .catch(err => err);
   };
 
   return (
@@ -164,6 +184,8 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
           </div>
         </form>
       </div>
+      <p>{error}</p>
+      {showPush && <PushNotify setShowPush={setShowPush}/>}
     </section>
   );
 };

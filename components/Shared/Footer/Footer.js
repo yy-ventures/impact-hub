@@ -27,14 +27,14 @@ const Footer = () => {
                     <h4>Find us at</h4>
                     <p>Located in: Grameen Telecom Bhaban Address: R952+66V, 9th Floor, Grameen Telecom Bhaban, Zoo Road, Dhaka 1216</p>
                     <div className='footer_middle_content_social'>
-                        <Link href="#">
-                            <a><img src={fb.src}/></a>
+                        <Link href="https://www.facebook.com/ImpactHubDhaka" passHref={true}>
+                            <a target="_blank" rel="noopener noreferrer"><img src={fb.src}/></a>
                         </Link>
-                        <Link href="#">
-                            <a><img src={linked.src}/></a>
+                        <Link href="https://www.linkedin.com/company/impact-hubdhaka" passHref={true}>
+                            <a target="_blank" rel="noopener noreferrer"><img src={linked.src}/></a>
                         </Link>
-                        <Link href="#">
-                            <a><img src={insta.src}/></a>
+                        <Link href="https://www.instagram.com/impacthubdhk/" passHref={true}>
+                            <a target="_blank" rel="noopener noreferrer"><img src={insta.src}/></a>
                         </Link>
                     </div>
                 </div>

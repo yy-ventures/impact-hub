@@ -1,26 +1,18 @@
 [
     {
-        "img1": "img1",
-        "img2": "img2",
-        "title": "Events and Meetups",
-        "sub_title": "our upcoming events"
+        "img": "img1",
+        "title": "Event Space"
     },
     {
-        "img1": "img1",
-        "img2": "img2",
-        "title": "Events and Meetups",
-        "sub_title": "our upcoming events"
+        "img": "img2",
+        "title": "Hub Cafe"
     },
     {
-        "img1": "img1",
-        "img2": "img2",
-        "title": "Events and Meetups",
-        "sub_title": "our upcoming events"
+        "img": "img3",
+        "title": "Workshop Space"
     },
     {
-        "img1": "img1",
-        "img2": "img2",
-        "title": "Events and Meetups",
-        "sub_title": "our upcoming events"
+        "img": "img4",
+        "title": "Board Meeting Room"
     }
 ]

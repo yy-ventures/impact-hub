@@ -3,13 +3,11 @@ import HomeNewsLetterForm from './HomeNewsLetterForm';
 import HomeNewsLetterSubscribeForm from './HomeNewsLetterSubscribeForm';
 import crossBtn from '../../../public/cross.svg'
 
+
 const HomeNewsLetter = () => {
     const [showForm, setShowForm] = useState(true)
-    const [hideForm, setHideForm] = useState(true)
-    
     const [showSubscribe, setShowSubscribe] = useState(true)
-    const [hideSubscribe, setHideSubscribe] = useState(false)
-
+    
     const HandleShowForm = () => {
         setShowForm(false)
     }

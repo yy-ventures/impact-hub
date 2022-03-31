@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import Button from '../Button/Button';
 
-const EventCommonCard = ({ title, type, date, time, summary, thumb, id }) => {
+const EventCommonCard = ({ title, type, date, time, summary, thumb, id, btnText }) => {
     return (
         <div className='event_common_card'>
             <div className='event_common_card_header'><img src={thumb}/></div>
@@ -19,7 +19,7 @@ const EventCommonCard = ({ title, type, date, time, summary, thumb, id }) => {
             <div className='event_common_card_footer'>
                 <Link href='/stories/[id]' as={`/stories/${id}`}>
                     <a>
-                        <Button text='view' type='secondary'/>
+                        <Button text={btnText} type='secondary'/>
                     </a>
                 </Link>
             </div>

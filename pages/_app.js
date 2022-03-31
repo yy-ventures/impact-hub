@@ -54,6 +54,12 @@ import "../components/Stories/Stories.scss";
 // story details
 import '../components/StoryDetails/StoryDetails.scss';
 
+// push notification
+import '../components/Shared/PushNotify/PushNotify.scss'
+
+// pre loader
+import '../components/Shared/PreLoader/PreLoader.scss';
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>

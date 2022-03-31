@@ -2,7 +2,8 @@ import React from 'react';
 
 const Cookies = ({setCookie}) => {
     const handleOffCookie = () => {
-        setCookie(false)
+        setCookie(true)
+        sessionStorage.setItem('cookie', true)
     }
     return (
         <section className='cookie_section'>

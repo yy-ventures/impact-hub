@@ -25,6 +25,7 @@ const Stories = () => {
                             date={story.location}
                             thumb={`https://ihd.yyventures.org${story.image_path}`}
                             id={story.id}
+                            btnText='read more'
                         />
                     )}
                     
