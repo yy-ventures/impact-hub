@@ -39,6 +39,7 @@ const HomeNewsLetterSubscribeForm = () => {
                 }
             }) 
             .catch(err => err);
+        }
     }
     return (
         <div className='home_news_letter_right_form'>

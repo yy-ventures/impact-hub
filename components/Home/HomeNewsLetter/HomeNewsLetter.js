@@ -37,22 +37,19 @@ const HomeNewsLetter = () => {
                     <p>If you’re interested in social impact, subscribe below and get curated weekly Impact news.</p>
                     {showForm && <button onClick={HandleShowForm}>Show More</button>}
                 </div>}
-                {!showForm && <HomeNewsLetterSubscribeForm/>}
+                {!showForm && <HomeNewsLetterSubscribeForm />}
                 {!showForm && <div className="home_news_letter_left_cross">
-                    <img src={crossBtn.src} alt="" onClick={HandleHideForm}/>
+                    <img src={crossBtn.src} alt="" onClick={HandleHideForm} />
                 </div>}
             </div>
             {showSubscribe && <Button text="Show Form" onClick={HandleShowSubscribeForm} />}
-          </div>
-        )}
-        {!showSubscribe && <HomeNewsLetterForm />}
-        {!showSubscribe && (
-          <div className="home_news_letter_right_cross">
-            <img src={crossBtn.src} alt="" onClick={HandleHideSubscribe} />
-          </div>
-        )}
-      </div>
-    </section>
+            {!showSubscribe && <HomeNewsLetterForm />}
+            {!showSubscribe && (
+                <div className="home_news_letter_right_cross">
+                    <img src={crossBtn.src} alt="" onClick={HandleHideSubscribe} />
+                </div>
+            )}
+        </section >
   );
 };
 
