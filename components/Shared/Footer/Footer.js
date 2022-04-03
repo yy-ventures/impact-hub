@@ -12,9 +12,9 @@ const Footer = () => {
             <div className='footer_left'>
                 <div className='footer_left_list'>
                     <ul>
-                        <li><a href='#'>About us</a></li>
-                        <li><a href='#'>Work With Us</a></li>
-                        <li><a href='#'>Impact Blog</a></li>
+                        <li><Link href='/about/about-us'><a>About us</a></Link></li>
+                        <li><Link href='/about/partners'><a>Work With Us</a></Link></li>
+                        <li><Link href='/stories'><a>Impact Blog</a></Link></li>
                         <li><a href='#'>Privacy Policy</a></li>
                     </ul>
                 </div>
