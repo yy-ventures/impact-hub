@@ -1,8 +1,9 @@
 export const spaces = [
   // plan 1
   {
+    image: "/images/office-space/small.png",
     title: "Small",
-    price: "BDT 14000",
+    price: "14000",
     duration: "8 hrs",
     details: [
       {
@@ -46,8 +47,9 @@ export const spaces = [
 
   // plan 3
   {
+    image: "/images/office-space/regular.png",
     title: "Regular",
-    price: "BDT 25800",
+    price: "25800",
     duration: "8 hrs",
     details: [
       {
@@ -91,8 +93,9 @@ export const spaces = [
 
   // plan 4
   {
+    image: "/images/office-space/large.png",
     title: "Large",
-    price: "BDT 31500",
+    price: "31500",
     duration: "8 hrs",
     details: [
       {
