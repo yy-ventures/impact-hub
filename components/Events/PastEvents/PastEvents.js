@@ -52,7 +52,7 @@ const PastEvents = () => {
             }
         ]
     };
-
+    
     return (
         <section className='past_events'>
             {/* event path */}

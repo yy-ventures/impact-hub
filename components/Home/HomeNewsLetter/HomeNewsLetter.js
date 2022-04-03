@@ -31,24 +31,41 @@ const HomeNewsLetter = () => {
     }
     return (
         <section className='home_news_letter'>
-            <div className='home_news_letter_left'>
-                {showForm && <div>
-                    <h4>Newsletter</h4>
-                    <p>If you’re interested in social impact, subscribe below and get curated weekly Impact news.</p>
-                    {showForm && <button onClick={HandleShowForm}>Show More</button>}
-                </div>}
+            <div className="home_impacts_layout"><img src={layout2.src} /></div>
+            <div className="home_news_letter_left">
+                {showForm && (
+                    <div>
+                        <h4>Newsletter</h4>
+                        <p className="home_news_letter_left_para">
+                            If you’re interested in social impact, subscribe below and get curated weekly Impact news.
+                        </p>
+                        {showForm && <Button text="Show More" type="secondary" onClick={HandleShowForm} />}
+                    </div>
+                )}
                 {!showForm && <HomeNewsLetterSubscribeForm />}
-                {!showForm && <div className="home_news_letter_left_cross">
-                    <img src={crossBtn.src} alt="" onClick={HandleHideForm} />
-                </div>}
+                {!showForm && (
+                    <div className="home_news_letter_left_cross">
+                        <img src={crossBtn.src} alt="" onClick={HandleHideForm} />
+                    </div>
+                )}
             </div>
-            {showSubscribe && <Button text="Show Form" onClick={HandleShowSubscribeForm} />}
-            {!showSubscribe && <HomeNewsLetterForm />}
-            {!showSubscribe && (
-                <div className="home_news_letter_right_cross">
-                    <img src={crossBtn.src} alt="" onClick={HandleHideSubscribe} />
-                </div>
-            )}
+            <div className="home_news_letter_right">
+                {showSubscribe && (
+                    <div>
+                        <div className="home_news_letter_right_header">
+                            <h2>Let’s talk</h2>
+                            <h3>How may we help you?</h3>
+                        </div>
+                        {showSubscribe && <Button text="Show Form" onClick={HandleShowSubscribeForm} />}
+                    </div>
+                )}
+                {!showSubscribe && <HomeNewsLetterForm />}
+                {!showSubscribe && (
+                    <div className="home_news_letter_right_cross">
+                        <img src={crossBtn.src} alt="" onClick={HandleHideSubscribe} />
+                    </div>
+                )}
+            </div>
         </section >
   );
 };

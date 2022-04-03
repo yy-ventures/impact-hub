@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10rem;
-    position: relative;
+    overflow: hidden;
 
     position: relative;
 
@@ -66,10 +66,11 @@
         }
         &_form {
             animation: form 0.3s;
-            form{
-                display: flex;
-                flex-direction: column;                
-                margin-inline: auto;
+      
+            form {
+              display: flex;
+              flex-direction: column;
+              margin-inline: auto;
             }
       
             input,
