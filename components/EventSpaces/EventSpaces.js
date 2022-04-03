@@ -7,15 +7,16 @@ import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription"
 const EventSpaces = () => {
   return (
     <section className="event-spaces">
-      <EventSpacesBg className={"event-spaces_bg_top"} />
+      <EventSpacesBg className={"event-spaces_bg"} />
       <HeadingDescription parentClass="event-spaces" span="Event" heading="Spaces" />
       <div className="event-spaces_cards">
         {spaces.length > 0 &&
-          spaces.map(({ title, size, seating, description, amenities }, index) => {
+          spaces.map(({ image, title, size, seating, description, amenities }, index) => {
             return (
               index < 2 && (
                 <div key={index} className={`event-spaces_cards_${index === 0 ? "left" : "right"}`}>
                   <SpaceCard
+                    image={spaces[index * 2].image}
                     title={spaces[index * 2].title}
                     size={spaces[index * 2].size}
                     seating={spaces[index * 2].seating}
@@ -24,6 +25,7 @@ const EventSpaces = () => {
                     direction={index === 0 ? "left" : "right"}
                   />
                   <SpaceCard
+                    image={spaces[index * 2 + 1].image}
                     title={spaces[index * 2 + 1].title}
                     size={spaces[index * 2 + 1].size}
                     seating={spaces[index * 2 + 1].seating}
@@ -36,7 +38,6 @@ const EventSpaces = () => {
             );
           })}
       </div>
-      <EventSpacesBg className={"event-spaces_bg_bottom"} />
     </section>
   );
 };
