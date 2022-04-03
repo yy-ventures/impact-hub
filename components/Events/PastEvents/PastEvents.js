@@ -62,7 +62,10 @@ const PastEvents = () => {
 
             {/* past event main */}
             <div className='past_events_header'>
-                <HeadingDescription span='Past Impact Hub Dhaka' heading='Events' />
+                <HeadingDescription 
+                    parentClass="past_events_header"
+                    span='Past Impact Hub Dhaka' 
+                    heading='Events' />
             </div>
             <div className='past_events_container'>
                 <Slider {...parentSliderSettings}>
