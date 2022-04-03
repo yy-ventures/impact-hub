@@ -11,7 +11,7 @@ import Cookies from "../components/Shared/Cookies/Cookies";
 export default function Home() {
   // const token = useToken();
   const [token, setToken] = useState(null);
-  const [cookie, setCookie] = useState(true)
+  const [cookie, setCookie] = useState(false)
 
   // Get token value from the api
   const HandleToken = async () => {
@@ -31,14 +31,14 @@ export default function Home() {
 
   useEffect(() => {
     HandleToken();
+    if(sessionStorage.getItem("cookie")) setCookie(true)
+    if(!sessionStorage.getItem("cookie")) setCookie(false)
   }, []);
 
   // Set local storage on the browser not on the server-side
   if (typeof window !== "undefined") {
     localStorage.setItem("token", token);
   }
-
-
 
   return (
     <div>
@@ -57,7 +57,7 @@ export default function Home() {
       <HomeImpacts />
       <HomeGrid />
       <HomeNewsLetter />
-      {cookie && <Cookies setCookie={setCookie}/>}
+      {!cookie && <Cookies setCookie={setCookie}/>}
     </div>
   );
 }

@@ -14,6 +14,18 @@
     .box{
         position: relative;
         z-index: 111;
+        &_back{
+            padding: 2rem 0;
+            a{
+                color: $secondary;
+                font-weight: $bold;
+                font-size: $para1;
+                padding: 1rem 2rem;
+                border: 1px solid $secondary;
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+        }
     }
     .top-layout{
         position: absolute;

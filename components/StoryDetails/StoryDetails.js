@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 // IMAGES
 import image1 from '../../public/images/story-details/img-1.png'
@@ -25,8 +26,9 @@ export default function StoryDetails({html}) {
               <p className='content-container__text body-global'>From Amsterdam to Johannesburg, Jakarta to San Francisco, Impact Hub has evolved into a rapidly expanding, diverse global network of over 17.000+ members in 100+ locations. Each community is a wealth of innovative programs, events, and cutting-edge content. Step into any one of our Impact Hubs worldwide and immerse yourself in the local experience of a global movement.</p>
             </div>
           </div>
-          <div className='story-container' dangerouslySetInnerHTML={{__html: html}}>
-
+          <div className='story-container' dangerouslySetInnerHTML={{__html: html}}></div>
+          <div className='box_back'>
+            <Link href='/stories'>back</Link>
           </div>
         </div>
     </div>

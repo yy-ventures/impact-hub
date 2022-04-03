@@ -1,7 +1,7 @@
 @import "../../styles/base.scss";
 .officespace_container {
   position: relative;
-  height: 150rem;
+  height: 155rem;
   @include response(vp-800) {
     height: 180rem;
   }
@@ -70,29 +70,26 @@
     }
   }
   &_grid_cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     justify-items: space-between;
-    width: 88rem;
-    gap: 1.6rem;
+    width: fit-content;
+    gap: 3rem;
     margin: auto;
-    &_flex {
-      display: flex;
+    @include response(phone) {
       flex-direction: column;
-      gap: 1.6rem;
-
-      @each $color in $cardColors {
-        $i: index(
-          $list: $cardColors,
-          $value: $color,
-        );
+    }
+    @each $color in $cardColors {
+      $i: index(
+        $list: $cardColors,
+        $value: $color,
+      );
+      .flex-card-#{$i} {
+        @include setMembershipCardColors($color);
+      }
+      @if $i==6 {
         .flex-card-#{$i} {
-          @include setMembershipCardColors($color);
-        }
-        @if $i==6 {
-          .flex-card-#{$i} {
-            @include setMembershipCardColors($color, "true");
-          }
+          @include setMembershipCardColors($color, "true");
         }
       }
     }

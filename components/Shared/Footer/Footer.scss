@@ -1,6 +1,7 @@
 @import "../../../styles/base.scss";
 
 .footer {
+  overflow: hidden;
   height: 52.3rem;
   padding: 8.4rem 18.4rem;
   display: grid;
@@ -74,8 +75,8 @@
     }
   }
   &_right {
-    width: 59.6rem;
-    height: 42rem;
+    width: 61rem;
+    height: 45rem;
     position: absolute;
     top: 0;
     right: 0;
@@ -86,8 +87,9 @@
     }
     img {
       top: 0;
-      height: 100%;
-      width: 100%;
+      left: -3px;
+      height: 101%;
+      width: 102%;
       object-fit: cover;
       position: absolute;
       pointer-events: none;

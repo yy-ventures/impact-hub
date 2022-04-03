@@ -11,9 +11,12 @@ const useFetch = (endPoint) => {
   }
   // state to hold the data
   const [data, setData] = useState([]);
+  const [isPending, setIsPending] = useState(false)
+
   // Fetch the data from the api based on the endpoint
   const fetchData = async () => {
     const baseUrl = process.env.baseUrl;
+    setIsPending(true)
     await fetch(`${baseUrl + endPoint}`, {
       method: "GET",
       headers: {
@@ -23,6 +26,7 @@ const useFetch = (endPoint) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        setIsPending(false)
         const reverse = data.data
           .slice(0)
           .reverse()
@@ -31,7 +35,10 @@ const useFetch = (endPoint) => {
           });
         setData(reverse);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setIsPending(false)
+        console.log(err)
+      });
   };
   //
   useEffect(() => {

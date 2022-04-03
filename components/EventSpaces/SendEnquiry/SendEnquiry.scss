@@ -17,6 +17,11 @@
             color: $primary2;
             width: 74.1rem;
         }
+        &_heading {
+            @include headingLine("left", center);
+            font-size: 6.5rem;
+            padding-bottom: 4.7rem;
+          }
     }
     &_body{
         padding: 10.5rem 0;
@@ -58,6 +63,7 @@
             }
             &_body{
                 padding: 0 15rem;
+                position: relative;
                 &_container{
                     display: flex;
                     flex-direction: row;

@@ -15,7 +15,10 @@ const Stories = () => {
             </div>
             <div className='stories_main'>
                 <div className='stories_main_header'>
-                    <HeadingDescription span='Impact Hub' heading='Stories'/>
+                    <HeadingDescription 
+                        parentClass="stories_main_header"
+                        span='Impact Hub' 
+                        heading='Stories'/>
                 </div>
                 <div className='stories_main_body'>
 
@@ -25,6 +28,7 @@ const Stories = () => {
                             date={story.location}
                             thumb={`https://ihd.yyventures.org${story.image_path}`}
                             id={story.id}
+                            btnText='read more'
                         />
                     )}
                     

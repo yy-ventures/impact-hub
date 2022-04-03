@@ -1,17 +1,35 @@
 @import '../../../styles/base.scss';
 
 .home_impacts{
-    height: 107.9rem;
+    padding-top: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    overflow: hidden;
+
+    position: relative;
 
     @media screen and (max-width: 600px) {
         height: auto;
-        padding: 2rem 0;
+        padding: 10rem 0;
+    }
+    &_layout{
+        position: absolute;
+        left: -2px;
+
+        img{
+            width: 101%;
+            object-fit: cover;
+        }
+
+        @include response(phone){
+            display: none;
+        }
     }
     &_header{
+        position: relative;
+        z-index: 111;
         text-align: center;
         h2{
             color: $textDark;
@@ -41,6 +59,7 @@
             display: grid;
             grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
             grid-template-rows: repeat(2, [row-start] min-content [row-end]);
+            row-gap: 5rem;
 
             @include response(phone){
                 grid-template-columns: [col-start] 1fr [col-end];
@@ -109,35 +128,32 @@
 
                 position: relative;
 
-                &::before{
-                    content: '';
+                &_layout-1{
                     background-image: url('../../../static/assets/counter/counter_1.png');
                     background-repeat: no-repeat;
                     background-size: contain;
                     height: 100%;
                     width: 100%;
-                    position: absolute;
-                    top: -3rem;
-                    left: -5rem;
-                    z-index: -1;
 
-                    @include response(phone){
-                        width: 20%;
-                        left: 40rem;
-                    }
+                    position: absolute;
                 }
                 h2{
-                    font-size: $number;
+                    position: relative;
+                    z-index: 11;
+                    font-size: 15rem;
                     @include response(phone){
                         font-size: 25rem;
                     }
                 }
-                p{
-                    &:not(:last-child){
-                        margin-top: 4rem;
-                    }
-                    @include response(phone){
+                .text{
+                    position: relative;
+                    z-index: 11;
+                    p{
                         font-size: 3rem;
+                        font-weight: 500;
+                        &:not(:last-child){
+                            margin-top: 4rem;
+                        }
                     }
                 }
             }
@@ -151,39 +167,38 @@
                     align-items: center;
                 }
 
-                &::before{
-                    content: '';
+                &_layout-2{
                     background-image: url('../../../static/assets/counter/counter_2.png');
                     background-repeat: no-repeat;
                     background-size: contain;
                     height: 100%;
                     width: 100%;
-                    position: absolute;
-                    top: 4rem;
-                    left: -1rem;
-                    z-index: -1;
 
-                    @include response(phone){
-                        width: 20%;
-                        left: 45rem;
-                    }
+                    position: absolute;
+                    top: -5rem;
                 }
                 h2{
                     font-size: 15rem;
                     line-height: .8;
                     text-align: end;
+                    position: relative;
+                    z-index: 11;
                     @include response(phone){
                         font-size: 25rem;
                     }
                 }
                 .text{
+                    position: relative;
+                    z-index: 11;
                     align-self: flex-end;
-
+                    
                     @include response(phone){
                         align-self: center;
                         margin-left: 28rem;
                     }
                     p{
+                        font-size: 3rem;
+                        font-weight: 500;
                         @include response(phone){
                             font-size: 3rem;
                         }
@@ -203,25 +218,18 @@
                     margin-top: 6rem;
                 }
 
-                &::before{
-                    content: '';
+                &_layout-3{
                     background-image: url('../../../static/assets/counter/counter_3.png');
                     background-repeat: no-repeat;
                     background-size: contain;
-                    position: absolute;
                     height: 100%;
                     width: 100%;
-                    top: -3rem;
-                    right: -4rem;
-                    z-index: -1;
 
-                    @include response(phone){
-                        width: 20%;
-                        top: -4rem;
-                        right: 53rem;
-                    }
+                    position: absolute;
                 }
                 h2{
+                    position: relative;
+                    z-index: 11;
                     font-size: 15rem;
                     margin-top: 2rem;
                     @include response(phone){
@@ -229,9 +237,15 @@
                         font-size: 25rem;
                     }
                 }
-                p{
-                    @include response(phone){
+                .text{
+                    position: relative;
+                    z-index: 11;
+                    p{
                         font-size: 3rem;
+                        font-weight: 500;
+                        @include response(phone){
+                            font-size: 3rem;
+                        }
                     }
                 }
             }
@@ -245,31 +259,27 @@
                     align-items: center;
                 }
 
-                &::before{
-                    content: '';
+                &_layout-4{
                     background-image: url('../../../static/assets/counter/counter_4.png');
                     background-repeat: no-repeat;
                     background-size: contain;
                     height: 100%;
                     width: 100%;
-                    position: absolute;
-                    top: -9rem;
-                    left: 11rem;
-                    z-index: -1;
 
-                    @include response(phone){
-                        top: 0;
-                        left: 62rem;
-                        width: 20%;
-                    }
+                    position: absolute;
+                    top: -5rem;
                 }
                 h2{
-                    font-size: 13rem;
+                    position: relative;
+                    z-index: 11;
+                    font-size: 15rem;
                     @include response(phone){
                         font-size: 25rem;
                     }
                 }
                 .text{
+                    position: relative;
+                    z-index: 11;
                     margin-left: 3rem;
 
                     @include response(phone){
@@ -278,7 +288,27 @@
                     }
                     p{
                         font-size: 3rem;
+                        font-weight: 500;
                     }
+                }
+            }
+            &_card_1_layout-1,
+            &_card_2_layout-2,
+            &_card_3_layout-3,
+            &_card_4_layout-4{
+                width: 40rem;
+                @include response(phone){
+                    left: 40rem;
+                }
+            }
+            &_card_3_layout-3{
+                @include response(phone){
+                    top: -5rem;
+                }
+            }
+            &_card_4_layout-4{
+                @include response(phone){
+                    top: 3rem;
                 }
             }
         }

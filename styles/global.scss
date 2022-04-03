@@ -1,14 +1,16 @@
 @import "./base.scss";
-@import url("/fonts/GTWalsheimPro/font.css");
+// @import url("/fonts/GTWalsheimPro/font.scss");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "GT Walsheim Pro";
 }
 
 html {
   font-size: 0.625em;
+  font-family: "GT Walsheim Pro";
 
   @include response(big-desktop) {
     font-size: 0.625em;
@@ -42,6 +44,8 @@ body {
   font-family: "GT Walsheim Pro";
   line-height: 1.5;
   overflow-x: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 button {
   font-family: "GT Walsheim Pro";

@@ -6,6 +6,7 @@ const nextConfig = {
     baseUrl: "https://ihd.yyventures.org/api",
     baseUrlForImages: "https://ihd.yyventures.org",
   },
+  optimizeFonts: false
 };
 
 module.exports = nextConfig;
