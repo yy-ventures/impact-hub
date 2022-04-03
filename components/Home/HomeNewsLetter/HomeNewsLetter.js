@@ -31,7 +31,7 @@ const HomeNewsLetter = () => {
     }
     return (
         <section className='home_news_letter'>
-            <div className="home_impacts_layout"><img src={layout2.src} /></div>
+            <div className="home_news_letter_layout"><img src={layout2.src} /></div>
             <div className="home_news_letter_left">
                 {showForm && (
                     <div>
