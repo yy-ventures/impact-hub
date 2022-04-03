@@ -10,15 +10,15 @@
             overflow: hidden;
             width: 100%;
             height: 90vh;
+            @include response(tab-port){
+                height: 70vh;
+            }
             iframe,object,embed{
-                position: absolute;
-                top: 0;
-                left: 0;
                 width: 100%;
                 height: 100%;
             }
         }
-        &_information{
+        &_filter{
             width: 100%;
             height: 100%;
             position: absolute;
@@ -28,20 +28,27 @@
             pointer-events: none;
             background: linear-gradient(
                 to left,
-                $primary2, 
-                rgba($primary2, .1)
+                $white, 
+                rgba($white, .1)
             );
         }
         &_right{
             z-index: 11;
             width: 50%;
-            height: 90vh;
+            // height: 90vh;
             pointer-events: none;
             position: absolute;
             top: 9rem;
             right: 0;
-            text-align: center;
-            padding: 7rem;
+            text-align: end;
+            padding: 7rem 18.4rem 7rem 0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+
+
             @include response(s-phone){
                 width: 100%;
             }
@@ -50,14 +57,16 @@
             }
             @include response(tab-port){
                 width: 75%;
+                height: 70vh;
             }
             h1{
-                color: $white;
+                color: $primary2;
                 font-weight: $bold;
                 font-size: $headingPrimary;
-                line-height: 9.2rem;
-                &:nth-child(2){
-                    padding-bottom: 5rem;
+                line-height: 7.5rem;
+                margin-bottom: 2rem;
+                span{
+                    display: block;
                 }
                 @include response(s-phone){
                     font-size: $subHeading4;
@@ -69,29 +78,35 @@
                     font-weight: $bold;
                     line-height: 5.2rem;
                 }
+                @include response(phone){
+                    font-size: 8rem;
+                    line-height: 8.5rem;
+                }
             }
             p{
-                font-size: 30px;
+                font-size: 3rem;
                 font-weight: 500;
                 letter-spacing: 0px;
                 line-height: normal;
-                color: $white;
-                padding-bottom: 7.5rem;
+                color: $textDark;
+                margin-bottom: 7.5rem;
                 @include response(s-phone){
                     font-size: $para2;
                 }
                 @include response(M-phone){
                     font-size: $common;
                 }
+                @include response(phone){
+                    font-size: 3rem;
+                }
             }
             a{
                 text-decoration: none;
-                font-size: 25px;
+                font-size: 2.5rem;
                 font-weight: 500;
                 color: $primary1;
                 padding: 10px 25px;
                 position: relative;
-                // background-color: $white;
                 background: $white 0% 0% no-repeat padding-box;
                 box-shadow: 0px 3px 6px #00000029;
                 border-radius: 8px;
@@ -105,6 +120,9 @@
                     padding: 7px 15px;
                     font-size: $para3;
                     text-align: justify;
+                }
+                @include response(phone){
+                    font-size: 3rem;
                 }
             }
         }

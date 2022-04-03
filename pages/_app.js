@@ -56,6 +56,7 @@ import "../components/Shared/Cookies/Cookies.scss";
 import "../components/Shared/TitleBlock/TitleBlock.scss";
 import "../components/Shared/Button/Button.scss";
 import "../components/Shared/MembershipCard/MembershipCard.scss";
+import '../components/Shared/ButtonWhite/ButtonWhite.scss';
 
 // push notification
 import '../components/Shared/PushNotify/PushNotify.scss'
