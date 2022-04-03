@@ -1,13 +1,15 @@
 import React from "react";
-const AboutUsImageGrid = ({ parentClass, images }) => {
+const AboutUsImageGrid = ({ parentClass, members }) => {
+  const baseUrlForImages = process.env.baseUrlForImages;
   return (
     <>
-      {images &&
-        images.map((image, index) => {
+      {members &&
+        members.map(({ id, name, designation, email, profile, image_path }, index) => {
           return (
-            <div key={index} className={parentClass + "_img-" + index}>
-              <img src={image} alt="" />
-              <p className="body-global">Lamia Hafiz</p>
+            <div key={id} className={parentClass + "_img-" + index}>
+              <img src={baseUrlForImages + image_path} alt="" />
+              <p className="body-global">{name}</p>
+              <p className="body-global">{designation}</p>
             </div>
           );
         })}

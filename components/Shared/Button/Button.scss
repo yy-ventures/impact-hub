@@ -20,7 +20,7 @@
   cursor: pointer;
   transition: transform 0.25s ease-in-out;
   // Button text style
-  p {
+  span {
     position: relative;
     z-index: 2;
     font-size: 2.5rem;
@@ -59,7 +59,7 @@
     &_active {
       background: white;
       color: $primary1;
-      p {
+      span {
         font-size: 2.7rem;
         font-weight: $bold;
       }
@@ -95,7 +95,7 @@
     &_active {
       background: white;
       color: $primary1;
-      p {
+      span {
         font-weight: $bold;
       }
       svg {
@@ -109,7 +109,7 @@
 .primary_active {
   background: white;
   color: $primary1;
-  p {
+  span {
     font-weight: $bold;
   }
   svg {
@@ -119,7 +119,7 @@
 .secondary_active {
   background: white;
   color: $primary1;
-  p {
+  span {
     font-weight: $bold;
   }
   svg {

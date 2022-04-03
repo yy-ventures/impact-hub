@@ -2,13 +2,19 @@ import React from "react";
 
 const EventSpacesBg = ({ className }) => {
   return (
-    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000.886 1004.956">
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      width="1919.667"
+      height="964.389"
+      viewBox="0 0 1919.667 964.389"
+    >
       <path
-        id="Vector_14"
-        data-name="Vector 14"
-        d="M560.642,4.726C635.959,3.748,792.854,37.8,817.895,181.811c31.3,180.02,204.273,418.939-85.53,625.167C588.8,909.143,169.542,1009.843,46.46,648.945c-121.972-357.643,30-382.016,72.06-467.133S329.8-25.6,560.642,4.726Z"
-        transform="translate(1000.886 895.564) rotate(173)"
-        fill="#f2f2f2"
+        id="Path_21"
+        data-name="Path 21"
+        d="M15823,3044.03c-49.841-73.311,1918.736,0,1918.736,0v931.806s-256.748-110.259-892.186-159.584S15872.841,3117.341,15823,3044.03Z"
+        transform="translate(-15822.069 -3011.448)"
+        fill="#f3f3f3"
       />
     </svg>
   );

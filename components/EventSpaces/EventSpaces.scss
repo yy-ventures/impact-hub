@@ -3,23 +3,26 @@
   position: relative;
   height: fit-content;
   overflow: hidden;
-  padding: 5rem 10rem;
+  padding: 20rem;
+  &_heading {
+    padding-bottom: 6rem;
+  }
   &_bg {
-    &_top {
-      width: 89.7rem;
-      position: absolute;
-      bottom: 35rem;
-      right: 125rem;
-      z-index: 1;
-    }
-    &_bottom {
-      width: 89.7rem;
-      position: absolute;
-      top: 50rem;
-      left: 120rem;
-      z-index: 1;
+    position: absolute;
+    z-index: 1;
+    top: -29rem;
+    left: 0rem;
+    width: 100%;
+  }
+  @include response(phone) {
+    padding: 10rem;
+    &_bg {
+      left: -14rem;
+      width: auto;
+      height: 100%;
     }
   }
+
   &_heading {
     position: relative;
     z-index: 2;

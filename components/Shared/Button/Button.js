@@ -24,7 +24,7 @@ const Button = ({ text = "button", type = "primary", onClick }) => {
       }}
     >
       {type === "primary" ? <ButtonPrimarySVG /> : <ButtonSecondarySVG />}
-      <p>{text}</p>
+      <span className="btn-component_text">{text}</span>
     </button>
   );
 };
