@@ -9,7 +9,10 @@ const SendEnquiry = () => {
         <section className='enquiry'>
             <div className='enquiry_header'>
                 <div>
-                    <HeadingDescription span='' heading='Booking Enquiry' />
+                    <HeadingDescription 
+                        parentClass="enquiry_header"
+                        span='' 
+                        heading='Booking Enquiry' />
                     <p>If you are a member, please enter the email address you used to register your membership. If you have booked a space before, please use the same email address again.</p>
                 </div>
                 <TitleBlock 

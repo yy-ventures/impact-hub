@@ -17,6 +17,11 @@
     &_main{
         &_header{
             padding: 0 7.4rem;
+            &_heading {
+                @include headingLine("left", flex-start);
+                font-size: 6.5rem;
+                padding-bottom: 4.7rem;
+              }
         }
         &_body{
             padding: 4.9rem 5.1rem;
