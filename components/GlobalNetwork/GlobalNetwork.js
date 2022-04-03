@@ -9,9 +9,11 @@ const GlobalNetwork = () => {
                 <div className='global_network_container_header'>
                     <div className='global_network_container_header_left'>
                         <div>
-                            <h1>Impact Hub Dhaka</h1>
-                            <h1>is part of a Global</h1>
-                            <h1>Network</h1>
+                            <h1>
+                               <span className='mark'>Impact Hub Dhaka</span>
+                               <span>is part of a Global</span>
+                               <span>Network</span>
+                            </h1>
                         </div>
                         <div className='para_medium'>
                             <p>We believe a better world is created through the combined accomplishments of compassionate, creative, and committed individuals focused on a common purpose.</p>
