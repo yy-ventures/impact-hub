@@ -9,15 +9,21 @@ import menuClose from "../../../public/menu_close.svg";
 
 const Navbar = () => {
   const [mousePoint, setMousePoint] = useState({ x: 203.5, y: -83 });
+  const [activeNavbar, setActiveNavbar] = useState(false);
   const menuRef = useRef(null);
   const HandleCursor = (e) => {
     setMousePoint({ x: e.clientX, y: e.clientY });
   };
   const handleMenuOpen = () => {
     menuRef.current.style.left = "0";
+    // setActive(!activeNavbar);
+
+    console.log('it worked')
   };
   const handleMenuClose = () => {
     menuRef.current.style.left = "-100%";
+    // setActive(!activeNavbar);
+    console.log('it worked')
   };
   return (
     <nav className="navbar_container" onMouseMove={HandleCursor}>
@@ -37,26 +43,26 @@ const Navbar = () => {
           <div className="menu_close" onClick={handleMenuClose}>
             <img src={menuClose.src} alt="menu close" />
           </div>
-          <ul>
-            <li>
+          <ul className="list">
+            <li className="list__item">
               About
               <span className="nav_list_arrow_container">
-                <img src={downArrow.src} alt="arrow down" />
+                <img src={downArrow.src} alt="arrow down"/>
               </span>
-              <ul>
-                <li>
+              <ul className="sub-list">
+                <li onClick={handleMenuClose} className="sub-list__item">
                   <Link href="/about/about-us">about us</Link>
                 </li>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/about/partners">partners</Link>
                 </li>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/about/global-network">global network</Link>
                 </li>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/about/careers">careers</Link>
                 </li>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/about/global-locations">global locations</Link>
                 </li>
               </ul>
@@ -67,15 +73,15 @@ const Navbar = () => {
                 <img src={downArrow.src} alt="arrow down" />
               </span>
               <ul>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/co-working/membership">membership</Link>
                 </li>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/co-working/faq">FAQ</Link>
                 </li>
               </ul>
             </li>
-            <li>
+            <li onClick={handleMenuClose}>
               <Link href="/office-space">Office Space</Link>
             </li>
             <li>
@@ -84,10 +90,10 @@ const Navbar = () => {
                 <img src={downArrow.src} alt="arrow down" />
               </span>
               <ul>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/event-space/spaces">spaces</Link>
                 </li>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/event-space/send-enquiry">send enquiry</Link>
                 </li>
               </ul>
@@ -98,16 +104,18 @@ const Navbar = () => {
                 <img src={downArrow.src} alt="arrow down" />
               </span>
               <ul>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/events/upcoming-events">upcoming events</Link>
                 </li>
-                <li>
+                <li onClick={handleMenuClose}>
                   <Link href="/events/past-events">past events</Link>
                 </li>
               </ul>
             </li>
-            <li>
-              <Link href="/stories">Stories</Link>
+            <li onClick={handleMenuClose}>
+              <Link href="/stories">
+                <a>Stories</a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -23,6 +23,7 @@
     }
     .nav_list {
       text-align: center;
+      // background-color: palevioletred;
       // menu toggle classes
       .menu_open,
       .menu_close {
@@ -31,6 +32,7 @@
         width: 5rem;
         height: 5rem;
         top: 5%;
+        z-index: 111;
         cursor: pointer;
         img {
           width: 4rem;
@@ -53,7 +55,8 @@
       @media screen and (max-width: 900px) {
         background-color: $primary2;
         width: 100%;
-        height: calc(100vh - 9rem);
+        // height: calc(100vh - 9rem);
+        background-color: $primary2;
         position: absolute;
         top: 9rem;
         left: -100%;
@@ -64,7 +67,9 @@
         }
       }
       ul {
+        // background-color: palevioletred;
         @media screen and (max-width: 900px) {
+          margin-top: 10rem;
           height: 100%;
           width: 100%;
           display: inline-flex;
@@ -72,6 +77,7 @@
           justify-content: space-around;
         }
         li {
+          // background-color: #11436e;
           list-style-type: none;
           display: inline-block;
           @media screen and (max-width: 900px) {
@@ -105,6 +111,7 @@
           }
           &:hover {
             ul {
+              background-color: $primary2;
               transform-origin: 50% 0;
               animation: submenu 0.3s;
               border-bottom-left-radius: 10px;
@@ -129,7 +136,7 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: $primary2;
+            // background-color: $primary2;
             width: 17.5rem;
             @media screen and (max-width: 900px) {
               position: relative;

@@ -25,6 +25,10 @@
     z-index: 2;
     font-size: 2.5rem;
     font-weight: $regular;
+
+    @include response(phone){
+      font-size: 4rem;
+    }
   }
   // Button svg initial position
   svg {

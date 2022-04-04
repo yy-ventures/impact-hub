@@ -1,18 +1,18 @@
 [
     {
-        "img": "img1",
+        "img": "event-space",
         "title": "Event Space"
     },
     {
-        "img": "img2",
+        "img": "hub-cafe",
         "title": "Hub Cafe"
     },
     {
-        "img": "img3",
+        "img": "hub-cafe",
         "title": "Workshop Space"
     },
     {
-        "img": "img4",
+        "img": "board-meeting-room",
         "title": "Board Meeting Room"
     }
 ]

@@ -46,16 +46,10 @@
             font-size: $headingOptional;
             font-weight: $bold;
             color: $primary2;
-        }
-        button{
-            outline: 0;
-            border: 0;
-            padding: 1.9rem 2.8rem;
-            font-size: 2.6rem;
-            color: $white;
-            background-color: $primary2;
-            border-radius: 5px;
-            cursor: pointer;
+
+            @include response(phone){
+                font-size: 10rem;
+            }
         }
         &_para {
             font-size: $para2;
@@ -63,6 +57,11 @@
             line-height: 2.9rem;
             padding: 2rem 0;
             margin-bottom: 5rem;
+
+            @include response(phone){
+                font-size: 4rem;
+                line-height: 5rem;
+            }
         }
         &_form {
             animation: form 0.3s;
@@ -106,22 +105,26 @@
         position: relative;
         div {
         // padding-inline: 15rem;
-        margin-top: 5rem;
-        text-align: center;
+            margin-top: 5rem;
+            text-align: center;
 
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
 
-        @include response(phone) {
-            align-items: center;
-        }
+            @include response(phone) {
+                align-items: center;
+            }
         }
         &_header {
         h2 {
             font-size: $headingPrimary;
             color: $secondary;
             font-weight: $bold;
+            
+            @include response(phone){
+                font-size: 10rem;
+            }
         }
         h3 {
             font-size: $headingOptional;

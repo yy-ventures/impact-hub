@@ -13,6 +13,10 @@
                 font-size: $headingSecondary;
                 font-weight: $bold;
                 display: inline;
+
+                @include response(phone){
+                    font-size: 7rem;
+                }
             }
         }
         &_body{
@@ -27,6 +31,10 @@
                 margin-top: $para1;
                 color: $primary2;
                 padding: 0rem 8rem;
+
+                @include response(phone){
+                    padding: 0;
+                }
             }
         }
     }
