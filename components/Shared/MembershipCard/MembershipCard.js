@@ -21,7 +21,11 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1, im
     setShowForm(true);
   };
   return (
-    <div className="membership-card-container">
+    <div
+      className={`${
+        image ? `office-space-card-container${showCard ? " office-space-show-card" : ""}` : "membership-card-container"
+      }`}
+    >
       {image && <img src={image} alt="" />}
       <div
         className={`membership-card ${modifierClass ? modifierClass : ""} ${showCard ? "show-card" : ""} ${

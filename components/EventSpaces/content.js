@@ -1,5 +1,6 @@
 export const spaces = [
   {
+    image: "event-space.webp",
     title: "Event Space",
     size: 1200,
     seating: 70,
@@ -29,6 +30,7 @@ export const spaces = [
     ],
   },
   {
+    image: "workshop-space.webp",
     title: "Workshop Space",
     size: 1200,
     seating: 70,
@@ -58,6 +60,7 @@ export const spaces = [
     ],
   },
   {
+    image: "hub-cafe.webp",
     title: "Hub Cafe",
     size: 1200,
     seating: 70,
@@ -87,6 +90,7 @@ export const spaces = [
     ],
   },
   {
+    image: "board-meeting-room.webp",
     title: "Board Meeting Room",
     size: 1200,
     seating: 70,

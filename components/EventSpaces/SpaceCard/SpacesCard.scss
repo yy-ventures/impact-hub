@@ -1,31 +1,60 @@
 @import "../../../styles/base.scss";
-.spaces-card {
+// Title
+.spaces-card_container {
   position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 50rem;
-  height: 40rem;
-  border-radius: 2rem;
+  // Card Title
+  &_title {
+    position: absolute;
+    z-index: 2;
+
+    width: max-content;
+    padding: 1.1rem 3.3rem;
+    border-radius: 1.4rem;
+
+    font-size: $para1;
+    font-weight: $bold;
+
+    color: white;
+    background: $primary2;
+
+    transition: left 0.5s ease;
+  }
+}
+
+// Base styles of component
+.spaces-card {
   overflow: hidden;
-  transition: all 0.5s ease;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 52.1rem;
+  height: 38.1rem;
+  border-radius: 2rem;
+
+  transition: width 0.5s ease;
+
+  // background image
   img {
-    width: auto;
+    height: inherit;
     object-fit: contain;
     position: absolute;
     z-index: 0;
-    filter: grayscale(100%);
     transition: all 0.5s ease;
   }
+
+  // Background Gradient
   &_bg-gradient {
-    // width: 73.6rem;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.5) 30%);
+    background-image: linear-gradient(to right, rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.1) 30%);
     position: absolute;
     z-index: 1;
-    transition: all 0.5s ease;
   }
+
+  // Details
   &_details {
     position: relative;
     z-index: 2;
@@ -34,17 +63,10 @@
     align-items: center;
     justify-content: space-between;
     width: 45rem;
-    height: 80%;
+    height: 70%;
     color: white;
-    &_title {
-      position: relative;
-      font-size: $para1;
-      font-weight: $bold;
-      background: $primary2;
-      padding: 1.1rem 3.3rem;
-      transition: left 0.5s ease;
-      width: max-content;
-    }
+
+    // Size Seating
     &_size-seating {
       position: relative;
       bottom: -30rem;
@@ -52,7 +74,7 @@
       justify-content: space-between;
       width: 40rem;
       opacity: 0;
-      font-size: $spaceSize;
+      font-size: $para3;
       font-weight: $medium;
       transition: bottom 0.5s ease;
       &_size,
@@ -73,6 +95,8 @@
         }
       }
     }
+
+    // Event space description
     &_description {
       position: relative;
       bottom: -30rem;
@@ -81,6 +105,8 @@
       transition: bottom 0.5s ease;
       font-size: $common;
     }
+
+    // Button Component
     .btn-component {
       width: 14rem;
       height: 6rem;
@@ -91,7 +117,7 @@
       svg {
         fill: $limeGreen;
       }
-      p {
+      &_text {
         font-size: $common;
         font-weight: $bold;
       }
@@ -104,6 +130,8 @@
       }
     }
   }
+
+  // Amenities
   &_features {
     position: relative;
     z-index: 2;
@@ -118,40 +146,65 @@
     transition: bottom 0.5s ease;
     h2 {
       color: $limeGreen;
-      font-size: $para1;
+      font-size: $para2;
     }
     p {
-      font-size: $para3;
+      font-size: $showMoreButton;
       font-weight: $medium;
       svg {
         width: $para3;
       }
     }
   }
+
+  // Show More Button
   &_show-more {
     position: relative;
     z-index: 2;
+
     display: flex;
-    width: 4.4rem;
+    align-items: center;
+
+    width: min-content;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+
     font-size: $showMoreButton;
     font-weight: $bold;
+
     color: white;
     transition: all 0.5s ease;
-    &_left {
-      left: 5rem;
-    }
-    &_right {
-      right: 5rem;
-    }
     svg {
+      fill: white;
+      position: relative;
+      left: 0rem;
+      right: 0rem;
+
       width: $showMoreButton;
+      margin: 0.2rem;
+
+      transition: all 0.5s ease 0.5s;
+    }
+    // Show More button hover effect
+    &:hover {
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
     }
   }
 }
+
 // Styles for right aligned and left aligned card
-.spaces-card {
+.spaces-card_container {
+  // Right Aligned
   &_left {
-    flex-direction: row-reverse;
+    .spaces-card_container_title {
+      right: 3.5rem;
+      top: -2.5rem;
+    }
+    .spaces-card {
+      flex-direction: row-reverse;
+    }
     .spaces-card_details_title {
       align-self: flex-end;
       border-radius: 1rem 0rem 0rem 1rem;
@@ -159,29 +212,34 @@
     }
     .spaces-card_show-more {
       flex-direction: row-reverse;
-      left: 5rem;
-      transition: all 1s ease;
+      left: 12rem;
     }
   }
+  // Left aligned
   &_right {
+    .spaces-card_container_title {
+      left: 3.5rem;
+      top: -2.5rem;
+    }
     .spaces-card_details_title {
       align-self: flex-start;
       border-radius: 0rem 1rem 1rem 0rem;
       // transition: all 1s ease;
     }
     .spaces-card_show-more {
-      right: 5rem;
-      transition: all 1s ease;
-      svg {
+      right: 12rem;
+      // svg
+      &_right {
         transform: rotate(180deg);
       }
     }
   }
 }
-// Styles when card opens
+// Styles when cards are open
 .spaces-card_open {
   width: 93.6rem;
   transition: all 0.5s ease;
+  // Background image
   img {
     width: 100%;
     filter: blur(0.5rem);
@@ -190,7 +248,7 @@
   }
   .spaces-card {
     &_bg-gradient {
-      transition: all 0.5s ease;
+      background-image: linear-gradient(to right, rgba(32, 32, 32, 0), rgba(0, 0, 0, 0.5) 30%);
     }
     &_details {
       &_title {
@@ -212,8 +270,13 @@
       bottom: 0rem;
     }
     &_show-more {
-      transition: all 1s ease;
+      left: 0rem;
+      right: 0rem;
+      transition: all 0.5s ease;
       &_right {
+        transform: rotate(360deg);
+      }
+      &_left {
         transform: rotate(180deg);
       }
     }
