@@ -32,7 +32,7 @@
       // Description Body
       &_body {
         width: 71.8rem;
-        padding-left: 3rem;
+        margin-left: 7.9rem;
         font-size: $para1;
         color: $primary2;
         @include response(vp-800) {
@@ -60,8 +60,17 @@
         padding: 3rem;
         object-fit: contain;
       }
-      p {
-        font-size: $para1;
+      &_grid-child {
+        h4 {
+          font-size: $para2;
+          font-weight: $bold;
+          color: $primary2;
+        }
+        p {
+          font-size: $common;
+          font-weight: $regular;
+          color: $primary2;
+        }
       }
     }
   }

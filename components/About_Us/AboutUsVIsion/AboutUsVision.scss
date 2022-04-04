@@ -34,7 +34,7 @@
           @include response(vp-800) {
             width: fit-content;
           }
-          margin-left: 3rem;
+          margin-left: 7.9rem;
           color: $primary2;
           p:first-child {
             padding-bottom: 3.8rem;
@@ -65,10 +65,8 @@
       }
       &_body {
         width: 67.2rem;
-        margin-right: 3rem;
+        margin-right: 7.9rem;
         @include response(vp-800) {
-          margin-left: 3rem;
-          margin-right: 0rem;
         }
         font-size: $para1;
       }
