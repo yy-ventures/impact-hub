@@ -32,9 +32,7 @@ const HomeGrid = () => {
         </div>
         <div className="home_image_grid_header_right">
           <Link href="#">
-            <a>
               <h4>view stories</h4>
-            </a>
           </Link>
           <span>
             <img src={rightArrow.src} />

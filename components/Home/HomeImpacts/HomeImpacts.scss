@@ -54,6 +54,9 @@
             font-weight: $bold;
             margin-left: 2.7rem;
             padding-bottom: 4.5rem;
+
+            position: relative;
+            z-index: 111;
         }
         &_counter{
             margin-top: 4rem;
@@ -151,7 +154,7 @@
                     z-index: 11;
                     p{
                         font-size: 3rem;
-                        font-weight: 500;
+                        font-weight: 700;
                         &:not(:last-child){
                             margin-top: 4rem;
                         }
@@ -199,7 +202,7 @@
                     }
                     p{
                         font-size: 3rem;
-                        font-weight: 500;
+                        font-weight: 700;
                         @include response(phone){
                             font-size: 3rem;
                         }
@@ -243,7 +246,7 @@
                     z-index: 11;
                     p{
                         font-size: 3rem;
-                        font-weight: 500;
+                        font-weight: 700;
                         @include response(phone){
                             font-size: 3rem;
                         }
@@ -289,7 +292,7 @@
                     }
                     p{
                         font-size: 3rem;
-                        font-weight: 500;
+                        font-weight: 700;
                     }
                 }
             }

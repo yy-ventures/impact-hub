@@ -49,19 +49,17 @@
     &_right {
       display: flex;
       align-items: center;
+      gap: 2rem;
       h4 {
         font-size: $subHeading3;
         color: $primary2;
         font-weight: $bold;
         text-transform: capitalize;
-      }
-      a {
-        text-decoration: none;
+        cursor: pointer;
       }
       img {
         width: 70%;
         transition: 0.3s;
-        margin-left: 5%;
       }
     }
   }

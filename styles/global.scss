@@ -9,6 +9,7 @@
 
 html {
   font-size: 0.625em;
+  // font-size: 62.5%;
   font-family: "GT Walsheim Pro";
 
   @include response(big-desktop) {

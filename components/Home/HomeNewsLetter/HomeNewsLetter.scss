@@ -120,13 +120,12 @@
         &_header {
         h2 {
             font-size: $headingPrimary;
-            color: $primary2;
+            color: $secondary;
             font-weight: $bold;
-            margin-left: 4rem;
         }
         h3 {
             font-size: $headingOptional;
-            color: $secondary;
+            color: $primary2;
             font-weight: $bold;
             line-height: 6.9rem;
             padding-bottom: 2rem;
