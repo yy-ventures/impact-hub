@@ -1,320 +1,321 @@
-@import '../../../styles/base.scss';
+@import "../../../styles/base.scss";
 
-.home_impacts{
-    padding-top: 20rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
+.home_impacts {
+  padding-top: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
 
+  position: relative;
+
+  @media screen and (max-width: 600px) {
+    height: auto;
+    padding: 10rem 0;
+  }
+  &_layout {
+    position: absolute;
+    top: 0;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include response(phone) {
+      display: none;
+    }
+  }
+  &_header {
     position: relative;
-
+    z-index: 111;
+    text-align: center;
+    h2 {
+      color: $textDark;
+      font-size: $headingSecondary;
+      font-weight: $bold;
+    }
+    h4 {
+      color: $textDark;
+      font-size: $subHeading3;
+      font-weight: $bold;
+    }
+  }
+  &_body {
+    width: 137.058rem;
+    margin-top: 10.6rem;
     @media screen and (max-width: 600px) {
-        height: auto;
-        padding: 10rem 0;
+      width: 100%;
     }
-    &_layout{
-        position: absolute;
-        top: 0;
-        height: 100%;
+    h4 {
+      font-size: $subHeading3;
+      font-weight: $bold;
+      margin-left: 2.7rem;
+      padding-bottom: 4.5rem;
 
-        img{
-            height: 100%;
-            object-fit: cover;
-        }
+      position: relative;
+      z-index: 111;
+    }
+    &_counter {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+      grid-template-rows: repeat(2, [row-start] min-content [row-end]);
+      row-gap: 5rem;
 
-        @include response(phone){
-            display: none;
-        }
-    }
-    &_header{
-        position: relative;
-        z-index: 111;
-        text-align: center;
-        h2{
-            color: $textDark;
-            font-size: $headingSecondary;
-            font-weight: $bold;
-        }
-        h4{
-            color: $textDark;
-            font-size: $subHeading3;
-            font-weight: $bold;
-        }
-    }
-    &_body{
-        width: 137.058rem;
-        margin-top: 10.6rem;
+      @include response(phone) {
+        grid-template-columns: [col-start] 1fr [col-end];
+        grid-template-rows: repeat(4, [row-start] min-content [row-end]);
+        gap: 4rem;
+      }
+
+      &_card {
         @media screen and (max-width: 600px) {
-            width: 100%;
+          height: 32.5rem;
         }
-        h4{
-            font-size: $subHeading3;
-            font-weight: $bold;
-            margin-left: 2.7rem;
-            padding-bottom: 4.5rem;
-
-            position: relative;
-            z-index: 111;
+        h2 {
+          font-weight: $bold;
+          color: $textDark;
+          line-height: 1.2;
         }
-        &_counter{
-            margin-top: 4rem;
-            display: grid;
-            grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
-            grid-template-rows: repeat(2, [row-start] min-content [row-end]);
-            row-gap: 5rem;
-
-            @include response(phone){
-                grid-template-columns: [col-start] 1fr [col-end];
-                grid-template-rows: repeat(4, [row-start] min-content [row-end]);
-                gap: 4rem;
-            }
-
-            &_card{
-                @media screen and (max-width: 600px) {
-                    height: 32.5rem;
-                }
-                h2{
-                    font-weight: $bold;
-                    color: $textDark;
-                    line-height: 1.2;
-                }
-                p{
-                    font-size: $common;
-                    text-transform: capitalize;
-                    color: $textDark;
-                    font-weight: $bold;
-                }
-                &:nth-child(1){
-                    grid-column: col-start 1 /col-end 1;
-                    grid-row: row-start 1 / row-end 1;
-
-                    @include response(phone){
-                        grid-column: col-start / col-end;
-                        grid-row: row-start 1 / row-end 1;
-                    }
-                }
-                &:nth-child(2){
-                    grid-column: col-start 2 /col-end 2;
-                    grid-row: row-start 2 / row-end 2;
-
-                    @include response(phone){
-                        grid-column: col-start / col-end;
-                        grid-row: row-start 2 / row-end 2;
-                    }
-                }
-                &:nth-child(3){
-                    grid-column: col-start 3 /col-end 3;
-                    grid-row: row-start 1 / row-end 1;
-
-                    @include response(phone){
-                        grid-column: col-start / col-end;
-                        grid-row: row-start 3 / row-end 3;
-                    }
-                }
-                &:nth-child(4){
-                    grid-column: col-start 4 /col-end 4;
-                    grid-row: row-start 2 / row-end 2;
-
-                    @include response(phone){
-                        grid-column: col-start / col-end;
-                        grid-row: row-start 4 / row-end 4;
-                    }
-                }
-            }
-            &_card_1{
-                width: 100%;
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                gap: 1rem;
-
-                position: relative;
-
-                &_layout-1{
-                    background-image: url('../../../static/assets/counter/counter_1.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 100%;
-                    width: 100%;
-
-                    position: absolute;
-                }
-                h2{
-                    position: relative;
-                    z-index: 11;
-                    font-size: 15rem;
-                    @include response(phone){
-                        font-size: 25rem;
-                    }
-                }
-                .text{
-                    position: relative;
-                    z-index: 11;
-                    p{
-                        font-size: 3rem;
-                        font-weight: 700;
-                        &:not(:last-child){
-                            margin-top: 4rem;
-                        }
-                    }
-                }
-            }
-            &_card_2{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                position: relative;
-
-                @include response(phone){
-                    align-items: center;
-                }
-
-                &_layout-2{
-                    background-image: url('../../../static/assets/counter/counter_2.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 100%;
-                    width: 100%;
-
-                    position: absolute;
-                    top: -5rem;
-                }
-                h2{
-                    font-size: 15rem;
-                    line-height: .8;
-                    text-align: end;
-                    position: relative;
-                    z-index: 11;
-                    @include response(phone){
-                        font-size: 25rem;
-                    }
-                }
-                .text{
-                    position: relative;
-                    z-index: 11;
-                    align-self: flex-end;
-                    
-                    @include response(phone){
-                        align-self: center;
-                        margin-left: 28rem;
-                    }
-                    p{
-                        font-size: 3rem;
-                        font-weight: 700;
-                        @include response(phone){
-                            font-size: 3rem;
-                        }
-                    }
-                }
-            }
-            &_card_3{
-                width: 100%;
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                gap: 1rem;
-
-                position: relative;
-
-                @include response(phone){
-                    margin-top: 6rem;
-                }
-
-                &_layout-3{
-                    background-image: url('../../../static/assets/counter/counter_3.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 100%;
-                    width: 100%;
-
-                    position: absolute;
-                }
-                h2{
-                    position: relative;
-                    z-index: 11;
-                    font-size: 15rem;
-                    margin-top: 2rem;
-                    @include response(phone){
-                        margin-top: 0;
-                        font-size: 25rem;
-                    }
-                }
-                .text{
-                    position: relative;
-                    z-index: 11;
-                    p{
-                        font-size: 3rem;
-                        font-weight: 700;
-                        @include response(phone){
-                            font-size: 3rem;
-                        }
-                    }
-                }
-            }
-            &_card_4{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                position: relative;
-
-                @include response(phone){
-                    align-items: center;
-                }
-
-                &_layout-4{
-                    background-image: url('../../../static/assets/counter/counter_4.png');
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 100%;
-                    width: 100%;
-
-                    position: absolute;
-                    top: -5rem;
-                }
-                h2{
-                    position: relative;
-                    z-index: 11;
-                    font-size: 15rem;
-                    @include response(phone){
-                        font-size: 25rem;
-                    }
-                }
-                .text{
-                    position: relative;
-                    z-index: 11;
-                    margin-left: 3rem;
-
-                    @include response(phone){
-                        margin-left: -25rem;
-                        margin-top: -5rem;
-                    }
-                    p{
-                        font-size: 3rem;
-                        font-weight: 700;
-                    }
-                }
-            }
-            &_card_1_layout-1,
-            &_card_2_layout-2,
-            &_card_3_layout-3,
-            &_card_4_layout-4{
-                width: 40rem;
-                @include response(phone){
-                    left: 40rem;
-                }
-            }
-            &_card_3_layout-3{
-                @include response(phone){
-                    top: -5rem;
-                }
-            }
-            &_card_4_layout-4{
-                @include response(phone){
-                    top: 3rem;
-                }
-            }
+        p {
+          font-size: $common;
+          text-transform: capitalize;
+          color: $textDark;
+          font-weight: $bold;
         }
+        &:nth-child(1) {
+          grid-column: col-start 1 / col-end 1;
+          grid-row: row-start 1 / row-end 1;
+
+          @include response(phone) {
+            grid-column: col-start / col-end;
+            grid-row: row-start 1 / row-end 1;
+          }
+        }
+        &:nth-child(2) {
+          grid-column: col-start 2 / col-end 2;
+          grid-row: row-start 2 / row-end 2;
+
+          @include response(phone) {
+            grid-column: col-start / col-end;
+            grid-row: row-start 2 / row-end 2;
+          }
+        }
+        &:nth-child(3) {
+          grid-column: col-start 3 / col-end 3;
+          grid-row: row-start 1 / row-end 1;
+
+          @include response(phone) {
+            grid-column: col-start / col-end;
+            grid-row: row-start 3 / row-end 3;
+          }
+        }
+        &:nth-child(4) {
+          grid-column: col-start 4 / col-end 4;
+          grid-row: row-start 2 / row-end 2;
+
+          @include response(phone) {
+            grid-column: col-start / col-end;
+            grid-row: row-start 4 / row-end 4;
+          }
+        }
+      }
+      &_card_1 {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1rem;
+
+        position: relative;
+
+        &_layout-1 {
+          background-image: url("../../../static/assets/counter/counter_1.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 100%;
+          width: 100%;
+
+          position: absolute;
+        }
+        h2 {
+          position: relative;
+          z-index: 11;
+          font-size: 15rem;
+          @include response(phone) {
+            font-size: 25rem;
+          }
+        }
+        .text {
+          position: relative;
+          z-index: 11;
+          p {
+            font-size: 3rem;
+            font-weight: 700;
+            &:not(:last-child) {
+              margin-top: 4rem;
+            }
+          }
+        }
+      }
+      &_card_2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        @include response(phone) {
+          align-items: center;
+        }
+
+        &_layout-2 {
+          background-image: url("../../../static/assets/counter/counter_2.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 100%;
+          width: 100%;
+
+          position: absolute;
+          top: -5rem;
+        }
+        h2 {
+          font-size: 15rem;
+          line-height: 0.8;
+          text-align: end;
+          position: relative;
+          z-index: 11;
+          @include response(phone) {
+            font-size: 25rem;
+          }
+        }
+        .text {
+          position: relative;
+          z-index: 11;
+          align-self: flex-end;
+
+          @include response(phone) {
+            align-self: center;
+            margin-left: 28rem;
+          }
+          p {
+            font-size: 3rem;
+            font-weight: 700;
+            @include response(phone) {
+              font-size: 3rem;
+            }
+          }
+        }
+      }
+      &_card_3 {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1rem;
+
+        position: relative;
+
+        @include response(phone) {
+          margin-top: 6rem;
+        }
+
+        &_layout-3 {
+          background-image: url("../../../static/assets/counter/counter_3.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 100%;
+          width: 100%;
+
+          position: absolute;
+        }
+        h2 {
+          position: relative;
+          z-index: 11;
+          font-size: 15rem;
+          margin-top: 2rem;
+          @include response(phone) {
+            margin-top: 0;
+            font-size: 25rem;
+          }
+        }
+        .text {
+          position: relative;
+          z-index: 11;
+          p {
+            font-size: 3rem;
+            font-weight: 700;
+            @include response(phone) {
+              font-size: 3rem;
+            }
+          }
+        }
+      }
+      &_card_4 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        @include response(phone) {
+          align-items: center;
+        }
+
+        &_layout-4 {
+          background-image: url("../../../static/assets/counter/counter_4.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 100%;
+          width: 100%;
+
+          position: absolute;
+          top: -5rem;
+        }
+        h2 {
+          position: relative;
+          z-index: 11;
+          font-size: 15rem;
+          @include response(phone) {
+            font-size: 25rem;
+          }
+        }
+        .text {
+          position: relative;
+          z-index: 11;
+          margin-left: 3rem;
+
+          @include response(phone) {
+            margin-left: -25rem;
+            margin-top: -5rem;
+          }
+          p {
+            font-size: 3rem;
+            font-weight: 700;
+          }
+        }
+      }
+      &_card_1_layout-1,
+      &_card_2_layout-2,
+      &_card_3_layout-3,
+      &_card_4_layout-4 {
+        width: 40rem;
+        @include response(phone) {
+          left: 40rem;
+        }
+      }
+      &_card_3_layout-3 {
+        @include response(phone) {
+          top: -5rem;
+        }
+      }
+      &_card_4_layout-4 {
+        @include response(phone) {
+          top: 3rem;
+        }
+      }
     }
+  }
 }
