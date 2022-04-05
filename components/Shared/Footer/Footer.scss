@@ -19,12 +19,21 @@
     justify-content: space-between;
     flex-direction: column;
     height: 36.5rem;
+    @include response(phone){
+      gap: 2rem;
+      height: min-content;
+    }
     &_list {
       ul {
+        text-align: center;
+        // font-size: 4rem;
         li {
           font-size: $para1;
           list-style-type: none;
           margin-top: 2.7rem;
+          @include response(phone){
+            font-size: 4.5rem;
+          }
           a {
             text-decoration: none;
             color: $white;
@@ -36,10 +45,13 @@
       }
     }
     &_logo {
-      width: 19.6rem;
-      height: 9.1rem;
+      width: 14.6rem;
+      height: 14.1rem;
+      @include response(phone){
+        align-self: center;
+      }
       img {
-        width: 100%;
+        // width: 100%;
         height: 100%;
         object-fit: cover;
       }
@@ -48,6 +60,13 @@
   &_middle {
     width: 43rem;
     height: 25.21rem;
+    @include response(phone){
+      justify-self: center;
+      margin-top: 4rem;
+      font-size: 5rem;
+      height: min-content;
+      width: 100%;
+    }
     &_content {
       height: 100%;
       display: flex;
@@ -59,17 +78,30 @@
         font-size: $subHeading2;
         color: $white;
         font-weight: $bold;
+        @include response(phone){
+          font-size: 6.5rem;
+        }
       }
       p {
         color: $white;
         font-size: $para1;
         line-height: 2.9rem;
+        @include response(phone){
+          font-size: 4.5rem;
+          line-height: 5rem;
+          font-weight: 300;
+        }
       }
       &_social {
         img {
           height: 3.5rem;
           width: 3.5rem;
           margin: 0 1.5rem;
+          @include response(phone){
+            margin-top: 5rem;
+            height: 6rem;
+            width: 6rem;
+          }
         }
       }
     }

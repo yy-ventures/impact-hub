@@ -5,6 +5,9 @@
     @media screen and (max-width: 900px) {
         height: 350px;
     }
+    @include response(phone){
+        height: 60rem;
+    }
     background-color: $textLight;
     z-index: 1;
     position: relative;
