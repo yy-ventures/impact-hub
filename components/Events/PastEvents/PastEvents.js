@@ -8,9 +8,9 @@ import NextArrow from "./Arrows/NextArrow";
 import storyPath from "../../../public/story_path.png";
 import useFetch from "../../Hooks/useFetch";
 
-const PastEvents = () => {
+const PastEvents = ({ type = "past" }) => {
   // Fetch data of past events
-  const pastEvents = useFetch("/get-event?type=past");
+  const pastEvents = useFetch(`/get-event?type=${type}`);
   const baseUrlForImages = process.env.baseUrlForImages;
 
   //   Sort the events based on year and months
@@ -54,6 +54,8 @@ const PastEvents = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     arrows: false,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 600,
@@ -84,6 +86,7 @@ const PastEvents = () => {
                 <div key={index} className="past_events_container_data">
                   <div className="past_events_container_data_header">
                     <h3>{date}</h3>
+                    <NextArrow />
                   </div>
                   <div className="past_events_container_data_body">
                     {(childSliderSettings.infinite = events.length > 3)}
