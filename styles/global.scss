@@ -16,7 +16,7 @@ html {
     font-size: 0.625em;
   }
   @include response(m-desktop) {
-    font-size: 0.425em;
+    font-size: 0.45em;
   }
   @include response(desktop) {
     font-size: 0.4em;

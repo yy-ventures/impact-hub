@@ -6,10 +6,10 @@ const AboutUsImageGrid = ({ parentClass, members }) => {
       {members &&
         members.map(({ id, name, designation, email, profile, image_path }, index) => {
           return (
-            <div key={id} className={parentClass + "_img-" + index}>
+            <div key={id} className={parentClass + "_grid-child"}>
               <img src={baseUrlForImages + image_path} alt="" />
-              <p className="body-global">{name}</p>
-              <p className="body-global">{designation}</p>
+              <h4 className="name body-global">{name}</h4>
+              <p className="designation body-global">{designation}</p>
             </div>
           );
         })}

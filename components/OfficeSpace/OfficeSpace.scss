@@ -3,7 +3,9 @@
   position: relative;
   height: 155rem;
   @include response(vp-800) {
-    height: 180rem;
+    min-height: 280rem;
+    height: max-content;
+    padding-bottom: 5rem;
   }
   &_bg {
     svg {

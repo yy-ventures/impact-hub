@@ -1,6 +1,6 @@
 @import "../../../styles/base.scss";
 .about_us_approach {
-  padding: 9.6rem 13rem 15.6rem 21.2rem;
+  padding: 9.6rem 10rem 15.6rem 10rem;
 
   &_container {
     display: grid;
@@ -14,18 +14,33 @@
       align-items: center;
       padding-bottom: 20.5rem;
       &_heading {
-        font-size: $headingPrimary;
+        font-size: $headingSecondary;
         font-weight: $bold;
         color: $secondary;
       }
       &_body {
         font-size: $para1;
+        text-align: center;
         color: $primary2;
       }
-      &_image {
-        img {
-          width: 65.7rem;
-          object-fit: contain;
+      &_banner {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin: 0 auto;
+        &_svg {
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          position: relative;
+          svg {
+            width: 25.2rem;
+          }
+          p {
+            position: absolute;
+            font-size: $para1;
+            font-weight: $medium;
+            color: white;
+          }
         }
       }
     }
@@ -34,8 +49,12 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      width: 126.5rem;
       column-gap: 10rem;
       row-gap: 5rem;
+      @include response(phone) {
+        width: auto;
+      }
       &_card {
         width: 35.5rem;
         position: relative;
