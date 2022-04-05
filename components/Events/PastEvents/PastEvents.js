@@ -11,7 +11,7 @@ import useFetch from "../../Hooks/useFetch";
 import leftArrow from '../../../public/icons/prev_icon.png'
 import rightArrow from '../../../public/icons/next_icon.png'
 
-const PastEvents = () => {
+const PastEvents = ({type}) => {
   // Fetch data of past events
   const pastEvents = useFetch(`/get-event?type=${type}`);
   const baseUrlForImages = process.env.baseUrlForImages;
@@ -82,10 +82,10 @@ const PastEvents = () => {
       <div className="past_events_container">
         <div className="past_events_container_data">
           <div className="past_events_container_data_header">
-            <span onClick={HandleLeft}><img src={leftArrow.src}/></span><h3>{pastEvents.length > 0 && pastEvents[slideIndex].date}</h3><span onClick={HandleRight}><img src={rightArrow.src}/></span>
+            <span className="past_events_container_data_header_arrow" onClick={HandleLeft}><img src={leftArrow.src}/></span><h3>{pastEvents.length > 0 && pastEvents[slideIndex].date}</h3><span className="past_events_container_data_header_arrow" onClick={HandleRight}><img src={rightArrow.src}/></span>
           </div>
           <div className="past_events_container_data_body">
-            {pastEvents.length>0 && (sliderSettings.infinite = pastEvents[slideIndex].events.length>3)}
+            {pastEvents.length > 0 && (sliderSettings.infinite = pastEvents[slideIndex].events.length>3)}
             <Slider {...sliderSettings}>
               {pastEvents.length > 0 && pastEvents[slideIndex].events.map(({ id, title, start_date, end_date, starts_at, ends_at, image_path }) => {
                 return (

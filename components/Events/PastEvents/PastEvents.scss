@@ -21,7 +21,7 @@
             @include headingLine("left", flex-start);
             font-size: 6.5rem;
             padding-bottom: 4.7rem;
-          }
+        }
     }
     &_container{
         border: 1px solid #707070;
@@ -39,6 +39,9 @@
                     font-size: $para1;
                     color: $primary2;
                     font-weight: $bold;
+                }
+                &_arrow{
+                    cursor: pointer;
                 }
             }
             .card_prev_arrow{
