@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Button from "../Button/Button";
 
-const EventCommonCard = ({ title, type, date, starts_at, ends_at, summary, thumb, id, btnText = "View" }) => {
+const EventCommonCard = ({ id,title, type, date, starts_at, ends_at, summary, thumb,  btnText = "View", slug }) => {
   // convert time from 24hr format to 12 hr format
   const tConvert = (time) => {
     // Check correct time format and split into components
@@ -34,14 +34,14 @@ const EventCommonCard = ({ title, type, date, starts_at, ends_at, summary, thumb
           <p className={type ? "event_common_card_body_center_content_time" : "event_common_card_body_content_time"}>
             {
               // Converted time value
-              `${tConvert(starts_at)} - ${tConvert(ends_at)}`
+              `${starts_at && tConvert(starts_at)} - ${ends_at && tConvert(ends_at)}`
             }
           </p>
           <p className="event_common_card_body_content_summary">{summary}</p>
         </div>
       </div>
       <div className="event_common_card_footer">
-        <Link href="/stories/[id]" as={`/stories/${id}`}>
+        <Link href={`/${slug}/[id]`} as={`/${slug}/${id}`}>
           <a>
             <Button text={btnText} type="secondary" />
           </a>

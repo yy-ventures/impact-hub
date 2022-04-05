@@ -7,10 +7,11 @@ const storyDetails = () => {
     let router = useRouter()
     const { id } = router.query
     const detailStory = useFetch(`/get-story-detail/${id}`)
+    console.log(detailStory)
     return (
         <>
         {
-            detailStory[0] && <StoryDetails html={detailStory[0].details}></StoryDetails>
+            detailStory[0] && <StoryDetails html={detailStory[0].details} slug='stories'></StoryDetails>
         }
         </>
         

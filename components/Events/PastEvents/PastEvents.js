@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import EventCommonCard from "../../Shared/EventCommoncard/EventCommonCard";
 import storyThumb from "../../../public/images/story_thumb.png";
@@ -7,6 +7,9 @@ import PrevArrow from "./Arrows/PrevArrow";
 import NextArrow from "./Arrows/NextArrow";
 import storyPath from "../../../public/story_path.png";
 import useFetch from "../../Hooks/useFetch";
+
+import leftArrow from '../../../public/icons/prev_icon.png'
+import rightArrow from '../../../public/icons/next_icon.png'
 
 const PastEvents = () => {
   // Fetch data of past events
@@ -22,13 +25,32 @@ const PastEvents = () => {
     }
   });
 
-  const childSliderSettings = {
+
+  const [slideIndex, setSlideIndex] = useState(0)
+
+  const HandleLeft = i => {
+    if(slideIndex <= 0){
+      setSlideIndex(pastEvents.length - 1)
+      return 
+    }
+    setSlideIndex(prev => prev - 1)
+  }
+
+  const HandleRight = () => {
+    if(slideIndex >= pastEvents.length - 1){
+      setSlideIndex(0)
+      return 
+    }
+    setSlideIndex(prev => prev + 1)
+  }
+
+  const sliderSettings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: true,
+    centerMode: false,
     autoplay: true,
     autoplaySpeed: 2000,
     prevArrow: <PrevArrow />,
@@ -45,25 +67,6 @@ const PastEvents = () => {
     ],
   };
 
-  const parentSliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 1500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          arrows: false,
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
 
   return (
     <section className="past_events">
@@ -77,37 +80,31 @@ const PastEvents = () => {
         <HeadingDescription parentClass="past_events_header" span="Past Impact Hub Dhaka" heading="Events" />
       </div>
       <div className="past_events_container">
-        <Slider {...parentSliderSettings}>
-          {pastEvents.length > 0 &&
-            pastEvents.map(({ date, events }, index) => {
-              return (
-                <div key={index} className="past_events_container_data">
-                  <div className="past_events_container_data_header">
-                    <h3>{date}</h3>
-                  </div>
-                  <div className="past_events_container_data_body">
-                    {(childSliderSettings.infinite = events.length > 3)}
-                    <Slider {...childSliderSettings}>
-                      {events.map(({ id, title, start_date, end_date, starts_at, ends_at, image_path }) => {
-                        return (
-                          <EventCommonCard
-                            key={id}
-                            title={title}
-                            date={`${start_date} - ${end_date}`}
-                            starts_at={starts_at}
-                            ends_at={ends_at}
-                            type="center"
-                            thumb={baseUrlForImages + image_path}
-                          />
-                        );
-                      })}
-                    </Slider>
-                  </div>
-                </div>
-              );
-            })}
-          {/* slider container */}
-        </Slider>
+        <div className="past_events_container_data">
+          <div className="past_events_container_data_header">
+            <span onClick={HandleLeft}><img src={leftArrow.src}/></span><h3>{pastEvents.length > 0 && pastEvents[slideIndex].date}</h3><span onClick={HandleRight}><img src={rightArrow.src}/></span>
+          </div>
+          <div className="past_events_container_data_body">
+            {pastEvents.length>0 && (sliderSettings.infinite = pastEvents[slideIndex].events.length>3)}
+            <Slider {...sliderSettings}>
+              {pastEvents.length > 0 && pastEvents[slideIndex].events.map(({ id, title, start_date, end_date, starts_at, ends_at, image_path }) => {
+                return (
+                  <EventCommonCard
+                    key={id}
+                    id={id}
+                    title={title}
+                    date={`${start_date} - ${end_date}`}
+                    starts_at={starts_at}
+                    ends_at={ends_at}
+                    type="center"
+                    thumb={baseUrlForImages + image_path}
+                    slug="events"
+                  />
+                );
+              })}
+            </Slider>
+          </div>
+        </div>
       </div>
 
       {/* // events footer */}
