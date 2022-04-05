@@ -29,6 +29,7 @@ const Stories = () => {
                             thumb={`https://ihd.yyventures.org${story.image_path}`}
                             id={story.id}
                             btnText='read more'
+                            slug='stories'
                         />
                     )}
                     
