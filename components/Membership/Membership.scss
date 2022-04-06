@@ -1,9 +1,9 @@
 @import "../../styles/base.scss";
 @import "../../styles/mixin";
 .membership_container {
-  height: 150rem;
+  height: 165rem;
   @include response(phone) {
-    height: 202rem;
+    height: 210rem;
   }
   position: relative;
   &_bg {

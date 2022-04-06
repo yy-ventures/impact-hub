@@ -3,16 +3,11 @@
   padding: 9.6rem 10rem 15.6rem 10rem;
 
   &_container {
-    display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    justify-content: center;
-    justify-items: center;
     &_inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      width: fit-content;
       padding-bottom: 20.5rem;
+      margin: 0 auto;
+      text-align: center;
       &_heading {
         font-size: $headingSecondary;
         font-weight: $bold;
@@ -22,21 +17,31 @@
         font-size: $para1;
         text-align: center;
         color: $primary2;
+        padding-bottom: 2.5rem;
       }
       &_banner {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         margin: 0 auto;
+        @include response(vp-800) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
         &_svg {
           display: flex;
           align-items: flex-end;
           justify-content: center;
           position: relative;
           svg {
-            width: 25.2rem;
+            width: 27.2rem;
+            padding: 2rem;
+            @include response(vp-800) {
+              width: 47.2rem;
+            }
           }
           p {
             position: absolute;
+            bottom: 5rem;
             font-size: $para1;
             font-weight: $medium;
             color: white;
@@ -46,22 +51,26 @@
     }
 
     &_grid {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       justify-content: center;
-      width: 126.5rem;
+      justify-items: center;
+      padding: 0rem 15rem;
       column-gap: 10rem;
       row-gap: 5rem;
+      margin: 0 auto;
       @include response(phone) {
-        width: auto;
+        grid-template-columns: repeat(1, 1fr);
       }
       &_card {
-        width: 35.5rem;
         position: relative;
         svg {
           width: 7.6rem;
           position: absolute;
           z-index: 1;
+          @include response(vp-800) {
+            width: 9.6rem;
+          }
         }
         &_details {
           padding: 3rem 0rem 0rem 4rem;

@@ -7,6 +7,10 @@
     svg {
       position: absolute;
       z-index: 1;
+      height: 100%;
+      @include response(phone) {
+        width: 100%;
+      }
     }
   }
   &_container {
@@ -120,11 +124,19 @@
             font-size: $para3;
             font-weight: $medium;
           }
+          @include response(vp-800) {
+            h3 {
+              font-size: $subHeading2;
+            }
+            p {
+              font-size: $para1;
+            }
+          }
           &::before {
             position: absolute;
             content: "";
-            height: 4.6rem;
-            border: 0.4rem solid $primary2;
+            height: 5.6rem;
+            border-right: 1rem solid $primary2;
             bottom: 90%;
           }
         }

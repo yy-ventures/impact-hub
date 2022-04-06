@@ -98,6 +98,7 @@
     flex-direction: column;
     justify-content: center;
     height: 32rem;
+    padding: 5rem 0;
     &_paragraph {
       display: flex;
       align-items: center;
@@ -111,9 +112,10 @@
     }
     p {
       padding-right: 1rem;
+      font-size: $common;
     }
     svg {
-      width: $para3;
+      width: $common;
       aspect-ratio: 1;
     }
   }
@@ -126,10 +128,13 @@
 
 // show card on click
 .office-space-show-card {
-  height: 91rem;
+  height: 100rem;
 }
 .show-card {
-  height: 67rem;
+  height: 85rem;
+  @include response(vp-800) {
+    height: 75rem;
+  }
   .membership-card_btn {
     opacity: 1;
   }

@@ -5,8 +5,8 @@ const CardDetail = ({ parentClass, index, heading, details }) => {
     <div className={parentClass + "_card"}>
       <CardSvg />
       <div className={parentClass + "_card_details"}>
-        <h4>{heading}</h4>
-        <p>{details}</p>
+        <h4 className="body-global">{heading}</h4>
+        <p className="body-global">{details}</p>
       </div>
     </div>
   );
