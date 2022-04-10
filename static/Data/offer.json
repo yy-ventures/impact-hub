@@ -2,17 +2,13 @@
     {
         "img": "event-space",
         "title": "Event Space"
+    },    
+    {
+        "img": "hub-cafe",
+        "title": "Office Space"
     },
     {
         "img": "hub-cafe",
-        "title": "Hub Cafe"
-    },
-    {
-        "img": "hub-cafe",
-        "title": "Workshop Space"
-    },
-    {
-        "img": "board-meeting-room",
-        "title": "Board Meeting Room"
+        "title": "Co-Working"
     }
 ]

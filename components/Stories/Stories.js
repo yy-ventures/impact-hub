@@ -6,6 +6,7 @@ import useFetch from '../Hooks/useFetch';
 
 const Stories = () => {
     const stories = useFetch('/get-stories')
+    const baseUrlForImages = process.env.baseUrlForImages;
     
     return (
         <section className='stories'>
@@ -24,9 +25,10 @@ const Stories = () => {
 
                     {stories.map(story =>
                         <EventCommonCard
+                            key={story.id}
                             title={story.title}
                             date={story.location}
-                            thumb={`https://ihd.yyventures.org${story.image_path}`}
+                            thumb={`${baseUrlForImages}${story.image_path}`}
                             id={story.id}
                             btnText='read more'
                             slug='stories'
