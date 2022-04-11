@@ -5,6 +5,8 @@ import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import { spaces } from "./contents";
 import OfficeSpaceBg from "./OfficeSpaceBg";
 const OfficeSpace = () => {
+  //State to hold Membership Data
+  const officeSpacePlans = useFetch("/get-packages/2");
   return (
     <section className="officespace_container">
       <div className="officespace_container_bg">
@@ -34,7 +36,7 @@ const OfficeSpace = () => {
               type={2}
               image={image}
               title={title}
-              price={price}
+              price={officeSpacePlans[index].price}
               duration={duration}
               details={details}
               modifierClass={`flex-card-${index + 1}`}
