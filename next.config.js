@@ -6,7 +6,17 @@ const nextConfig = {
     baseUrl: "https://ihd.yyventures.org/api",
     baseUrlForImages: "https://ihd.yyventures.org",
   },
-  optimizeFonts: false
+  optimizeFonts: false,
+  trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/about/global-locations',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 module.exports = nextConfig;
