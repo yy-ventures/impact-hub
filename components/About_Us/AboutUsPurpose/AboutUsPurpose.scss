@@ -7,7 +7,6 @@
     svg {
       position: absolute;
       z-index: 1;
-      height: 100%;
       @include response(phone) {
         width: 100%;
       }
@@ -72,56 +71,42 @@
       padding: 8.4rem 0rem 12.5rem 0rem;
       gap: 3rem;
       row-gap: 5rem;
+      @include response(vp-800) {
+        grid-template-columns: repeat(1, 1fr);
+      }
       // Line before the cards
-      &_card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        width: 36.4rem;
-        @include response(vp-800) {
-          width: auto;
-        }
-        padding: 2rem;
-        border-radius: 1.5rem;
-        text-transform: uppercase;
-        text-align: center;
-        color: white;
-        transition: 0.25s ease;
-        // buttons 1,2,3
-        &:nth-child(-n + 3) {
-          h3 {
-            font-size: $subHeading2;
-            font-weight: $bold;
+      &_child {
+        &_card {
+          height: fit-content;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          width: 36.4rem;
+          @include response(vp-800) {
+            width: auto;
           }
+          padding: 2rem;
+          border-radius: 1.5rem;
+          text-transform: uppercase;
+          text-align: center;
+          color: white;
+          transition: 0.25s ease;
         }
-        // Button background
-        // buttons 1,4,7
-        &:nth-child(3n + 1) {
-          background: $secondary;
-        }
-        // buttons 2,5,8
-        &:nth-child(3n + 2) {
-          background: $primary2;
-        }
-        // buttons 3,6,9
-        &:nth-child(3n) {
-          background: $orange;
-        }
-        // Button animation initial state
-        // buttons 4,5,6,7,8,9
-        &:nth-child(n + 4) {
+        .card-features {
+          height: 0rem;
+          margin-bottom: 6rem;
+          opacity: 0;
           background: transparent;
           color: $primary2;
-          opacity: 0;
           transform: translateY(-6rem);
           h3 {
             font-size: $para2;
-            font-weight: $medium;
+            font-weight: $bold;
           }
           p {
-            font-size: $para3;
+            font-size: $common;
             font-weight: $medium;
           }
           @include response(vp-800) {
@@ -139,22 +124,48 @@
             border-right: 1rem solid $primary2;
             bottom: 90%;
           }
+          &:nth-child(2) {
+            transform: translateY(-6rem);
+          }
+          &:nth-child(3) {
+            transform: translateY(-12rem);
+          }
         }
-        // buttons 7,8,9
-        &:nth-child(n + 7) {
-          transform: translateY(-12rem);
+        .expand {
+          height: fit-content;
+          opacity: 1;
+          &:nth-child(2) {
+            transform: translateY(6rem);
+          }
+          &:nth-child(3) {
+            transform: translateY(6rem);
+          }
         }
-      }
-      // Button animation final state
-      // expand buttons 4,5,6
-      .expand:nth-child(n + 4) {
-        opacity: 1;
-        transform: translateY(0rem);
-      }
-      // expand buttons 7,8,9
-      .expand:nth-child(n + 7) {
-        opacity: 1;
-        transform: translateY(0rem);
+
+        &:nth-child(1) {
+          .card-heading {
+            background: $secondary;
+          }
+        }
+        &:nth-child(2) {
+          .card-heading {
+            background: $primary2;
+          }
+        }
+        &:nth-child(3) {
+          .card-heading {
+            background: $orange;
+          }
+        }
+        .card-heading {
+          // buttons 1,2,3
+          &:nth-child(-n + 3) {
+            h3 {
+              font-size: $subHeading2;
+              font-weight: $bold;
+            }
+          }
+        }
       }
     }
   }
