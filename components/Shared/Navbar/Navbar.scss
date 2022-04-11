@@ -29,14 +29,14 @@
       .menu_close {
         position: absolute;
         display: none;
-        width: 5rem;
-        height: 5rem;
+        width: 10rem;
+        height: 10rem;
         top: 5%;
         z-index: 111;
         cursor: pointer;
         img {
-          width: 4rem;
-          height: 4rem;
+          width: 8rem;
+          height: 8rem;
           object-fit: cover;
           position: absolute;
           top: 50%;
@@ -45,7 +45,7 @@
         }
       }
       .menu_open {
-        right: -5rem;
+        right: -10rem;
         background-color: $primary2;
       }
       .menu_close {
@@ -55,7 +55,7 @@
       @media screen and (max-width: 900px) {
         background-color: $primary2;
         width: 100%;
-        // height: calc(100vh - 9rem);
+        min-height: 75vh;
         background-color: $primary2;
         position: absolute;
         top: 9rem;
@@ -69,7 +69,7 @@
       ul {
         // background-color: palevioletred;
         @media screen and (max-width: 900px) {
-          margin-top: 10rem;
+          margin-top: 15rem;
           height: 100%;
           width: 100%;
           display: inline-flex;
@@ -83,6 +83,7 @@
           @media screen and (max-width: 900px) {
             width: 100%;
             display: block;
+            margin-top: 15rem;
           }
           height: 9rem;
           width: 17.5rem;
@@ -93,6 +94,9 @@
           font-size: $common;
           position: relative;
           cursor: pointer;
+          @media screen and (max-width: 600px) {
+            font-size: 5rem;
+          }
           .nav_list_arrow_container {
             position: absolute;
             top: 40%;
@@ -102,6 +106,9 @@
             height: 3rem;
             @media screen and (max-width: 900px) {
               right: 5%;
+              top: 80%;
+              width: 8rem;
+              height: 8rem;
             }
             img {
               width: 100%;
@@ -150,13 +157,17 @@
               line-height: 1.5;
               display: none;
               @media screen and (max-width: 900px) {
+                margin-top: 0;
                 z-index: 500;
-                background-color: #11436e;
+                background-color: $primary1;
               }
               a {
                 transition: 0.3s;
                 &:hover {
                   color: $primary1;
+                  @media screen and (max-width: 600px) {
+                    color: $primary2;
+                  }
                 }
               }
             }

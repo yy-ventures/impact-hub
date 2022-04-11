@@ -2,10 +2,10 @@
 
 .global_network{
     padding: 14.2rem 0 19.5rem 0;
-
     &_container{
         display: flex;
         justify-content: center;
+        padding-bottom: 14.2rem;
         &_header{
             width: 172rem;
             display: flex;
@@ -27,6 +27,7 @@
                 @include response(phone){
                     padding-left: 0;
                     margin-bottom: 5rem;
+                    height: auto;
                 }
                 h1{
                     color: $primary2;
@@ -51,6 +52,10 @@
                 p{
                     font-size: $para1;
                     color: $textDark;
+                    @media screen and (max-width: 600px) {
+                        margin-top: 5rem;
+                        font-size: 5rem;
+                    }
                 }
             }
             &_right{

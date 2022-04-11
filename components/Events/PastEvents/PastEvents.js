@@ -60,7 +60,7 @@ const PastEvents = ({type}) => {
         breakpoint: 600,
         settings: {
           arrows: false,
-          centerMode: true,
+          centerMode: false,
           slidesToShow: 1,
         },
       },

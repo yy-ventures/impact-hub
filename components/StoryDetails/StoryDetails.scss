@@ -15,6 +15,7 @@
         position: relative;
         z-index: 111;
         &_back{
+            margin-top: 2rem;
             padding: 2rem 0;
             a{
                 color: $secondary;
@@ -24,6 +25,10 @@
                 border: 1px solid $secondary;
                 text-decoration: none;
                 text-transform: capitalize;
+                @media screen and (max-width: 600px) {
+                    padding: 2rem 4rem;
+                    font-size: 5rem;
+                }
             }
         }
     }
@@ -119,6 +124,9 @@
             font-size: $para1;
             color: $primary2;
             padding: 2rem 0;
+            @media screen and (max-width:600px) {
+                font-size: 5rem;
+            }
         }
 
         a{

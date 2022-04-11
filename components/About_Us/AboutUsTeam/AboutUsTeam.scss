@@ -51,7 +51,7 @@
       gap: 4rem;
       text-align: center;
       @include response(vp-800) {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         column-gap: 6rem;
       }
 

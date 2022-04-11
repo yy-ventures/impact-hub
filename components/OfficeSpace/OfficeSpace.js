@@ -4,7 +4,10 @@ import MembershipCard from "../Shared/MembershipCard/MembershipCard";
 import TitleBlock from "../Shared/TitleBlock/TitleBlock";
 import { spaces } from "./contents";
 import OfficeSpaceBg from "./OfficeSpaceBg";
+import useFetch from "../Hooks/useFetch";
 const OfficeSpace = () => {
+  //State to hold Membership Data
+  const officeSpacePlans = useFetch("/get-packages/2");
   return (
     <section className="officespace_container">
       <div className="officespace_container_bg">
@@ -27,16 +30,16 @@ const OfficeSpace = () => {
         <TitleBlock title="Come create with us!" parentClass="officespace_container_header" shape={partnerShape.src} />
       </div>
       <div className="officespace_container_grid_cards">
-        {spaces.map(({ image, title, price, duration, details }, index) => {
+        {officeSpacePlans.map(({ name, price, get_package_features }, index) => {
           return (
             <MembershipCard
               key={index}
               type={2}
-              image={image}
-              title={title}
+              image={spaces[index].image}
+              title={name}
               price={price}
-              duration={duration}
-              details={details}
+              duration={8}
+              details={get_package_features}
               modifierClass={`flex-card-${index + 1}`}
             />
           );

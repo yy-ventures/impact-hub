@@ -5,7 +5,6 @@ import AboutUsImageGrid from "./AboutUsImageGrid/AboutUsImageGrid";
 import { team, images } from "./contents";
 const AboutUsTeam = () => {
   const teamMembers = useFetch("/get-team-members");
-  console.log(teamMembers);
   return (
     <section className="about_us_team">
       <div className="about_us_team_container">

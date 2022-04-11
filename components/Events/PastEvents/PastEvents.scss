@@ -39,6 +39,9 @@
                     font-size: $para1;
                     color: $primary2;
                     font-weight: $bold;
+                    @media screen and (max-width: 600px) {
+                        font-size: 5rem;
+                    }
                 }
                 &_arrow{
                     cursor: pointer;
