@@ -30,16 +30,16 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 52.1rem;
-  height: 38.1rem;
+  width: 65rem;
+  height: 40rem;
   border-radius: 2rem;
 
   transition: width 0.5s ease;
 
   // background image
   img {
-    height: inherit;
-    object-fit: contain;
+    width: 110%;
+    object-fit: cover;
     position: absolute;
     z-index: 0;
     transition: all 0.5s ease;
@@ -62,8 +62,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 45rem;
+    width: 55rem;
     height: 70%;
+    padding: 0rem 5rem;
+    gap: 2.5rem;
     color: white;
 
     // Size Seating
@@ -72,9 +74,10 @@
       bottom: -30rem;
       display: flex;
       justify-content: space-between;
-      width: 40rem;
+      gap: 2rem;
+      width: max-content;
       opacity: 0;
-      font-size: $para3;
+      font-size: $common;
       font-weight: $medium;
       transition: bottom 0.5s ease;
       &_size,
@@ -83,7 +86,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 18rem;
+        width: 25rem;
         height: 6rem;
         border-radius: 1rem;
         text-align: center;
@@ -91,7 +94,8 @@
         background-image: linear-gradient(to right, $limeGreen 50%, white 0);
         p {
           width: 100%;
-          font-size: $para3;
+          font-size: $common;
+          padding: 1rem;
         }
       }
     }
@@ -212,7 +216,7 @@
     }
     .spaces-card_show-more {
       flex-direction: row-reverse;
-      left: 12rem;
+      left: 15rem;
     }
   }
   // Left aligned
@@ -227,7 +231,7 @@
       // transition: all 1s ease;
     }
     .spaces-card_show-more {
-      right: 12rem;
+      right: 15rem;
       // svg
       &_right {
         transform: rotate(180deg);
@@ -237,7 +241,7 @@
 }
 // Styles when cards are open
 .spaces-card_open {
-  width: 93.6rem;
+  width: 101rem;
   transition: all 0.5s ease;
   // Background image
   img {

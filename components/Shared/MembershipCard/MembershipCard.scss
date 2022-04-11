@@ -5,8 +5,9 @@
 }
 .office-space-card-container {
   position: relative;
-  height: 43rem;
+  max-height: 43rem;
   transition: height 0.5s ease;
+  transition: max-height 1s ease -0.5s;
   img {
     position: absolute;
     width: 43rem;
@@ -25,11 +26,12 @@
   justify-content: space-between;
   align-items: center;
   width: 43rem;
-  height: 18rem;
+  max-height: 18rem;
   padding: 3rem;
   border-radius: 3rem;
   background: white;
-  transition: all 0.5s ease;
+  transition: height 0.5s ease;
+  transition: max-height 1s ease -0.5s;
   box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
   // grid-column: span;
   // Plan section styles
@@ -98,7 +100,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 32rem;
+    height: fit-content;
     padding: 5rem 0;
     &_paragraph {
       display: flex;
@@ -127,12 +129,13 @@
   }
 }
 
-// show card on click
-.office-space-show-card {
-  height: 100rem;
-}
+// // show card on click
+// .office-space-show-card {
+//   height: 100rem;
+// }
 .show-card {
-  height: 85rem;
+  max-height: 105rem;
+  transition: max-height 1s ease;
   @include response(vp-800) {
     height: 75rem;
   }

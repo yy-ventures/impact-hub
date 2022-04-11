@@ -7,21 +7,9 @@ const FaqComponent = ({ question, answer, zIndex }) => {
   const toggle = () => {
     setVisible(!visible);
   };
-  // Open the accordion on hover
-  const mouseEnter = () => {
-    setVisible(true);
-  };
-  // Close the accordion when the mouse leaves
-  const mouseLeave = () => {
-    setVisible(false);
-  };
+
   return (
-    <div
-      className={`faq-component ${visible ? "show" : ""}`}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
-      onClick={toggle}
-    >
+    <div className={`faq-component ${visible ? "show" : ""}`} onClick={toggle}>
       <h4 style={{ zIndex: zIndex }}>
         {question}
         <FaqIcon className={visible ? "rotate" : ""} />
