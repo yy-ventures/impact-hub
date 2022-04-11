@@ -164,7 +164,10 @@
               a {
                 transition: 0.3s;
                 &:hover {
-                  color: $primary2;
+                  color: $primary1;
+                  @media screen and (max-width: 600px) {
+                    color: $primary2;
+                  }
                 }
               }
             }

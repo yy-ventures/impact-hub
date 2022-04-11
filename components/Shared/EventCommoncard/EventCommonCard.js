@@ -43,7 +43,7 @@ const EventCommonCard = ({ id, title, type, date, starts_at, ends_at, summary, t
       <div className="event_common_card_footer">
         <Link href={`/${slug}/[id]`} as={`/${slug}/${id}`}>
           <a>
-            <Button text={btnText} type="secondary" />
+            <Button text={btnText} type='primary'/>
           </a>
         </Link>
       </div>

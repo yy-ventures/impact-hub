@@ -37,11 +37,17 @@
       color: $textDark;
       font-size: $headingSecondary;
       font-weight: $bold;
+      @media screen and (max-width: 600px) {
+        font-size: 9rem;
+      }
     }
     h4 {
       color: $textDark;
       font-size: $subHeading3;
       font-weight: $bold;
+      @media screen and (max-width: 600px) {
+        font-size: 6rem;
+      }
     }
   }
   &_body {
@@ -55,9 +61,12 @@
       font-weight: $bold;
       margin-left: 2.7rem;
       padding-bottom: 4.5rem;
-
       position: relative;
       z-index: 111;
+      @media screen and (max-width: 600px){
+        text-align: center;
+        font-size: 7rem;
+      }
     }
     &_counter {
       margin-top: 4rem;
@@ -69,7 +78,7 @@
       @include response(phone) {
         grid-template-columns: [col-start] 1fr [col-end];
         grid-template-rows: repeat(4, [row-start] min-content [row-end]);
-        gap: 4rem;
+        gap: 10rem;
       }
 
       &_card {
@@ -156,6 +165,9 @@
           p {
             font-size: 3rem;
             font-weight: 700;
+            @media screen and (max-width: 600px){
+              font-size: 5rem;
+            }
             &:not(:last-child) {
               margin-top: 4rem;
             }
@@ -205,7 +217,7 @@
             font-size: 3rem;
             font-weight: 700;
             @include response(phone) {
-              font-size: 3rem;
+              font-size: 5rem;
             }
           }
         }
@@ -249,7 +261,7 @@
             font-size: 3rem;
             font-weight: 700;
             @include response(phone) {
-              font-size: 3rem;
+              font-size: 5rem;
             }
           }
         }
@@ -294,6 +306,9 @@
           p {
             font-size: 3rem;
             font-weight: 700;
+            @media screen and (max-width: 600px){
+              font-size: 5rem;
+            }
           }
         }
       }

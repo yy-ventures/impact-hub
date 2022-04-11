@@ -112,7 +112,7 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
               onChange={(e) => setLastName(e.target.value)}
             />
           </div>
-          <div className="membership_modal_form_input_container">
+          <div className="membership_modal_form_input_container mt-mb">
             <input
               type="email"
               placeholder="Email"

@@ -16,6 +16,9 @@
             font-size: $para2;
             color: $primary2;
             width: 74.1rem;
+            @media screen and (max-width: 600px) {
+                font-size: 5rem;
+            }
         }
         &_heading {
             @include headingLine("left", center);
@@ -39,12 +42,19 @@
             &_header{
                 padding: 8rem 13rem;
                 display: flex;
+                flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
+                @media screen and (max-width: 600px) {
+                    flex-direction: column;
+                }
                 h3{
                     font-size: 3rem;
                     color: $placeholder;
                     font-weight: normal;
+                    @media screen and (max-width: 600px) {
+                        font-size: 5rem;
+                    }
                 }
                 select{
                     padding: 1.3rem 2rem;
@@ -59,10 +69,16 @@
                         border: 0;
                         outline: 0;
                     }
+                    @media screen and (max-width: 600px) {
+                        font-size: 5rem;
+                    }
                 }
             }
             &_body{
                 padding: 0 15rem;
+                @media screen and (max-width: 600px) {
+                    padding: 0 5rem;
+                }
                 position: relative;
                 &_container{
                     display: flex;
@@ -80,13 +96,14 @@
                                 margin-right: 2rem;
                                 @media screen and (max-width:600px) {
                                     margin-right: 0;
+                                    font-size: 5rem;
                                 }
                             }
                             &:last-child{
                                 margin-left: 2rem;
                                 @media screen and (max-width:600px) {
                                     margin-left: 0;
-                                    margin-top: 4rem;
+                                    margin-top: 10rem;
                                 }
                             }
                         }
@@ -102,17 +119,27 @@
                         border-bottom: 1px solid #707070;
                         font-size: 3rem;
                         width: 100%;
+                        @media screen and (max-width: 600px) {
+                            font-size: 5rem;
+                            margin-top: 5rem;
+                        }
                     }
                     input[type="date"]{
                         color: #707070;
                         font-size: 3rem;
                         font-family: "GT Walsheim Pro";
+                        @media screen and (max-width: 600px) {
+                            font-size: 5rem;
+                        }
                     }
                     input[type="time"]{
                         color: #707070;
                         font-size: 3rem;
                         font-family: "GT Walsheim Pro";
                         width: 50%;
+                        @media screen and (max-width: 600px) {
+                            font-size: 5rem;
+                        }
                     }
                 }
                 &_label{
@@ -121,6 +148,9 @@
                         color: #707070;
                         font-weight: $bold;
                         font-size: 3rem;
+                        @media screen and (max-width: 600px) {
+                            font-size: 5rem;
+                        }
                     }
                 }
             }
