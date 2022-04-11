@@ -45,6 +45,10 @@
             font-size: $para1;
             font-weight: $medium;
             color: white;
+            @include response(vp-800) {
+              bottom: 50%;
+              transform: translateY(50%);
+            }
           }
         }
       }

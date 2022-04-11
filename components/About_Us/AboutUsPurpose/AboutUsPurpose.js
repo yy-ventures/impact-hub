@@ -10,14 +10,19 @@ const AboutUsPurpose = () => {
   const divRef = useRef();
 
   // On hover toggle the expand variable value
-  const onScroll = (e) => {
+  const onScroll = () => {
     window.scrollY > divRef.current.offsetTop ? setExpand(true) : setExpand(false);
+  };
+  const onMobileScreen = () => {
+    window.innerWidth < 600 && setExpand(true);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onMobileScreen);
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onMobileScreen);
     };
   }, []);
 
@@ -41,16 +46,29 @@ const AboutUsPurpose = () => {
         <div className="about_us_purpose_container_btn_grid">
           {buttons.map(({ title, span }, index) => {
             return index < 3 ? (
-              <Card key={index} text={title} parentClass={"about_us_purpose_container_btn_grid"} />
-            ) : (
-              <Card
-                key={index}
-                text={title}
-                parentClass={"about_us_purpose_container_btn_grid"}
-                span={span}
-                expand={expand}
-              />
-            );
+              <div className={`about_us_purpose_container_btn_grid_child`}>
+                <Card
+                  key={index}
+                  text={title}
+                  parentClass={"about_us_purpose_container_btn_grid_child"}
+                  heading={true}
+                />
+                <Card
+                  key={index}
+                  text={buttons[index + 3].title}
+                  parentClass={"about_us_purpose_container_btn_grid_child"}
+                  span={buttons[index + 3].span}
+                  expand={expand}
+                />
+                <Card
+                  key={index}
+                  text={buttons[index + 6].title}
+                  parentClass={"about_us_purpose_container_btn_grid_child"}
+                  span={buttons[index + 6].span}
+                  expand={expand}
+                />
+              </div>
+            ) : null;
           })}
         </div>
       </div>
