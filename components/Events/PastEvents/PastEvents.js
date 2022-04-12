@@ -87,7 +87,7 @@ const PastEvents = ({type}) => {
           <div className="past_events_container_data_body">
             {pastEvents.length > 0 && (sliderSettings.infinite = pastEvents[slideIndex].events.length>3)}
             <Slider {...sliderSettings}>
-              {pastEvents.length > 0 && pastEvents[slideIndex].events.map(({ id, title, start_date, end_date, starts_at, ends_at, image_path }) => {
+              {pastEvents.length > 0 ? pastEvents[slideIndex].events.map(({ id, title, start_date, end_date, starts_at, ends_at, image_path }) => {
                 return (
                   <EventCommonCard
                     key={id}
@@ -101,7 +101,7 @@ const PastEvents = ({type}) => {
                     slug="events"
                   />
                 );
-              })}
+              }) : <div className="no-data-found"><p>No Data Found</p></div>}
             </Slider>
           </div>
         </div>

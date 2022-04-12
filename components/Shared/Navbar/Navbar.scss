@@ -2,6 +2,9 @@
 
 .navbar_container {
   height: 9rem;
+  @media screen and (max-width: 600px){
+    height: 12rem;
+  }
   position: relative;
   font-size: $common;
   z-index: 1;
@@ -19,6 +22,9 @@
     .brand_logo {
       img {
         height: 7.4rem;
+        @media screen and (max-width: 600px){
+          height: 9.4rem;
+        }
       }
     }
     .nav_list {
@@ -58,7 +64,7 @@
         min-height: 75vh;
         background-color: $primary2;
         position: absolute;
-        top: 9rem;
+        top: 12rem;
         left: -100%;
         transition: 0.3s;
         .menu_open,
@@ -184,6 +190,10 @@
           font-size: 2rem;
           text-transform: capitalize;
           margin-left: 5%;
+          @media screen and (max-width: 600px){
+            font-size: 4rem;
+            color: $white;
+          }
         }
       }
     }
