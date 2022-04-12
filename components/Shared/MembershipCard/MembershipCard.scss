@@ -5,15 +5,15 @@
 }
 .office-space-card-container {
   position: relative;
-  max-height: 43rem;
-  min-height: 43rem;
+  width: 43rem;
   transition: height 0.5s ease;
   transition: max-height 1s ease -0.5s;
   img {
     position: absolute;
-    width: 43rem;
+    width: 100%;
     z-index: 1;
     top: 0;
+    border-radius: 3.5rem 3.5rem 0rem 0rem;
   }
   .card-bg-image {
     top: 25rem;
@@ -22,21 +22,34 @@
 .membership-card {
   overflow: hidden;
   position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   min-width: 43rem;
   width: max-content;
   max-height: 18rem;
   min-height: 18rem;
   padding: 3rem;
+
   border-radius: 3rem;
+
   background: white;
   transition: height 0.5s ease;
   transition: max-height 1s ease -0.5s;
+
   box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
-  // grid-column: span;
+
+  @include response(vp-800) {
+    min-width: 100%;
+    max-height: 25rem;
+    min-height: 25rem;
+
+    padding: 5rem;
+  }
+
   // Plan section styles
   &_plan {
     width: 100%;
@@ -48,14 +61,19 @@
       z-index: 2;
       top: 5rem;
       left: -15rem;
+
       width: 170%;
+
       fill: $primary1;
+
       transform: translateY(-50%);
       transition: all 0.5s ease;
-      @include response(tab-port) {
-        height: 120rem;
-        left: -25rem;
-        top: 0;
+
+      @include response(vp-800) {
+        top: -15rem;
+        left: -45rem;
+
+        width: 210%;
       }
     }
     &_header {
@@ -97,10 +115,17 @@
         position: relative;
         z-index: 3;
         font-size: $para2;
+
+        @include response(vp-800) {
+          font-size: $subHeading3;
+        }
+
         font-weight: $medium;
         color: $textLight;
         mix-blend-mode: multiply;
         isolation: auto;
+        top: 20rem;
+        transition: top 0.5s ease;
       }
     }
   }
@@ -110,7 +135,10 @@
     flex-direction: column;
     justify-content: center;
     height: fit-content;
-    padding: 10rem 0;
+    padding: 5rem 0;
+    @include response(vp-800) {
+      padding: 15rem 0;
+    }
     &_paragraph {
       display: flex;
       align-items: center;
@@ -120,14 +148,16 @@
     p {
       padding-right: 1rem;
       font-size: $common;
-      @include response(tab-port) {
-        line-height: 1.5;
-        font-size: $para2;
+      @include response(vp-800) {
+        font-size: $subHeading3;
       }
     }
     svg {
       width: $common;
       aspect-ratio: 1;
+      @include response(vp-800) {
+        width: $subHeading3;
+      }
     }
   }
   //   Membership choose plan button
@@ -147,10 +177,7 @@
   max-height: 250rem;
   min-height: fit-content;
   transition: max-height 1s ease;
-  // @include response(tab-port) {
-  //   max-height: 95rem;
-  //   min-height: fit-content;
-  // }
+
   .membership-card_btn {
     opacity: 1;
   }
@@ -166,6 +193,10 @@
           transform: rotate(180deg);
         }
       }
+    }
+    &_header_duration {
+      top: 0rem;
+      transition: top 0.5s ease;
     }
   }
 }

@@ -1,14 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Button from "../../Shared/Button/Button";
 import FeatureAvailability from "../../Shared/MembershipCard/MembershipSVGs/FeatureAvailability";
 import ShowMoreSvg from "./ShowMoreSvg";
-const SpaceCard = ({ image, title, size, seating, description, amenities, direction = "right", handleVisibility }) => {
+const SpaceCard = ({ image, title, size, seating, description, amenities, direction = "right", cardId }) => {
   // State value to show or hide event spaced card
-  const [showCard, setShowCard] = useState(false);
+  const [showCard, setShowCard] = useState(null);
   // State value to hold the value of the current screen size
   const [screenWidth, setScreenWidth] = useState(null);
-
+  const ref = useRef(null);
+  const handleVisibility = () => {
+    // const openCards = document.querySelector(`.spaces-card_open`);
+    // if (openCards !== null) {
+    //   openCards.className = openCards.className.replace("spaces-card_open", "spaces-card_closed");
+    // }
+    setShowCard(!showCard);
+  };
   // keep the cards open on mobile screens
   const showCardOnMobile = (screenWidth) => {
     // for mobile screens less than 700px width
@@ -34,7 +41,7 @@ const SpaceCard = ({ image, title, size, seating, description, amenities, direct
   return (
     <div className={`spaces-card_container spaces-card_container_${direction}`}>
       <h2 className="spaces-card_container_title">{title}</h2>
-      <div className={`spaces-card spaces-card_${showCard ? "open" : "closed"}`}>
+      <div className={`spaces-card spaces-card_${showCard ? "open" : "closed"}`} id={`card-${cardId}`} ref={ref}>
         <img src={`/images/spaces/${image ? image : ""}`} alt="spaces" />
         <div className="spaces-card_bg-gradient"></div>
         <div className="spaces-card_details">
@@ -71,8 +78,7 @@ const SpaceCard = ({ image, title, size, seating, description, amenities, direct
         <button
           className={`spaces-card_show-more`}
           onClick={() => {
-            // setShowCard(!showCard);
-            handleVisibility && handleVisibility();
+            handleVisibility();
           }}
         >
           Show {showCard ? "Less" : "More"} <ShowMoreSvg className={`spaces-card_show-more_${direction}`} />

@@ -81,7 +81,7 @@ export const spaces = [
     ],
   },
   {
-    image: "hub-cafe.webp",
+    image: "hub-cafe.png",
     title: "Hub Cafe BDT 2000/2hr",
     size: 1200,
     seating: 70,

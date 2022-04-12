@@ -2,8 +2,8 @@
 @import "../../styles/mixin";
 .membership_container {
   height: 170rem;
-  @include response(phone) {
-    height: 300rem;
+  @include response(vp-800) {
+    height: 375rem;
   }
   position: relative;
   &_bg {
@@ -16,18 +16,22 @@
   &_header {
     position: relative;
     z-index: 2;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+
     padding: 12.7rem 16rem 8.8rem 15.3rem;
+
     @include response(phone) {
       flex-direction: column;
-      padding: 12.7rem 8rem 8.8rem 8rem;
+      padding: 12.7rem 10rem 8.8rem 10rem;
     }
+
     &_content {
       width: 84.1rem;
       height: 35.7rem;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -45,12 +49,15 @@
         position: relative;
         &::before {
           content: "";
-          display: block;
           position: absolute;
           bottom: $subHeading1 / 2;
-          width: 6.4rem;
           left: -6.4rem - 1rem;
+
+          display: block;
+
+          width: 6.4rem;
           height: 0.5rem;
+
           background-color: $primary1;
         }
       }
@@ -80,29 +87,32 @@
   &_grid_cards {
     position: relative;
     z-index: 3;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    height: 39.2rem;
-    width: fit-content;
+
+    height: fit-content;
     margin: auto;
     gap: 1.6rem;
-    @include response(tab-port) {
+    width: fit-content;
+
+    @include response(vp-800) {
       grid-template-columns: repeat(1, 1fr);
+      width: auto;
+      padding: 0rem 10rem;
+      margin: auto;
     }
-    // =====================
-    // .membership-card {
-    //   &:nth-child(4):hover {
-    //     grid-row: span 3;
-    //   }
-    // }
-    // =====================
+
     &_flex {
       display: flex;
+      align-items: center;
       flex-direction: column;
       gap: 1.6rem;
-      @include response(tab-port) {
-        flex-direction: column;
+
+      // In phones show only 1 column
+      @include response(vp-800) {
+        width: 100%;
       }
       // set colors for each card based on their class names
       @each $color in $cardColors {

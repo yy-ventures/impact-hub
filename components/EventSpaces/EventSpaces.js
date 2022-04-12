@@ -8,7 +8,7 @@ const EventSpaces = () => {
   const handleVisibility = (index) => {
     console.log(index);
   };
-  const [visibility, setVisibility] = useState([0, 0, 0, 0]);
+  const showCardIndex = [1, 2, 3, 4];
 
   return (
     <section className="event-spaces">
@@ -29,6 +29,7 @@ const EventSpaces = () => {
                     amenities={spaces[index * 2].amenities}
                     direction={index === 0 ? "left" : "right"}
                     handleVisibility={() => handleVisibility(index)}
+                    cardId={showCardIndex[index * 2]}
                   />
                   <SpaceCard
                     image={spaces[index * 2 + 1].image}
@@ -39,6 +40,7 @@ const EventSpaces = () => {
                     amenities={spaces[index * 2 + 1].amenities}
                     direction={index === 0 ? "left" : "right"}
                     handleVisibility={() => handleVisibility(index)}
+                    cardId={showCardIndex[index * 2 + 1]}
                   />
                 </div>
               )
