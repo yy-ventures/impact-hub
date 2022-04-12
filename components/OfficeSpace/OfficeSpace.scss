@@ -3,7 +3,7 @@
   position: relative;
   height: 175rem;
   @include response(vp-800) {
-    min-height: 285rem;
+    min-height: 390rem;
     padding-bottom: 5rem;
   }
   &_bg {
@@ -71,15 +71,21 @@
     }
   }
   &_grid_cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: space-between;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    @include response(vp-800) {
+      grid-template-columns: repeat(1, 1fr);
+      width: auto;
+      padding: 0rem 10rem;
+      margin: auto;
+    }
     width: fit-content;
     gap: 3rem;
     margin: auto;
-    @include response(phone) {
-      flex-direction: column;
-    }
     @each $color in $cardColors {
       $i: index(
         $list: $cardColors,

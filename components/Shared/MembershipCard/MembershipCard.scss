@@ -8,6 +8,10 @@
   width: 43rem;
   transition: height 0.5s ease;
   transition: max-height 1s ease -0.5s;
+  @include response(vp-800) {
+    width: 100%;
+    min-height: 75rem;
+  }
   img {
     position: absolute;
     width: 100%;
@@ -17,6 +21,9 @@
   }
   .card-bg-image {
     top: 25rem;
+    @include response(vp-800) {
+      top: 50rem;
+    }
   }
 }
 .membership-card {
@@ -134,6 +141,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
     height: fit-content;
     padding: 5rem 0;
     @include response(vp-800) {
@@ -141,7 +149,6 @@
     }
     &_paragraph {
       display: flex;
-      align-items: center;
       line-height: 1.8;
       color: $placeholder;
     }
@@ -172,6 +179,9 @@
   max-height: 250rem;
   min-height: 75rem;
   transition: max-height 1s ease;
+  @include response(vp-800) {
+    min-height: 140rem;
+  }
 }
 .show-card {
   max-height: 250rem;
