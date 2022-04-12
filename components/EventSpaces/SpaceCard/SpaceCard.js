@@ -3,7 +3,7 @@ import Link from "next/link";
 import Button from "../../Shared/Button/Button";
 import FeatureAvailability from "../../Shared/MembershipCard/MembershipSVGs/FeatureAvailability";
 import ShowMoreSvg from "./ShowMoreSvg";
-const SpaceCard = ({ image, title, size, seating, description, amenities, direction = "right" }) => {
+const SpaceCard = ({ image, title, size, seating, description, amenities, direction = "right", handleVisibility }) => {
   // State value to show or hide event spaced card
   const [showCard, setShowCard] = useState(false);
   // State value to hold the value of the current screen size
@@ -68,7 +68,13 @@ const SpaceCard = ({ image, title, size, seating, description, amenities, direct
               );
             })}
         </div>
-        <button className={`spaces-card_show-more`} onClick={() => setShowCard(!showCard)}>
+        <button
+          className={`spaces-card_show-more`}
+          onClick={() => {
+            // setShowCard(!showCard);
+            handleVisibility && handleVisibility();
+          }}
+        >
           Show {showCard ? "Less" : "More"} <ShowMoreSvg className={`spaces-card_show-more_${direction}`} />
         </button>
       </div>

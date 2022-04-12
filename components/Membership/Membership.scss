@@ -1,9 +1,9 @@
 @import "../../styles/base.scss";
 @import "../../styles/mixin";
 .membership_container {
-  height: 165rem;
+  height: 170rem;
   @include response(phone) {
-    height: 210rem;
+    height: 300rem;
   }
   position: relative;
   &_bg {
@@ -80,13 +80,16 @@
   &_grid_cards {
     position: relative;
     z-index: 3;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     height: 39.2rem;
-    max-width: 132.2rem;
+    width: fit-content;
     margin: auto;
     gap: 1.6rem;
+    @include response(tab-port) {
+      grid-template-columns: repeat(1, 1fr);
+    }
     // =====================
     // .membership-card {
     //   &:nth-child(4):hover {
@@ -98,8 +101,8 @@
       display: flex;
       flex-direction: column;
       gap: 1.6rem;
-      @include response(phone) {
-        flex-direction: row;
+      @include response(tab-port) {
+        flex-direction: column;
       }
       // set colors for each card based on their class names
       @each $color in $cardColors {

@@ -1,14 +1,17 @@
 [
-    {
-        "img": "event-space",
-        "title": "Event Space"
-    },    
-    {
-        "img": "hub-cafe",
-        "title": "Office Space"
-    },
-    {
-        "img": "hub-cafe",
-        "title": "Co-Working"
-    }
+  {
+    "img": "event-space.webp",
+    "title": "Event Space",
+    "link": "/event-space/spaces"
+  },
+  {
+    "img": "office-space.jpg",
+    "title": "Office Space",
+    "link": "/office-space"
+  },
+  {
+    "img": "co-working.png",
+    "title": "Co-Working",
+    "link": "/co-working/membership"
+  }
 ]

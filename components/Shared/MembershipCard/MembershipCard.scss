@@ -6,6 +6,7 @@
 .office-space-card-container {
   position: relative;
   max-height: 43rem;
+  min-height: 43rem;
   transition: height 0.5s ease;
   transition: max-height 1s ease -0.5s;
   img {
@@ -25,8 +26,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 43rem;
+  min-width: 43rem;
+  width: max-content;
   max-height: 18rem;
+  min-height: 18rem;
   padding: 3rem;
   border-radius: 3rem;
   background: white;
@@ -43,11 +46,17 @@
     svg {
       position: absolute;
       z-index: 2;
-      height: 83.2rem;
-      left: -20rem;
+      top: 5rem;
+      left: -15rem;
+      width: 170%;
       fill: $primary1;
       transform: translateY(-50%);
       transition: all 0.5s ease;
+      @include response(tab-port) {
+        height: 120rem;
+        left: -25rem;
+        top: 0;
+      }
     }
     &_header {
       width: inherit;
@@ -101,21 +110,20 @@
     flex-direction: column;
     justify-content: center;
     height: fit-content;
-    padding: 5rem 0;
+    padding: 10rem 0;
     &_paragraph {
       display: flex;
       align-items: center;
       line-height: 1.8;
-      font-size: $para3;
       color: $placeholder;
-      @include response(phone) {
-        line-height: 1.2;
-        font-size: 1.8rem;
-      }
     }
     p {
       padding-right: 1rem;
       font-size: $common;
+      @include response(tab-port) {
+        line-height: 1.5;
+        font-size: $para2;
+      }
     }
     svg {
       width: $common;
@@ -129,16 +137,20 @@
   }
 }
 
-// // show card on click
-// .office-space-show-card {
-//   height: 100rem;
-// }
-.show-card {
-  max-height: 105rem;
+// show card on click
+.office-space-show-card {
+  max-height: 250rem;
+  min-height: 75rem;
   transition: max-height 1s ease;
-  @include response(vp-800) {
-    height: 75rem;
-  }
+}
+.show-card {
+  max-height: 250rem;
+  min-height: fit-content;
+  transition: max-height 1s ease;
+  // @include response(tab-port) {
+  //   max-height: 95rem;
+  //   min-height: fit-content;
+  // }
   .membership-card_btn {
     opacity: 1;
   }

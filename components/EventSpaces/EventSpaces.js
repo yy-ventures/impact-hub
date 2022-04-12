@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import EventSpacesBg from "./EventSpacesBg/EventSpacesBg";
 import SpaceCard from "./SpaceCard/SpaceCard";
 import { spaces } from "./content";
 import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription";
 
 const EventSpaces = () => {
+  const handleVisibility = (index) => {
+    console.log(index);
+  };
+  const [visibility, setVisibility] = useState([0, 0, 0, 0]);
+
   return (
     <section className="event-spaces">
       <EventSpacesBg className={"event-spaces_bg"} />
@@ -23,6 +28,7 @@ const EventSpaces = () => {
                     description={spaces[index * 2].description}
                     amenities={spaces[index * 2].amenities}
                     direction={index === 0 ? "left" : "right"}
+                    handleVisibility={() => handleVisibility(index)}
                   />
                   <SpaceCard
                     image={spaces[index * 2 + 1].image}
@@ -32,6 +38,7 @@ const EventSpaces = () => {
                     description={spaces[index * 2 + 1].description}
                     amenities={spaces[index * 2 + 1].amenities}
                     direction={index === 0 ? "left" : "right"}
+                    handleVisibility={() => handleVisibility(index)}
                   />
                 </div>
               )
