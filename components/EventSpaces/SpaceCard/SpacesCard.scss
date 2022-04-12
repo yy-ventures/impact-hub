@@ -87,6 +87,9 @@
       font-size: $common;
       font-weight: $medium;
       transition: bottom 0.5s ease;
+      @include response(vp-800) {
+        flex-direction: column;
+      }
       &_size,
       &_seating {
         position: relative;
@@ -115,6 +118,9 @@
       text-align: center;
       transition: bottom 0.5s ease;
       font-size: $common;
+      @include response(vp-800) {
+        font-size: $para2;
+      }
     }
 
     // Button Component
@@ -158,12 +164,24 @@
     h2 {
       color: $limeGreen;
       font-size: $para2;
+      @include response(vp-800) {
+        font-size: $subHeading1;
+      }
     }
     p {
-      font-size: $showMoreButton;
+      display: flex;
+      align-items: center;
+      padding-right: 1rem;
+      font-size: $common;
       font-weight: $medium;
+      @include response(vp-800) {
+        font-size: $para2;
+      }
       svg {
-        width: $para3;
+        width: $common;
+        @include response(vp-800) {
+          width: $para2;
+        }
       }
     }
   }
@@ -224,6 +242,9 @@
     .spaces-card_show-more {
       flex-direction: row-reverse;
       left: 15rem;
+      @include response(vp-800) {
+        left: 0rem;
+      }
     }
   }
   // Left aligned
@@ -239,6 +260,9 @@
     }
     .spaces-card_show-more {
       right: 15rem;
+      @include response(vp-800) {
+        right: 0rem;
+      }
       // svg
       &_right {
         transform: rotate(180deg);
@@ -248,8 +272,11 @@
 }
 // Styles when cards are open
 .spaces-card_open {
-  width: 101rem;
+  width: 95rem;
   transition: all 0.5s ease;
+  @include response(vp-800) {
+    width: 110rem;
+  }
   // Background image
   img {
     width: 100%;
