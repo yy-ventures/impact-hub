@@ -1,6 +1,10 @@
 @import "../../../styles/base.scss";
 // Title
 .spaces-card_container {
+  a {
+    list-style: none;
+    text-decoration: none;
+  }
   position: relative;
   // Card Title
   &_title {
@@ -35,7 +39,10 @@
   border-radius: 2rem;
 
   transition: width 0.5s ease;
-
+  @include response(vp-800) {
+    width: 85rem;
+    height: 60rem;
+  }
   // background image
   img {
     width: 110%;
