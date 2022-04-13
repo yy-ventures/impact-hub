@@ -11,9 +11,9 @@ const HomeOffer = () => {
       </div>
       <div className="home_offer_body">
         {offerData.map((offer, index) => (
-          <Link href={offer.link}>
+          <Link href={offer.link} key={index}>
             <a>
-              <HomeOfferCard offer={offer} key={index} />
+              <HomeOfferCard offer={offer} />
             </a>
           </Link>
         ))}

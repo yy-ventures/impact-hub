@@ -18,12 +18,11 @@ const Navbar = () => {
     menuRef.current.style.left = "0";
     // setActive(!activeNavbar);
 
-    console.log('it worked')
+    console.log("it worked");
   };
   const handleMenuClose = () => {
     menuRef.current.style.left = "-100%";
     // setActive(!activeNavbar);
-    console.log('it worked')
   };
   return (
     <nav className="navbar_container" onMouseMove={HandleCursor}>
@@ -47,7 +46,7 @@ const Navbar = () => {
             <li className="list__item">
               About
               <span className="nav_list_arrow_container">
-                <img src={downArrow.src} alt="arrow down"/>
+                <img src={downArrow.src} alt="arrow down" />
               </span>
               <ul className="sub-list">
                 <li onClick={handleMenuClose} className="sub-list__item">

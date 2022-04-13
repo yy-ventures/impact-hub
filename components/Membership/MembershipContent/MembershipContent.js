@@ -4,7 +4,6 @@ import MembershipCard from "../../Shared/MembershipCard/MembershipCard";
 const MembershipContent = ({ parentClass }) => {
   //State to hold Membership Data
   const membershipPlans = useFetch("/get-packages/1");
-  console.log(membershipPlans);
   return membershipPlans.map((data, index) => {
     return (
       index < 3 && (
