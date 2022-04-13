@@ -25,6 +25,7 @@ html {
     font-size: 0.3em;
   }
   @include response(vp-800) {
+    // font-size: 0.25em;
     font-size: 3px;
     .body-global,
     .highlight-global {
@@ -32,6 +33,7 @@ html {
     }
   }
   @include response(phone) {
+    // font-size: 0.2em;
     font-size: 3px;
     .body-global,
     .highlight-global {
