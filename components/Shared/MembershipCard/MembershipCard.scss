@@ -10,7 +10,7 @@
   transition: max-height 1s ease -0.5s;
   @include response(vp-800) {
     width: 100%;
-    min-height: 75rem;
+    min-height: 85rem;
   }
   img {
     position: absolute;
@@ -18,11 +18,12 @@
     z-index: 1;
     top: 0;
     border-radius: 3.5rem 3.5rem 0rem 0rem;
+    object-fit: contain;
   }
   .card-bg-image {
     top: 25rem;
     @include response(vp-800) {
-      top: 50rem;
+      top: 60rem;
     }
   }
 }
@@ -180,7 +181,7 @@
   min-height: 75rem;
   transition: max-height 1s ease;
   @include response(vp-800) {
-    min-height: 140rem;
+    min-height: 150rem;
   }
 }
 .show-card {
