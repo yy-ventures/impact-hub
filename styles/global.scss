@@ -25,14 +25,14 @@ html {
     font-size: 0.3em;
   }
   @include response(vp-800) {
-    font-size: 0.25em;
+    font-size: 3px;
     .body-global,
     .highlight-global {
       font-size: 4rem !important;
     }
   }
   @include response(phone) {
-    font-size: 0.2em;
+    font-size: 3px;
     .body-global,
     .highlight-global {
       font-size: 5rem !important;
@@ -90,13 +90,13 @@ button {
   color: $primary1;
 }
 
-.mt-mb{
+.mt-mb {
   margin-top: 4rem;
 }
 
-.no-data-found{
+.no-data-found {
   text-align: center;
-  p{
+  p {
     color: $textDark;
     font-size: 18px;
   }
