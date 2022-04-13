@@ -10,20 +10,24 @@
   transition: max-height 1s ease -0.5s;
   @include response(vp-800) {
     width: 100%;
-    min-height: 85rem;
+    min-height: 90rem;
   }
-  img {
+
+  .membership-card_plan_header_duration {
+    opacity: 0;
+  }
+  .office-space-bg-image {
     position: absolute;
     width: 100%;
     z-index: 1;
     top: 0;
-    border-radius: 3.5rem 3.5rem 0rem 0rem;
+    border-radius: 3.5rem;
     object-fit: contain;
   }
   .card-bg-image {
     top: 25rem;
     @include response(vp-800) {
-      top: 60rem;
+      top: 65rem;
     }
   }
 }
@@ -181,9 +185,10 @@
   min-height: 75rem;
   transition: max-height 1s ease;
   @include response(vp-800) {
-    min-height: 150rem;
+    min-height: 155rem;
   }
 }
+
 .show-card {
   max-height: 250rem;
   min-height: fit-content;

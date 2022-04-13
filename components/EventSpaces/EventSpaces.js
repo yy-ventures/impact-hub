@@ -6,9 +6,10 @@ import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription"
 
 const EventSpaces = () => {
   // State value to hold the value of the current screen size
-  const [screenWidth, setScreenWidth] = useState(null);
+  const [screenWidth, setScreenWidth] = useState(1200);
   // State value to hold the visibility property of the cards
   const [showCard, setShowCard] = useState([false, false, false, false]);
+  const [mobileScreen, setMobileScreen] = useState(false);
 
   const handleVisibility = (index) => {
     let tempState = [false, false, false, false];

@@ -8,6 +8,7 @@ import useFetch from "../Hooks/useFetch";
 const OfficeSpace = () => {
   //State to hold Membership Data
   const officeSpacePlans = useFetch("/get-packages/2");
+  console.log(officeSpacePlans);
   return (
     <section className="officespace_container">
       <div className="officespace_container_bg">
@@ -30,10 +31,11 @@ const OfficeSpace = () => {
         <TitleBlock title="Come create with us!" parentClass="officespace_container_header" shape={partnerShape.src} />
       </div>
       <div className="officespace_container_grid_cards">
-        {officeSpacePlans.map(({ name, price, get_package_features }, index) => {
+        {officeSpacePlans.map(({ id, name, price, get_package_features }, index) => {
           return (
             <MembershipCard
               key={index}
+              id={id}
               type={2}
               image={spaces[index].image}
               title={name}

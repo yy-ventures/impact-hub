@@ -9,6 +9,8 @@ import DownArrow from "./MembershipSVGs/DownArrow";
 const MembershipCard = ({ id, title, price, details, modifierClass, type = 1, image }) => {
   //  Show or hide membership form
   const [showForm, setShowForm] = useState(false);
+  // Set dummy data for duration until this field is added to the api, once done remove this piece of code
+  let duration = title.split(" ")[1] === "Connect" ? 8 : title.split(" ")[1];
 
   // Reference variable to store the reference of the card div
   const ref = useRef(null);
@@ -76,7 +78,7 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1, im
                 <DownArrow />
               </span>
             </h3>
-            <span className="membership-card_plan_header_duration">8hrs / month</span>
+            <span className="membership-card_plan_header_duration">{duration && duration} hrs / month </span>
           </div>
         </div>
         <div className="membership-card_details">
@@ -99,7 +101,7 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1, im
           <MembershipModal handleCloseModal={handleCloseModal} optionTitle={title} optionId={id} type={type} />
         )}
       </div>
-      {image && <img src={image} alt="" />}
+      {image && <img className="office-space-bg-image" src={image} alt="" />}
     </div>
   );
 };
