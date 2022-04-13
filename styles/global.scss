@@ -93,3 +93,11 @@ button {
 .mt-mb{
   margin-top: 4rem;
 }
+
+.no-data-found{
+  text-align: center;
+  p{
+    color: $textDark;
+    font-size: 18px;
+  }
+}

@@ -7,7 +7,7 @@ import PushNotify from "../PushNotify/PushNotify";
 const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
   // get package details
   const data = useFetch(`/get-packages/${type}`);
-  
+
   // states to hold Form data
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -20,10 +20,10 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
   const [didHear, setDidHear] = useState("");
 
   // error message
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
 
   // push
-  const [showPush, setShowPush] = useState(false)
+  const [showPush, setShowPush] = useState(false);
 
   // number input check
   const handleContact = (e) => {
@@ -34,7 +34,7 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
       setContact(phoneNumber);
     }
   };
-  
+
   // Select a package
   const handlePackageChange = (e) => {
     let packageId = e.target.value;
@@ -44,7 +44,6 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
     }
     setHubPackage(packageId);
   };
-
 
   // submit
   const HandleOnSubmit = async (e) => {
@@ -71,25 +70,25 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
       },
       body: bookingFormData,
     })
-    .then((res) => res.json())
-    .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.success) {
-            setShowPush(true)
-            setFirstName('')
-            setLastName('')
-            setEmail('')
-            setContact('')
-            setOrganization('')
-            setHubPackage('')
-            setOrganizationBrief('')
-            setWhyBecome('')
-            setDidHear('')
+          setShowPush(true);
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setContact("");
+          setOrganization("");
+          setHubPackage("");
+          setOrganizationBrief("");
+          setWhyBecome("");
+          setDidHear("");
         }
-        if(!data.success) {
-            setError(data.errors)
+        if (!data.success) {
+          setError(data.errors);
         }
-    }) 
-    .catch(err => err);
+      })
+      .catch((err) => err);
   };
 
   return (
@@ -113,20 +112,8 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
             />
           </div>
           <div className="membership_modal_form_input_container mt-mb">
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Contact no."
-              required
-              value={contact}
-              onChange={handleContact}
-            />
+            <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type="text" placeholder="Contact no." required value={contact} onChange={handleContact} />
           </div>
           <div className="membership_modal_form_input_container">
             <input
@@ -141,22 +128,18 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
             <p>Choose {type === 1 ? "Membership" : "Office Space"} Package</p>
 
             <select onChange={handlePackageChange}>
-              <option value="">Your Packages</option>
               {data.length > 0 &&
                 data.map(({ id, name }) => {
                   return (
                     <option key={id} value={id} selected={id === optionId}>
-                      {name} 1day/month
+                      {name}
                     </option>
                   );
                 })}
             </select>
           </div>
           <div className="membership_modal_form_textarea">
-            <p>
-              Please tell us a little about you or your organisation/company – and the work you do
-              there
-            </p>
+            <p>Please tell us a little about you or your organisation/company – and the work you do there</p>
             <textarea
               required
               onChange={(e) => setOrganizationBrief(e.target.value)}
@@ -165,19 +148,11 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
           </div>
           <div className="membership_modal_form_textarea">
             <p>Please shortly describe why you would like to become a member</p>
-            <textarea
-              required
-              onChange={(e) => setWhyBecome(e.target.value)}
-              value={whyBecome}
-            ></textarea>
+            <textarea required onChange={(e) => setWhyBecome(e.target.value)} value={whyBecome}></textarea>
           </div>
           <div className="membership_modal_form_textarea">
             <p>How did your hear about us?</p>
-            <textarea
-              required
-              onChange={(e) => setDidHear(e.target.value)}
-              value={didHear}
-            ></textarea>
+            <textarea required onChange={(e) => setDidHear(e.target.value)} value={didHear}></textarea>
           </div>
           <div className="membership_modal_form_submit">
             <Button text="submit" />
@@ -185,7 +160,7 @@ const MembershipModal = ({ handleCloseModal, type = 1, optionId }) => {
         </form>
       </div>
       <p>{error}</p>
-      {showPush && <PushNotify setShowPush={setShowPush}/>}
+      {showPush && <PushNotify setShowPush={setShowPush} />}
     </section>
   );
 };

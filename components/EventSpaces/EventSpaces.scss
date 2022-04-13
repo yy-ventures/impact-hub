@@ -3,9 +3,9 @@
   position: relative;
   height: fit-content;
   overflow: hidden;
-  padding: 20rem;
+  padding: 5rem 0rem;
   &_heading {
-    padding-bottom: 6rem;
+    padding: 10rem 20rem;
   }
   &_bg {
     position: absolute;
@@ -14,8 +14,7 @@
     left: 0rem;
     width: 100%;
   }
-  @include response(phone) {
-    padding: 10rem;
+  @include response(vp-800) {
     &_bg {
       left: -14rem;
       width: auto;
@@ -35,7 +34,7 @@
     width: fit-content;
     margin: auto;
     gap: 5rem;
-    @include response(phone) {
+    @include response(vp-800) {
       flex-direction: column;
     }
     &_left,
