@@ -8,7 +8,6 @@ import useFetch from "../Hooks/useFetch";
 const OfficeSpace = () => {
   //State to hold Membership Data
   const officeSpacePlans = useFetch("/get-packages/2");
-  console.log(officeSpacePlans);
   return (
     <section className="officespace_container">
       <div className="officespace_container_bg">

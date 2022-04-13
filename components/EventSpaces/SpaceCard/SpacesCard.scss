@@ -241,7 +241,7 @@
     }
     .spaces-card_show-more {
       flex-direction: row-reverse;
-      left: 15rem;
+      left: 17rem;
       @include response(vp-800) {
         left: 0rem;
       }
@@ -259,7 +259,7 @@
       // transition: all 1s ease;
     }
     .spaces-card_show-more {
-      right: 15rem;
+      right: 17rem;
       @include response(vp-800) {
         right: 0rem;
       }
