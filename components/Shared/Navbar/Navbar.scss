@@ -2,27 +2,39 @@
 
 .navbar_container {
   height: 9rem;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 600px) {
     height: 12rem;
   }
   position: relative;
   font-size: $common;
   z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: $primary2;
   z-index: 1000;
   .navbar_grid {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 0rem 18.4rem;
     .brand_logo {
       img {
         height: 7.4rem;
-        @media screen and (max-width: 600px){
+        @media screen and (max-width: 600px) {
           height: 9.4rem;
         }
       }
@@ -43,10 +55,13 @@
         img {
           width: 8rem;
           height: 8rem;
+          -o-object-fit: cover;
           object-fit: cover;
           position: absolute;
           top: 50%;
           left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
         }
       }
@@ -66,6 +81,8 @@
         position: absolute;
         top: 12rem;
         left: -100%;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
         transition: 0.3s;
         .menu_open,
         .menu_close {
@@ -78,8 +95,14 @@
           margin-top: 15rem;
           height: 100%;
           width: 100%;
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
           display: inline-flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column;
+          -ms-flex-pack: distribute;
           justify-content: space-around;
         }
         li {
@@ -107,6 +130,8 @@
             position: absolute;
             top: 40%;
             left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
             transform: translateX(-50%);
             width: 3rem;
             height: 3rem;
@@ -119,17 +144,22 @@
             img {
               width: 100%;
               height: 100%;
+              -o-object-fit: cover;
               object-fit: cover;
             }
           }
           &:hover {
             ul {
               background-color: $primary2;
+              -webkit-transform-origin: 50% 0;
+              -ms-transform-origin: 50% 0;
               transform-origin: 50% 0;
+              -webkit-animation: submenu 0.3s;
               animation: submenu 0.3s;
               border-bottom-left-radius: 10px;
               border-bottom-right-radius: 10px;
               @media screen and (max-width: 900px) {
+                -webkit-animation: none;
                 animation: none;
               }
               li {
@@ -142,14 +172,22 @@
             color: $white;
           }
           ul {
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
             display: inline-flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
             flex-direction: column;
             position: absolute;
             top: 100%;
             left: 0;
-            // background-color: $primary2;
             width: 17.5rem;
             @media screen and (max-width: 900px) {
               position: relative;
@@ -168,6 +206,8 @@
                 background-color: $primary1;
               }
               a {
+                -webkit-transition: 0.3s;
+                -o-transition: 0.3s;
                 transition: 0.3s;
                 &:hover {
                   color: $primary1;
@@ -183,14 +223,18 @@
     }
     .language-container {
       .language {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         p {
           color: $textLight;
           font-size: 2rem;
           text-transform: capitalize;
           margin-left: 5%;
-          @media screen and (max-width: 600px){
+          @media screen and (max-width: 600px) {
             font-size: 4rem;
             color: $white;
           }
@@ -207,13 +251,31 @@
   }
 }
 
-@keyframes submenu {
+@-webkit-keyframes submenu {
   0% {
+    -webkit-transform: translateY(-1rem);
     transform: translateY(-1rem);
+    -webkit-transform: scale(0);
     transform: scale(0);
   }
   100% {
+    -webkit-transform: translateY(0);
     transform: translateY(0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes submenu {
+  0% {
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
