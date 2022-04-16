@@ -88,15 +88,23 @@
     position: relative;
     z-index: 3;
 
+    display: -ms-grid;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     justify-items: center;
+
+    height: -webkit-fit-content;
+
+    height: -moz-fit-content;
 
     height: fit-content;
     margin: auto;
     gap: 1.6rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
-
     @include response(vp-800) {
       grid-template-columns: repeat(1, 1fr);
       width: auto;
@@ -105,8 +113,15 @@
     }
 
     &_flex {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column;
       gap: 1.6rem;
 
