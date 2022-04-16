@@ -108,8 +108,7 @@
     @include response(vp-800) {
       grid-template-columns: repeat(1, 1fr);
       width: auto;
-      gap: 1.6rem;
-      padding: 0rem 10rem;
+      padding: 2rem 10rem;
       margin: auto;
     }
 
