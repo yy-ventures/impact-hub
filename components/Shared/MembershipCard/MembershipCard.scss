@@ -142,24 +142,24 @@
         // -webkit-box-pack: justify;
         // -ms-flex-pack: justify;
         // justify-content: space-between;
-        // gap: 3rem;
+        gap: 3rem;
         font-size: $subHeading4;
         font-weight: $bold;
         color: white;
-        // span {
-        //   font-size: $para2;
-        //   font-weight: $regular;
-        //   svg {
-        //     fill: $textLight;
-        //     mix-blend-mode: multiply;
-        //     isolation: isolate;
-        //     position: initial;
-        //     width: 4rem;
-        //     height: -webkit-fit-content;
-        //     height: -moz-fit-content;
-        //     height: fit-content;
-        //   }
-        // }
+        span {
+          font-size: $subHeading4;
+          font-weight: $regular;
+          svg {
+            fill: $textLight;
+            mix-blend-mode: multiply;
+            isolation: isolate;
+            position: initial;
+            width: $subHeading4;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+          }
+        }
       }
       &_duration {
         position: relative;
