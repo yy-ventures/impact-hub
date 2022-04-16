@@ -6,7 +6,11 @@
 .office-space-card-container {
   position: relative;
   width: 43rem;
+  -webkit-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
   transition: height 0.5s ease;
+  -webkit-transition: max-height 1s ease -0.5s;
+  -o-transition: max-height 1s ease -0.5s;
   transition: max-height 1s ease -0.5s;
   @include response(vp-800) {
     width: 100%;
@@ -22,6 +26,7 @@
     z-index: 1;
     top: 0;
     border-radius: 3.5rem;
+    -o-object-fit: contain;
     object-fit: contain;
   }
   .card-bg-image {
@@ -35,12 +40,25 @@
   overflow: hidden;
   position: relative;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   min-width: 43rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   max-height: 18rem;
   min-height: 18rem;
@@ -49,8 +67,14 @@
   border-radius: 3rem;
 
   background: white;
+  -webkit-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
   transition: height 0.5s ease;
+  -webkit-transition: max-height 1s ease -0.5s;
+  -o-transition: max-height 1s ease -0.5s;
   transition: max-height 1s ease -0.5s;
+
+  -webkit-box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
 
   box-shadow: 0.1rem 0.1rem 0.6rem rgba(0, 0, 0, 0.16);
 
@@ -61,10 +85,10 @@
 
     padding: 5rem;
   }
-
   // Plan section styles
   &_plan {
     width: 100%;
+    -ms-flex-item-align: start;
     align-self: flex-start;
     color: white;
     cursor: pointer;
@@ -78,7 +102,13 @@
 
       fill: $primary1;
 
+      -webkit-transform: translateY(-50%);
+
+      -ms-transform: translateY(-50%);
+
       transform: translateY(-50%);
+      -webkit-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
       transition: all 0.5s ease;
 
       @include response(vp-800) {
@@ -103,8 +133,14 @@
         width: inherit;
         position: relative;
         z-index: 3;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: flex-end;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         gap: 3rem;
         font-size: $subHeading4;
@@ -119,11 +155,20 @@
             isolation: isolate;
             position: initial;
             width: 4rem;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
             height: fit-content;
           }
         }
       }
       &_duration {
+        /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
         position: relative;
         z-index: 3;
         font-size: $para2;
@@ -137,22 +182,35 @@
         mix-blend-mode: multiply;
         isolation: auto;
         top: 20rem;
+        -webkit-transition: top 0.5s ease;
+        -o-transition: top 0.5s ease;
         transition: top 0.5s ease;
       }
     }
   }
   // Features styles
   &_details {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     padding: 5rem 0;
     @include response(vp-800) {
       padding: 15rem 0;
     }
     &_paragraph {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       line-height: 1.8;
       color: $placeholder;
@@ -175,6 +233,8 @@
   //   Membership choose plan button
   &_btn {
     opacity: 0;
+    -webkit-transition: opacity 0.25s ease-in-out 0.25s;
+    -o-transition: opacity 0.25s ease-in-out 0.25s;
     transition: opacity 0.25s ease-in-out 0.25s;
   }
 }
@@ -183,6 +243,8 @@
 .office-space-show-card {
   max-height: 250rem;
   min-height: 75rem;
+  -webkit-transition: max-height 1s ease;
+  -o-transition: max-height 1s ease;
   transition: max-height 1s ease;
   @include response(vp-800) {
     min-height: 155rem;
@@ -191,7 +253,11 @@
 
 .show-card {
   max-height: 250rem;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
   min-height: fit-content;
+  -webkit-transition: max-height 1s ease;
+  -o-transition: max-height 1s ease;
   transition: max-height 1s ease;
 
   .membership-card_btn {
@@ -199,6 +265,8 @@
   }
   .membership-card_plan {
     svg {
+      -webkit-transform: translateY(-72%);
+      -ms-transform: translateY(-72%);
       transform: translateY(-72%);
     }
     &_header_price {
@@ -206,12 +274,16 @@
       mix-blend-mode: normal;
       span {
         svg {
+          -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
           transform: rotate(180deg);
         }
       }
     }
     &_header_duration {
       top: 0rem;
+      -webkit-transition: top 0.5s ease;
+      -o-transition: top 0.5s ease;
       transition: top 0.5s ease;
     }
   }
