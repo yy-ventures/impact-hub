@@ -108,7 +108,7 @@
     @include response(vp-800) {
       grid-template-columns: repeat(1, 1fr);
       width: auto;
-      padding: 2rem 10rem;
+      padding: 0rem 10rem;
       margin: auto;
     }
 
@@ -124,9 +124,9 @@
       -ms-flex-direction: column;
       flex-direction: column;
       gap: 1.6rem;
-
       // In phones show only 1 column
       @include response(vp-800) {
+        padding: 1.6rem 0rem;
         width: 100%;
       }
       // set colors for each card based on their class names
