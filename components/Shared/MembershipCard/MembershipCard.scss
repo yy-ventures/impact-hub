@@ -150,9 +150,11 @@
           font-size: $subHeading4;
           font-weight: $regular;
           svg {
+            float: right;
             fill: $textLight;
             position: initial;
             width: $subHeading4;
+            transform: translateY(50%);
           }
         }
       }
@@ -188,7 +190,7 @@
     // -webkit-box-pack: center;
     // -ms-flex-pack: center;
     // justify-content: center;
-    width: 100%;
+
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -204,7 +206,6 @@
       color: $placeholder;
     }
     p {
-      padding-right: 1rem;
       font-size: $common;
       @include response(vp-800) {
         font-size: $subHeading3;
@@ -213,6 +214,7 @@
     svg {
       width: $common;
       aspect-ratio: 1;
+      margin-left: 2rem;
       @include response(vp-800) {
         width: $subHeading3;
       }
@@ -253,18 +255,18 @@
   }
   .membership-card_plan {
     svg {
-      -webkit-transform: translateY(-72%);
-      -ms-transform: translateY(-72%);
-      transform: translateY(-72%);
+      -webkit-transform: translateY(-73%);
+      -ms-transform: translateY(-73%);
+      transform: translateY(-73%);
     }
     &_header_price {
       color: white;
       mix-blend-mode: normal;
       span {
         svg {
-          -webkit-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+          -webkit-transform: translateY(50%) rotate(180deg);
+          -ms-transform: translateY(50%) rotate(180deg);
+          transform: translateY(50%) rotate(180deg);
         }
       }
     }
