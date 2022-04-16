@@ -24,11 +24,11 @@ body {
   }
   @include response(tab-port) {
     font-size: 4.8px; //0.3em
-    -webkit-text-size-adjust: none;
+    // -webkit-text-size-adjust: none;
   }
   @include response(vp-800) {
     font-size: 4px; //0.25em
-    -webkit-text-size-adjust: none;
+    // -webkit-text-size-adjust: none;
     .body-global,
     .highlight-global {
       font-size: 4rem !important;
@@ -36,7 +36,7 @@ body {
   }
   @include response(phone) {
     font-size: 3.2px; // 0.2em
-    -webkit-text-size-adjust: none;
+    // -webkit-text-size-adjust: none;
     .body-global,
     .highlight-global {
       font-size: 5rem !important;
