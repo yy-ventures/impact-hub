@@ -74,9 +74,9 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1, im
             <h2 className="membership-card_plan_header_title">{title}</h2>
             <h3 className="membership-card_plan_header_price">
               BDT {price}
-              <span>
+              {/* <span>
                 <DownArrow />
-              </span>
+              </span> */}
             </h3>
             <span className="membership-card_plan_header_duration">{duration && duration} hrs / month </span>
           </div>
