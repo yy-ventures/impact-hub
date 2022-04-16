@@ -102,14 +102,13 @@
     height: fit-content;
     margin: auto;
     gap: 1.6rem;
-    padding: 1.6rem 0rem;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     @include response(vp-800) {
       grid-template-columns: repeat(1, 1fr);
       width: auto;
-      padding: 1.6rem 10rem;
+      padding: 0rem 10rem;
       margin: auto;
     }
 
@@ -125,7 +124,6 @@
       -ms-flex-direction: column;
       flex-direction: column;
       gap: 1.6rem;
-      padding: 1.6rem 0rem;
       // In phones show only 1 column
       @include response(vp-800) {
         width: 100%;
