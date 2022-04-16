@@ -20,7 +20,7 @@ const OfficeSpace = () => {
             <h5>We are on the transitioning team.</h5>
           </div>
           <div>
-            <p>
+            <p className="body-global">
               Impact Hub Dhaka is part of a global network of over 100 connected communities that enable collaboration.
               We unite people from every profession, background and culture with imagination and drive to challenge the
               status quo. We see and do things differently – together we create the new normal.

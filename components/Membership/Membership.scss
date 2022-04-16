@@ -3,7 +3,7 @@
 .membership_container {
   height: 170rem;
   @include response(vp-800) {
-    height: 375rem;
+    height: 410rem;
   }
   position: relative;
   &_bg {
@@ -23,7 +23,7 @@
 
     padding: 12.7rem 16rem 8.8rem 15.3rem;
 
-    @include response(phone) {
+    @include response(vp-800) {
       flex-direction: column;
       padding: 12.7rem 10rem 8.8rem 10rem;
     }
@@ -35,8 +35,9 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      @include response(phone) {
+      @include response(vp-800) {
         width: auto;
+        height: max-content;
         justify-content: space-evenly;
         margin-bottom: 2rem;
       }
@@ -47,10 +48,13 @@
         color: $primary2;
         margin-left: 7.4rem;
         position: relative;
+        @include response(vp-800) {
+          font-size: $headingSecondary;
+        }
         &::before {
           content: "";
           position: absolute;
-          bottom: $subHeading1 / 2;
+          top: $subHeading1;
           left: -6.4rem - 1rem;
 
           display: block;
@@ -66,6 +70,9 @@
         font-weight: $bold;
         color: $primary2;
         margin-left: 7.4rem;
+        @include response(vp-800) {
+          font-size: $headingSecondary;
+        }
       }
       p {
         font-size: $para1;
