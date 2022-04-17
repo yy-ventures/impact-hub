@@ -3,7 +3,7 @@
   position: relative;
   height: 175rem;
   @include response(vp-800) {
-    min-height: 500rem;
+    min-height: 520rem;
     padding-bottom: 5rem;
   }
   &_bg {
