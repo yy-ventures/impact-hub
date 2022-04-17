@@ -95,19 +95,6 @@
     width: fit-content;
     gap: 3rem;
     margin: auto;
-    @each $color in $cardColors {
-      $i: index(
-        $list: $cardColors,
-        $value: $color,
-      );
-      .flex-card-#{$i} {
-        @include setMembershipCardColors($color);
-      }
-      @if $i==6 {
-        .flex-card-#{$i} {
-          @include setMembershipCardColors($color, "true");
-        }
-      }
-    }
+    @include setCardColorInOrder($cardColors);
   }
 }

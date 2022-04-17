@@ -91,7 +91,7 @@
   }
 }
 
-@mixin setMembershipCardColors($color, $bgDarken: "false") {
+@mixin setCardColors($color, $bgDarken: "false") {
   .membership-card {
     &_plan {
       svg {
@@ -114,6 +114,23 @@
         svg {
           fill: darken($color, 10%);
         }
+      }
+    }
+  }
+}
+
+@mixin setCardColorInOrder($colorsInOrder) {
+  @each $color in $colorsInOrder {
+    $i: index(
+      $list: $colorsInOrder,
+      $value: $color,
+    );
+    .flex-card-#{$i} {
+      @include setCardColors($color);
+    }
+    @if $i==6 {
+      .flex-card-#{$i} {
+        @include setCardColors($color, "true");
       }
     }
   }

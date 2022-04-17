@@ -131,25 +131,29 @@
       -ms-flex-direction: column;
       flex-direction: column;
       gap: 1.6rem;
+
+      @include setCardColorInOrder($cardColors);
       // In phones show only 1 column
       @include response(vp-800) {
         width: 100%;
+        @include setCardColorInOrder($cardColorsOnMobile);
       }
+
       // set colors for each card based on their class names
-      @each $color in $cardColors {
-        $i: index(
-          $list: $cardColors,
-          $value: $color,
-        );
-        .flex-card-#{$i} {
-          @include setMembershipCardColors($color);
-        }
-        @if $i==6 {
-          .flex-card-#{$i} {
-            @include setMembershipCardColors($color, "true");
-          }
-        }
-      }
+      // @each $color in $cardColors {
+      //   $i: index(
+      //     $list: $cardColors,
+      //     $value: $color,
+      //   );
+      //   .flex-card-#{$i} {
+      //     @include setMembershipCardColors($color);
+      //   }
+      //   @if $i==6 {
+      //     .flex-card-#{$i} {
+      //       @include setMembershipCardColors($color, "true");
+      //     }
+      //   }
+      // }
     }
   }
 }
