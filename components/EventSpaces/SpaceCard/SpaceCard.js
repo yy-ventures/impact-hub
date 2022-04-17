@@ -13,6 +13,7 @@ const SpaceCard = ({
   direction = "right",
   cardVisibility,
   handleVisibility,
+  onMobileScreen = false,
 }) => {
   return (
     <div className={`spaces-card_container spaces-card_container_${direction}`}>
@@ -51,14 +52,16 @@ const SpaceCard = ({
               );
             })}
         </div>
-        <button
-          className={`spaces-card_show-more`}
-          onClick={() => {
-            handleVisibility();
-          }}
-        >
-          Show {cardVisibility ? "Less" : "More"} <ShowMoreSvg className={`spaces-card_show-more_${direction}`} />
-        </button>
+        {!onMobileScreen && (
+          <button
+            className={`spaces-card_show-more`}
+            onClick={() => {
+              handleVisibility();
+            }}
+          >
+            Show {cardVisibility ? "Less" : "More"} <ShowMoreSvg className={`spaces-card_show-more_${direction}`} />
+          </button>
+        )}
       </div>
     </div>
   );
