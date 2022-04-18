@@ -30,7 +30,7 @@
     object-fit: contain;
   }
   .card-bg-image {
-    top: 25rem;
+    top: 24rem;
     @include response(vp-800) {
       top: 50vw;
     }
@@ -133,27 +133,20 @@
         width: inherit;
         position: relative;
         z-index: 3;
-        // display: -webkit-box;
-        // display: -ms-flexbox;
-        // display: flex;
-        // -webkit-box-align: end;
-        // -ms-flex-align: end;
-        // align-items: flex-end;
-        // -webkit-box-pack: justify;
-        // -ms-flex-pack: justify;
-        // justify-content: space-between;
         gap: 3rem;
-        font-size: $subHeading4;
+        font-size: $subHeading3;
         font-weight: $bold;
         color: white;
         span {
-          font-size: $subHeading4;
+          font-size: $subHeading2;
           font-weight: $regular;
+          color: $textDark;
+          opacity: 0.7;
           svg {
+            position: initial;
             float: right;
             fill: $textLight;
-            position: initial;
-            width: $subHeading4;
+            width: $subHeading2;
             transform: translateY(50%);
           }
         }
@@ -180,28 +173,14 @@
   }
   // Features styles
   &_details {
-    // display: -webkit-box;
-    // display: -ms-flexbox;
-    // display: flex;
-    // -webkit-box-orient: vertical;
-    // -webkit-box-direction: normal;
-    // -ms-flex-direction: column;
-    // flex-direction: column;
-    // -webkit-box-pack: center;
-    // -ms-flex-pack: center;
-    // justify-content: center;
-
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     padding: 5rem 0;
     @include response(vp-800) {
-      padding: 20rem 0;
+      padding: 25rem 0;
     }
     &_paragraph {
-      // display: -webkit-box;
-      // display: -ms-flexbox;
-      // display: flex;
       line-height: 1.8;
       color: $placeholder;
     }
@@ -237,7 +216,7 @@
   -o-transition: max-height 1s ease;
   transition: max-height 1s ease;
   @include response(vp-800) {
-    min-height: 155rem;
+    min-height: 130vw;
   }
 }
 
