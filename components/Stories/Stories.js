@@ -7,7 +7,7 @@ import useFetch from '../Hooks/useFetch';
 const Stories = () => {
     const stories = useFetch('/get-stories')
     const baseUrlForImages = process.env.baseUrlForImages;
-    
+    console.log(stories)
     return (
         <section className='stories'>
             {/* event path */}

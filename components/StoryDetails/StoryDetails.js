@@ -1,36 +1,48 @@
-import React from 'react'
-import Link from 'next/link'
-
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { getSummary } from "./getSummary";
 // IMAGES
-import image1 from '../../public/images/story-details/img-1.png'
+import image1 from "../../public/images/story-details/img-1.png";
 
 // LAYOUT
-import StoriesSvg from './layout/StoriesSvg';
+import StoriesSvg from "./layout/StoriesSvg";
 
-export default function StoryDetails({ html, slug }) {
+export default function StoryDetails({ image, title, html, slug }) {
+  const baseUrlForImages = process.env.baseUrlForImages;
+  // To get the summary out of the innerHtml
+  const [summary, setSummary] = useState("");
+  // Extract the summary from the innerHtml
+  useEffect(() => {
+    // selects all the paragraph tags from the innerHtml
+    const paragraphs = document.getElementsByTagName("p");
+    // get the summary of the 3rd paragraph of the innerHtml with a character length of 200
+    const summarizedString = getSummary(paragraphs[3], 200);
+    setSummary(summarizedString);
+  }, []);
+
   return (
-    <div className='story-details'>
-      <div className='top-layout'>
+    <div className="story-details">
+      <div className="top-layout">
         <StoriesSvg />
       </div>
-      <div className='bottom-layout'>
+      <div className="bottom-layout">
         <StoriesSvg />
       </div>
-      <div className='box'>
-        <div className='container-1'>
-          <div className='img-container'>
-            <img className='image' src={image1.src} alt='image' />
+      <div className="box">
+        <div className="container-1">
+          <div className="img-container">
+            <img className="image" src={baseUrlForImages + image} alt="image" />
           </div>
-          <div className='content-container'>
-            <h1 className='content-container__heading'>Creating A Bangladesh Where Everyone Thrives</h1>
-            <p className='content-container__text body-global'>From Amsterdam to Johannesburg, Jakarta to San Francisco, Impact Hub has evolved into a rapidly expanding, diverse global network of over 17.000+ members in 100+ locations. Each community is a wealth of innovative programs, events, and cutting-edge content. Step into any one of our Impact Hubs worldwide and immerse yourself in the local experience of a global movement.</p>
+          <div className="content-container">
+            <h1 className="content-container__heading">{title}</h1>
+            <p className="content-container__text body-global">{summary && summary}...</p>
           </div>
         </div>
-        <div className='story-container' dangerouslySetInnerHTML={{ __html: html }}></div>
-        <div className='box_back'>
+        <div className="story-container" dangerouslySetInnerHTML={{ __html: html }}></div>
+        <div className="box_back">
           <Link href={`/${slug}`}>back</Link>
         </div>
       </div>
     </div>
-  )
+  );
 }

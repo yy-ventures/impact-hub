@@ -1,186 +1,185 @@
-@import '../../styles//base.scss';
+@import "../../styles//base.scss";
 
-.story-details{
-    padding: 8.8rem 19.3rem;
-    overflow: hidden;
-    
+.story-details {
+  padding: 8.8rem 19.3rem;
+  overflow: hidden;
+
+  position: relative;
+
+  @include response(phone) {
+    // padding: 5rem;
+    padding: 4.8rem 9.8rem;
+  }
+
+  .box {
     position: relative;
-    
-    @include response(phone){
-        // padding: 5rem;
-        padding: 4.8rem 9.8rem;
+    z-index: 111;
+    &_back {
+      margin-top: 2rem;
+      padding: 2rem 0;
+      a {
+        color: $secondary;
+        font-weight: $bold;
+        font-size: $para1;
+        padding: 1rem 2rem;
+        border: 1px solid $secondary;
+        text-decoration: none;
+        text-transform: capitalize;
+        @media screen and (max-width: 600px) {
+          padding: 2rem 4rem;
+          font-size: 5rem;
+        }
+      }
     }
-    
-    .box{
-        position: relative;
-        z-index: 111;
-        &_back{
-            margin-top: 2rem;
-            padding: 2rem 0;
-            a{
-                color: $secondary;
-                font-weight: $bold;
-                font-size: $para1;
-                padding: 1rem 2rem;
-                border: 1px solid $secondary;
-                text-decoration: none;
-                text-transform: capitalize;
-                @media screen and (max-width: 600px) {
-                    padding: 2rem 4rem;
-                    font-size: 5rem;
-                }
-            }
-        }
-    }
-    .top-layout{
-        position: absolute;
-        top: -28rem;
-        left: -21rem;
+  }
+  .top-layout {
+    position: absolute;
+    top: -28rem;
+    left: -21rem;
 
-        @include response(m-desktop){
-            top: -73rem;
-            left: -47rem;
-        }
-        @include response(desktop){
-            top: -82rem;
-            left: -54rem;
-        }
-        @include response(tab-port){
-            top: -162rem;
-            left: -97rem;
-        }
-        @include response(phone){
-            top: -145rem;
-            left: -97rem;
-        }
-        @include response(s-phone){
-            top: -200rem;
-            left: -97rem;
-        }
+    @include response(m-desktop) {
+      top: -73rem;
+      left: -47rem;
     }
-    .bottom-layout{
-        position: absolute;
-        right: -15rem;
-        bottom: -45rem;
+    @include response(desktop) {
+      top: -82rem;
+      left: -54rem;
+    }
+    @include response(tab-port) {
+      top: -162rem;
+      left: -97rem;
+    }
+    @include response(phone) {
+      top: -145rem;
+      left: -97rem;
+    }
+    @include response(s-phone) {
+      top: -200rem;
+      left: -97rem;
+    }
+  }
+  .bottom-layout {
+    position: absolute;
+    right: -15rem;
+    bottom: -45rem;
 
-        @include response(m-desktop){
-            right: -56rem;
-            bottom: -82rem;
-        }
-        @include response(desktop){
-            right: -66rem;
-            bottom: -92rem;
-        }
-        @include response(tab-port){
-            right: -127rem;
-            bottom: -135rem;
-        }
-        @include response(s-phone){
-            right: -211rem;
-            bottom: -197rem;
-        }
+    @include response(m-desktop) {
+      right: -56rem;
+      bottom: -82rem;
+    }
+    @include response(desktop) {
+      right: -66rem;
+      bottom: -92rem;
+    }
+    @include response(tab-port) {
+      right: -127rem;
+      bottom: -135rem;
+    }
+    @include response(s-phone) {
+      right: -211rem;
+      bottom: -197rem;
+    }
+  }
+
+  .container-1 {
+    margin-bottom: 13rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+
+    @include response(phone) {
+      grid-template-columns: 1fr;
     }
 
-    .container-1{
-        margin-bottom: 13rem;
-
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
-
-        @include response(phone){
-            grid-template-columns: 1fr;
+    .img-container {
+      .image {
+        height: 100%;
+        max-width: 71.2rem;
+        object-fit: contain;
+        @include response(phone) {
+          width: 100%;
         }
-
-        .img-container{
-            height: 42.3rem;
-            .image{
-                height: 100%;
-                object-fit: cover;
-                @include response(phone){
-                    width: 100%;
-                }
-            }
-
-        }
-        .content-container{
-            align-self: center;
-            &__heading{
-                color: $primary1;
-                font-size: 6rem;
-                line-height: 1.2;
-
-                @include response(phone){
-                    margin-bottom: 2rem;
-                }
-            }
-            &__text{
-                font-size: 2.5rem;
-            }
-        }
+      }
     }
-    .story-container{
-        p{
-            font-size: $para1;
-            color: $primary2;
-            padding: 2rem 0;
-            @media screen and (max-width:600px) {
-                font-size: 5rem;
-            }
-        }
+    .content-container {
+      align-self: center;
+      &__heading {
+        color: $primary1;
+        font-size: 6rem;
+        line-height: 1.2;
 
-        a{
-            color: $primary1;
-            font-weight: $bold;
+        @include response(phone) {
+          margin-bottom: 2rem;
         }
-
-        h2{
-            font-size: 4.5rem;
-            color: $primary2;
-            margin-bottom: 4.8rem;
-
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-
-            &::before{
-                content: '';
-                display: block;
-                height: .5rem;
-                width: 6.4rem;
-                background-color: $primary1;
-            }
-        }
-        h3{
-            font-size: 3.5rem;
-            color: $primary2;
-            margin-bottom: 3.8rem;
-        }
-        h4{
-            font-size: 2.5rem;
-            color: $primary2;
-            margin-bottom: 2.8rem;
-        }
-        h5{
-            font-size: 2rem;
-            color: $primary2;
-            margin-bottom: 2rem;
-        }
-        h6{
-            font-size: 1.6rem;
-            color: $primary2;
-            margin-bottom: 1rem;
-        }
-        img{
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        em{
-            font-size: $para1;
-            color: $primary2;
-            padding: 2rem 0; 
-            font-family: "GT Walsheim Pro";
-        }
+      }
+      &__text {
+        font-size: 2.5rem;
+      }
     }
+  }
+  .story-container {
+    p {
+      font-size: $para1;
+      color: $primary2;
+      padding: 2rem 0;
+      @media screen and (max-width: 600px) {
+        font-size: 5rem;
+      }
+    }
+
+    a {
+      color: $primary1;
+      font-weight: $bold;
+    }
+
+    h2 {
+      font-size: 4.5rem;
+      color: $primary2;
+      margin-bottom: 4.8rem;
+
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 0.5rem;
+        width: 6.4rem;
+        background-color: $primary1;
+      }
+    }
+    h3 {
+      font-size: 3.5rem;
+      color: $primary2;
+      margin-bottom: 3.8rem;
+    }
+    h4 {
+      font-size: 2.5rem;
+      color: $primary2;
+      margin-bottom: 2.8rem;
+    }
+    h5 {
+      font-size: 2rem;
+      color: $primary2;
+      margin-bottom: 2rem;
+    }
+    h6 {
+      font-size: 1.6rem;
+      color: $primary2;
+      margin-bottom: 1rem;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    em {
+      font-size: $para1;
+      color: $primary2;
+      padding: 2rem 0;
+      font-family: "GT Walsheim Pro";
+    }
+  }
 }
