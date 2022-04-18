@@ -179,6 +179,7 @@
       }
       svg {
         width: $common;
+        margin: 0rem 1.5rem;
         @include response(vp-800) {
           width: $para2;
         }
@@ -241,7 +242,7 @@
     }
     .spaces-card_show-more {
       flex-direction: row-reverse;
-      left: 17rem;
+      left: 20rem;
       @include response(vp-800) {
         left: 0rem;
       }
@@ -259,7 +260,7 @@
       // transition: all 1s ease;
     }
     .spaces-card_show-more {
-      right: 17rem;
+      right: 20rem;
       @include response(vp-800) {
         right: 0rem;
       }
@@ -272,10 +273,11 @@
 }
 // Styles when cards are open
 .spaces-card_open {
-  width: 95rem;
+  width: 110rem;
   transition: all 0.5s ease;
   @include response(vp-800) {
-    width: 110rem;
+    // width: 110rem;
+    justify-content: space-evenly;
   }
   // Background image
   img {

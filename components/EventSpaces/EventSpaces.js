@@ -6,10 +6,13 @@ import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription"
 
 const EventSpaces = () => {
   // State value to hold the value of the current screen size
-  const [screenWidth, setScreenWidth] = useState(1200);
+  // Set the screen-width to window's inner width if we are on the client side
+  // In SSR we do not have a window on the server side,so we need to check if we are on the client side
+  // as we set the screen width to window.innerWidth by putting a condition (typeof window !== 'undefined')
+  const [screenWidth, setScreenWidth] = useState(typeof window !== "undefined" && window.innerWidth);
   // State value to hold the visibility property of the cards
   const [showCard, setShowCard] = useState([false, false, false, false]);
-  const [mobileScreen, setMobileScreen] = useState(false);
+  const [onMobileScreen, setOnMobileScreen] = useState(false);
 
   const handleVisibility = (index) => {
     let tempState = [false, false, false, false];
@@ -21,10 +24,12 @@ const EventSpaces = () => {
   // keep the cards open on mobile screens
   const showCardOnMobile = (screenWidth) => {
     // for mobile screens less than 700px width
-    if (screenWidth < 700 && screenWidth !== null) {
+    if (screenWidth <= 800 && screenWidth !== null) {
       setShowCard([true, true, true, true]);
+      setOnMobileScreen(true);
     } else {
       setShowCard([false, false, false, false]);
+      setOnMobileScreen(false);
     }
   };
 
@@ -60,6 +65,7 @@ const EventSpaces = () => {
                     direction={index === 0 ? "left" : "right"}
                     handleVisibility={() => handleVisibility(index * 2)}
                     cardVisibility={showCard[index * 2]}
+                    onMobileScreen={onMobileScreen}
                   />
                   <SpaceCard
                     image={spaces[index * 2 + 1].image}
@@ -71,6 +77,7 @@ const EventSpaces = () => {
                     direction={index === 0 ? "left" : "right"}
                     handleVisibility={() => handleVisibility(index * 2 + 1)}
                     cardVisibility={showCard[index * 2 + 1]}
+                    onMobileScreen={onMobileScreen}
                   />
                 </div>
               )

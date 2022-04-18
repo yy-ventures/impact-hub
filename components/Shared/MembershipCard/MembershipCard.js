@@ -75,6 +75,7 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1, im
             <h3 className="membership-card_plan_header_price">
               BDT {price}
               <span>
+                {type == 2 && " /month"}
                 <DownArrow />
               </span>
             </h3>
@@ -86,8 +87,10 @@ const MembershipCard = ({ id, title, price, details, modifierClass, type = 1, im
             details.map(({ name, is_available }, index) => {
               return (
                 <div key={index} className="membership-card_details_paragraph">
-                  <p>{name}</p>
-                  <FeatureAvailability available={is_available} />
+                  <p>
+                    {name}
+                    <FeatureAvailability available={is_available} />
+                  </p>
                 </div>
               );
             })}

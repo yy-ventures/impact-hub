@@ -1,7 +1,7 @@
 export const spaces = [
   {
     image: "event-space.webp",
-    title: "Event Space BDT 27.5K/8hr",
+    title: "Event Space BDT 27500/8hr",
     price: 2000,
     size: 1200,
     seating: 70,
@@ -44,14 +44,14 @@ export const spaces = [
   },
   {
     image: "workshop-space.webp",
-    title: "Workshop Space BDT 6K/4hrs",
+    title: "Workshop Space BDT 6000/4hrs",
     size: 1200,
-    seating: 70,
+    seating: 35,
     description:
       "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
     amenities: [
       {
-        feature: "Suitable for up to 30 people",
+        feature: "Suitable for up to 35 people",
         availability: 1,
       },
       {
@@ -84,7 +84,7 @@ export const spaces = [
     image: "hub-cafe.png",
     title: "Hub Cafe BDT 2000/2hr",
     size: 1200,
-    seating: 70,
+    seating: 20,
     description:
       "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
     amenities: [
@@ -122,7 +122,7 @@ export const spaces = [
     image: "board-meeting-room.webp",
     title: "Board Meeting Room BDT 1200/hrs",
     size: 1200,
-    seating: 70,
+    seating: 15,
     description:
       "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
     amenities: [

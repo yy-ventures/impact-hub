@@ -12,6 +12,10 @@ $orange: #ff8e3d;
 $skyBlue: #41bed0;
 $formBackground: #f2f2f2;
 
+// Membership Card colors
+$cardColors: ($secondary, $orange, $limeGreen, $skyBlue, $yellow, $primary2);
+// Membership Card Color On Mobile
+$cardColorsOnMobile: ($secondary, $limeGreen, $yellow, $orange, $skyBlue, $primary2);
 // Faq accordion color
 // 1st color is the primary1 color
 $faqColorOrange: #fe8b38;
@@ -19,7 +23,7 @@ $faqColorYellow: #ffce28;
 $faqColorGreen: #aacb70;
 
 // Membership Card colors
-$cardColors: ($secondary, $orange, $limeGreen, $skyBlue, $yellow, $primary2);
+// $cardColors: ($secondary, $orange, $limeGreen, $skyBlue, $yellow, $primary2);
 // fonts size
 $headingPrimary: 8rem;
 $headingSecondary: 6.5rem;
