@@ -7,7 +7,7 @@ import image1 from "../../public/images/story-details/img-1.png";
 // LAYOUT
 import StoriesSvg from "./layout/StoriesSvg";
 
-export default function StoryDetails({ image, title, html, slug }) {
+export default function StoryDetails({ image, title, sum, html, slug }) {
   const baseUrlForImages = process.env.baseUrlForImages;
   // To get the summary out of the innerHtml
   const [summary, setSummary] = useState("");
@@ -35,7 +35,7 @@ export default function StoryDetails({ image, title, html, slug }) {
           </div>
           <div className="content-container">
             <h1 className="content-container__heading">{title}</h1>
-            <p className="content-container__text body-global">{summary && summary}...</p>
+            <p className="content-container__text body-global">{sum ? sum : summary}...</p>
           </div>
         </div>
         <div className="story-container" dangerouslySetInnerHTML={{ __html: html }}></div>

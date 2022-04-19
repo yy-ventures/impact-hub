@@ -6,19 +6,17 @@ import StoryDetails from "../../../components/StoryDetails/StoryDetails";
 const storyDetails = () => {
   let router = useRouter();
   const { id } = router.query;
-  const detailStory = useFetch(`/get-story-detail/${id}`);
-  const stories = useFetch("/get-stories");
-  const story = stories.filter(({ id: storyId }) => {
-    return storyId == id;
-  });
+  const storyDetail = useFetch(`/get-story-detail/${id}`);
+  const { details, get_story: story, summary } = storyDetail.length > 0 && storyDetail[0];
 
   return (
     <>
-      {story[0] && detailStory[0] && (
+      {storyDetail[0] && (
         <StoryDetails
-          image={story[0].image_path}
-          title={story[0].title}
-          html={detailStory[0].details}
+          image={story.image_path}
+          title={story.title}
+          sum={summary}
+          html={details}
           slug="stories"
         ></StoryDetails>
       )}
