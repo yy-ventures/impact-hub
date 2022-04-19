@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import useFetch from "../../../components/Hooks/useFetch";
 import StoryDetails from "../../../components/StoryDetails/StoryDetails";
+import PreLoader from "../../../components/Shared/PreLoader/PreLoader";
 
 const storyDetails = () => {
   let router = useRouter();
@@ -11,7 +12,7 @@ const storyDetails = () => {
 
   return (
     <>
-      {storyDetail[0] && (
+      {storyDetail[0] ? (
         <StoryDetails
           image={story.image_path}
           title={story.title}
@@ -19,6 +20,8 @@ const storyDetails = () => {
           html={details}
           slug="stories"
         ></StoryDetails>
+      ) : (
+        <PreLoader />
       )}
     </>
   );

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // import { useEffect } from "react/cjs/react.production.min";
 import useFetch from "../../../components/Hooks/useFetch";
 import StoryDetails from "../../../components/StoryDetails/StoryDetails";
+import PreLoader from "../../../components/Shared/PreLoader/PreLoader";
 
 const storyDetails = () => {
   let router = useRouter();
@@ -14,13 +15,15 @@ const storyDetails = () => {
 
   return (
     <>
-      {eventDetail[0] && (
+      {eventDetail[0] ? (
         <StoryDetails
           image={event.image_path}
           title={event.title}
           html={eventDetail[0].description}
           slug="/events/past-events"
         ></StoryDetails>
+      ) : (
+        <PreLoader />
       )}
     </>
   );

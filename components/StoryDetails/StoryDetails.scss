@@ -95,7 +95,7 @@
     .img-container {
       .image {
         height: 100%;
-        max-width: 71.2rem;
+        width: 71.2rem;
         object-fit: contain;
         @include response(phone) {
           width: 100%;
