@@ -11,7 +11,7 @@ import Cookies from "../components/Shared/Cookies/Cookies";
 export default function Home() {
   // const token = useToken();
   const [token, setToken] = useState(null);
-  const [cookie, setCookie] = useState(false)
+  const [cookie, setCookie] = useState(false);
 
   // Get token value from the api
   const HandleToken = async () => {
@@ -31,8 +31,8 @@ export default function Home() {
 
   useEffect(() => {
     HandleToken();
-    if(sessionStorage.getItem("cookie")) setCookie(true)
-    if(!sessionStorage.getItem("cookie")) setCookie(false)
+    if (sessionStorage.getItem("cookie")) setCookie(true);
+    if (!sessionStorage.getItem("cookie")) setCookie(false);
   }, []);
 
   // Set local storage on the browser not on the server-side
@@ -42,22 +42,13 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>Impact Hub Dhaka</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta
-          name="description"
-          content="Impact Hub Dhaka brings together entrepreneurs, enablers, young talents and professionals from all across Bangladesh to create a vibrant community."
-        />
-        <link rel="icon" href="/favicon.svg" />
-      </Head>
       <HomeHero />
       <HomeWelcome />
       <HomeOffer />
       <HomeImpacts />
       <HomeGrid />
       <HomeNewsLetter />
-      {!cookie && <Cookies setCookie={setCookie}/>}
+      {!cookie && <Cookies setCookie={setCookie} />}
     </div>
   );
 }
