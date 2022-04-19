@@ -15,7 +15,7 @@ const storyDetails = () => {
 
   return (
     <>
-      {eventDetail[0] ? (
+      {eventDetail.length > 0 ? (
         <StoryDetails
           image={event.image_path}
           title={event.title}
