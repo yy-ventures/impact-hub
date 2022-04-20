@@ -3,7 +3,7 @@
 .membership_container {
   height: 170rem;
   @include response(vp-800) {
-    height: 410rem;
+    height: 450rem;
   }
   position: relative;
   &_bg {

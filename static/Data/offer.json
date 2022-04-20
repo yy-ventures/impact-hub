@@ -1,8 +1,8 @@
 [
   {
-    "img": "event-space.webp",
-    "title": "Event Space",
-    "link": "/event-space/spaces"
+    "img": "co-working.png",
+    "title": "Coworking",
+    "link": "/coworking/membership"
   },
   {
     "img": "office-space.jpg",
@@ -10,8 +10,8 @@
     "link": "/office-space"
   },
   {
-    "img": "co-working.png",
-    "title": "Co-Working",
-    "link": "/co-working/membership"
+    "img": "event-space.webp",
+    "title": "Event Space",
+    "link": "/event-space/spaces"
   }
 ]
