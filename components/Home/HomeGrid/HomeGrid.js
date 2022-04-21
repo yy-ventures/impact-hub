@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import rightArrow from "../../../public/right_arrow.svg";
 import Link from "next/link";
 import useFetch from "../../Hooks/useFetch";
-import crossWhite from '../../../public/cross_white.svg'
+import crossWhite from "../../../public/cross_white.svg";
 
 const HomeGrid = () => {
   const community = useFetch("/get-community");
@@ -32,7 +32,9 @@ const HomeGrid = () => {
         </div>
         <div className="home_image_grid_header_right">
           <Link href="/stories">
-              <a><h4>view stories</h4></a>
+            <a>
+              <h4>view stories</h4>
+            </a>
           </Link>
           <span>
             <img src={rightArrow.src} />
@@ -77,7 +79,7 @@ const HomeGrid = () => {
           {showPopUp && (
             <div className="home_image_grid_body_pop" onClick={handlePopUpClose}>
               <div className="home_image_grid_body_pop_cross" onClick={handlePopUpClose}>
-                <img src={crossWhite.src}/>
+                <img src={crossWhite.src} />
               </div>
               {popUp.map((popImage) => (
                 <img src={baseUrlForImages + popImage.image} key={popImage.id} />

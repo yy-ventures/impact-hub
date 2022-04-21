@@ -12,7 +12,7 @@ const storyDetails = () => {
 
   return (
     <>
-      {storyDetail[0] ? (
+      {storyDetail.length > 0 ? (
         <StoryDetails
           image={story.image_path}
           title={story.title}

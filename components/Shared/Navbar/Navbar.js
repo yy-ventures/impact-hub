@@ -67,16 +67,16 @@ const Navbar = () => {
               </ul>
             </li>
             <li>
-              Co-Working
+              Coworking
               <span className="nav_list_arrow_container">
                 <img src={downArrow.src} alt="arrow down" />
               </span>
               <ul>
                 <li onClick={handleMenuClose}>
-                  <Link href="/co-working/membership">membership</Link>
+                  <Link href="/coworking/membership">membership</Link>
                 </li>
                 <li onClick={handleMenuClose}>
-                  <Link href="/co-working/faq">FAQ</Link>
+                  <Link href="/coworking/faq">FAQ</Link>
                 </li>
               </ul>
             </li>

@@ -83,7 +83,7 @@ export const spaces = [
   {
     image: "hub-cafe.png",
     title: "Hub Cafe BDT 2000/2hr",
-    size: 1200,
+    size: 600,
     seating: 20,
     description:
       "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
@@ -119,9 +119,9 @@ export const spaces = [
     ],
   },
   {
-    image: "board-meeting-room.webp",
+    image: "board-meeting-room.png",
     title: "Board Meeting Room BDT 1200/hrs",
-    size: 1200,
+    size: 240,
     seating: 15,
     description:
       "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
