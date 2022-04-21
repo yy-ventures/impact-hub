@@ -119,7 +119,7 @@ export const spaces = [
     ],
   },
   {
-    image: "board-meeting-room.webp",
+    image: "board-meeting-room.png",
     title: "Board Meeting Room BDT 1200/hrs",
     size: 240,
     seating: 15,
