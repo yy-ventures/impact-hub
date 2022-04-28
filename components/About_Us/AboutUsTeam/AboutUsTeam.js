@@ -2,7 +2,7 @@ import React from "react";
 import useFetch from "../../Hooks/useFetch";
 import HeadingDescription from "../../Shared/HeadingDescription/HeadingDescription";
 import AboutUsImageGrid from "./AboutUsImageGrid/AboutUsImageGrid";
-import { team, images } from "./contents";
+import { team } from "./contents";
 const AboutUsTeam = () => {
   const teamMembers = useFetch("/get-team-members");
   return (
