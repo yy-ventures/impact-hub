@@ -2,31 +2,31 @@ import React, { useState, useEffect } from "react";
 import useToken from "./useToken";
 
 const useFetch = (endPoint) => {
-  let token = "";
-  if (typeof window !== "undefined") {
-    token = localStorage.getItem("token");
-    if (token === "") {
-      token = useToken();
-    }
-  }
+  // let token = "";
+  // if (typeof window !== "undefined") {
+  //   token = localStorage.getItem("token");
+  //   if (token === "") {
+  //     token = useToken();
+  //   }
+  // }
   // state to hold the data
   const [data, setData] = useState([]);
-  const [isPending, setIsPending] = useState(false)
+  const [isPending, setIsPending] = useState(false);
 
   // Fetch the data from the api based on the endpoint
   const fetchData = async () => {
     const baseUrl = process.env.baseUrl;
-    setIsPending(true)
+    setIsPending(true);
     await fetch(`${baseUrl + endPoint}`, {
       method: "GET",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        Authorization: "Bearer " + window.localStorage.getItem("token"),
-      },
+      // headers: {
+      //   "Access-Control-Allow-Origin": "*",
+      //   Authorization: "Bearer " + window.localStorage.getItem("token"),
+      // },
     })
       .then((res) => res.json())
       .then((data) => {
-        setIsPending(false)
+        setIsPending(false);
         const reverse = data.data
           .slice(0)
           .reverse()
@@ -36,16 +36,16 @@ const useFetch = (endPoint) => {
         setData(reverse);
       })
       .catch((err) => {
-        setIsPending(false)
-        console.log(err)
+        setIsPending(false);
+        console.log(err);
       });
   };
   //
   useEffect(() => {
-    if (token !== "") {
-      fetchData();
-    }
-  }, [endPoint, token]);
+    // if (token !== "") {
+    fetchData();
+    // }
+  }, [endPoint]);
 
   return data;
 };

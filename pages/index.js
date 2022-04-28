@@ -13,32 +13,32 @@ export default function Home() {
   const [token, setToken] = useState(null);
   const [cookie, setCookie] = useState(false);
 
-  // Get token value from the api
-  const HandleToken = async () => {
-    const baseUrl = process.env.baseUrl;
-    await fetch(`${baseUrl}/login`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "access-control-allow-origin": "*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: "admin@example.com", password: "yy@123456" }),
-    })
-      .then((res) => res.json())
-      .then((data) => setToken(data.data.token));
-  };
+  // // Get token value from the api
+  // const HandleToken = async () => {
+  //   const baseUrl = process.env.baseUrl;
+  //   await fetch(`${baseUrl}/login`, {
+  //     method: "POST",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "access-control-allow-origin": "*",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email: "admin@example.com", password: "yy@123456" }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setToken(data.data.token));
+  // };
 
   useEffect(() => {
-    HandleToken();
+    // HandleToken();
     if (sessionStorage.getItem("cookie")) setCookie(true);
     if (!sessionStorage.getItem("cookie")) setCookie(false);
   }, []);
 
   // Set local storage on the browser not on the server-side
-  if (typeof window !== "undefined") {
-    localStorage.setItem("token", token);
-  }
+  // if (typeof window !== "undefined") {
+  //   localStorage.setItem("token", token);
+  // }
 
   return (
     <div>
