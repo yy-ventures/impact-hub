@@ -35,7 +35,7 @@ const SpaceCard = ({
             </div>
           </div>
           <p className="spaces-card_details_description">{description}</p>
-          <Link href="/send-enquiry">
+          <Link href="/event-space/send-enquiry">
             <a>
               <Button type="secondary" text="Book Now!" />
             </a>
