@@ -44,24 +44,19 @@ const AboutUsPurpose = () => {
           </p>
         </div>
         <div className="about_us_purpose_container_btn_grid">
-          {buttons.map(({ title, span }, index) => {
+          {buttons.map(({ id, title, span }, index) => {
             return index < 3 ? (
               <div className={`about_us_purpose_container_btn_grid_child`}>
+                <Card key={id} text={title} parentClass={"about_us_purpose_container_btn_grid_child"} heading={true} />
                 <Card
-                  key={index}
-                  text={title}
-                  parentClass={"about_us_purpose_container_btn_grid_child"}
-                  heading={true}
-                />
-                <Card
-                  key={index}
+                  key={buttons[index + 3].id}
                   text={buttons[index + 3].title}
                   parentClass={"about_us_purpose_container_btn_grid_child"}
                   span={buttons[index + 3].span}
                   expand={expand}
                 />
                 <Card
-                  key={index}
+                  key={buttons[index + 6].id}
                   text={buttons[index + 6].title}
                   parentClass={"about_us_purpose_container_btn_grid_child"}
                   span={buttons[index + 6].span}
