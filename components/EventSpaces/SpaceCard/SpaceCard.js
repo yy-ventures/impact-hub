@@ -6,6 +6,8 @@ import ShowMoreSvg from "./ShowMoreSvg";
 const SpaceCard = ({
   image,
   title,
+  price,
+  duration,
   size,
   seating,
   description,
@@ -17,7 +19,9 @@ const SpaceCard = ({
 }) => {
   return (
     <div className={`spaces-card_container spaces-card_container_${direction}`}>
-      <h2 className="spaces-card_container_title">{title}</h2>
+      <h2 className="spaces-card_container_title">{`${title} BDT ${price}/${
+        duration > 1 ? duration + "hrs" : "hr"
+      }`}</h2>
       <div className={`spaces-card spaces-card_${cardVisibility ? "open" : "closed"}`}>
         <img src={`/images/spaces/${image ? image : ""}`} alt="spaces" />
         <div className="spaces-card_bg-gradient"></div>

@@ -1,4 +1,4 @@
-export const spaces = [
+export const spacesStaticData = [
   {
     image: "event-space.webp",
     title: "Event Space BDT 27500/8hr",

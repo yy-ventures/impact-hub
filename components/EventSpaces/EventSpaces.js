@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import EventSpacesBg from "./EventSpacesBg/EventSpacesBg";
 import SpaceCard from "./SpaceCard/SpaceCard";
-import { spaces } from "./content";
+import { spacesStaticData } from "./content";
 import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription";
 
-const EventSpaces = () => {
+const EventSpaces = ({ spaces }) => {
   // State value to hold the value of the current screen size
   // Set the screen-width to window's inner width if we are on the client side
   // In SSR we do not have a window on the server side,so we need to check if we are on the client side
@@ -50,39 +50,42 @@ const EventSpaces = () => {
       <EventSpacesBg className={"event-spaces_bg"} />
       <HeadingDescription parentClass="event-spaces" span="Event" heading="Spaces" />
       <div className="event-spaces_cards">
-        {spaces.length > 0 &&
-          spaces.map(({ image, title, size, seating, description, amenities }, index) => {
-            return (
-              index < 2 && (
-                <div key={index} className={`event-spaces_cards_${index === 0 ? "left" : "right"}`}>
-                  <SpaceCard
-                    image={spaces[index * 2].image}
-                    title={spaces[index * 2].title}
-                    size={spaces[index * 2].size}
-                    seating={spaces[index * 2].seating}
-                    description={spaces[index * 2].description}
-                    amenities={spaces[index * 2].amenities}
-                    direction={index === 0 ? "left" : "right"}
-                    handleVisibility={() => handleVisibility(index * 2)}
-                    cardVisibility={showCard[index * 2]}
-                    onMobileScreen={onMobileScreen}
-                  />
-                  <SpaceCard
-                    image={spaces[index * 2 + 1].image}
-                    title={spaces[index * 2 + 1].title}
-                    size={spaces[index * 2 + 1].size}
-                    seating={spaces[index * 2 + 1].seating}
-                    description={spaces[index * 2 + 1].description}
-                    amenities={spaces[index * 2 + 1].amenities}
-                    direction={index === 0 ? "left" : "right"}
-                    handleVisibility={() => handleVisibility(index * 2 + 1)}
-                    cardVisibility={showCard[index * 2 + 1]}
-                    onMobileScreen={onMobileScreen}
-                  />
-                </div>
-              )
-            );
-          })}
+        {spaces?.map(({ id }, index) => {
+          return (
+            index < 2 && (
+              <div key={id} className={`event-spaces_cards_${index === 0 ? "left" : "right"}`}>
+                <SpaceCard
+                  image={spacesStaticData[index * 2].image}
+                  title={spaces[index * 2].title}
+                  price={spaces[index * 2].price}
+                  duration={spaces[index * 2].duration}
+                  size={spaces[index * 2].size}
+                  seating={spaces[index * 2].seating}
+                  description={spacesStaticData[index * 2].description}
+                  amenities={spacesStaticData[index * 2].amenities}
+                  direction={index === 0 ? "left" : "right"}
+                  handleVisibility={() => handleVisibility(index * 2)}
+                  cardVisibility={showCard[index * 2]}
+                  onMobileScreen={onMobileScreen}
+                />
+                <SpaceCard
+                  image={spacesStaticData[index * 2 + 1].image}
+                  title={spaces[index * 2 + 1].title}
+                  price={spaces[index * 2 + 1].price}
+                  duration={spaces[index * 2 + 1].duration}
+                  size={spaces[index * 2 + 1].size}
+                  seating={spaces[index * 2 + 1].seating}
+                  description={spacesStaticData[index * 2 + 1].description}
+                  amenities={spacesStaticData[index * 2 + 1].amenities}
+                  direction={index === 0 ? "left" : "right"}
+                  handleVisibility={() => handleVisibility(index * 2 + 1)}
+                  cardVisibility={showCard[index * 2 + 1]}
+                  onMobileScreen={onMobileScreen}
+                />
+              </div>
+            )
+          );
+        })}
       </div>
     </section>
   );
