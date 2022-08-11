@@ -43,8 +43,9 @@
     }
   }
   &_body_container {
+    padding: 0 7.3rem;
     &_body {
-      padding: 8rem 7.3rem;
+      padding: 8rem 0;
       display: flex;
       gap: 10rem;
       border-bottom: 2px solid #0f3a5f;
@@ -68,12 +69,12 @@
         width: 100%;
         display: block;
       }
-      // &:not(:last-child) {
-      //   border-bottom: 0 none !important;
-      // }
+      &:last-child {
+        border-bottom: 0 none !important;
+      }
     }
     &_body_reverse {
-      padding: 8rem 7.3rem;
+      padding: 8rem 0;
       display: flex;
       gap: 10rem;
       flex-direction: row-reverse;
