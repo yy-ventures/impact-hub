@@ -1,0 +1,102 @@
+@import "../../../styles/base.scss";
+
+.intro {
+  padding: 8rem 15.3rem;
+  @include response(vp-800) {
+    padding: 5.3rem 5.3rem !important;
+  }
+  &_bg {
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+  &_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+    p {
+      padding: 0.3rem 0 0 8rem;
+      font-size: $common;
+      color: $primary2;
+      width: 74.1rem;
+      @media screen and (max-width: 600px) {
+        font-size: 5rem;
+      }
+      @include response(vp-800) {
+        padding: 5.3rem 5.3rem !important;
+      }
+    }
+    &_heading {
+      @include headingLine("left", center);
+      font-size: 6.5rem;
+      padding-bottom: 4.7rem;
+      @include response(vp-800) {
+        padding: 5.3rem 5.3rem !important;
+      }
+    }
+  }
+  &_body_container {
+    &_body {
+      padding: 8rem 7.3rem;
+      display: flex;
+      gap: 10rem;
+      border-bottom: 2px solid #0f3a5f;
+      &_program_image {
+        width: 100rem;
+        // background: #aae148 0% 0% no-repeat padding-box;
+        // padding: 1rem;
+        img {
+          object-fit: cover;
+          width: 100%;
+          border-radius: 20px;
+        }
+        @include response(vp-800) {
+          width: 100%;
+          border-radius: 10px;
+          padding: 5rem;
+        }
+      }
+      @include response(vp-800) {
+        padding: 5.3rem;
+        width: 100%;
+        display: block;
+      }
+      // &:not(:last-child) {
+      //   border-bottom: 0 none !important;
+      // }
+    }
+    &_body_reverse {
+      padding: 8rem 7.3rem;
+      display: flex;
+      gap: 10rem;
+      flex-direction: row-reverse;
+      &_program_image {
+        width: 100rem;
+        // background: #aae148 0% 0% no-repeat padding-box;
+        // padding: 1rem;
+        img {
+          object-fit: cover;
+          width: 100%;
+          border-radius: 20px;
+        }
+        @include response(vp-800) {
+          width: 100%;
+          border-radius: 10px;
+          padding: 5rem;
+        }
+      }
+      @include response(vp-800) {
+        padding: 5.3rem;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}

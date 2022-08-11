@@ -1,0 +1,63 @@
+@import "../../../styles/base.scss";
+.heading-global {
+  font-size: $subHeading2;
+  font-weight: $bold;
+  color: $primary2;
+  position: relative;
+  .title_small_bg {
+    position: absolute;
+    z-index: -1;
+    top: -4.5rem;
+    left: -1.5rem;
+  }
+  h6 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 33px;
+  }
+  span {
+    font-size: $subHeading2;
+    font-weight: $bold;
+  }
+  @include response(vp-800) {
+    h6 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5rem;
+      font-size: $headingPrimary;
+      padding-top: 8.5rem;
+      padding-left: 1.5rem;
+    }
+    span {
+      font-size: $subHeading2;
+      font-weight: $bold;
+    }
+  }
+}
+.body-global {
+  font-size: $common !important;
+  color: $primary2;
+  margin-top: 3rem;
+  @include response(vp-800) {
+    margin-top: 10rem;
+  }
+}
+.program_footer {
+  text-align: right;
+  a {
+    color: $primary2;
+    text-decoration: none;
+    font-size: $common;
+    padding-right: 1rem;
+    margin-right: 3rem;
+    // Hover State
+    &:hover {
+      color: $linkHover;
+      transform: scale(1.1);
+      transition: transform 0.5s ease-in-out;
+    }
+    @include response(vp-800) {
+      font-size: $subHeading4;
+    }
+  }
+}

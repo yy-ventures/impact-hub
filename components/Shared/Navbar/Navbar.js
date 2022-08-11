@@ -1,11 +1,11 @@
-import React, { useState, useRef } from "react";
-import logo from "../../../static/assets/ihd_logo.svg";
-import globeIcon from "../../../static/assets/globe-icon.svg";
 import Link from "next/link";
-import SVGCursor from "../SVGCursor/SVGCursor";
+import React, { useRef, useState } from "react";
 import downArrow from "../../../public/down_arrow.svg";
-import menuOpen from "../../../public/menu_open.svg";
 import menuClose from "../../../public/menu_close.svg";
+import menuOpen from "../../../public/menu_open.svg";
+import globeIcon from "../../../static/assets/globe-icon.svg";
+import logo from "../../../static/assets/ihd_logo.svg";
+import SVGCursor from "../SVGCursor/SVGCursor";
 
 const Navbar = () => {
   const [mousePoint, setMousePoint] = useState({ x: 203.5, y: -83 });
@@ -110,6 +110,11 @@ const Navbar = () => {
                   <Link href="/events/past-events">past events</Link>
                 </li>
               </ul>
+            </li>
+            <li onClick={handleMenuClose}>
+              <Link href="/programs">
+                <a>Programs</a>
+              </Link>
             </li>
             <li onClick={handleMenuClose}>
               <Link href="/stories">
