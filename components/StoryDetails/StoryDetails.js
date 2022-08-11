@@ -20,6 +20,15 @@ export default function StoryDetails({ image, title, sum, html, slug }) {
     setSummary(summarizedString);
   }, []);
 
+  useEffect(() => {
+    // Removing all the srcset attributes from image because it creates issues while loading the images
+    const img = document.getElementsByTagName("img");
+    for (let index = 0; index < img.length; index++) {
+      const element = img[index];
+      element.removeAttribute("srcset");
+    }
+  }, [html]);
+
   return (
     <div className="story-details">
       <div className="top-layout">
