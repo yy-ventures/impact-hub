@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import TitleSmallBg from "./TitleSmallBg";
-const ProgramHeadingDescription = ({ parentClass, span, heading, paragraph }) => {
+const ProgramHeadingDescription = ({ parentClass, span, heading, paragraph, link }) => {
   return (
     <>
       {heading && (
@@ -18,8 +18,8 @@ const ProgramHeadingDescription = ({ parentClass, span, heading, paragraph }) =>
 
       {paragraph && <p className={parentClass + "_body body-global-program"}>{paragraph}</p>}
       <div className="program_footer">
-        <Link href={`#`}>
-          <a>Read More &#x25B6;</a>
+        <Link href={link} passHref>
+          <a target="__blank">Read More &#x25B6;</a>
         </Link>
       </div>
     </>
