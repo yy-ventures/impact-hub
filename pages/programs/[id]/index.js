@@ -4,7 +4,7 @@ import useFetch from "../../../components/Hooks/useFetch";
 import ProgramDetails from "../../../components/ProgramDetails/ProgramDetails";
 import PreLoader from "../../../components/Shared/PreLoader/PreLoader";
 
-const storyDetails = () => {
+const ProgramDetailsPage = () => {
   let router = useRouter();
   const { id } = router.query;
   const programDetail = useFetch(`/get-program-detail/${id}`);
@@ -13,13 +13,13 @@ const storyDetails = () => {
   return (
     <>
       {programDetail.length > 0 ? (
-        <programDetails
+        <ProgramDetails
           image={story.image_path}
           title={story.title}
           sum={summary}
           html={details}
           slug="stories"
-        ></programDetails>
+        ></ProgramDetails>
       ) : (
         <PreLoader />
       )}
@@ -27,4 +27,4 @@ const storyDetails = () => {
   );
 };
 
-export default storyDetails;
+export default ProgramDetailsPage;
