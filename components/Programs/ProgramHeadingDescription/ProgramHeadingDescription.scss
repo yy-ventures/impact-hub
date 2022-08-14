@@ -1,5 +1,5 @@
 @import "../../../styles/base.scss";
-.heading-global {
+.heading-global-program {
   font-size: $subHeading2;
   font-weight: $bold;
   color: $primary2;
@@ -36,7 +36,7 @@
     }
   }
 }
-.body-global {
+.body-global-program {
   font-size: $common !important;
   color: $primary2;
   margin-top: 3rem;

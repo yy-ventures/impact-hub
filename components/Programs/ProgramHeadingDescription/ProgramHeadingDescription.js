@@ -5,9 +5,9 @@ const ProgramHeadingDescription = ({ parentClass, span, heading, paragraph }) =>
   return (
     <>
       {heading && (
-        <div className={parentClass + "_heading heading-global"}>
+        <div className={parentClass + "_heading heading-global-program"}>
           <div className="title_small_bg">
-              <TitleSmallBg />
+            <TitleSmallBg />
           </div>
           <h6>
             <span>{span && span}</span>
@@ -15,13 +15,13 @@ const ProgramHeadingDescription = ({ parentClass, span, heading, paragraph }) =>
           </h6>
         </div>
       )}
-      
-      {paragraph && <p className={parentClass + "_body body-global"}>{paragraph}</p>}  
+
+      {paragraph && <p className={parentClass + "_body body-global-program"}>{paragraph}</p>}
       <div className="program_footer">
         <Link href={`#`}>
           <a>Read More &#x25B6;</a>
         </Link>
-      </div>    
+      </div>
     </>
   );
 };
