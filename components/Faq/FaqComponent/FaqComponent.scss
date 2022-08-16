@@ -68,11 +68,40 @@
   .faq-component {
     &_answer {
       top: 80%;
-      height: auto;
+      height: max-content;
       padding: 8rem;
       max-height: 100rem;
       transition: all 0.25s ease-in-out;
       box-shadow: 0rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.16);
+    }
+  }
+  .job-detail-component {
+    &_answer {
+      padding: 6rem 4rem 4rem 4rem;
+      top: -2rem;
+    }
+  }
+}
+
+// Style specific for job detail accordion
+.job-detail-component {
+  margin-bottom: 1.5rem;
+  h4 {
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.5rem;
+
+    font-size: 2rem;
+    svg {
+      width: 2rem;
+    }
+  }
+  &_answer {
+    position: relative;
+    top: -2rem;
+    padding: 0 4rem;
+    border-radius: 0.5rem;
+    p {
+      font-size: 1.5rem;
     }
   }
 }

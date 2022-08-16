@@ -1,8 +1,10 @@
 @import "../../styles/base.scss";
 
 .careers_container {
-  height: 76.3rem;
+  height: max-content;
+  padding: 10rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -52,6 +54,25 @@
       img {
         right: 0;
       }
+    }
+  }
+  &_job {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15rem;
+
+    padding: 10rem;
+
+    &_title {
+      grid-column-end: span 1;
+      &_heading {
+        @include headingLine("left", flex-start);
+        font-size: 4.5rem !important;
+        padding: 5rem 0;
+      }
+    }
+    &_description {
+      grid-column-end: span 2;
     }
   }
 }
