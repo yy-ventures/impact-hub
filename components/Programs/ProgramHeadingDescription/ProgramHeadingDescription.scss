@@ -11,6 +11,11 @@
     left: -1.5rem;
     width: 12rem;
     aspect-ratio: 1;
+    @include response(vp-800) {
+      width: 20rem;
+      left: 0;
+      top: 10rem;
+    }
   }
   h6 {
     display: flex;
