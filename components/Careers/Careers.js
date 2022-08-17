@@ -16,8 +16,9 @@ const Careers = () => {
             companies and social impact projects in Bangladesh.
           </p>
           <p className="body-global">
-            We’re looking for community managers, business developers and community hosts to join our growing team! Get
-            in touch at dhaka@impacthub.net.
+            {/* We’re looking for community managers, business developers and community hosts to join our growing team! Get
+            in touch at dhaka@impacthub.net. */}
+            To join our growing team, get in touch through dhaka@impacthub.net!
           </p>
         </div>
         <TitleBlock
