@@ -91,7 +91,10 @@
     padding: 1.5rem 2.5rem;
     border-radius: 0.5rem;
 
-    font-size: 2rem;
+    font-size: $common;
+    @include response(vp-800) {
+      font-size: $subHeading2;
+    }
     svg {
       width: 2rem;
     }
@@ -102,14 +105,23 @@
     padding: 0 4rem;
     border-radius: 0.5rem;
     p {
-      font-size: 1.5rem;
+      font-size: $para3;
+
+      @include response(vp-800) {
+        font-size: $para2;
+      }
     }
   }
   ul {
     li {
       list-style: circle;
-      font-size: 1.5rem;
+      font-size: $para3;
       color: $primary2;
+
+      @include response(vp-800) {
+        font-size: $para2;
+        margin-left: $para2;
+      }
       &::marker {
         font-size: 2rem;
         font-weight: bolder;

@@ -18,15 +18,28 @@
       gap: 2rem;
       padding: 0rem 5rem;
       p {
-        font-size: 1.5rem;
+        font-size: $para3;
         color: $primary2;
+
+        @include response(vp-800) {
+          font-size: $para2;
+        }
       }
       ul {
         li {
           list-style: circle;
-          font-size: 1.5rem;
+          font-size: $para3;
+
+          @include response(vp-800) {
+            font-size: $para2;
+            margin-left: 1rem;
+          }
           &::marker {
             font-size: 2rem;
+
+            @include response(vp-800) {
+              font-size: 3rem;
+            }
           }
         }
       }

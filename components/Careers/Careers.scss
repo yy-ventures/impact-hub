@@ -13,15 +13,17 @@
     padding: 5rem;
   }
   &_content {
-    width: 172rem;
+    // width: 172rem;
+    z-index: 2;
+
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 2;
+
+    gap: 5rem;
     @include response(vp-800) {
       flex-direction: column-reverse;
-      gap: 5rem;
     }
     &_left {
       width: 66.7rem;
@@ -63,6 +65,9 @@
 
     padding: 10rem;
 
+    @include response(vp-800) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     // &_title {
     //   grid-column-end: span 1;
     //   &_heading {
