@@ -20,6 +20,7 @@ import "../components/GlobalNetwork/GlobalNetwork.scss";
 import "../components/GlobalLocations/GlobalLocations.scss";
 // Careers Page Styles
 import "../components/Careers/Careers.scss";
+import "../components/Careers/JobPosts/JobPosts.scss";
 // Membership Page Styles
 import "../components/Membership/Membership.scss";
 // Faq Page Styles

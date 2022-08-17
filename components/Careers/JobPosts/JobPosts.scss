@@ -1,0 +1,35 @@
+@import "../../../styles/base.scss";
+
+.job_post {
+  &__title {
+    grid-column-end: span 1;
+    &_heading {
+      @include headingLine("left", flex-start);
+      font-size: 4.5rem !important;
+      padding: 5rem 0;
+    }
+  }
+  &__description {
+    grid-column-end: span 2;
+
+    &__common-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 0rem 5rem;
+      p {
+        font-size: 1.5rem;
+        color: $primary2;
+      }
+      ul {
+        li {
+          list-style: circle;
+          font-size: 1.5rem;
+          &::marker {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
