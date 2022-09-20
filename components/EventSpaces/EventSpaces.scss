@@ -31,6 +31,9 @@
     position: relative;
     z-index: 2;
     display: flex;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
     width: fit-content;
     margin: auto;
     gap: 5rem;

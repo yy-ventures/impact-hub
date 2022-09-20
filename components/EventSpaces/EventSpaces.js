@@ -5,18 +5,24 @@ import { spacesStaticData } from "./content";
 import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription";
 
 const EventSpaces = ({ spaces }) => {
+  const spaceDataLength = spaces.length;
+  const half = Math.ceil(spaceDataLength / 2);
   // State value to hold the value of the current screen size
   // Set the screen-width to window's inner width if we are on the client side
   // In SSR we do not have a window on the server side,so we need to check if we are on the client side
   // as we set the screen width to window.innerWidth by putting a condition (typeof window !== 'undefined')
-  const [screenWidth, setScreenWidth] = useState(typeof window !== "undefined" && window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(
+    typeof window !== "undefined" && window.innerWidth
+  );
   // State value to hold the visibility property of the cards
   const [showCard, setShowCard] = useState([false, false, false, false]);
   const [onMobileScreen, setOnMobileScreen] = useState(false);
 
   const handleVisibility = (index) => {
     let tempState = [false, false, false, false];
-    showCard[index] === true ? (tempState[index] = false) : (tempState[index] = true);
+    showCard[index] === true
+      ? (tempState[index] = false)
+      : (tempState[index] = true);
 
     setShowCard(tempState);
   };
@@ -25,10 +31,10 @@ const EventSpaces = ({ spaces }) => {
   const showCardOnMobile = (screenWidth) => {
     // for mobile screens less than 700px width
     if (screenWidth <= 800 && screenWidth !== null) {
-      setShowCard([true, true, true, true]);
+      setShowCard([true, true, true, true, true]);
       setOnMobileScreen(true);
     } else {
-      setShowCard([false, false, false, false]);
+      setShowCard([false, false, false, false, false]);
       setOnMobileScreen(false);
     }
   };
@@ -48,12 +54,22 @@ const EventSpaces = ({ spaces }) => {
   return (
     <section className="event-spaces">
       <EventSpacesBg className={"event-spaces_bg"} />
-      <HeadingDescription parentClass="event-spaces" span="Event" heading="Spaces" />
+      <HeadingDescription
+        parentClass="event-spaces"
+        span="Event"
+        heading="Spaces"
+        subHeading="Impact Hub Dhaka is conveniently located near the National Zoo in Mirpur inside the Grameen Telecom Bhaban. Our event space is versatile and designed to support productivity and collaboration. With over 2500 sqft, we can host a variety of formats- from two person meetings to 80+ person gatherings, and even for your next shoot! Our space can be rented on an hourly or daily basis. Our event space is available from Sunday to Thursday, with weekend bookings possible upon request. We also provide dedicated event support!"
+      />
       <div className="event-spaces_cards">
         {spaces?.map(({ id }, index) => {
           return (
-            index < 2 && (
-              <div key={id} className={`event-spaces_cards_${index === 0 ? "left" : "right"}`}>
+            index < half && (
+              <div
+                key={id}
+                className={`event-spaces_cards_${
+                  index === 0 ? "left" : "right"
+                }`}
+              >
                 <SpaceCard
                   image={spacesStaticData[index * 2].image}
                   title={spaces[index * 2].title}
@@ -67,21 +83,25 @@ const EventSpaces = ({ spaces }) => {
                   handleVisibility={() => handleVisibility(index * 2)}
                   cardVisibility={showCard[index * 2]}
                   onMobileScreen={onMobileScreen}
+                  index={index}
+                  newDescription="Our studio space of 2,500 sf can be used as film studio, video studio, photo studio, production space. Besides the breathtaking view, we have some interesting backdrops and spaces to shoot in around the facility. It also has a fully-furnished café which are all included in the space rental. The studio space comes with ample amount of natural light and can be fully blacked out. Our space is perfect for your next video/film/commercial project or photography shoot. The studio includes space for the camera team and production amenities. Impact Hub cafe can be added to any production for additional space or for shooting."
                 />
-                <SpaceCard
-                  image={spacesStaticData[index * 2 + 1].image}
-                  title={spaces[index * 2 + 1].title}
-                  price={spaces[index * 2 + 1].price}
-                  duration={spaces[index * 2 + 1].duration}
-                  size={spaces[index * 2 + 1].size}
-                  seating={spaces[index * 2 + 1].seating}
-                  description={spacesStaticData[index * 2 + 1].description}
-                  amenities={spacesStaticData[index * 2 + 1].amenities}
-                  direction={index === 0 ? "left" : "right"}
-                  handleVisibility={() => handleVisibility(index * 2 + 1)}
-                  cardVisibility={showCard[index * 2 + 1]}
-                  onMobileScreen={onMobileScreen}
-                />
+                {index * 2 + 1 < spaceDataLength && (
+                  <SpaceCard
+                    image={spacesStaticData[index * 2 + 1].image}
+                    title={spaces[index * 2 + 1].title}
+                    price={spaces[index * 2 + 1].price}
+                    duration={spaces[index * 2 + 1].duration}
+                    size={spaces[index * 2 + 1].size}
+                    seating={spaces[index * 2 + 1].seating}
+                    description={spacesStaticData[index * 2 + 1].description}
+                    amenities={spacesStaticData[index * 2 + 1].amenities}
+                    direction={index === 0 ? "left" : "right"}
+                    handleVisibility={() => handleVisibility(index * 2 + 1)}
+                    cardVisibility={showCard[index * 2 + 1]}
+                    onMobileScreen={onMobileScreen}
+                  />
+                )}
               </div>
             )
           );

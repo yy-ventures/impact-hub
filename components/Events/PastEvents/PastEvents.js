@@ -75,25 +75,49 @@ const PastEvents = ({ type = "past" }) => {
 
       {/* past event main */}
       <div className="past_events_header">
-        <HeadingDescription parentClass="past_events_header" span="Past Impact Hub Dhaka" heading="Events" />
+        <HeadingDescription
+          parentClass="past_events_header"
+          span={
+            type === "past"
+              ? "Past Impact Hub Dhaka"
+              : "Upcoming Impact Hub Dhaka"
+          }
+          heading="Events"
+        />
       </div>
       <div className="past_events_container">
         <div className="past_events_container_data">
           <div className="past_events_container_data_header">
-            <span className="past_events_container_data_header_arrow" onClick={HandleLeft}>
+            <span
+              className="past_events_container_data_header_arrow"
+              onClick={HandleLeft}
+            >
               <img src={leftArrow.src} />
             </span>
             <h3>{pastEvents.length > 0 && pastEvents[slideIndex].date}</h3>
-            <span className="past_events_container_data_header_arrow" onClick={HandleRight}>
+            <span
+              className="past_events_container_data_header_arrow"
+              onClick={HandleRight}
+            >
               <img src={rightArrow.src} />
             </span>
           </div>
           <div className="past_events_container_data_body">
-            {pastEvents.length > 0 && (sliderSettings.infinite = pastEvents[slideIndex].events.length > 3)}
+            {pastEvents.length > 0 &&
+              (sliderSettings.infinite =
+                pastEvents[slideIndex].events.length > 3)}
             <Slider {...sliderSettings}>
               {pastEvents.length > 0 ? (
                 pastEvents[slideIndex].events.map(
-                  ({ id, title, start_date, end_date, starts_at, ends_at, image_path }) => {
+                  ({
+                    id,
+                    title,
+                    start_date,
+                    end_date,
+                    starts_at,
+                    ends_at,
+                    image_path,
+                  }) => {
                     return (
                       <EventCommonCard
                         key={id}

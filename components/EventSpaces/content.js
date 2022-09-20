@@ -156,4 +156,42 @@ export const spacesStaticData = [
       },
     ],
   },
+  {
+    image: "board-meeting-room.png",
+    title: "Board Meeting Room BDT 1200/hrs",
+    size: 240,
+    seating: 15,
+    description:
+      "IDEAL USE: Music Video Shoots, Photo Shoots, Commercial Shoots, Interviews, Film Shoots, Dance Shoots, Production Events",
+    amenities: [
+      {
+        feature: "Suitable for up to 12 people",
+        availability: 1,
+      },
+      {
+        feature: "Wifi",
+        availability: 1,
+      },
+      {
+        feature: "Writable Glass",
+        availability: 1,
+      },
+      {
+        feature: "White Board",
+        availability: 1,
+      },
+      {
+        feature: "Led Screen",
+        availability: 1,
+      },
+      {
+        feature: "Conference table and chairs",
+        availability: 1,
+      },
+      {
+        feature: "Complimentary Tea/Coffee",
+        availability: 1,
+      },
+    ],
+  },
 ];

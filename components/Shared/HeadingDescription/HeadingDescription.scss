@@ -7,10 +7,15 @@
   h2 {
     display: flex;
     flex-direction: column;
+    span {
+      font-size: $subHeading2;
+      font-weight: $bold;
+    }
   }
-  span {
-    font-size: $subHeading2;
-    font-weight: $bold;
+  div {
+    p {
+      font-size: 5rem;
+    }
   }
 }
 .body-global {
