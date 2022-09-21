@@ -80,51 +80,51 @@ export const spacesStaticData = [
       },
     ],
   },
-  {
-    image: "hub-cafe.png",
-    title: "Hub Cafe BDT 2000/2hr",
-    size: 600,
-    seating: 20,
-    description:
-      "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
-    amenities: [
-      {
-        feature: "Suitable for up to 20 people",
-        availability: 1,
-      },
-      {
-        feature: "Wifi",
-        availability: 1,
-      },
-      {
-        feature: "Sound System",
-        availability: 1,
-      },
-      {
-        feature: "Writable Glass",
-        availability: 1,
-      },
-      {
-        feature: "White Board",
-        availability: 1,
-      },
-      {
-        feature: "Led Screen",
-        availability: 1,
-      },
-      {
-        feature: "Complimentary Tea/Coffee",
-        availability: 1,
-      },
-    ],
-  },
+  // {
+  //   image: "hub-cafe.png",
+  //   title: "Hub Cafe BDT 2000/2hr",
+  //   size: 600,
+  //   seating: 20,
+  //   description:
+  //     "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
+  //   amenities: [
+  //     {
+  //       feature: "Suitable for up to 20 people",
+  //       availability: 1,
+  //     },
+  //     {
+  //       feature: "Wifi",
+  //       availability: 1,
+  //     },
+  //     {
+  //       feature: "Sound System",
+  //       availability: 1,
+  //     },
+  //     {
+  //       feature: "Writable Glass",
+  //       availability: 1,
+  //     },
+  //     {
+  //       feature: "White Board",
+  //       availability: 1,
+  //     },
+  //     {
+  //       feature: "Led Screen",
+  //       availability: 1,
+  //     },
+  //     {
+  //       feature: "Complimentary Tea/Coffee",
+  //       availability: 1,
+  //     },
+  //   ],
+  // },
   {
     image: "board-meeting-room.png",
     title: "Board Meeting Room BDT 1200/hrs",
     size: 240,
     seating: 15,
     description:
-      "A lofty, spacious open space for your inspiring events, hackathons, innovation labs, innovative workshops, networking and more.",
+      "Fully-equipped and access-friendly meeting room, perfect for focused working, innovative workshops, press meetings, and interviews.",
     amenities: [
       {
         feature: "Suitable for up to 12 people",

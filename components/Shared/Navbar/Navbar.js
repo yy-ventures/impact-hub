@@ -81,11 +81,11 @@ const Navbar = () => {
               </ul>
             </li>
             <li onClick={handleMenuClose}>
-              <Link href="/office-space">Office Space</Link>
+              <Link href="/office-space">Offices</Link>
             </li>
             <li>
-              Event Space
-              <span className="nav_list_arrow_container">
+              <Link href="/event-space/spaces">spaces</Link>
+              {/* <span className="nav_list_arrow_container">
                 <img src={downArrow.src} alt="arrow down" />
               </span>
               <ul>
@@ -95,7 +95,7 @@ const Navbar = () => {
                 <li onClick={handleMenuClose}>
                   <Link href="/event-space/send-enquiry">send enquiry</Link>
                 </li>
-              </ul>
+              </ul> */}
             </li>
             <li>
               Events
@@ -113,14 +113,15 @@ const Navbar = () => {
             </li>
             <li onClick={handleMenuClose}>
               <Link href="/programs">
-                <a>Programs</a>
+                <a>projects</a>
               </Link>
             </li>
-            <li onClick={handleMenuClose}>
+            {/* Temporary Close */}
+            {/* <li onClick={handleMenuClose}>
               <Link href="/stories">
                 <a>Stories</a>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="language-container">

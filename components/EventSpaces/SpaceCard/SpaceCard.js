@@ -19,6 +19,7 @@ const SpaceCard = ({
   newDescription = "",
   index,
 }) => {
+  console.log(index);
   return (
     <div className={`spaces-card_container spaces-card_container_${direction}`}>
       <h2 className="spaces-card_container_title">{`${title} BDT ${price}/${
@@ -57,8 +58,19 @@ const SpaceCard = ({
           }`}
         >
           <h2>Amenities</h2>
-          {newDescription && index === 2 ? (
-            <p>{newDescription}</p>
+          {newDescription ? (
+            <p className="description">
+              Our studio space of 2,500 sf can be used as film studio, video
+              studio, photo studio, production space. Besides the breathtaking
+              view, we have some interesting backdrops and spaces to shoot in
+              around the facility. It also has a fully-furnished café which are
+              all included in the space rental. The studio space comes with
+              ample amount of natural light and can be fully blacked out. Our
+              space is perfect for your next video/film/commercial project or
+              photography shoot. The studio includes space for the camera team
+              and production amenities. Impact Hub cafe can be added to any
+              production for additional space or for shooting.
+            </p>
           ) : (
             amenities.length > 0 &&
             amenities.map(({ feature, availability }, index) => {

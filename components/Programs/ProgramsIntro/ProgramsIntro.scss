@@ -43,7 +43,11 @@
     }
   }
   &_body_container {
-    padding: 0 7.3rem;
+    padding: 8rem 7.3rem;
+
+    h1 {
+      font-size: 3rem;
+    }
     &_body {
       padding: 8rem 0;
       display: flex;

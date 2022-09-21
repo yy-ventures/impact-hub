@@ -21,30 +21,36 @@ const OfficeSpace = () => {
           </div>
           <div>
             <p className="body-global">
-              Impact Hub Dhaka is part of a global network of over 100 connected communities that enable collaboration.
-              We unite people from every profession, background and culture with imagination and drive to challenge the
-              status quo. We see and do things differently – together we create the new normal.
+              Impact Hub Dhaka offers fully-furnished private office rooms,
+              ideal for teams of 3 – 8 people. We also customise bespoke rooms
+              for C-suite executives upon request.
             </p>
           </div>
         </div>
-        <TitleBlock title="Come create with us!" parentClass="officespace_container_header" shape={partnerShape.src} />
+        <TitleBlock
+          title="Come create with us!"
+          parentClass="officespace_container_header"
+          shape={partnerShape.src}
+        />
       </div>
       <div className="officespace_container_grid_cards">
-        {officeSpacePlans.map(({ id, name, price, get_package_features }, index) => {
-          return (
-            <MembershipCard
-              key={index}
-              id={id}
-              type={2}
-              image={spaces[index].image}
-              title={name}
-              price={price}
-              duration={8}
-              details={get_package_features}
-              modifierClass={`flex-card-${index + 1}`}
-            />
-          );
-        })}
+        {officeSpacePlans.map(
+          ({ id, name, price, get_package_features }, index) => {
+            return (
+              <MembershipCard
+                key={index}
+                id={id}
+                type={2}
+                image={spaces[index].image}
+                title={name}
+                price={price}
+                duration={8}
+                details={get_package_features}
+                modifierClass={`flex-card-${index + 1}`}
+              />
+            );
+          }
+        )}
       </div>
     </section>
   );

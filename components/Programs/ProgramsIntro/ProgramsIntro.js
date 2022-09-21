@@ -19,39 +19,115 @@ const ProgramsIntro = () => {
       </div>
       <div className="intro_header">
         <div>
-          <HeadingDescription parentClass="intro_header" span="" heading="Programs" />
+          <HeadingDescription
+            parentClass="intro_header"
+            span=""
+            heading="Projects"
+          />
           <p>
-            Impact Hub Dhaka is part of a global network of over 100 connected communities that enable collaboration. We
-            unite people from every profession, background and culture with imagination and drive to challenge the
-            status quo. We see and do things differently – together we create the new normal.
+            We connect entrepreneurs and innovators to large organizations,
+            cultural and public institutions. Why? To enable inclusive and
+            sustainable innovation at scale. At Impact Hub, we make
+            collaboration happen.
           </p>
         </div>
-        <TitleBlock title="Come create with us!" parentClass="membership_container_header" shape={partnerShape.src} />
+        <TitleBlock
+          title="Inclusive and sustainable innovation at scale"
+          parentClass="membership_container_header"
+          shape={partnerShape.src}
+        />
       </div>
       <div className="intro_body_container">
-        {programs.map(({ id, title, short_description, thumb_image, is_external_link, link }, index) => {
-          return (
-            <div
-              key={id}
-              className={`intro_body_container_body ${index % 2 === 1 ? "intro_body_container_body_reverse" : ""}`}
-            >
-              <div className="intro_body_container_body_program_image">
-                <img src={baseUrlForImages + thumb_image} alt="" />
+        {/* Dummy start */}
+        <HeadingDescription
+          parentClass="intro"
+          span="Ongoing projects"
+          heading=" "
+        />
+        {/* Dummy end */}
+        {programs.map(
+          (
+            {
+              id,
+              title,
+              short_description,
+              thumb_image,
+              is_external_link,
+              link,
+            },
+            index
+          ) => {
+            return (
+              <div
+                key={id}
+                className={`intro_body_container_body ${
+                  index % 2 === 1 ? "intro_body_container_body_reverse" : ""
+                }`}
+              >
+                <div className="intro_body_container_body_program_image">
+                  <img src={baseUrlForImages + thumb_image} alt="" />
+                </div>
+                <div className="intro_body_container_body_program_header">
+                  <ProgramHeadingDescription
+                    id={id}
+                    parentClass="intro_body_container_body_program_header"
+                    span=""
+                    heading={title}
+                    paragraph={short_description}
+                    external={is_external_link}
+                    link={link}
+                  />
+                </div>
               </div>
-              <div className="intro_body_container_body_program_header">
-                <ProgramHeadingDescription
-                  id={id}
-                  parentClass="intro_body_container_body_program_header"
-                  span=""
-                  heading={title}
-                  paragraph={short_description}
-                  external={is_external_link}
-                  link={link}
-                />
+            );
+          }
+        )}
+      </div>
+      <div className="intro_body_container">
+        {/* Dummy start */}
+        <HeadingDescription
+          parentClass="intro"
+          span="Past projects"
+          heading=" "
+        />
+        {/* Dummy end */}
+        {programs.map(
+          (
+            {
+              id,
+              title,
+              short_description,
+              thumb_image,
+              is_external_link,
+              link,
+            },
+            index
+          ) => {
+            return (
+              <div
+                key={id}
+                className={`intro_body_container_body ${
+                  index % 2 === 1 ? "intro_body_container_body_reverse" : ""
+                }`}
+              >
+                <div className="intro_body_container_body_program_image">
+                  <img src={baseUrlForImages + thumb_image} alt="" />
+                </div>
+                <div className="intro_body_container_body_program_header">
+                  <ProgramHeadingDescription
+                    id={id}
+                    parentClass="intro_body_container_body_program_header"
+                    span=""
+                    heading={title}
+                    paragraph={short_description}
+                    external={is_external_link}
+                    link={link}
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          }
+        )}
       </div>
     </section>
   );

@@ -84,24 +84,24 @@ const EventSpaces = ({ spaces }) => {
                   cardVisibility={showCard[index * 2]}
                   onMobileScreen={onMobileScreen}
                   index={index}
-                  newDescription="Our studio space of 2,500 sf can be used as film studio, video studio, photo studio, production space. Besides the breathtaking view, we have some interesting backdrops and spaces to shoot in around the facility. It also has a fully-furnished café which are all included in the space rental. The studio space comes with ample amount of natural light and can be fully blacked out. Our space is perfect for your next video/film/commercial project or photography shoot. The studio includes space for the camera team and production amenities. Impact Hub cafe can be added to any production for additional space or for shooting."
                 />
-                {index * 2 + 1 < spaceDataLength && (
-                  <SpaceCard
-                    image={spacesStaticData[index * 2 + 1].image}
-                    title={spaces[index * 2 + 1].title}
-                    price={spaces[index * 2 + 1].price}
-                    duration={spaces[index * 2 + 1].duration}
-                    size={spaces[index * 2 + 1].size}
-                    seating={spaces[index * 2 + 1].seating}
-                    description={spacesStaticData[index * 2 + 1].description}
-                    amenities={spacesStaticData[index * 2 + 1].amenities}
-                    direction={index === 0 ? "left" : "right"}
-                    handleVisibility={() => handleVisibility(index * 2 + 1)}
-                    cardVisibility={showCard[index * 2 + 1]}
-                    onMobileScreen={onMobileScreen}
-                  />
-                )}
+                {/* {index * 2 + 1 < spaceDataLength && ( */}
+                <SpaceCard
+                  image={spacesStaticData[index * 2 + 1].image}
+                  title={spaces[index * 2 + 1].title}
+                  price={spaces[index * 2 + 1].price}
+                  duration={spaces[index * 2 + 1].duration}
+                  size={spaces[index * 2 + 1].size}
+                  seating={spaces[index * 2 + 1].seating}
+                  description={spacesStaticData[index * 2 + 1].description}
+                  amenities={spacesStaticData[index * 2 + 1].amenities}
+                  direction={index === 0 ? "left" : "right"}
+                  handleVisibility={() => handleVisibility(index * 2 + 1)}
+                  cardVisibility={showCard[index * 2 + 1]}
+                  onMobileScreen={onMobileScreen}
+                  newDescription={index * 2 + 1 === 3}
+                />
+                {/* // )} */}
               </div>
             )
           );

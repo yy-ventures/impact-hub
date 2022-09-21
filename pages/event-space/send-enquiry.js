@@ -1,12 +1,13 @@
-import React from 'react';
-import SendEnquiry from '../../components/EventSpaces/SendEnquiry/SendEnquiry';
+import React from "react";
+// COMPONENTS
+import SendEnquiry from "../../components/EventSpaces/SendEnquiry/SendEnquiry";
 
 const sendEnquiry = () => {
-    return (
-        <>
-           <SendEnquiry/> 
-        </>
-    );
+  return (
+    <>
+      <SendEnquiry />
+    </>
+  );
 };
 
 export default sendEnquiry;

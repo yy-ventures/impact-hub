@@ -5,14 +5,17 @@ import useFetch from "../../Hooks/useFetch";
 import PreLoader from "../../Shared/PreLoader/PreLoader";
 
 // LAYOUT
-import layout1 from '../../../public/images/home/impact-layout.svg';
+import layout1 from "../../../public/images/home/impact-layout.svg";
 
 const HomeImpacts = () => {
   const counterData = useFetch("/get-global-networks");
+  console.log(counterData);
 
   return (
     <section className="home_impacts">
-      <div className="home_impacts_layout"><img src={layout1.src}/></div>
+      <div className="home_impacts_layout">
+        <img src={layout1.src} />
+      </div>
       <div className="home_impacts_header">
         <h4>Want to Know</h4>
         <h2>
@@ -22,7 +25,7 @@ const HomeImpacts = () => {
       <div className="home_impacts_body">
         <h4 className="marked">Lets break it down!</h4>
         <div className="home_impacts_body_counter">
-          {!counterData && <PreLoader/>}
+          {!counterData && <PreLoader />}
           {counterData.map((counter, index) => (
             <HomeImpactCounter counter={counter} key={index} index={index} />
           ))}
