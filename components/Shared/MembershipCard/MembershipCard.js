@@ -5,6 +5,7 @@ import FeatureAvailability from "./MembershipSVGs/FeatureAvailability";
 import MembershipBg from "./MembershipSVGs/MembershipBg";
 import useFetch from "../../Hooks/useFetch";
 import DownArrow from "./MembershipSVGs/DownArrow";
+import bookedIcon from "../../../public/icons/booked.png";
 
 const MembershipCard = ({
   id,
@@ -90,7 +91,8 @@ const MembershipCard = ({
     >
       {id === 11 || id === 14 ? (
         <div className="booked-tag">
-          <p>Fully Booked</p>
+          {/* <p>Fully Booked</p> */}
+          <img src={bookedIcon.src} alt="booked icon" />
         </div>
       ) : (
         ""

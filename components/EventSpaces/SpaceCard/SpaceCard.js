@@ -16,7 +16,7 @@ const SpaceCard = ({
   cardVisibility,
   handleVisibility,
   onMobileScreen = false,
-  newDescription = "",
+  newDescription,
   index,
 }) => {
   console.log(index);
@@ -85,7 +85,7 @@ const SpaceCard = ({
         {!onMobileScreen && (
           <button
             className={`spaces-card_show-more ${
-              index === 2 ? "show-more-new" : ""
+              newDescription ? "show-more-new" : ""
             }`}
             onClick={() => {
               handleVisibility();
