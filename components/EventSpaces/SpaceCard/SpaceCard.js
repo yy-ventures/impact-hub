@@ -25,11 +25,7 @@ const SpaceCard = ({
       <h2 className="spaces-card_container_title">{`${title} BDT ${price}/${
         duration > 1 ? duration + "hrs" : "hr"
       }`}</h2>
-      <div
-        className={`spaces-card spaces-card_${
-          cardVisibility ? "open" : "closed"
-        }`}
-      >
+      <div className={`spaces-card spaces-card_${cardVisibility ? "open" : "closed"}`}>
         <img src={`/images/spaces/${image ? image : ""}`} alt="spaces" />
         <div className="spaces-card_bg-gradient"></div>
         <div className="spaces-card_details">
@@ -52,24 +48,16 @@ const SpaceCard = ({
             </a>
           </Link>
         </div>
-        <div
-          className={`spaces-card_features ${
-            index === 2 ? "feature-style" : ""
-          }`}
-        >
+        <div className={`spaces-card_features ${index === 2 ? "feature-style" : ""}`}>
           <h2>Amenities</h2>
           {newDescription ? (
             <p className="description">
-              Our studio space of 2,500 sf can be used as film studio, video
-              studio, photo studio, production space. Besides the breathtaking
-              view, we have some interesting backdrops and spaces to shoot in
-              around the facility. It also has a fully-furnished café which are
-              all included in the space rental. The studio space comes with
-              ample amount of natural light and can be fully blacked out. Our
-              space is perfect for your next video/film/commercial project or
-              photography shoot. The studio includes space for the camera team
-              and production amenities. Impact Hub cafe can be added to any
-              production for additional space or for shooting.
+              Our studio space of 3000 sq.ft can be used as film studio, video studio, photo studio, production space.
+              Besides the breathtaking view, we have some interesting backdrops and spaces to shoot in around the
+              facility. It also has a fully-furnished café which are all included in the space rental. The studio space
+              comes with ample amount of natural light and can be fully blacked out. Our space is perfect for your next
+              video/film/commercial project or photography shoot. The studio includes space for the camera team and
+              production amenities. Impact Hub cafe can be added to any production for additional space or for shooting.
             </p>
           ) : (
             amenities.length > 0 &&
@@ -84,15 +72,12 @@ const SpaceCard = ({
         </div>
         {!onMobileScreen && (
           <button
-            className={`spaces-card_show-more ${
-              newDescription ? "show-more-new" : ""
-            }`}
+            className={`spaces-card_show-more ${newDescription ? "show-more-new" : ""}`}
             onClick={() => {
               handleVisibility();
             }}
           >
-            Show {cardVisibility ? "Less" : "More"}{" "}
-            <ShowMoreSvg className={`spaces-card_show-more_${direction}`} />
+            Show {cardVisibility ? "Less" : "More"} <ShowMoreSvg className={`spaces-card_show-more_${direction}`} />
           </button>
         )}
       </div>

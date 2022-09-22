@@ -20,3 +20,9 @@
     z-index: 3;
   }
 }
+.size_small {
+  h1 {
+    font-size: $headingPrimary - 4rem;
+    line-height: 5rem;
+  }
+}

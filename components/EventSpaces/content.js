@@ -157,12 +157,11 @@ export const spacesStaticData = [
     ],
   },
   {
-    image: "board-meeting-room.png",
+    image: "shooting_space.jpeg",
     title: "Board Meeting Room BDT 1200/hrs",
     size: 240,
     seating: 15,
-    description:
-      "IDEAL USE: Music Video Shoots, Photo Shoots, Commercial Shoots, Interviews, Film Shoots, Dance Shoots, Production Events",
+    description: "IDEAL USE: Photo Shoots, Commercial TVC Shoots, Interviews, Film Shoots, Production Events",
     amenities: [
       {
         feature: "Suitable for up to 12 people",
