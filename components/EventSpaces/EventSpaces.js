@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription";
+import { spacesStaticData } from "./content";
 import EventSpacesBg from "./EventSpacesBg/EventSpacesBg";
 import SpaceCard from "./SpaceCard/SpaceCard";
-import { spacesStaticData } from "./content";
-import HeadingDescription from "../Shared/HeadingDescription/HeadingDescription";
 
 const EventSpaces = ({ spaces }) => {
   const spaceDataLength = spaces.length;
@@ -56,8 +56,8 @@ const EventSpaces = ({ spaces }) => {
       <EventSpacesBg className={"event-spaces_bg"} />
       <HeadingDescription
         parentClass="event-spaces"
-        span="Event"
-        heading="Spaces"
+        span="Spaces"
+        heading="To Rent"
         subHeading="Impact Hub Dhaka is conveniently located near the National Zoo in Mirpur inside the Grameen Telecom Bhaban. Our event space is versatile and designed to support productivity and collaboration. With over 2500 sqft, we can host a variety of formats- from two person meetings to 80+ person gatherings, and even for your next shoot! Our space can be rented on an hourly or daily basis. Our event space is available from Sunday to Thursday, with weekend bookings possible upon request. We also provide dedicated event support!"
       />
       <div className="event-spaces_cards">
