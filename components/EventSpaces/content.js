@@ -43,7 +43,7 @@ export const spacesStaticData = [
     ],
   },
   {
-    image: "workshop-space.webp",
+    image: "workshop-space.jpeg",
     title: "Workshop Space BDT 6000/4hrs",
     size: 1200,
     seating: 35,
@@ -157,11 +157,12 @@ export const spacesStaticData = [
     ],
   },
   {
-    image: "shooting_space.jpeg",
+    image: "shooting_space.png",
     title: "Board Meeting Room BDT 1200/hrs",
     size: 240,
     seating: 15,
-    description: "IDEAL USE: Photo Shoots, Commercial TVC Shoots, Interviews, Film Shoots, Production Events",
+    description:
+      "IDEAL USE: Photo Shoots, Commercial TVC Shoots, Interviews, Film Shoots, Production Events",
     amenities: [
       {
         feature: "Suitable for up to 12 people",

@@ -28,9 +28,9 @@ const Footer = () => {
                 <a>Impact Blog</a>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <a href="#">Privacy Policy</a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="footer_left_logo">
